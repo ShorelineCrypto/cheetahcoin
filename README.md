@@ -4,6 +4,8 @@ Cheetahcoin integration/staging tree
 http://www.cheetahcoin.org
 
 Copyright (c) 2009-2013 Bitcoin Developers
+Copyright (c) 2018-2021 Nengcoin Developers
+Copyright (c) 2021 Cheetahcoin Developers
 
 What is Cheetahcoin?
 ----------------
