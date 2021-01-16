@@ -1,0 +1,14 @@
+rpcuser=youruser
+rpcpassword=yourpassword
+rpcallowip=192.168.1.103
+rpcport=8378
+server=1
+daemon=1
+addnode=144.202.22.19
+addnode=76.28.105.88
+addnode=110.232.113.233
+addnode=68.151.225.158
+addnode=85.15.179.171
+addnode=50.245.85.73
+addnode=95.111.248.174
+addnode=73.147.208.44
