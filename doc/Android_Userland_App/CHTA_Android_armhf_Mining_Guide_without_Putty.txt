@@ -7,15 +7,15 @@ CHTA Android Mining Guide without Putty on Armhf Platform
     6. Enter command line
         a.  sudo apt update
         b. sudo apt install wget ssh
-        c. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.5.0.2/cheetahcoin_v1.5.0.2_android_userland_arm.tgz
-        d. tar xvfz cheetahcoin_v1.5.0.2_android_userland_arm.tgz
+        c. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.6.0.2/cheetahcoin_v1.6.0.2_android_userland_arm.tgz
+        d. tar xvfz cheetahcoin_v1.6.0.2_android_userland_arm.tgz
         e. cd  Android_Userland_App/ubuntu/armhf/
         f. bash prepare_userland.sh
     7. Relogin Userland Ubuntu
     8. Enter command line
         a. cd  Android_Userland_App/ubuntu/armhf/
         b. bash prepare_neng.sh
-        c. cd cheetahcoin_v1.5.0.2_u16_armhf/
+        c. cd cheetahcoin_v1.6.0.2_u16_armhf/
         d. ./cheetahcoind (create wallet folder & files)
         e. screen (creates another screen so you can check your wallet and mining at the same time using one ssh)
         f. cd
