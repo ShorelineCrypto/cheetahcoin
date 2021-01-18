@@ -8,10 +8,14 @@ This folder describe how to CPU mine Cheetahcoin (CHTA) in android phone on 64 b
 Please read high level overview first from pdf report:
 https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/NENG_2020_Q3_report/NENG_2020_Q3_report.pdf 
 
-For CPU mining steps and optimization with cheetah_Cpuminer on "chta" branch, please checkout: 
-https://github.com/ShorelineCrypto/cheetah_cpuminer
-git checkout chta
+For CPU mining steps and optimization with cheetah_Cpuminer on "chta" branch web guide at
+https://github.com/ShorelineCrypto/cheetah_cpuminer/tree/chta
 
+To obtain software, please perform below command lines: 
+```
+  git clone https://github.com/ShorelineCrypto/cheetah_cpuminer
+  git checkout chta
+```
 or download zip file:
 https://github.com/ShorelineCrypto/cheetah_cpuminer/releases/tag/chta-beta2
 
