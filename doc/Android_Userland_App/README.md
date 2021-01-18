@@ -6,14 +6,18 @@ This folder describe how to CPU mine Cheetahcoin (CHTA) in android phone on 64 b
 - Software Required: UserLand app from Google Play Store or F-Droid
 
 Please read high level overview first from pdf report:
-https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/CHTA_2020_Q3_report/CHTA_2020_Q3_report.pdf 
+https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/NENG_2020_Q3_report/NENG_2020_Q3_report.pdf 
 
-For CPU mining steps and optimization with cheetah_Cpuminer, please checkout: 
+For CPU mining steps and optimization with cheetah_Cpuminer on "chta" branch, please checkout: 
 https://github.com/ShorelineCrypto/cheetah_cpuminer
+git checkout chta
 
-## Confusion on android vs linux on CHTA v1.4.x/v1.5.x release
+or download zip file:
+https://github.com/ShorelineCrypto/cheetah_cpuminer/releases/tag/chta-beta2
 
-There was some confusion created by android mining release v1.4.0.  Please watch this youtube video from android authority Gary Sims:
+## Confusion on android vs linux on CHTA v1.6.x release
+
+There was some confusion created by android mining release v1.6.0.  Please watch this youtube video from android authority Gary Sims:
 
 Is Android really just Linux? - Gary explains
 https://www.youtube.com/watch?v=BkP6FTy0a4Y&t=307s
@@ -72,7 +76,7 @@ See attached picture in this folder "tab.gif".  Tab key in android is the charac
 
 Here is easier way with tab:
 ```
-   cd  cheetahcoin_v1.5.0.2_u16_arm64
+   cd  cheetahcoin_v1.6.0.2_u16_arm64
 
 ```
   Typing above long word in android phone is close to impossible. An easier way to do is:
@@ -80,7 +84,7 @@ Here is easier way with tab:
 ```
    cd  newe-finger push TAB key
 ```
-After you push TAB afer word "newe" , the android UserLand linux terminal should behave like linux in server/desktop with the full file/folder name "cheetahcoin_v1.5.0.2_u16_arm64" auto populated for you. 
+After you push TAB afer word "newe" , the android UserLand linux terminal should behave like linux in server/desktop with the full file/folder name "cheetahcoin_v1.6.0.2_u16_arm64" auto populated for you. 
 
 #### Arrow up or down key for history
 
@@ -119,16 +123,16 @@ Now you can let the cheetah cpuminer running with the phone cord connected to ch
  "Enable X11 forwarding" for the userland login setting. Save the login session with X11 enabled, start VcXsrv in windows, 
  re-login into phone with putty and type below command lines:
  ```
- hlu@localhost:~$ cd cheetahcoin_v1.5.0.2_u16_arm64
- hlu@localhost:~/cheetahcoin_v1.5.0.2_u16_arm64$ ./cheetahcoin-qt &
+ hlu@localhost:~$ cd cheetahcoin_v1.6.0.2_u16_arm64
+ hlu@localhost:~/cheetahcoin_v1.6.0.2_u16_arm64$ ./cheetahcoin-qt &
 ```
  Above command inside putty will pop the QT GUI wallet in windows 10 with VcXsrv running. Wait for a while for the QT wallet to fully show up in windows, and then you can control the wallet inside phone from windows 10.
  - macOS with XQuartz. Download, install free software "XQuartz". Log out and re-login. Open up mac terminal:
  ```
  $ ssh -XY hlu@192.168.1.98 -p 2022
  -----login in phone----
- hlu@localhost:~$ cd cheetahcoin_v1.5.0.2_u16_arm64
- hlu@localhost:~/cheetahcoin_v1.5.0.2_u16_arm64$ ./cheetahcoin-qt &
+ hlu@localhost:~$ cd cheetahcoin_v1.6.0.2_u16_arm64
+ hlu@localhost:~/cheetahcoin_v1.6.0.2_u16_arm64$ ./cheetahcoin-qt &
 ```
 Above in mac terminal will pop up android phone CHTA QT GUI wallet in macOS desktop. 
 
@@ -136,8 +140,8 @@ Above in mac terminal will pop up android phone CHTA QT GUI wallet in macOS desk
 ```
  honglu@MX $ ssh -XY hlu@192.168.1.98 -p 2022
  -----login in phone----
- hlu@localhost:~$ cd cheetahcoin_v1.5.0.2_u16_arm64
- hlu@localhost:~/cheetahcoin_v1.5.0.2_u16_arm64$ ./cheetahcoin-qt &
+ hlu@localhost:~$ cd cheetahcoin_v1.6.0.2_u16_arm64
+ hlu@localhost:~/cheetahcoin_v1.6.0.2_u16_arm64$ ./cheetahcoin-qt &
 ```
 Above in linux desktop terminal will pop android phone CHTA QT wallet in linux desktop remotely.
 
