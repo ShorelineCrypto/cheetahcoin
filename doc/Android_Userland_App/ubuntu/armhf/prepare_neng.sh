@@ -24,5 +24,5 @@ sudo ldconfig
 
 git clone https://github.com/ShorelineCrypto/cheetah_cpuminer.git
 ## download the binary wallet and enjoy:
-wget  https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.5.0.2/cheetahcoin_v1.5.0.2_u16_armhf.tgz
-tar xvfz cheetahcoin_v1.5.0.2_u16_armhf.tgz
+wget  https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.6.0.2/cheetahcoin_v1.6.0.2_u16_armhf.tgz
+tar xvfz cheetahcoin_v1.6.0.2_u16_armhf.tgz
