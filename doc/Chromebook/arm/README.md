@@ -9,8 +9,16 @@ Older version of Chrome OS run Debian 9 (Stretch). The below script and method w
 - Minimum hardware requirement: 2G memory chromebook with 3G additonal spare hard disk. 
 - Software Required: Linux (Beta) turned on in Chrome OS or Android UserLand App
 
-For CPU mining steps and optimization with cheetah_Cpuminer, please checkout: 
-https://github.com/ShorelineCrypto/cheetah_cpuminer
+For CPU mining steps and optimization with cheetah_Cpuminer on "chta" branch web guide at
+https://github.com/ShorelineCrypto/cheetah_cpuminer/tree/chta
+
+To obtain software, please perform below command lines:
+```
+  git clone https://github.com/ShorelineCrypto/cheetah_cpuminer
+  git checkout chta
+```
+or download zip file: https://github.com/ShorelineCrypto/cheetah_cpuminer/releases/tag/chta-beta2
+
 
 For Android UserLand app setup on Debian/Ubuntu, please download and checkout Android Userland package. Below we mainly cover the method using Linux (beta) or Crostini method. 
 
