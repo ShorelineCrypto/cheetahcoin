@@ -54,5 +54,5 @@ sudo mv boost1.58.conf  /etc/ld.so.conf.d/
 sudo ldconfig
 
 
-wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.5.0.0/cheetahcoin_v1.5.0.0_ubuntu16.04.tgz
-tar xvfz cheetahcoin_v1.5.0.0_ubuntu16.04.tgz
+wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.6.0.0/cheetahcoin_v1.6.0.0_ubuntu16.04.tgz
+tar xvfz cheetahcoin_v1.6.0.0_ubuntu16.04.tgz
