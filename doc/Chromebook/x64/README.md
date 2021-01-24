@@ -10,8 +10,17 @@ Older version of Chrome OS run Debian 9 (Stretch). The below script and method w
 - Minimum hardware requirement: 2G memory chromebook with 3G additonal spare hard disk. 
 - Software Required: Linux (Beta) turned on in Chrome OS
 
-For CPU mining steps and optimization with cheetah_Cpuminer, please checkout: 
-https://github.com/ShorelineCrypto/cheetah_cpuminer
+For CPU mining steps and optimization with cheetah_Cpuminer on "chta" branch web guide at
+https://github.com/ShorelineCrypto/cheetah_cpuminer/tree/chta
+
+To obtain software, please perform below command lines:
+```
+  git clone https://github.com/ShorelineCrypto/cheetah_cpuminer
+  git checkout chta
+```
+
+or download zip file: https://github.com/ShorelineCrypto/cheetah_cpuminer/releases/tag/chta-beta2
+
 
 ## Turn on Linux Beta (Crostini)
 Go to Chrome OS setting, turn on Linux (Beta).  If your chromebook does not have this option, it is not supported here for CHTA CPU mining. 
