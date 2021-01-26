@@ -10,8 +10,17 @@ Older version of Chrome OS run Debian 9 (Stretch). The below script and method w
 - Minimum hardware requirement: 2G memory chromebook with 3G additonal spare hard disk. 
 - Software Required: Linux (Beta) turned on in Chrome OS
 
-For CPU mining steps and optimization with cheetah_Cpuminer, please checkout: 
-https://github.com/ShorelineCrypto/cheetah_cpuminer
+For CPU mining steps and optimization with cheetah_Cpuminer on "chta" branch web guide at
+https://github.com/ShorelineCrypto/cheetah_cpuminer/tree/chta
+
+To obtain software, please perform below command lines:
+```
+  git clone https://github.com/ShorelineCrypto/cheetah_cpuminer
+  git checkout chta
+```
+
+or download zip file: https://github.com/ShorelineCrypto/cheetah_cpuminer/releases/tag/chta-beta2
+
 
 ## Turn on Linux Beta (Crostini)
 Go to Chrome OS setting, turn on Linux (Beta).  If your chromebook does not have this option, it is not supported here for CHTA CPU mining. 
@@ -26,7 +35,7 @@ Inside terminal, this file will be at your home directory.
 By default, Linux (Beta) or Crostini runs a container for Debian 10. Below has been tested to be working in both Debian 10 and Debian 9.  Run below commands to install all required files:
 
 ```
-   tar xvfz cheetahcoin_v1.5.0.3_chromeos_x64.tgz
+   tar xvfz cheetahcoin_v1.6.0.3_chromeos_x64.tgz
    cd Chromebook/x64/debian
    bash  prepare_neng.sh
 ```
@@ -45,8 +54,8 @@ to run a full node and for the purpose of CPU mining.
 ## run GUI QT wallet in Chromebook
 
  ```
- hlu@penguin:~$ cd  cheetahcoin_v1.5.0.0_ubuntu16.04
- hlu@penguin:~/cheetahcoin_v1.5.0.0_ubuntu16.04$ ./cheetahcoin-qt &
+ hlu@penguin:~$ cd  cheetahcoin_v1.6.0.0_ubuntu16.04
+ hlu@penguin:~/cheetahcoin_v1.6.0.0_ubuntu16.04$ ./cheetahcoin-qt &
 ```
 
 Above in linux terminal will pop CHTA QT wallet in chromebook desktop.
@@ -70,15 +79,15 @@ TAB key is powerful in linux command line.  Typing full word of file or folder n
 
 Here is easier way with tab:
 ```
-   cd  cheetahcoin_v1.5.0.0_ubuntu16.04
+   cd  cheetahcoin_v1.6.0.0_ubuntu16.04
 
 ```
   Typing above long word in Chromebook is close to impossible. An easier way to do is:
 
 ```
-   cd  nengc-finger push TAB key
+   cd  cheetahc-finger push TAB key
 ```
-After you push TAB afer word "nengc" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "cheetahcoin_v1.5.0.0_ubuntu16.04" auto populated for you. 
+After you push TAB afer word "cheetahc" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "cheetahcoin_v1.6.0.0_ubuntu16.04" auto populated for you. 
 
 #### Arrow up or down key for history
 
