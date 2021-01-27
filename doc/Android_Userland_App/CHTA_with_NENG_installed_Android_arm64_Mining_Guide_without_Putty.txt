@@ -67,7 +67,7 @@ a. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.6.0.
 b. tar xvfz cheetahcoin_v1.6.0.2_android_userland_arm.tgz
 c. cd  Android_Userland_App/ubuntu/arm64/
 d. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.6.0.2/cheetahcoin_v1.6.0.2_u16_arm64.tgz
-e. tar xvfz cheetahcoin_v1.6.0.2_android_userland_arm.tgz
+e. tar xvfz cheetahcoin_v1.6.0.2_u16_arm64.tgz
 f. cd cheetahcoin_v1.6.0.2_u16_arm64/
 g. ./cheetahcoind (create wallet folder & files)
 h. screen (creates another screen so you can check your wallet and mining at the same time using one ssh)
