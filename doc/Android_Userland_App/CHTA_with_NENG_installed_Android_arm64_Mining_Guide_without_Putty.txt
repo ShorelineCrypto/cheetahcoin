@@ -1,45 +1,46 @@
 NENG Android Mining Guide without Putty
-1. Download Userland App from Google Playstore
-2. Open Userland App and select Ubuntu
-3. Create an account if you do not have
-4. Log in Ubuntu
-5. Copy and paste all the Linux command lines to your whatsapp / chat app / email and save them to your notes on your mobile phone for easier copy and paste
-6. Enter command line
-a.  sudo apt update
-b. sudo apt install wget ssh
-c. wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.5.0.2/nengcoin_v1.5.0.2_android_userland_arm.tgz
-d. tar xvfz nengcoin_v1.5.0.2_android_userland_arm.tgz
-e. cd  Android_Userland_App/ubuntu/arm64/
-f. bash prepare_userland.sh
-7. Relogin Userland Ubuntu
-8. Enter command line
-a. cd  Android_Userland_App/ubuntu/arm64/
-b. bash prepare_neng.sh
-c. cd nengcoin_v1.5.0.2_u16_arm64/
-d. ./nengcoind (create wallet folder & files)
-e. screen (creates another screen so you can check your wallet and mining at the same time using one ssh)
-f. cd
-g. cd  Android_Userland_App/ubuntu/arm64/cheetah_cpuminer
-h. mv nengcoin.conf-example nengcoin.conf (rename)
-i. vi nengcoin.conf
-j. Press i and use the arrow keys to navigate to modify your rpc username and password
-k. Press Esc
-l. :wq
-m. cp nengcoin.conf  ~/.nengcoin/
-n. Press Ctrl AD to go back to the main screen (NENG Wallet)
-o. ./nengcoind (sync the wallet appx 48 hrs or more)
-p. top (rotate your mobile phone to the side so that you are able to see whether nengcoind is running)
-q. ./nengcoind getmininginfo (compare the current block with https://hashminingpool.com/explorer/NENG to ensure it has sync to the latest block before getting ready to perform mining)
-r. ./nengcoind getbalance (check your coin balance in your wallet)
-s. Ctrl+C (to exit top)
+    1. Download Userland App from Google Playstore
+    2. Open Userland App and select Ubuntu
+    3. Create a SSH account if you do not have
+    4. Log in Ubuntu
+    5. Copy and paste all the Linux command lines to your whatsapp / chat app / email and save them to your notes on your mobile phone for easier copy and paste
+    6. Enter command line
+        a. uname -a (or uname -m : to determine whether your phone is 64bit or 32bit. This guide is using arm64 / 64bit folder. For 32bit please install the files in armhf folder instead of arm64 folder) 
+        b. sudo apt update
+        c. sudo apt install wget ssh
+        d. wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.5.0.2/nengcoin_v1.5.0.2_android_userland_arm.tgz
+        e. tar xvfz nengcoin_v1.5.0.2_android_userland_arm.tgz
+        f. cd  Android_Userland_App/ubuntu/arm64/
+        g. bash prepare_userland.sh
+    7. Relogin Userland Ubuntu
+    8. Enter command line
+        a. cd  Android_Userland_App/ubuntu/arm64/
+        b. bash prepare_neng.sh
+        c. cd nengcoin_v1.5.0.2_u16_arm64/
+        d. ./nengcoind (create wallet folder & files)
+        e. screen (creates another screen so you can check your wallet and mining at the same time using one ssh)
+        f. cd
+        g. cd  Android_Userland_App/ubuntu/arm64/cheetah_cpuminer
+        h. mv nengcoin.conf-example nengcoin.conf (rename)
+        i. vi nengcoin.conf
+        j. Press i and use the arrow keys to navigate to modify your rpc username and password
+        k. Press Esc
+        l. :wq
+        m. cp nengcoin.conf  ~/.nengcoin/
+        n. Press Ctrl AD to go back to the main screen (NENG Wallet)
+        o. ./nengcoind (sync the wallet appx 48 hrs or more)
+        p. top (rotate your mobile phone to the side so that you are able to see whether nengcoind is running)
+        q. ./nengcoind getmininginfo (compare the current block with https://hashminingpool.com/explorer/NENG to ensure it has sync to the latest block before getting ready to perform mining)
+        r. ./nengcoind getbalance (check your coin balance in your wallet)
+        s. Ctrl+C (to exit top)
 After complete syncing your NENG wallet
-1. Enter command line
-a. screen –r (from NENG wallet to Cheetah screen)
-b. sh cheetah.sh (for standard mining)
-c. python main.py  --interval  10  --cpu 4 (for customized mining)
-d. Press Ctrl C to stop
-e. Press Ctrl AD to go back to the main screen (NENG Wallet)
-f. screen –r (Reattach the cheetah miner screen back) 
+    1. Enter command line
+        a. screen -r (from NENG wallet to Cheetah screen)
+        b. sh cheetah.sh (for standard mining)
+        c. python main.py  --interval  10  --cpu 4 (for customized mining)
+        d. Press Ctrl C to stop
+        e. Press Ctrl AD to go back to the main screen (NENG Wallet)
+        f. screen -r (Reattach the cheetah miner screen back) 
 
 
 
@@ -61,40 +62,40 @@ f. screen –r (Reattach the cheetah miner screen back)
 
 
 CHTA Android Mining Guide without Putty
-Note : You can type “screen” to start a new screen and type “cd” to reach home if you still want to keep working on with NENG wallet and NENG cheetah_miner screen. To access any screens, type “screen id –r where you can obtain the screen “id” when you type “screen –r” when you have more than 1 screen. 
-1. Home Enter command line
-a. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.6.0.2/cheetahcoin_v1.6.0.2_android_userland_arm.tgz
-b. tar xvfz cheetahcoin_v1.6.0.2_android_userland_arm.tgz
-c. cd  Android_Userland_App/ubuntu/arm64/
-d. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.6.0.2/cheetahcoin_v1.6.0.2_u16_arm64.tgz
-e. tar xvfz cheetahcoin_v1.6.0.2_u16_arm64.tgz
-f. cd cheetahcoin_v1.6.0.2_u16_arm64/
-g. ./cheetahcoind (create wallet folder & files)
-h. screen (creates another screen so you can check your wallet and mining at the same time using one ssh)
-i. cd
-j. cd  Android_Userland_App/ubuntu/arm64
-k. cp  -r cheetah_cpuminer  cheetah_cpuminer_chta
-l. cd cheetah_cpuminer_chta
-m. git pull
-n. git checkout chta
-o. vi cheetahcoin.conf
-p. Press i and use the arrow keys to navigate to modify your rpc username and password
-q. Press Esc
-r. :wq
-s. cp cheetahcoin.conf  ~/.cheetahcoin/
-t. Press Ctrl AD to go back to the main screen (Cheetah Wallet)
-u. ./cheetahcoind (sync the wallet appx 48 hrs or more)
-v. top (rotate your mobile phone to the side so that you are able to see whether cheetahcoind is running)
-t. ./cheetahcoind getmininginfo (compare the current block with https://pool.letshash.online/explorer/CHTA to ensure it has sync to the latest block before getting ready to perform mining)
-u. ./cheetahcoind getbalance (check your coin balance in your wallet)
-v. Ctrl+C (to exit top)
+Note : You can type “screen” to start a new screen and type “cd” to reach home if you still want to keep working on with NENG wallet and NENG cheetah_miner screen. To access any screens, type “screen id -r where you can obtain the screen “id” when you type “screen -r” when you have more than 1 screen. 
+    1. Home Enter command line
+        a. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.6.0.2/cheetahcoin_v1.6.0.2_android_userland_arm.tgz
+        b. tar xvfz cheetahcoin_v1.6.0.2_android_userland_arm.tgz
+        c. cd  Android_Userland_App/ubuntu/arm64/
+        d. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.6.0.2/cheetahcoin_v1.6.0.2_u16_arm64.tgz
+        e. tar xvfz cheetahcoin_v1.6.0.2_u16_arm64.tgz
+        f. cd cheetahcoin_v1.6.0.2_u16_arm64/
+        g. ./cheetahcoind (create wallet folder & files)
+        h. screen (creates another screen so you can check your wallet and mining at the same time using one ssh)
+        i. cd
+        j. cd  Android_Userland_App/ubuntu/arm64
+        k. cp  -r cheetah_cpuminer  cheetah_cpuminer_chta
+        l. cd cheetah_cpuminer_chta
+        m. git pull
+        n. git checkout chta
+        o. vi cheetahcoin.conf
+        p. Press i and use the arrow keys to navigate to modify your rpc username and password
+        q. Press Esc
+        r. :wq
+        s. cp cheetahcoin.conf  ~/.cheetahcoin/
+        t. Press Ctrl AD to go back to the main screen (Cheetah Wallet)
+        u. ./cheetahcoind (sync the wallet appx 48 hrs or more)
+        v. top (rotate your mobile phone to the side so that you are able to see whether cheetahcoind is running)
+        t. ./cheetahcoind getmininginfo (compare the current block with https://pool.letshash.online/explorer/CHTA to ensure it has sync to the latest block before getting ready to perform mining)
+        u. ./cheetahcoind getbalance (check your coin balance in your wallet)
+        v. Ctrl+C (to exit top)
 
 
 After complete syncing your Cheetah wallet
-1. Enter command line
-a. screen –r (from CHTA wallet to Cheetah screen)
-b. sh cheetah.sh (for standard mining)
-c. python main.py  --interval  10  --cpu 4 (for customized mining)
-d. Press Ctrl C to stop
-e. Press Ctrl AD to go back to the main screen (CHTA Wallet)
-f. screen –r (Reattach the cheetah miner screen back)
+    1. Enter command line
+        a. screen -r (from CHTA wallet to Cheetah screen)
+        b. sh cheetah.sh (for standard mining)
+        c. python main.py  --interval  10  --cpu 4 (for customized mining)
+        d. Press Ctrl C to stop
+        e. Press Ctrl AD to go back to the main screen (CHTA Wallet)
+        f. screen -r (Reattach the cheetah miner screen back)
