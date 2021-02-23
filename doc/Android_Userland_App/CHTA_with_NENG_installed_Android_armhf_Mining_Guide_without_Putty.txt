@@ -4,19 +4,20 @@ NENG Android Mining Guide without Putty
     3. Create a SSH account if you do not have
     4. Log in Ubuntu
     5. Copy and paste all the Linux command lines to your whatsapp / chat app / email and save them to your notes on your mobile phone for easier copy and paste
-    6. Enter command line
+    6. Check for the latest version of the wallet first and replace the link version accordingly
+    7. Enter command line
         a. uname -a (or uname -m : to determine whether your phone is 64bit or 32bit. This guide is using armhf / 32bit folder. For 64bit please install the files in arm64 folder instead of armhf folder) 
         b. sudo apt update
         c. sudo apt install wget ssh
-        d. wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.5.0.2/nengcoin_v1.5.0.2_android_userland_arm.tgz
-        e. tar xvfz nengcoin_v1.5.0.2_android_userland_arm.tgz
+        d. wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.6.0.2/nengcoin_v1.6.0.2_android_userland_arm.tgz
+        e. tar xvfz nengcoin_v1.6.0.2_android_userland_arm.tgz
         f. cd  Android_Userland_App/ubuntu/armhf/
         g. bash prepare_userland.sh
-    7. Relogin Userland Ubuntu
-    8. Enter command line
+    8. Relogin Userland Ubuntu
+    9. Enter command line
         a. cd  Android_Userland_App/ubuntu/armhf/
         b. bash prepare_neng.sh
-        c. cd nengcoin_v1.5.0.2_u16_armhf/
+        c. cd nengcoin_v1.6.0.2_u16_armhf/
         d. ./nengcoind (create wallet folder & files)
         e. screen (creates another screen so you can check your wallet and mining at the same time using one ssh)
         f. cd
@@ -30,7 +31,7 @@ NENG Android Mining Guide without Putty
         n. Press Ctrl AD to go back to the main screen (NENG Wallet)
         o. ./nengcoind (sync the wallet appx 48 hrs or more)
         p. top (rotate your mobile phone to the side so that you are able to see whether nengcoind is running)
-        q. ./nengcoind getmininginfo (compare the current block with https://hashminingpool.com/explorer/NENG to ensure it has sync to the latest block before getting ready to perform mining)
+        q. ./nengcoind getmininginfo (compare the current block with http://86.100.49.209/explorer/NENG to ensure it has sync to the latest block before getting ready to perform mining)
         r. ./nengcoind getbalance (check your coin balance in your wallet)
         s. Ctrl+C (to exit top)
 After complete syncing your NENG wallet
@@ -57,13 +58,10 @@ After complete syncing your NENG wallet
 
 
 
-
-
-
-
 CHTA Android Mining Guide without Putty
 Note : You can type “screen” to start a new screen and type “cd” to reach home if you still want to keep working on with NENG wallet and NENG cheetah_miner screen. To access any screens, type “screen id -r where you can obtain the screen “id” when you type “screen -r” when you have more than 1 screen. 
-    1. Home Enter command line
+    1. Check for the latest version of the wallet first and replace the link version accordingly
+    2. Home Enter command line
         a. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.6.0.2/cheetahcoin_v1.6.0.2_android_userland_arm.tgz
         b. tar xvfz cheetahcoin_v1.6.0.2_android_userland_arm.tgz
         c. cd  Android_Userland_App/ubuntu/armhf/
@@ -89,7 +87,6 @@ Note : You can type “screen” to start a new screen and type “cd” to reach home i
         t. ./cheetahcoind getmininginfo (compare the current block with https://pool.letshash.online/explorer/CHTA to ensure it has sync to the latest block before getting ready to perform mining)
         u. ./cheetahcoind getbalance (check your coin balance in your wallet)
         v. Ctrl+C (to exit top)
-
 
 After complete syncing your Cheetah wallet
     1. Enter command line
