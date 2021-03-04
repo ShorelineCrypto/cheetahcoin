@@ -34,8 +34,9 @@ CHTA Android Mining Guide without Putty
         r. cp cheetahcoin.conf  ~/.cheetahcoin/
         s. Press Ctrl AD to go back to the main screen (Cheetah Wallet)
         t. ./cheetahcoind (sync the wallet appx 48 hrs or more)
+(Ensure that your device shows command prompt after it shows “Server is starting”. If not press Enter one time to allow command prompt to appear.)
         u. top (rotate your mobile phone to the side so that you are able to see whether cheetahcoind is running)
-        v. ./cheetahcoind getmininginfo (compare the current block with https://pool.letshash.online/explorer/CHTA
+        v. ./cheetahcoind getmininginfo (compare the current block with https://hashminingpool.com/explorer/CHTA
         w.  to ensure it has sync to the latest block before getting ready to perform mining)
         x. ./cheetahcoind getbalance (check your coin balance in your wallet)
         y. Ctrl+C (to exit top)
