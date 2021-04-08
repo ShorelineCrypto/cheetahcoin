@@ -10,14 +10,25 @@ Copyright (c) 2021 Cheetahcoin Developers
 What is Cheetahcoin?
 ----------------
 
-Cheetahcoin is an experimental new digital currency that enables instant payments to
-anyone, anywhere in the world. Cheetahcoin uses peer-to-peer technology to operate
-with no central authority: managing transactions and issuing money are carried
-out collectively by the network. Cheetahcoin is also the name of the open source
-software which enables the use of this currency.
+Cheetahcoin is new generation of SHA256 coin. Cheetahcoin is world first and only SHA256 coin that minable on Android phones. Cheetahcoin can also be mined in ASIC/USB ASICs/GPU/CPU. 
 
-For more information, as well as an immediately useable, binary version of
-the Cheetahcoin client software, see http://www.cheetahcoin.org.
+Cheetahcoin forked mobile mining technology Nengcoin (NENG) on SHA256 using a proof-of-work algorithm with enhanced features to protect against 51% attack and decentralize on mining to allow diversified mining rigs across CPUs, GPUs, ASICs and Android phones.
+
+Current full version name: "v0.8.6.0_randomSpike-v1.6.x" (shorthand: "v1.6.x") 
+Note: latest different platform wallets have "0.8.6.0" version tag in QT wallet. The downloaded files should have correct version on file names supporting different hardware devices and OS.
+
+Bitcointalk Ann
+https://bitcointalk.org/index.php?topic=5309004.0
+
+Reddit
+https://www.reddit.com/r/cheetahcoin/
+
+Discord
+https://discord.gg/WgXrgSYrBr
+
+Twitter
+https://twitter.com/Cheetahcoin1
+
 
 License
 -------
