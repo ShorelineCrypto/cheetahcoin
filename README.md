@@ -1,7 +1,6 @@
 Cheetahcoin integration/staging tree
 ================================
 
-http://www.cheetahcoin.org
 
 Copyright (c) 2009-2013 Bitcoin Developers
 
@@ -21,6 +20,9 @@ Note: latest different platform wallets have "0.8.6.0" version tag in QT wallet.
 
 Bitcointalk Ann
 https://bitcointalk.org/index.php?topic=5309004.0
+
+Community web
+http://www.cheetahcoin.org
 
 Reddit
 https://www.reddit.com/r/cheetahcoin/
