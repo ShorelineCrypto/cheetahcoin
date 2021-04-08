@@ -4,13 +4,15 @@ Cheetahcoin integration/staging tree
 http://www.cheetahcoin.org
 
 Copyright (c) 2009-2013 Bitcoin Developers
+
 Copyright (c) 2018-2021 Nengcoin Developers
+
 Copyright (c) 2021 Cheetahcoin Developers
 
 What is Cheetahcoin?
 ----------------
 
-Cheetahcoin is new generation of SHA256 coin. Cheetahcoin is world first and only SHA256 coin that minable on Android phones. Cheetahcoin can also be mined in ASIC/USB ASICs/GPU/CPU. 
+Cheetahcoin is Dogecoin on Steroids. Cheetahcoin is world first and only SHA256 coin minable on Android phones. 
 
 Cheetahcoin forked mobile mining technology Nengcoin (NENG) on SHA256 using a proof-of-work algorithm with enhanced features to protect against 51% attack and decentralize on mining to allow diversified mining rigs across CPUs, GPUs, ASICs and Android phones.
 
