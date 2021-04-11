@@ -31,7 +31,7 @@ Discord
 https://discord.gg/WgXrgSYrBr
 
 Twitter
-https://twitter.com/Cheetahcoin1
+https://twitter.com/official_CHTA
 
 
 License
