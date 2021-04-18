@@ -8,7 +8,7 @@
 > On SD create file called SSH (not extenion) using File Explorer make a text file and delete the .txt, you may need to go to Folder Options and show file extensions.
 > Create a wpa_supplicant.conf file (if you want to connect to wifi) - see how to on https://www.raspberrypi.org/documentation/configuration/wireless/headless.md
 > Otherwise connect an ethernet cable
->Nb check https://github.com/ShorelineCrypto/cheetahcoin/releases & https://github.com/ShorelineCrypto/nengcoin/releases for latest Linux on arm address/releases, as of this it was 1.6.0.4, if newer use latest for armhf or arm64 as needed.
+>Nb check https://github.com/ShorelineCrypto/cheetahcoin/releases & https://github.com/ShorelineCrypto/nengcoin/releases for latest Linux on arm address/releases, as of this it was v1.6.0.4, if newer use latest for armhf or arm64 as needed.
 
 ===Via SSH e.g Putty===
 
@@ -55,31 +55,7 @@ Good luck (below 2 lines useful)
 
 
 NENG Wallet & Cheeta NENG Miner (arm64/arch64)
-> cd ~
-> wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.6.0.4/nengcoin_v1.6.0.4_debian10_arm64.tgz
-> tar xvzf nengcoin_v1.6.0.4_debian10_arm64.tgz
-> cd Debian_10/arm64/
-> bash prepare_neng.sh
-> wget  https://github.com/ShorelineCrypto/nengcoin/releases/download/v1.6.0.2/nengcoin_v1.6.0.2_u16_arm64.tgz
-> tar xvfz nengcoin_v1.6.0.2_u16_arm64.tgz
-> cd nengcoin_v1.6.0.2_u16_arm64/
-> ./nengcoind (this creates a wallet)
-> cd ..
-> screen
-> cd cheetah_cpuminer
-> mv nengcoin.conf-example nengcoin.conf
-> vi nengcoin.conf (press i, change as needed, followed by ESC)
-> :wq
-> cp nengcoin.conf ~/.nengcoin/
-> press ctrl + a + d
-> ./nengcoind (starts wallet)
-> ./nengcoind getmininginfo (check up too most recent full block e.g. https://spools.online/explorer/NENG)
 
-When at the latest block start mining by 
-> screen -r
-> sh cheetah.sh
-> press ctrl+a+d
+Please checkout Nengcoin github below for detailed installation guide:
+https://github.com/ShorelineCrypto/nengcoin/tree/master/doc/Raspberry_Pi_4
 
-Good luck (below 2 lines useful)
-./Debian_10/arm64/nengcoin_v1.6.0.2_u16_arm64/nengcoind getmininginfo
-./Debian_10/arm64/nengcoin_v1.6.0.2_u16_arm64/nengcoind getbalance
