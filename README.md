@@ -17,8 +17,8 @@ Cheetahcoin forked mobile mining technology Nengcoin (NENG) on SHA256 using a pr
 
 Major releases features:
 
-v1.6.x Forked off Nengcoin randomSpike-v1.6.x  on SHA256 on top of bitcoin core v0.8.6
-v1.7.x New Logo, cheetah diff 4x, plus minor bitcoin core code updates
+* v1.6.x Forked off Nengcoin randomSpike-v1.6.x  on SHA256 on top of bitcoin core v0.8.6
+* v1.7.x New Logo, cheetah diff 4x, plus minor bitcoin core code updates
 
 Current full version name: "v0.8.8.0_randomSpike-v1.7.x" (shorthand: "v1.7.x") 
 Note: latest different platform wallets have "0.8.8.0" version tag in QT wallet. The downloaded files should have correct version on file names supporting different hardware devices and OS.
