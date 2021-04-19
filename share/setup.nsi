@@ -5,7 +5,7 @@ SetCompressor /SOLID lzma
 
 # General Symbol Definitions
 !define REGKEY "SOFTWARE\$(^Name)"
-!define VERSION 0.8.6
+!define VERSION 0.8.8
 !define COMPANY "Cheetahcoin project"
 !define URL http://www.cheetahcoin.org/
 
@@ -45,13 +45,13 @@ Var StartMenuGroup
 !insertmacro MUI_LANGUAGE English
 
 # Installer attributes
-OutFile cheetahcoin-0.8.6-win32-setup.exe
+OutFile cheetahcoin-0.8.8-win32-setup.exe
 InstallDir $PROGRAMFILES\Cheetahcoin
 CRCCheck on
 XPStyle on
 BrandingText " "
 ShowInstDetails show
-VIProductVersion 0.8.6.0
+VIProductVersion 0.8.8.0
 VIAddVersionKey ProductName Cheetahcoin
 VIAddVersionKey ProductVersion "${VERSION}"
 VIAddVersionKey CompanyName "${COMPANY}"
