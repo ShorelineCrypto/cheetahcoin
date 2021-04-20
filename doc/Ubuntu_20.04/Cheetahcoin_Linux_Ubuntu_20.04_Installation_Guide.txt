@@ -1,13 +1,13 @@
 Cheetahcoin (CHTA) Linux Ubuntu 20.04 Installation Guide
-    1. Download & save the right version of the wallet here : https://github.com/ShorelineCrypto/cheetahcoin/releases/tag/v1.6.0.1
+    1. Download & save the right version of the wallet here : https://github.com/ShorelineCrypto/cheetahcoin/releases/tag/v1.7.0.1
     2. Navigate to the Download folder and extract the downloaded file to Home folder
     3. Navigate to the newly extracted folder and open README.md file
     4. Follow the instructions from the README.md file to install Cheetahcoin wallet using CLI commands
         a. Open Terminal
         b. Navigate to the newly extracted folder
         c. Type  bash  prepare_neng.sh
-        d. Type wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.6.0.0/cheetahcoin_v1.6.0.0_ubuntu16.04.tgz 
-        e. Type tar xvfz cheetahcoin_v1.6.0.0_ubuntu16.04.tgz
+        d. Type wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.7.0.0/cheetahcoin_v1.7.0.0_ubuntu16.04.tgz 
+        e. Type tar xvfz cheetahcoin_v1.7.0.0_ubuntu16.04.tgz
         f. Navigate to the newly installed wallet folder
         g. Type ./cheetahcoind (you will receive an error pertaining rpc user and and password issue but it’s all good for now)
         h. You can stay at the same folder or navigate to any folder to install Cheetah Miner for CHTA
