@@ -1,6 +1,6 @@
 # MX Linux 19.2 / Debian 10 (buster) on x86_64
 
-This folder describe a binary support from v1.6.0.1 CHTA core release on MX Linux 19.2 and Debian 9 (stretch) / 10 (buster).
+This folder describe a binary support from v1.7.0.1 CHTA core release on MX Linux 19.2 and Debian 9 (stretch) / 10 (buster).
 
 ## Step 1: Install library files
 Please run below shell script in terminal for installing dependencies and library files:
@@ -10,6 +10,6 @@ Please run below shell script in terminal for installing dependencies and librar
 
 ## Step 2: download the binary wallet and enjoy:
 ```
-  wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.6.0.0/cheetahcoin_v1.6.0.0_ubuntu16.04.tgz
-  tar xvfz cheetahcoin_v1.6.0.0_ubuntu16.04.tgz
+  wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.7.0.0/cheetahcoin_v1.7.0.0_ubuntu16.04.tgz
+  tar xvfz cheetahcoin_v1.7.0.0_ubuntu16.04.tgz
 ```
