@@ -19,7 +19,7 @@ To obtain software, please perform below command lines:
 or download zip file:
 https://github.com/ShorelineCrypto/cheetah_cpuminer/releases/tag/chta-beta2
 
-## Confusion on android vs linux on CHTA v1.6.x release
+## Confusion on android vs linux on CHTA v1.7.x release
 
 There was some confusion created by android mining release v1.7.0.  Please watch this youtube video from android authority Gary Sims:
 
