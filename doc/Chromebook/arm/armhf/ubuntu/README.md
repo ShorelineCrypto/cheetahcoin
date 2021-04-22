@@ -1,6 +1,6 @@
 # Ubuntu 18.04 on armhf
 
-This folder describe a binary support from v1.6.0.3 CHTA core release on Ubuntu 18.04.
+This folder describe a binary support from v1.7.0.3 CHTA core release on Ubuntu 18.04.
 
 ## Step 1: Install library files
 Please run below shell script in terminal for installing dependencies and library files:
@@ -10,8 +10,8 @@ Please run below shell script in terminal for installing dependencies and librar
 
 ## Step 2: download the binary wallet and enjoy:
 ```
-  wget  https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.6.0.2/cheetahcoin_v1.6.0.2_u16_armhf.tgz
-  tar xvfz cheetahcoin_v1.6.0.2_u16_armhf.tgz
+  wget  https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.7.0.2/cheetahcoin_v1.7.0.2_u16_armhf.tgz
+  tar xvfz cheetahcoin_v1.7.0.2_u16_armhf.tgz
 ```
 
 ## Optional Step 3: compile boost 1.58 from source
