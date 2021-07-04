@@ -21,8 +21,8 @@ Major releases features:
 * v1.7.x New Logo, cheetah diff 4x, plus minor bitcoin core code updates
 * v1.8.x cheetah diff 3x
 
-Current full version name: "v0.8.8.0_randomSpike-v1.7.x" (shorthand: "v1.7.x") 
-Note: latest different platform wallets have "0.8.8.0" version tag in QT wallet. The downloaded files should have correct version on file names supporting different hardware devices and OS.
+Current full version name: "v0.8.9.0_randomSpike-v1.8.x" (shorthand: "v1.8.x") 
+Note: latest different platform wallets have "0.8.9.0" version tag in QT wallet. The downloaded files should have correct version on file names supporting different hardware devices and OS.
 
 Bitcointalk Ann
 https://bitcointalk.org/index.php?topic=5309004.0
