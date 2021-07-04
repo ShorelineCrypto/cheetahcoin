@@ -1142,6 +1142,47 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                 return pindex->nBits;
             }
         }
+        // v1.8.0 randomSpike fork after block height 356735
+        else if (pindex->nHeight > 356735) {
+            CBigNum bnCheetah;
+            bnCheetah = bnProofOfWorkLimit;
+            bnCheetah /= 4;
+            unsigned int nCheetah = bnCheetah.GetCompact();
+            
+            CBigNum bnSpike;
+            bnSpike = bnProofOfWorkLimit;
+            bnSpike /= 100000000000;
+            unsigned int nSpike = bnSpike.GetCompact();
+            
+            if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
+                return nCheetah;
+            else if  ((pblock->nTime > pindexLast->nTime + 18) || (pblock->nTime < pindexLast->nTime - 18))
+            {
+                // Return the last non-special-min-difficulty-rules-block
+                
+                while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                    pindex = pindex->pprev;
+                return pindex->nBits;
+            }
+            else
+            {
+                // randomSpike difficulty between +- 18 seconds
+                                
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 2 != 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+
+
+            }
+        }
        // v1.7.0 randomSpike fork after block height 216200
         else if (pindex->nHeight > 216200) {
             CBigNum bnCheetah;
