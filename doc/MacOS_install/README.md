@@ -5,7 +5,7 @@
 For full guide of building own wallet from source, please follow steps at:
  https://github.com/ShorelineCrypto/CheetahCoin/blob/master/doc/build-osx.md
 
-Here below we describe an easier way to install macOS binary wallet on CHTA v1.7.0.0, which was built from source in Mojave. The below 
+Here below we describe an easier way to install macOS binary wallet on CHTA v1.8.0.0, which was built from source in Mojave. The below 
 method was tested to be working on 10.11 , 10.14 and 10.15. 
 
 
