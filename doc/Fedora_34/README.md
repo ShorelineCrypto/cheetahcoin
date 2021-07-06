@@ -1,6 +1,6 @@
-# MX Linux 19.2 / Debian 10 (buster) on x86_64
+# Fedora 34 Workstation on x86_64
 
-This folder describe a binary support from v1.8.0.1 CHTA core release on MX Linux 19.2 and Debian 9 (stretch) / 10 (buster).
+This folder describe a binary support from v1.8.0.1 CHTA core release on Fedora 34 Workstation.
 
 ## Step 1: Install library files
 Please run below shell script in terminal for installing dependencies and library files:
