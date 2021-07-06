@@ -1,6 +1,6 @@
-# Manjaro 20.0.3 / Arch Linux on x86_64
+# Manjaro 21.0.7 / Arch Linux on x86_64
 
-This folder describe a binary support from v1.8.0.1 CHTA core release on Manjaro 20.0.3 or Arch Linux .
+This folder describe a binary support from v1.8.0.1 CHTA core release on Manjaro 21.0.7 or Arch Linux .
 
 ## Step 1: Install library files
 Please run below shell script in terminal for installing dependencies and library files:
