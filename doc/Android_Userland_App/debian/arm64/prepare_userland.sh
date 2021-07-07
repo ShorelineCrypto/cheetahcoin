@@ -10,7 +10,7 @@ sudo apt -y install nano
 ## toybox-aarch64 workaround provided at: 
 ## https://github.com/CypherpunkArmory/UserLAnd/issues/87
 
-wget http://landley.net/toybox/bin/toybox-aarch64
+wget http://landley.net/toybox/downloads/binaries/latest/toybox-aarch64
 chmod a+rx toybox-aarch64
 sudo mv toybox-aarch64 /usr/local/bin/
 

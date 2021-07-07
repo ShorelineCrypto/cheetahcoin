@@ -62,12 +62,12 @@ CHTA Android Mining Guide without Putty
 Note : You can type “screen” to start a new screen and type “cd” to reach home if you still want to keep working on with NENG wallet and NENG cheetah_miner screen. To access any screens, type “screen id -r where you can obtain the screen “id” when you type “screen -r” when you have more than 1 screen. 
     1. Check for the latest version of the wallet first and replace the link version accordingly
     2. Home Enter command line
-        a. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.7.0.2/cheetahcoin_v1.7.0.2_android_userland_arm.tgz
-        b. tar xvfz cheetahcoin_v1.7.0.2_android_userland_arm.tgz
+        a. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.8.0.2/cheetahcoin_v1.8.0.2_android_userland_arm.tgz
+        b. tar xvfz cheetahcoin_v1.8.0.2_android_userland_arm.tgz
         c. cd  Android_Userland_App/ubuntu/armhf/
-        d. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.7.0.2/cheetahcoin_v1.7.0.2_u16_armhf.tgz
-        e. tar xvfz cheetahcoin_v1.7.0.2_u16_armhf.tgz
-        f. cd cheetahcoin_v1.7.0.2_u16_armhf/
+        d. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.8.0.2/cheetahcoin_v1.8.0.2_u16_armhf.tgz
+        e. tar xvfz cheetahcoin_v1.8.0.2_u16_armhf.tgz
+        f. cd cheetahcoin_v1.8.0.2_u16_armhf/
         g. ./cheetahcoind (create wallet folder & files)
         h. screen (creates another screen so you can check your wallet and mining at the same time using one ssh)
         i. cd
