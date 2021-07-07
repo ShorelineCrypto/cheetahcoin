@@ -10,9 +10,9 @@ sudo apt -y install nano
 ## toybox-armv7l workaround provided at: 
 ## https://github.com/CypherpunkArmory/UserLAnd/issues/87
 
-wget http://landley.net/toybox/bin/toybox-armv7l
+wget http://landley.net/toybox/downloads/binaries/latest/toybox-armv7l
 chmod a+rx toybox-armv7l
-sudo mv toybox-armv7l /usr/local/bin/
+sudo mv toybox-armv7l /usr/local/downloads/binaries/latest/
 
 cat >> ~/.bashrc  << EOF
 
