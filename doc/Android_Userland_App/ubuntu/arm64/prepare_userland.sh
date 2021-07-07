@@ -12,7 +12,7 @@ sudo apt -y install nano
 
 wget http://landley.net/toybox/downloads/binaries/latest/toybox-aarch64
 chmod a+rx toybox-aarch64
-sudo mv toybox-aarch64 /usr/local/downloads/binaries/latest/
+sudo mv toybox-aarch64 /usr/local/bin/
 
 cat >> ~/.bashrc  << EOF
 

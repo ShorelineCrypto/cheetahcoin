@@ -12,7 +12,7 @@ sudo apt -y install nano
 
 wget http://landley.net/toybox/downloads/binaries/latest/toybox-armv7l
 chmod a+rx toybox-armv7l
-sudo mv toybox-armv7l /usr/local/downloads/binaries/latest/
+sudo mv toybox-armv7l /usr/local/bin/
 
 cat >> ~/.bashrc  << EOF
 
