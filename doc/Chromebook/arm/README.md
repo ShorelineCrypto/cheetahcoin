@@ -47,13 +47,13 @@ By default, Linux (Beta) or Crostini runs a container for Debian 10. Below has b
 ### arm64
 
 ```
-   tar xvfz cheetahcoin_v1.7.0.3_chromeos_arm.tgz
+   tar xvfz cheetahcoin_v1.8.0.3_chromeos_arm.tgz
    cd Chromebook/arm/arm64/debian
    bash  prepare_neng.sh
 ```
 ### armhf
 ```
-   tar xvfz cheetahcoin_v1.7.0.3_chromeos_arm.tgz
+   tar xvfz cheetahcoin_v1.8.0.3_chromeos_arm.tgz
    cd Chromebook/arm/armhf/debian
    bash  prepare_neng.sh
 ```
@@ -77,14 +77,14 @@ to run a full node and for the purpose of CPU mining.
 
 ### arm64
 ```
- hlu@penguin:~$ cd  cheetahcoin_v1.7.0.2_u16_arm64
- hlu@penguin:~/cheetahcoin_v1.7.0.2_u16_arm64$ ./cheetahcoin-qt &
+ hlu@penguin:~$ cd  cheetahcoin_v1.8.0.2_u16_arm64
+ hlu@penguin:~/cheetahcoin_v1.8.0.2_u16_arm64$ ./cheetahcoin-qt &
 ```
 
 ### armhf
 ```
- hlu@penguin:~$ cd  cheetahcoin_v1.7.0.2_u16_armhf
- hlu@penguin:~/cheetahcoin_v1.7.0.2_u16_armhf$ ./cheetahcoin-qt &
+ hlu@penguin:~$ cd  cheetahcoin_v1.8.0.2_u16_armhf
+ hlu@penguin:~/cheetahcoin_v1.8.0.2_u16_armhf$ ./cheetahcoin-qt &
 ```
 
 Above in linux terminal will pop CHTA QT wallet in chromebook desktop.
@@ -109,7 +109,7 @@ TAB key is powerful in linux command line.  Typing full word of file or folder n
 
 Here is easier way with tab:
 ```
-   cd  cheetahcoin_v1.7.0.2_u16_arm64
+   cd  cheetahcoin_v1.8.0.2_u16_arm64
 
 ```
   Typing above long word in Chromebook is close to impossible. An easier way to do is:
@@ -117,7 +117,7 @@ Here is easier way with tab:
 ```
    cd  cheetahc-finger push TAB key
 ```
-After you push TAB afer word "cheetahc" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "cheetahcoin_v1.7.0.2_u16_arm64" auto populated for you. 
+After you push TAB afer word "cheetahc" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "cheetahcoin_v1.8.0.2_u16_arm64" auto populated for you. 
 
 #### Arrow up or down key for history
 
