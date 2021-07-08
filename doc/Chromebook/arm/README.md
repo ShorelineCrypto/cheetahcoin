@@ -2,7 +2,7 @@
 
 This folder describe how to run a full node of Cheetahcoin (CHTA) and to CPU mine CHTA in arm based Chromebook as Linux App.  Chrome OS on arm64 or armhf platform was tested. Any Chrome OS version v69 or later on 64 bits arm64 or 32 bits armhf  with linux either in linux beta (Crostini) or Android UserLand app should all work. 
 
-Chrome OS v85 Linux (Beta) runs Debian 10 (Buster) in embedded linux in a container with close to full feature of linux for both CLI and GUI. 
+Chrome OS v89 Linux (Beta) runs Debian 10 (Buster) in embedded linux in a container with close to full feature of linux for both CLI and GUI. 
 Older version of Chrome OS run Debian 9 (Stretch). The below script and method was also tested on Debian 9 successfully and should all just work on Debian 9.
    
 
