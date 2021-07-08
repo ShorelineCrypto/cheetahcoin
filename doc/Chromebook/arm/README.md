@@ -2,7 +2,7 @@
 
 This folder describe how to run a full node of Cheetahcoin (CHTA) and to CPU mine CHTA in arm based Chromebook as Linux App.  Chrome OS on arm64 or armhf platform was tested. Any Chrome OS version v69 or later on 64 bits arm64 or 32 bits armhf  with linux either in linux beta (Crostini) or Android UserLand app should all work. 
 
-Chrome OS v85 Linux (Beta) runs Debian 10 (Buster) in embedded linux in a container with close to full feature of linux for both CLI and GUI. 
+Chrome OS v89 Linux (Beta) runs Debian 10 (Buster) in embedded linux in a container with close to full feature of linux for both CLI and GUI. 
 Older version of Chrome OS run Debian 9 (Stretch). The below script and method was also tested on Debian 9 successfully and should all just work on Debian 9.
    
 
@@ -47,13 +47,13 @@ By default, Linux (Beta) or Crostini runs a container for Debian 10. Below has b
 ### arm64
 
 ```
-   tar xvfz cheetahcoin_v1.7.0.3_chromeos_arm.tgz
+   tar xvfz cheetahcoin_v1.8.0.3_chromeos_arm.tgz
    cd Chromebook/arm/arm64/debian
    bash  prepare_neng.sh
 ```
 ### armhf
 ```
-   tar xvfz cheetahcoin_v1.7.0.3_chromeos_arm.tgz
+   tar xvfz cheetahcoin_v1.8.0.3_chromeos_arm.tgz
    cd Chromebook/arm/armhf/debian
    bash  prepare_neng.sh
 ```
@@ -77,14 +77,14 @@ to run a full node and for the purpose of CPU mining.
 
 ### arm64
 ```
- hlu@penguin:~$ cd  cheetahcoin_v1.7.0.2_u16_arm64
- hlu@penguin:~/cheetahcoin_v1.7.0.2_u16_arm64$ ./cheetahcoin-qt &
+ hlu@penguin:~$ cd  cheetahcoin_v1.8.0.2_u16_arm64
+ hlu@penguin:~/cheetahcoin_v1.8.0.2_u16_arm64$ ./cheetahcoin-qt &
 ```
 
 ### armhf
 ```
- hlu@penguin:~$ cd  cheetahcoin_v1.7.0.2_u16_armhf
- hlu@penguin:~/cheetahcoin_v1.7.0.2_u16_armhf$ ./cheetahcoin-qt &
+ hlu@penguin:~$ cd  cheetahcoin_v1.8.0.2_u16_armhf
+ hlu@penguin:~/cheetahcoin_v1.8.0.2_u16_armhf$ ./cheetahcoin-qt &
 ```
 
 Above in linux terminal will pop CHTA QT wallet in chromebook desktop.
@@ -109,7 +109,7 @@ TAB key is powerful in linux command line.  Typing full word of file or folder n
 
 Here is easier way with tab:
 ```
-   cd  cheetahcoin_v1.7.0.2_u16_arm64
+   cd  cheetahcoin_v1.8.0.2_u16_arm64
 
 ```
   Typing above long word in Chromebook is close to impossible. An easier way to do is:
@@ -117,7 +117,7 @@ Here is easier way with tab:
 ```
    cd  cheetahc-finger push TAB key
 ```
-After you push TAB afer word "cheetahc" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "cheetahcoin_v1.7.0.2_u16_arm64" auto populated for you. 
+After you push TAB afer word "cheetahc" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "cheetahcoin_v1.8.0.2_u16_arm64" auto populated for you. 
 
 #### Arrow up or down key for history
 
