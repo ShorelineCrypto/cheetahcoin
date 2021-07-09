@@ -8,7 +8,7 @@
 > On SD create file called SSH (not extenion) using File Explorer make a text file and delete the .txt, you may need to go to Folder Options and show file extensions.
 > Create a wpa_supplicant.conf file (if you want to connect to wifi) - see how to on https://www.raspberrypi.org/documentation/configuration/wireless/headless.md
 > Otherwise connect an ethernet cable
->Nb check https://github.com/ShorelineCrypto/cheetahcoin/releases & https://github.com/ShorelineCrypto/nengcoin/releases for latest Linux on arm address/releases, as of this it was v1.7.0.4, if newer use latest for armhf or arm64 as needed.
+>Nb check https://github.com/ShorelineCrypto/cheetahcoin/releases & https://github.com/ShorelineCrypto/nengcoin/releases for latest Linux on arm address/releases, as of this it was v1.8.0.4, if newer use latest for armhf or arm64 as needed.
 
 ===Via SSH e.g Putty===
 
@@ -23,13 +23,13 @@
 
 CHTA Wallet & Cheeta CHTA Miner(arm64/arch64)
 
-> wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.7.0.4/cheetahcoin_v1.7.0.4_debian10_arm64.tgz
-> tar xvzf cheetahcoin_v1.7.0.4_debian10_arm64.tgz
+> wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.8.0.4/cheetahcoin_v1.8.0.4_debian10_arm64.tgz
+> tar xvzf cheetahcoin_v1.8.0.4_debian10_arm64.tgz
 > cd Debian_10/arm64/
 > bash prepare_neng.sh
-> wget  https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.7.0.2/cheetahcoin_v1.7.0.2_u16_arm64.tgz
-> tar xvfz cheetahcoin_v1.7.0.2_u16_arm64.tgz
-> cd cheetahcoin_v1.7.0.2_u16_arm64/
+> wget  https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.8.0.2/cheetahcoin_v1.8.0.2_u16_arm64.tgz
+> tar xvfz cheetahcoin_v1.8.0.2_u16_arm64.tgz
+> cd cheetahcoin_v1.8.0.2_u16_arm64/
 > ./cheetahcoind (this creates a wallet)
 > screen
 > cd ..
@@ -50,8 +50,8 @@ When at the latest block start mining by
 > press ctrl+a+d
 
 Good luck (below 2 lines useful)
-./Debian_10/arm64/cheetahcoin_v1.7.0.2_u16_arm64/cheetahcoind getmininginfo
-./Debian_10/arm64/cheetahcoin_v1.7.0.2_u16_arm64/cheetahcoind getbalance
+./Debian_10/arm64/cheetahcoin_v1.8.0.2_u16_arm64/cheetahcoind getmininginfo
+./Debian_10/arm64/cheetahcoin_v1.8.0.2_u16_arm64/cheetahcoind getbalance
 
 
 NENG Wallet & Cheeta NENG Miner (arm64/arch64)
