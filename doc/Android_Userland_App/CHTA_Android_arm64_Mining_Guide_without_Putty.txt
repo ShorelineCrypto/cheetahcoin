@@ -1,8 +1,8 @@
 CHTA Android Mining Guide without Putty
     1. Download Userland App from Google Playstore
-    2. Open Userland App and select Ubuntu
+    2. Open Userland App and select Debian
     3. Create a SSH account if you do not have
-    4. Log in Ubuntu
+    4. Log in Debian
     5. Copy and paste all the Linux command lines to your whatsapp / chat app / email and save them to your notes on your mobile phone for easier copy and paste
     6. Enter command line
         a. uname -a (or uname -m : to determine whether your phone is 64bit or 32bit. This guide is using arm64 / 64bit folder. For 32bit please install the files in armhf folder instead of arm64 folder) 
@@ -10,11 +10,11 @@ CHTA Android Mining Guide without Putty
         c. sudo apt install wget ssh
         d. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.8.0.2/cheetahcoin_v1.8.0.2_android_userland_arm.tgz
         e. tar xvfz cheetahcoin_v1.8.0.2_android_userland_arm.tgz
-        f. cd  Android_Userland_App/ubuntu/arm64/
+        f. cd  Android_Userland_App/debian/arm64/
         g. bash prepare_userland.sh
-    7. Relogin Userland Ubuntu
+    7. Relogin Userland Debian
     8. Enter command line
-        a. cd  Android_Userland_App/ubuntu/arm64/
+        a. cd  Android_Userland_App/debian/arm64/
         b. bash prepare_neng.sh
         c. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.8.0.2/cheetahcoin_v1.8.0.2_u16_arm64.tgz
         d. tar xvfz cheetahcoin_v1.8.0.2_u16_arm64.tgz
@@ -22,7 +22,7 @@ CHTA Android Mining Guide without Putty
         f. ./cheetahcoind (create wallet folder & files)
         g. screen (creates another screen so you can check your wallet and mining at the same time using one ssh)
         h. cd
-        i. cd  Android_Userland_App/ubuntu/arm64/
+        i. cd  Android_Userland_App/debian/arm64/
         j. cp  -r cheetah_cpuminer  cheetah_cpuminer_chta
         k. cd cheetah_cpuminer_chta
         l.  git pull
@@ -41,7 +41,7 @@ CHTA Android Mining Guide without Putty
         x. ./cheetahcoind getbalance (check your coin balance in your wallet)
         y. Ctrl+C (to exit top)
 
-After complete syncing your NENG wallet
+After complete syncing your CHTA wallet
     1. Enter command line
         a. screen -r (from CHTA wallet to Cheetah screen)
         b. sh cheetah.sh (for standard mining)
