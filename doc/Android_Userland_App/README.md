@@ -41,9 +41,9 @@ Above information from terminal should give you clear idea whether you have arm6
 
 ## Debian or Ubuntu?
 
-UserLand app offers 4 linux distros (Alpine, Arch, Debian, Ubuntu). Currently for Cheetahcoin android mining, two distros are supported and tested: Debian and Ubuntu. 
+UserLand app offers 4 linux distros (Alpine, Arch, Debian, Ubuntu). Currently for Cheetahcoin android mining, two distros are supported and tested: Debian (version 10 ) and Ubuntu (version 18.04).  Due to issues that Userland app ubuntu install unsupported version 20.04, currently Debian is recommended for Userland app. 
 
-UserLand Debian runs Debian 10 (buster) on arm64/armhf.  UserLand ubuntu runs Ubuntu 18.04 on arm64/armhf.  The UserLand LXDE or XFCE desktop installation session uses Debian. 
+UserLand Debian runs Debian 10 (buster) on arm64/armhf.  UserLand ubuntu runs Ubuntu 18.04 or 20.04 on arm64/armhf.  The UserLand LXDE or XFCE desktop installation session uses Debian. 
 
 Either distro is fine with similar user experience. If you are interested in desktop offering, Debian is preferred. If you encounter hardware compatibility issues, 
 Ubuntu 18.04 is preferred. 
