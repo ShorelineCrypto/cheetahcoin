@@ -33,6 +33,7 @@ namespace Checkpoints
     //   (no blocks before with a timestamp after, none after with
     //    timestamp before)
     // + Contains no strange transactions
+    // v1.9.x MinWorkBug fix, checkpoint must be on cheetah block or lowest diff block
     static MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
         ( 0, uint256("0x0000000090ae6bab6c2abd99179a7632b84f286f876def641dd35c3221eee7be"))

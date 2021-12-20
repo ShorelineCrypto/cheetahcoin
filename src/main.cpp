@@ -1100,6 +1100,11 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
     if (fTestNet && nTime > nTargetSpacing*2)
         return bnProofOfWorkLimit.GetCompact();
 
+    // Cheetah blocks has low difficulty, allowed to sync to fix MinWorkBug
+    if (nTime > nTargetSpacing*2)
+        return bnProofOfWorkLimit.GetCompact();
+
+        
     CBigNum bnResult;
     bnResult.SetCompact(nBase);
     while (nTime > 0 && bnResult < bnProofOfWorkLimit)
