@@ -1100,6 +1100,11 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
     if (fTestNet && nTime > nTargetSpacing*2)
         return bnProofOfWorkLimit.GetCompact();
 
+    // Cheetah blocks has low difficulty, allowed to sync to fix MinWorkBug
+    if (nTime > nTargetSpacing*2)
+        return bnProofOfWorkLimit.GetCompact();
+
+        
     CBigNum bnResult;
     bnResult.SetCompact(nBase);
     while (nTime > 0 && bnResult < bnProofOfWorkLimit)
@@ -1140,6 +1145,93 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                 while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nProofOfWorkLimit)
                     pindex = pindex->pprev;
                 return pindex->nBits;
+            }
+        }
+        // v1.9.x randomSpike fork after block height 666136
+        else if (pindex->nHeight > 666136) {
+            CBigNum bnCheetah;
+            bnCheetah = bnProofOfWorkLimit;
+            bnCheetah /= 36;
+            unsigned int nCheetah = bnCheetah.GetCompact();
+            
+            CBigNum bnSpike;
+            bnSpike = bnProofOfWorkLimit;
+            bnSpike /= 20000000000;
+            unsigned int nSpike = bnSpike.GetCompact();
+            
+            if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
+                return nCheetah;
+            else if  ((pblock->nTime > pindexLast->nTime + 80) || (pblock->nTime < pindexLast->nTime - 80))
+            {
+                // Return the last non-special-min-difficulty-rules-block
+                
+                while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                    pindex = pindex->pprev;
+                return pindex->nBits;
+            }
+            else if ((pblock->nTime > pindexLast->nTime + 60) || (pblock->nTime < pindexLast->nTime - 60))
+            {
+                // 12.5% random chance on Spike difficulty between  +- 60 to 80 seconds
+                                
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 8 == 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+            }
+            else if ((pblock->nTime > pindexLast->nTime + 20) || (pblock->nTime < pindexLast->nTime - 20))
+            {
+                // 25% random chance on Spike difficulty between  +- 20 to 60 seconds
+                                
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 4 == 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+            }
+            else if ((pblock->nTime > pindexLast->nTime + 1) || (pblock->nTime < pindexLast->nTime - 1))
+            {
+                // 50% random chance on Spike difficulty between  +- 2 to 20 seconds
+                                
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 2 != 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+            }
+            else
+            {
+                // 75% random chance on Spike difficulty between +- 1 seconds
+                                
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 4 != 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
             }
         }
         // v1.8.0 randomSpike fork after block height 383570
@@ -2049,7 +2141,7 @@ bool SetBestChain(CValidationState &state, CBlockIndex* pindexNew)
             printf("SetBestChain: %d of last 100 blocks above version %d\n", nUpgraded, CBlock::CURRENT_VERSION);
         if (nUpgraded > 100/2)
             // strMiscWarning is read by GetWarnings(), called by Qt and the JSON-RPC code to warn the user:
-            strMiscWarning = _("Warning: This version is obsolete, upgrade required!");
+            strMiscWarning = _("Warning: 50% unknown/higher versions detected on 100 blocks!");
     }
 
     std::string strCmd = GetArg("-blocknotify", "");
