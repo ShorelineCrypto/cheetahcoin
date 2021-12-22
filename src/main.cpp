@@ -1147,8 +1147,8 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                 return pindex->nBits;
             }
         }
-        // v1.9.x randomSpike fork after block height 623083
-        else if (pindex->nHeight > 623083) {
+        // v1.9.x randomSpike fork after block height 623093
+        else if (pindex->nHeight > 623093) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah /= 36;
@@ -1161,7 +1161,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             
             if (pblock->nTime > pindexLast->nTime + nTargetSpacing*2)
                 return nCheetah;
-            else if  ((pblock->nTime > pindexLast->nTime + 18) || (pblock->nTime < pindexLast->nTime - 18))
+            else if  ((pblock->nTime > pindexLast->nTime + 80) || (pblock->nTime < pindexLast->nTime - 80))
             {
                 // Return the last non-special-min-difficulty-rules-block
                 
@@ -1169,9 +1169,41 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                     pindex = pindex->pprev;
                 return pindex->nBits;
             }
-            else
+            else if ((pblock->nTime > pindexLast->nTime + 60) || (pblock->nTime < pindexLast->nTime - 60))
             {
-                // randomSpike difficulty between +- 18 seconds
+                // 12.5% random chance on Spike difficulty between  +- 60 to 80 seconds
+                                
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 8 == 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+            }
+            else if ((pblock->nTime > pindexLast->nTime + 20) || (pblock->nTime < pindexLast->nTime - 20))
+            {
+                // 25% random chance on Spike difficulty between  +- 20 to 60 seconds
+                                
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 4 == 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
+            }
+            else if ((pblock->nTime > pindexLast->nTime + 1) || (pblock->nTime < pindexLast->nTime - 1))
+            {
+                // 50% random chance on Spike difficulty between  +- 2 to 20 seconds
                                 
                 const CBlockIndex* tmpindex = pindexLast;
                 tmpindex = tmpindex->pprev;
@@ -1184,8 +1216,22 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                         pindex = pindex->pprev;
                     return pindex->nBits;
                 }
-
-
+            }
+            else
+            {
+                // 75% random chance on Spike difficulty between +- 1 seconds
+                                
+                const CBlockIndex* tmpindex = pindexLast;
+                tmpindex = tmpindex->pprev;
+                tmpindex = tmpindex->pprev;
+                if ((tmpindex->nTime + pblock->nTime + pindex->nHeight) % 4 != 0)
+                    return nSpike;
+                else
+                {
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah)
+                        pindex = pindex->pprev;
+                    return pindex->nBits;
+                }
             }
         }
         // v1.8.0 randomSpike fork after block height 383570
