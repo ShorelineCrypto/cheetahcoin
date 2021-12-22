@@ -35,5 +35,5 @@
    
 ## Download GUI/CLI wallet
 cd ~/Downloads
-wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.8.0.0/cheetahcoin_v1.8.0.0_macOS_GUI.dmg
-wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.8.0.0/cheetahcoin_v1.8.0.0_macOS_CLI.zip
+wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.9.1.0/cheetahcoin_v1.9.1.0_macOS_GUI.dmg
+wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.9.1.0/cheetahcoin_v1.9.1.0_macOS_CLI.zip
