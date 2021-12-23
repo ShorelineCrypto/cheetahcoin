@@ -1,7 +1,13 @@
 sudo pacman -Syu
 sudo pacman --noconfirm  -S wget curl openssh 
 sudo pacman --noconfirm  -S  base-devel python2
-sudo pacman --noconfirm  -S qt4
+wget  https://desolve.ru/archrepo/x86_64/qt4-4.8.7-34-x86_64.pkg.tar.zst
+sudo pacman --noconfirm -U qt4-4.8.7-34-x86_64.pkg.tar.zst
+
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py
+sudo  python2 get-pip.py
+sudo pip2 install python-bitcoinrpc
+
 wget https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/v1.4.0/ubuntu20.04_x86_64_db-4.8.30.NC.tgz
 tar xvfz ubuntu20.04_x86_64_db-4.8.30.NC.tgz 
 sudo rm -rf /opt/db-4.8.30.NC
