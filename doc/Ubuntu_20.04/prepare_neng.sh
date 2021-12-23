@@ -15,7 +15,7 @@ sudo apt-get -y install openssl
 
 sudo apt-get -y install  python2
 sudo ln -s /usr/bin/python2.7 /usr/bin/python
-curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
 sudo python2 get-pip.py
 sudo pip install python-bitcoinrpc
 

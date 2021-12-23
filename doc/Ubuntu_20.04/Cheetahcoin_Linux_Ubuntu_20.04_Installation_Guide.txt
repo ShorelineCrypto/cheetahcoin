@@ -16,7 +16,7 @@ Cheetahcoin (CHTA) Linux Ubuntu 20.04 Installation Guide
         k. Type git pull
         l. Type git checkout chta
     5. Using Ubuntu GUI, navigate to your cheetah_cpuminer folder and edit your conf file’s rpc user name, password and port if needed
-    6. Copy the conf file to home\.cheetahcoin folder
+    6. Copy the conf file to ~/.cheetahcoin folder
     7. Go back to Terminal
     8. Navigate to the wallet folder
     9. Type ./cheetahcoind (to run the wallet and get it sync before mining)
