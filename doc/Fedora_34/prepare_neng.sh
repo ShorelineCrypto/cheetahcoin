@@ -6,7 +6,7 @@ sudo dnf -y install qt4
 sudo dnf -y install qt-x11.i686
 
 sudo dnf -y install python2
-curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
+curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
 sudo python2 get-pip.py
 sudo pip install python-bitcoinrpc
 
