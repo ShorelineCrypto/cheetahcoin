@@ -8,17 +8,17 @@ CHTA Android Mining Guide without Putty
         a. uname -a (or uname -m : to determine whether your phone is 64bit or 32bit. This guide is using armhf / 32bit folder. For 64bit please install the files in arm64 folder instead of armhf folder) 
         b. sudo apt update
         c. sudo apt install wget ssh
-        d. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.8.0.2/cheetahcoin_v1.8.0.2_android_userland_arm.tgz
-        e. tar xvfz cheetahcoin_v1.8.0.2_android_userland_arm.tgz
+        d. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.9.1.2/cheetahcoin_v1.9.1.2_android_userland_arm.tgz
+        e. tar xvfz cheetahcoin_v1.9.1.2_android_userland_arm.tgz
         f. cd  Android_Userland_App/debian/armhf/
         g. bash prepare_userland.sh
     7. Relogin Userland Debian
     8. Enter command line
         a. cd  Android_Userland_App/debian/armhf/
         b. bash prepare_neng.sh
-        c. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.8.0.2/cheetahcoin_v1.8.0.2_u16_armhf.tgz
-        d. tar xvfz cheetahcoin_v1.8.0.2_u16_armhf.tgz
-        e. cd cheetahcoin_v1.8.0.2_u16_armhf/
+        c. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.9.1.2/cheetahcoin_v1.9.1.2_u16_armhf.tgz
+        d. tar xvfz cheetahcoin_v1.9.1.2_u16_armhf.tgz
+        e. cd cheetahcoin_v1.9.1.2_u16_armhf/
         f. ./cheetahcoind (create wallet folder & files)
         g. screen (creates another screen so you can check your wallet and mining at the same time using one ssh)
         h. cd
