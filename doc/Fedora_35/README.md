@@ -1,6 +1,6 @@
 # Fedora 34 Workstation on x86_64
 
-This folder describe a binary support from v1.9.1.1 CHTA core release on Fedora 34 Workstation.
+This folder describe a binary support from v1.9.1.1 CHTA core release on Fedora 35 Workstation.
 
 ## Step 1: Install library files
 Please run below shell script in terminal for installing dependencies and library files:
