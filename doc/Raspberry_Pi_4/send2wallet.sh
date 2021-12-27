@@ -10,11 +10,11 @@
 
 ##Declare where the *coind wallets are, needs to be the absolute path, in home directory type ~ and press enter
 # this will tell you the home path, then chnage the VAR1 and VAR2 below to the path to where you installed the *coind binaries
-VAR1="/home/pi/Debian_10/arm64/nengcoin_v1.7.0.2_u16_arm64/nengcoind"
-VAR2="/home/pi/Debian_10/arm64/cheetahcoin_v1.8.0.2_u16_arm64/cheetahcoind"
+VAR1="/home/pi/Debian_10/arm64/nengcoin_v1.9.1.2_u16_arm64/nengcoind"
+VAR2="/home/pi/Debian_10/arm64/cheetahcoin_v1.9.1.2_u16_arm64/cheetahcoind"
 ##For ease of use I have included a typical Android path below uncomment (remove #)  and put # on the above two to use.
-#VAR1="/home/note9s/Android_Userland_App/ubuntu/arm64/nengcoin_v1.7.0.2_u16_arm64/nengcoind"
-#VAR2="/home/note9s/Android_Userland_App/ubuntu/arm64/cheetahcoin_v1.8.0.2_u16_arm64/cheetahcoind"
+#VAR1="/home/note9s/Android_Userland_App/ubuntu/arm64/nengcoin_v1.9.1.2_u16_arm64/nengcoind"
+#VAR2="/home/note9s/Android_Userland_App/ubuntu/arm64/cheetahcoin_v1.9.1.2_u16_arm64/cheetahcoind"
 
 ##Set the Minimum balance for local wallet  - by default it sends everything from the miner wallet = 0.00000000
 # If you wish to change this, enter the minimum you wish to retain using the same format
