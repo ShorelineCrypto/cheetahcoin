@@ -2403,8 +2403,8 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
         if (GetBlockTime() <= pindexPrev->GetMedianTimePast())
             return state.Invalid(error("AcceptBlock() : block's timestamp is too early"));
 
-        // Enforce timestamp 4 minute rule, v1.10.x fork on block height 727790
-        if ((nHeight > 727790) && (GetBlockTime() > GetAdjustedTime() + 1 * 4 * 55))
+        // Enforce timestamp 4 minute rule, v1.10.x fork on block height 727770
+        if ((nHeight > 727770) && (GetBlockTime() > GetAdjustedTime() + 1 * 4 * 55))
             return state.Invalid(error("AcceptBlock() : block timestamp too far in the future"));
         
         // Check that all transactions are finalized
