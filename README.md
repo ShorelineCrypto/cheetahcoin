@@ -2,11 +2,11 @@ Cheetahcoin integration/staging tree
 ================================
 
 
-Copyright (c) 2009-2013 Bitcoin Developers
+Copyright (c) 2009-2022 Bitcoin Developers
 
-Copyright (c) 2018-2021 Nengcoin Developers
+Copyright (c) 2018-2022 Nengcoin Developers
 
-Copyright (c) 2021 Cheetahcoin Developers
+Copyright (c) 2021-2022 Cheetahcoin Developers
 
 What is Cheetahcoin?
 ----------------
@@ -21,9 +21,10 @@ Major releases features:
 * v1.7.x New Logo, cheetah diff 4x, plus minor bitcoin core code updates
 * v1.8.x cheetah diff 3x
 * v1.9.x Fixed slow hack risk, cheetah diff rise 3x, spike drop 5x
+* v1.10.x Changed bitcoin future timestamp 2 hour rule to 4 minute, cheetah/spike diff adjustment
 
-Current full version name: "1.9.1.0_randomSpike-v1.9.x" (shorthand: "v1.9.x") 
-Note: latest different platform wallets have "1.9.1.0" version tag in QT wallet. The downloaded files should have correct version on file names supporting different hardware devices and OS.
+Current full version name: "1.10.1.0_randomSpike-v1.10.x" (shorthand: "v1.10.x") 
+Note: latest different platform wallets have "1.10.1.0" version tag in QT wallet. The downloaded files should have correct version on file names supporting different hardware devices and OS.
 
 Bitcointalk Ann
 https://bitcointalk.org/index.php?topic=5309004.0
