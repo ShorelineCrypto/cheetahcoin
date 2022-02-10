@@ -1,6 +1,6 @@
 # openSUSE Tumbleweed on x86_64
 
-This folder describe a binary support from v1.9.1.1 CHTA core release on openSUSE Tumbleweed 20200724.
+This folder describe a binary support from v1.10.1.1 CHTA core release on openSUSE Tumbleweed 20200724.
 
 
 ## Step 1: Install development tools through YaST
@@ -29,6 +29,6 @@ Please run below shell script in terminal for installing dependencies and librar
 
 ## Step 4: download the binary wallet and enjoy:
 ```
-  wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.9.1.0/cheetahcoin_v1.9.1.0_ubuntu16.04.tgz
-  tar xvfz cheetahcoin_v1.9.1.0_ubuntu16.04.tgz
+  wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.10.1.0/cheetahcoin_v1.10.1.0_ubuntu16.04.tgz
+  tar xvfz cheetahcoin_v1.10.1.0_ubuntu16.04.tgz
 ```

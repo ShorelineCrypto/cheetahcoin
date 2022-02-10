@@ -1,6 +1,6 @@
 # Ubuntu 18.04 on arm64
 
-This folder describe a binary support from v1.9.1.3 CHTA core release on Ubuntu 18.04.
+This folder describe a binary support from v1.10.1.3 CHTA core release on Ubuntu 18.04.
 
 ## Step 1: Install library files
 Please run below shell script in terminal for installing dependencies and library files:
@@ -10,8 +10,8 @@ Please run below shell script in terminal for installing dependencies and librar
 
 ## Step 2: download the binary wallet and enjoy:
 ```
-  wget  https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.9.1.2/cheetahcoin_v1.9.1.2_u16_arm64.tgz
-  tar xvfz cheetahcoin_v1.9.1.2_u16_arm64.tgz
+  wget  https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.10.1.2/cheetahcoin_v1.10.1.2_u16_arm64.tgz
+  tar xvfz cheetahcoin_v1.10.1.2_u16_arm64.tgz
 ```
 
 ## Optional Step 3: compile boost 1.58 from source
