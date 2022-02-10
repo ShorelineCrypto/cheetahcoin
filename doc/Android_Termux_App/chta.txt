@@ -2,9 +2,9 @@ apt update
 
 apt install wget
 
-wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.9.1.2/cheetahcoin_v1.9.1.2_android_userland_arm.tgz
+wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.10.1.2/cheetahcoin_v1.10.1.2_android_userland_arm.tgz
 
-tar xvfz cheetahcoin_v1.9.1.2_android_userland_arm.tgz
+tar xvfz cheetahcoin_v1.10.1.2_android_userland_arm.tgz
 
 cd Android_Userland_App/ubuntu/armhf or arm64 depends on your device
 
@@ -13,7 +13,7 @@ Note: Edit prepare_userland.sh and prepare_neng.sh
       files starting with prepare_userland.sh
 
 
-cd cheetahcoin_v1.9.1.2_u16_armhf
+cd cheetahcoin_v1.10.1.2_u16_armhf
 
 ./cheetahcoind (create wallet folder & files)
 
@@ -43,5 +43,5 @@ and password then  CTRL+X+Y+ENTER to save file
 
 cp cheetahcoin.conf  ~/.cheetahcoin/
 
-Now go back to: cd cheetahcoin_v1.9.1.2_u16_armhf
+Now go back to: cd cheetahcoin_v1.10.1.2_u16_armhf
 and type: ./cheetahcoind and wait for wallet to sync

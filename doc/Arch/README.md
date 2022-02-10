@@ -1,6 +1,6 @@
 # Manjaro 21.0.7 / Arch Linux on x86_64
 
-This folder describe a binary support from v1.9.1.1 CHTA core release on Manjaro 21.0.7 or Arch Linux .
+This folder describe a binary support from v1.10.1.1 CHTA core release on Manjaro 21.0.7 or Arch Linux .
 
 ## Step 1: Install library files
 Please run below shell script in terminal for installing dependencies and library files:
@@ -10,6 +10,6 @@ Please run below shell script in terminal for installing dependencies and librar
 
 ## Step 2: download the binary wallet and enjoy:
 ```
-  wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.9.1.0/cheetahcoin_v1.9.1.0_ubuntu16.04.tgz
-  tar xvfz cheetahcoin_v1.9.1.0_ubuntu16.04.tgz
+  wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.10.1.0/cheetahcoin_v1.10.1.0_ubuntu16.04.tgz
+  tar xvfz cheetahcoin_v1.10.1.0_ubuntu16.04.tgz
 ```

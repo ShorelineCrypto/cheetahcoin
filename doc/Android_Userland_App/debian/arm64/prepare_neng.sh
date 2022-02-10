@@ -54,6 +54,6 @@ sudo mv boost1.58.conf  /etc/ld.so.conf.d/
 sudo ldconfig
 
 # Download CHTA wallet and Enjoy!
-wget  https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.9.1.2/cheetahcoin_v1.9.1.2_u16_arm64.tgz
-tar xvfz cheetahcoin_v1.9.1.2_u16_arm64.tgz
+wget  https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.10.1.2/cheetahcoin_v1.10.1.2_u16_arm64.tgz
+tar xvfz cheetahcoin_v1.10.1.2_u16_arm64.tgz
 

@@ -53,6 +53,6 @@ sudo mv boost1.58.conf  /etc/ld.so.conf.d/
 sudo ldconfig
 
 ## download the binary wallet and enjoy:
-wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.9.1.2/cheetahcoin_v1.9.1.2_u16_armhf.tgz
-tar xvfz cheetahcoin_v1.9.1.2_u16_armhf.tgz
+wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.10.1.2/cheetahcoin_v1.10.1.2_u16_armhf.tgz
+tar xvfz cheetahcoin_v1.10.1.2_u16_armhf.tgz
 
