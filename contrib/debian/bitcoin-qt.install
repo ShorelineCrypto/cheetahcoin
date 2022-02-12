@@ -1,6 +1,0 @@
-cheetahcoin-qt usr/bin
-share/pixmaps/cheetahcoin32.xpm usr/share/pixmaps
-share/pixmaps/cheetahcoin16.xpm usr/share/pixmaps
-share/pixmaps/cheetahcoin128.png usr/share/pixmaps
-debian/cheetahcoin-qt.desktop usr/share/applications
-debian/cheetahcoin-qt.protocol usr/share/kde4/services/

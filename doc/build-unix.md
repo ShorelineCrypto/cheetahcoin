@@ -1,131 +1,147 @@
-Copyright (c) 2009-2013 Bitcoin Developers
+UNIX BUILD NOTES
+====================
+Some notes on how to build Bitcoin Core in Unix.
 
-Distributed under the MIT/X11 software license, see the accompanying
-file COPYING or http://www.opensource.org/licenses/mit-license.php.
-This product includes software developed by the OpenSSL Project for use in the [OpenSSL Toolkit](http://www.openssl.org/). This product includes
-cryptographic software written by Eric Young ([eay@cryptsoft.com](mailto:eay@cryptsoft.com)), and UPnP software written by Thomas Bernard.
+(for OpenBSD specific instructions, see [build-openbsd.md](build-openbsd.md))
 
+Note
+---------------------
+Always use absolute paths to configure and compile bitcoin and the dependencies,
+for example, when specifying the path of the dependency:
 
-# Docker Image
+	../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX
 
-A docker file "Dockerfile-ubuntu" for compiling Cheetahcoin (CHTA) in ubuntu 16.04 is provided here. You can pull down a docker image built on this docker file by 
-below docker command. 
+Here BDB_PREFIX must be an absolute path - it is defined using $(pwd) which ensures
+the usage of the absolute path.
 
-For x86_64:
+To Build
+---------------------
+
+```bash
+./autogen.sh
+./configure
+make
+make install # optional
 ```
- docker pull shorelinecrypto/neng_ubuntu16_x86_64:v1.3.0.1
-```
-For armhf:
-```
- docker pull shorelinecrypto/neng_ubuntu16_armhf:v1.4.0.5
-```
 
-# Linux Distros supported on binary wallet only
+This will build bitcoin-qt as well if the dependencies are met.
 
-Currently, only Ubuntu 16.04 or Debian 7 (Wheezy) / 8 (Jessie) are described below for compiling wallet from source. 
+Dependencies
+---------------------
 
-Newer versions of various linux distros are supported on binary wallet download only. Please check out v1.4.0.3 release ( https://github.com/ShorelineCrypto/CheetahCoin/releases/tag/v1.4.0.3 ) or follow web README page at each subfolder under:
-https://github.com/ShorelineCrypto/CheetahCoin/tree/master/doc
+These dependencies are required:
 
-The list of Linux distros currently supported on binary download on x86_64 platform:
+ Library     | Purpose          | Description
+ ------------|------------------|----------------------
+ libssl      | Crypto           | Random Number Generation, Elliptic Curve Cryptography
+ libboost    | Utility          | Library for threading, data structures, etc
+ libevent    | Networking       | OS independent asynchronous networking
 
--  Arch Linux
--  Debian 9 (stretch) / 10 (buster)
--  Fedora 32
--  Manjaro 20.0.3
--  MX Linux 19.2
--  Linux Mint 20
--  openSUSE Tumbleweed
--  Ubuntu 20.04/18.04/16.04
+Optional dependencies:
 
-The list of Linux distros currently supported on binary download on arm64 platform:
--  Ubuntu 16.04
--  Ubuntu 18.04
--  Debian 9
--  Debian 10
+ Library     | Purpose          | Description
+ ------------|------------------|----------------------
+ miniupnpc   | UPnP Support     | Firewall-jumping support
+ libdb4.8    | Berkeley DB      | Wallet storage (only needed when wallet enabled)
+ qt          | GUI              | GUI toolkit (only needed when GUI enabled)
+ protobuf    | Payments in GUI  | Data interchange format used for payment protocol (only needed when GUI enabled)
+ libqrencode | QR codes in GUI  | Optional for generating QR codes (only needed when GUI enabled)
+ univalue    | Utility          | JSON parsing and encoding (bundled version will be used unless --with-system-univalue passed to configure)
+ libzmq3     | ZMQ notification | Optional, allows generating ZMQ notifications (requires ZMQ version >= 4.x)
 
-The list of Linux distros currently supported on binary download on armhf platform:
--  Ubuntu 16.04
--  Ubuntu 18.04
--  Debian 9
--  Debian 10
+For the versions used in the release, see [release-process.md](release-process.md) under *Fetch and build inputs*.
+
+Memory Requirements
+--------------------
+
+C++ compilers are memory-hungry. It is recommended to have at least 1.5 GB of
+memory available when compiling Bitcoin Core. On systems with less, gcc can be
+tuned to conserve memory with additional CXXFLAGS:
 
 
-# Ubuntu 16.04 on x86_64 or arm64/armhf
+    ./configure CXXFLAGS="--param ggc-min-expand=1 --param ggc-min-heapsize=32768"
 
-Ubuntu 16.04 CHTA wallet can be compiled from source on x86_64 or arm64/armhf hardware.
-
-## Dependencies for Ubuntu 16.04
-
-
- Library     Purpose           Description
- -------     -------           -----------
- libssl      SSL Support       Secure communications
- libdb4.8    Berkeley DB       Blockchain & wallet storage
- libboost    Boost             C++ Library
- miniupnpc   UPnP Support      Optional firewall-jumping support
-
-[miniupnpc](http://miniupnp.free.fr/) may be used for UPnP port mapping.  It can be downloaded from [here](
-http://miniupnp.tuxfamily.org/files/).  UPnP support is compiled in and
-turned off by default.  Set USE_UPNP to a different value to control this:
-
-	USE_UPNP=     No UPnP support miniupnp not required
-	USE_UPNP=0    (the default) UPnP support turned off by default at runtime
-	USE_UPNP=1    UPnP support turned on by default at runtime
-
-IPv6 support may be disabled by setting:
-
-	USE_IPV6=0    Disable IPv6 support
-
-
-Linux Compilcation Guide
-
-Licenses of statically linked libraries:
- Berkeley DB   New BSD license with additional requirement that linked
-               software must be free open source
- Boost         MIT-like license
- miniupnpc     New (3-clause) BSD license
-
-
-### Versions used in this release in Ubuntu 16.04
-
--  GCC           5.4
--  OpenSSL       1.0.2g
--  Berkeley DB   4.8.30.NC
--  Boost         1.58.0
--  miniupnpc     1.9
--  Qt 4.8
-
-## Dependency Build Instructions: Ubuntu 16.04 / Ubuntu 18.04
-
-
+Dependency Build Instructions: Ubuntu & Debian
+----------------------------------------------
 Build requirements:
 
-```
-sudo apt-get install build-essential g++ libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils  libboost-all-dev
+    sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils
 
-sudo apt-get install software-properties-common
+Options when installing required Boost library files:
 
-sudo add-apt-repository ppa:bitcoin/bitcoin
+1. On at least Ubuntu 14.04+ and Debian 7+ there are generic names for the
+individual boost development packages, so the following can be used to only
+install necessary parts of boost:
 
-sudo apt-get update
+        sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
 
-sudo apt-get install libdb4.8-dev libdb4.8++-dev
+2. If that doesn't work, you can install all boost development packages with:
 
-sudo apt-get install libzmq3-dev libbz2-dev 
+        sudo apt-get install libboost-all-dev
 
-sudo apt-get install libqt4-dev libprotobuf-dev protobuf-compiler
-```
+BerkeleyDB is required for the wallet. db4.8 packages are available [here](https://launchpad.net/~bitcoin/+archive/bitcoin).
+You can add the repository and install using the following commands:
 
-## sometimes zlib will generate error, reinstall this
+    sudo apt-get install software-properties-common
+    sudo add-apt-repository ppa:bitcoin/bitcoin
+    sudo apt-get update
+    sudo apt-get install libdb4.8-dev libdb4.8++-dev
 
-sudo apt-get install --reinstall zlib1g
+Ubuntu and Debian have their own libdb-dev and libdb++-dev packages, but these will install
+BerkeleyDB 5.1 or later, which break binary wallet compatibility with the distributed executables which
+are based on BerkeleyDB 4.8. If you do not care about wallet compatibility,
+pass `--with-incompatible-bdb` to configure.
 
-Optional, but recommended:
+See the section "Disable-wallet mode" to build Bitcoin Core without wallet.
 
-	sudo apt-get install libminiupnpc-dev (see USE_UPNP compile flag)
+Optional:
 
-	sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler 
+    sudo apt-get install libminiupnpc-dev (see --with-miniupnpc and --enable-upnp-default)
+
+ZMQ dependencies:
+
+    sudo apt-get install libzmq3-dev (provides ZMQ API 4.x)
+
+Dependencies for the GUI: Ubuntu & Debian
+-----------------------------------------
+
+If you want to build Bitcoin-Qt, make sure that the required packages for Qt development
+are installed. Either Qt 5 or Qt 4 are necessary to build the GUI.
+If both Qt 4 and Qt 5 are installed, Qt 5 will be used. Pass `--with-gui=qt4` to configure to choose Qt4.
+To build without GUI pass `--without-gui`.
+
+To build with Qt 5 (recommended) you need the following:
+
+    sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
+
+Alternatively, to build with Qt 4 you need the following:
+
+    sudo apt-get install libqt4-dev libprotobuf-dev protobuf-compiler
+
+libqrencode (optional) can be installed with:
+
+    sudo apt-get install libqrencode-dev
+
+Once these are installed, they will be found by configure and a bitcoin-qt executable will be
+built by default.
+
+Dependency Build Instructions: Fedora
+-------------------------------------
+Build requirements:
+
+    sudo dnf install gcc-c++ libtool make autoconf automake openssl-devel libevent-devel boost-devel libdb4-devel libdb4-cxx-devel
+
+Optional:
+
+    sudo dnf install miniupnpc-devel
+
+To build with Qt 5 (recommended) you need the following:
+
+    sudo dnf install qt5-qttools-devel qt5-qtbase-devel protobuf-devel
+
+libqrencode (optional) can be installed with:
+
+    sudo dnf install qrencode-devel
 
 Notes
 -----
@@ -133,83 +149,163 @@ The release is built with GCC and then "strip bitcoind" to strip the debug
 symbols, which reduces the executable size by about 90%.
 
 
+miniupnpc
+---------
 
-## Cheetahcoin Linux BUILD NOTES on Ubuntu 16.04
+[miniupnpc](http://miniupnp.free.fr/) may be used for UPnP port mapping.  It can be downloaded from [here](
+http://miniupnp.tuxfamily.org/files/).  UPnP support is compiled in and
+turned off by default.  See the configure options for upnp behavior desired:
 
-Headless cheetahcoin CLI
+	--without-miniupnpc      No UPnP support miniupnp not required
+	--disable-upnp-default   (the default) UPnP support turned off by default at runtime
+	--enable-upnp-default    UPnP support turned on by default at runtime
 
-```
-cd src
-make -f makefile.unix USE_UPNP=1
-strip cheetahcoind
 
-```
+Berkeley DB
+-----------
+It is recommended to use Berkeley DB 4.8. If you have to build it yourself:
 
- Qt GUI Wallet
-```
-   cd ..
-   qmake USE_UPNP=1 
-   make
-``` 
+```bash
+BITCOIN_ROOT=$(pwd)
 
-# Ubuntu 18.04
+# Pick some path to install BDB to, here we create a directory within the bitcoin directory
+BDB_PREFIX="${BITCOIN_ROOT}/db4"
+mkdir -p $BDB_PREFIX
 
-There are two ways to obtain Ubuntu 18.04 compatible binary. The first approach is to follow similar steps above to compile everything
-in Ubuntu 18.04.  This could be complicated. Without custome method, a simple apt-get and same steps like Ubuntu 16.04 will fail on boost.
+# Fetch the source and verify that it is not tampered with
+wget 'http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz'
+echo '12edc0df75bf9abd7f82f821795bcee50f42cb2e5f76a6a281b85732798364ef  db-4.8.30.NC.tar.gz' | sha256sum -c
+# -> db-4.8.30.NC.tar.gz: OK
+tar -xzvf db-4.8.30.NC.tar.gz
 
-An easier way is simply using Ubuntu 16.04 compiled binary files, then compile a boost library version 1.58.0 in Ubuntu 18.04
+# Build the library and install to our prefix
+cd db-4.8.30.NC/build_unix/
+#  Note: Do a static build so that it can be embedded into the executable, instead of having to find a .so at runtime
+../dist/configure --enable-cxx --disable-shared --with-pic --prefix=$BDB_PREFIX
+make install
 
-* (1) Download Ubuntu 16.04 binary files from release from https://github.com/ShorelineCrypto/CheetahCoin/releases
-
-* (2) Compile boost v1.58.0 library in Ubuntu 18.04 with below steps:
-
-```
-    wget -O boost_1_58_0.tar.bz2 http://sourceforge.net/projects/boost/files/boost/1.58.0/boost_1_58_0.tar.bz2/download
-    tar xvfj boost_1_58_0.tar.bz2
-    cd boost_1_58_0
-    ./bootstrap.sh --with-libraries=all --with-toolset=gcc 
-    ./b2 toolset=gcc 
-    sudo ./b2 install --prefix=/usr
-    sudo ldconfig 
-```
-
-* (3) Re-run either QT or command line Ubuntu 16.04 files, all should work in Ubuntu 18.04, tested to be good on arm64 cloud vps
-
-# Debian Wheezy or Jessie
-
-CHTA core wallet can be compiled in Debian 7 (wheezy) or Debian 8 (jessie).  The dependencies are actually mostly same as Ubuntu 16.04 except for berkley DB shown below.  Please check out the android arm subfolder for more information on debian platform on library dependencies compiling and installation.
-
-```
-sudo apt-get -y install qt4-default
-
-cd /opt
-wget http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz
-tar xvfz db-4.8.30.NC.tar.gz
-cd db-4.8.30.NC/build_unix
-../dist/configure --enable-cxx --disable-shared --disable-replication
-make
-
-cat >> ~/.bashrc  << EOF
-
-export LDFLAGS="-L/opt/db-4.8.30.NC/build_unix"
-export CPPFLAGS="-I/opt/db-4.8.30.NC/build_unix"
-
-EOF
+# Configure Bitcoin Core to use our own-built instance of BDB
+cd $BITCOIN_ROOT
+./autogen.sh
+./configure LDFLAGS="-L${BDB_PREFIX}/lib/" CPPFLAGS="-I${BDB_PREFIX}/include/" # (other args...)
 ```
 
+**Note**: You only need Berkeley DB if the wallet is enabled (see the section *Disable-Wallet mode* below).
+
+Boost
+-----
+If you need to build Boost yourself:
+
+	sudo su
+	./bootstrap.sh
+	./bjam install
 
 
-For actual CHTA core wallet compiling, run below in Debian wheezy or jessie:
-```
-   cd CheetahCoin/src
-   make -f makefile.debian USE_UPNP=1
-   strip cheetahcoind
-   
-   cd ..
-   cp bitcoin-qt.pro.debian  bitcoin-qt.pro
-   qmake USE_UPNP=1 
-   make
-   
-```
+Security
+--------
+To help make your bitcoin installation more secure by making certain attacks impossible to
+exploit even if a vulnerability is found, binaries are hardened by default.
+This can be disabled with:
+
+Hardening Flags:
+
+	./configure --enable-hardening
+	./configure --disable-hardening
 
 
+Hardening enables the following features:
+
+* Position Independent Executable
+    Build position independent code to take advantage of Address Space Layout Randomization
+    offered by some kernels. Attackers who can cause execution of code at an arbitrary memory
+    location are thwarted if they don't know where anything useful is located.
+    The stack and heap are randomly located by default but this allows the code section to be
+    randomly located as well.
+
+    On an AMD64 processor where a library was not compiled with -fPIC, this will cause an error
+    such as: "relocation R_X86_64_32 against `......' can not be used when making a shared object;"
+
+    To test that you have built PIE executable, install scanelf, part of paxutils, and use:
+
+    	scanelf -e ./bitcoin
+
+    The output should contain:
+
+     TYPE
+    ET_DYN
+
+* Non-executable Stack
+    If the stack is executable then trivial stack based buffer overflow exploits are possible if
+    vulnerable buffers are found. By default, bitcoin should be built with a non-executable stack
+    but if one of the libraries it uses asks for an executable stack or someone makes a mistake
+    and uses a compiler extension which requires an executable stack, it will silently build an
+    executable without the non-executable stack protection.
+
+    To verify that the stack is non-executable after compiling use:
+    `scanelf -e ./bitcoin`
+
+    the output should contain:
+	STK/REL/PTL
+	RW- R-- RW-
+
+    The STK RW- means that the stack is readable and writeable but not executable.
+
+Disable-wallet mode
+--------------------
+When the intention is to run only a P2P node without a wallet, bitcoin may be compiled in
+disable-wallet mode with:
+
+    ./configure --disable-wallet
+
+In this case there is no dependency on Berkeley DB 4.8.
+
+Mining is also possible in disable-wallet mode, but only using the `getblocktemplate` RPC
+call not `getwork`.
+
+Additional Configure Flags
+--------------------------
+A list of additional configure flags can be displayed with:
+
+    ./configure --help
+
+
+Setup and Build Example: Arch Linux
+-----------------------------------
+This example lists the steps necessary to setup and build a command line only, non-wallet distribution of the latest changes on Arch Linux:
+
+    pacman -S git base-devel boost libevent python
+    git clone https://github.com/bitcoin/bitcoin.git
+    cd bitcoin/
+    ./autogen.sh
+    ./configure --disable-wallet --without-gui --without-miniupnpc
+    make check
+
+Note:
+Enabling wallet support requires either compiling against a Berkeley DB newer than 4.8 (package `db`) using `--with-incompatible-bdb`,
+or building and depending on a local version of Berkeley DB 4.8. The readily available Arch Linux packages are currently built using
+`--with-incompatible-bdb` according to the [PKGBUILD](https://projects.archlinux.org/svntogit/community.git/tree/bitcoin/trunk/PKGBUILD).
+As mentioned above, when maintaining portability of the wallet between the standard Bitcoin Core distributions and independently built
+node software is desired, Berkeley DB 4.8 must be used.
+
+
+ARM Cross-compilation
+-------------------
+These steps can be performed on, for example, an Ubuntu VM. The depends system
+will also work on other Linux distributions, however the commands for
+installing the toolchain will be different.
+
+Make sure you install the build requirements mentioned above.
+Then, install the toolchain and curl:
+
+    sudo apt-get install g++-arm-linux-gnueabihf curl
+
+To build executables for ARM:
+
+    cd depends
+    make HOST=arm-linux-gnueabihf NO_QT=1
+    cd ..
+    ./configure --prefix=$PWD/depends/arm-linux-gnueabihf --enable-glibc-back-compat --enable-reduce-exports LDFLAGS=-static-libstdc++
+    make
+
+
+For further documentation on the depends system see [README.md](../depends/README.md) in the depends directory.
