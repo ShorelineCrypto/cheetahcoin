@@ -134,7 +134,7 @@ am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
  configure.lineno config.status.lineno
 mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/src/config/cheetahcoin-config.h
-CONFIG_CLEAN_FILES = libcheetahcoinconsensus.pc share/setup.nsi \
+CONFIG_CLEAN_FILES = libbitcoinconsensus.pc share/setup.nsi \
 	share/qt/Info.plist src/test/buildenv.py \
 	qa/pull-tester/run-bitcoind-for-test.sh \
 	qa/pull-tester/tests_config.py contrib/devtools/split-debug.sh
@@ -513,7 +513,7 @@ ACLOCAL_AMFLAGS = -I build-aux/m4
 SUBDIRS = src
 GZIP_ENV = "-9n"
 @BUILD_CHEETAHCOIN_LIBS_TRUE@pkgconfigdir = $(libdir)/pkgconfig
-@BUILD_CHEETAHCOIN_LIBS_TRUE@pkgconfig_DATA = libcheetahcoinconsensus.pc
+@BUILD_CHEETAHCOIN_LIBS_TRUE@pkgconfig_DATA = libbitcoinconsensus.pc
 CHEETAHCOIND_BIN = $(top_builddir)/src/$(CHEETAHCOIN_DAEMON_NAME)$(EXEEXT)
 CHEETAHCOIN_QT_BIN = $(top_builddir)/src/qt/$(CHEETAHCOIN_GUI_NAME)$(EXEEXT)
 CHEETAHCOIN_CLI_BIN = $(top_builddir)/src/$(CHEETAHCOIN_CLI_NAME)$(EXEEXT)
@@ -617,7 +617,7 @@ $(top_srcdir)/src/config/cheetahcoin-config.h.in: @MAINTAINER_MODE_TRUE@ $(am__c
 
 distclean-hdr:
 	-rm -f src/config/cheetahcoin-config.h src/config/stamp-h1
-libcheetahcoinconsensus.pc: $(top_builddir)/config.status $(srcdir)/libbitcoinconsensus.pc.in
+libbitcoinconsensus.pc: $(top_builddir)/config.status $(srcdir)/libbitcoinconsensus.pc.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 share/setup.nsi: $(top_builddir)/config.status $(top_srcdir)/share/setup.nsi.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@

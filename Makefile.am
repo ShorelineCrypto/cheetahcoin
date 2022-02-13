@@ -11,7 +11,7 @@ export PYTHONPATH
 
 if BUILD_CHEETAHCOIN_LIBS
 pkgconfigdir = $(libdir)/pkgconfig
-pkgconfig_DATA = libcheetahcoinconsensus.pc
+pkgconfig_DATA = libbitcoinconsensus.pc
 endif
 
 CHEETAHCOIND_BIN=$(top_builddir)/src/$(CHEETAHCOIN_DAEMON_NAME)$(EXEEXT)

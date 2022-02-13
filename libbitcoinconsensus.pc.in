@@ -6,6 +6,6 @@ includedir=@includedir@
 Name: @PACKAGE_NAME@ consensus library
 Description: Library for the Cheetahcoin consensus protocol.
 Version: @PACKAGE_VERSION@
-Libs: -L${libdir} -lcheetahcoinconsensus
+Libs: -L${libdir} -lbitcoinconsensus
 Cflags: -I${includedir}
 Requires.private: libcrypto
