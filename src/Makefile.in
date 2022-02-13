@@ -868,7 +868,7 @@ cheetahcoin_tx_DEPENDENCIES = $(am__DEPENDENCIES_4) $(LIBCHEETAHCOIN_COMMON) \
 cheetahcoin_tx_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(cheetahcoin_tx_CXXFLAGS) \
 	$(CXXFLAGS) $(cheetahcoin_tx_LDFLAGS) $(LDFLAGS) -o $@
-am__cheetahcoind_SOURCES_DIST = cheetahcoind.cpp cheetahcoind-res.rc
+am__cheetahcoind_SOURCES_DIST = bitcoind.cpp cheetahcoind-res.rc
 @TARGET_WINDOWS_TRUE@am__objects_20 = cheetahcoind-res.$(OBJEXT)
 am_cheetahcoind_OBJECTS = cheetahcoind-cheetahcoind.$(OBJEXT) $(am__objects_20)
 cheetahcoind_OBJECTS = $(am_cheetahcoind_OBJECTS)
@@ -1944,7 +1944,7 @@ nodist_libcheetahcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # cheetahcoind binary #
-cheetahcoind_SOURCES = cheetahcoind.cpp $(am__append_4)
+cheetahcoind_SOURCES = bitcoind.cpp $(am__append_4)
 cheetahcoind_CPPFLAGS = $(AM_CPPFLAGS) $(CHEETAHCOIN_INCLUDES)
 cheetahcoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 cheetahcoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
@@ -7365,19 +7365,19 @@ cheetahcoin_tx-cheetahcoin-tx.obj: cheetahcoin-tx.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(cheetahcoin_tx_CPPFLAGS) $(CPPFLAGS) $(cheetahcoin_tx_CXXFLAGS) $(CXXFLAGS) -c -o cheetahcoin_tx-cheetahcoin-tx.obj `if test -f 'cheetahcoin-tx.cpp'; then $(CYGPATH_W) 'cheetahcoin-tx.cpp'; else $(CYGPATH_W) '$(srcdir)/cheetahcoin-tx.cpp'; fi`
 
-cheetahcoind-cheetahcoind.o: cheetahcoind.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(cheetahcoind_CPPFLAGS) $(CPPFLAGS) $(cheetahcoind_CXXFLAGS) $(CXXFLAGS) -MT cheetahcoind-cheetahcoind.o -MD -MP -MF $(DEPDIR)/cheetahcoind-cheetahcoind.Tpo -c -o cheetahcoind-cheetahcoind.o `test -f 'cheetahcoind.cpp' || echo '$(srcdir)/'`cheetahcoind.cpp
+cheetahcoind-cheetahcoind.o: bitcoind.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(cheetahcoind_CPPFLAGS) $(CPPFLAGS) $(cheetahcoind_CXXFLAGS) $(CXXFLAGS) -MT cheetahcoind-cheetahcoind.o -MD -MP -MF $(DEPDIR)/cheetahcoind-cheetahcoind.Tpo -c -o cheetahcoind-cheetahcoind.o `test -f 'bitcoind.cpp' || echo '$(srcdir)/'`bitcoind.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/cheetahcoind-cheetahcoind.Tpo $(DEPDIR)/cheetahcoind-cheetahcoind.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='cheetahcoind.cpp' object='cheetahcoind-cheetahcoind.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bitcoind.cpp' object='cheetahcoind-cheetahcoind.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(cheetahcoind_CPPFLAGS) $(CPPFLAGS) $(cheetahcoind_CXXFLAGS) $(CXXFLAGS) -c -o cheetahcoind-cheetahcoind.o `test -f 'cheetahcoind.cpp' || echo '$(srcdir)/'`cheetahcoind.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(cheetahcoind_CPPFLAGS) $(CPPFLAGS) $(cheetahcoind_CXXFLAGS) $(CXXFLAGS) -c -o cheetahcoind-cheetahcoind.o `test -f 'bitcoind.cpp' || echo '$(srcdir)/'`bitcoind.cpp
 
-cheetahcoind-cheetahcoind.obj: cheetahcoind.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(cheetahcoind_CPPFLAGS) $(CPPFLAGS) $(cheetahcoind_CXXFLAGS) $(CXXFLAGS) -MT cheetahcoind-cheetahcoind.obj -MD -MP -MF $(DEPDIR)/cheetahcoind-cheetahcoind.Tpo -c -o cheetahcoind-cheetahcoind.obj `if test -f 'cheetahcoind.cpp'; then $(CYGPATH_W) 'cheetahcoind.cpp'; else $(CYGPATH_W) '$(srcdir)/cheetahcoind.cpp'; fi`
+cheetahcoind-cheetahcoind.obj: bitcoind.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(cheetahcoind_CPPFLAGS) $(CPPFLAGS) $(cheetahcoind_CXXFLAGS) $(CXXFLAGS) -MT cheetahcoind-cheetahcoind.obj -MD -MP -MF $(DEPDIR)/cheetahcoind-cheetahcoind.Tpo -c -o cheetahcoind-cheetahcoind.obj `if test -f 'bitcoind.cpp'; then $(CYGPATH_W) 'bitcoind.cpp'; else $(CYGPATH_W) '$(srcdir)/bitcoind.cpp'; fi`
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/cheetahcoind-cheetahcoind.Tpo $(DEPDIR)/cheetahcoind-cheetahcoind.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='cheetahcoind.cpp' object='cheetahcoind-cheetahcoind.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bitcoind.cpp' object='cheetahcoind-cheetahcoind.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(cheetahcoind_CPPFLAGS) $(CPPFLAGS) $(cheetahcoind_CXXFLAGS) $(CXXFLAGS) -c -o cheetahcoind-cheetahcoind.obj `if test -f 'cheetahcoind.cpp'; then $(CYGPATH_W) 'cheetahcoind.cpp'; else $(CYGPATH_W) '$(srcdir)/cheetahcoind.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(cheetahcoind_CPPFLAGS) $(CPPFLAGS) $(cheetahcoind_CXXFLAGS) $(CXXFLAGS) -c -o cheetahcoind-cheetahcoind.obj `if test -f 'bitcoind.cpp'; then $(CYGPATH_W) 'bitcoind.cpp'; else $(CYGPATH_W) '$(srcdir)/bitcoind.cpp'; fi`
 
 qt/qt_cheetahcoin_qt-cheetahcoin.o: qt/cheetahcoin.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_cheetahcoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_cheetahcoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_cheetahcoin_qt-cheetahcoin.o -MD -MP -MF qt/$(DEPDIR)/qt_cheetahcoin_qt-cheetahcoin.Tpo -c -o qt/qt_cheetahcoin_qt-cheetahcoin.o `test -f 'qt/cheetahcoin.cpp' || echo '$(srcdir)/'`qt/cheetahcoin.cpp

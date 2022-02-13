@@ -337,7 +337,7 @@ nodist_libcheetahcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # cheetahcoind binary #
-cheetahcoind_SOURCES = cheetahcoind.cpp
+cheetahcoind_SOURCES = bitcoind.cpp
 cheetahcoind_CPPFLAGS = $(AM_CPPFLAGS) $(CHEETAHCOIN_INCLUDES)
 cheetahcoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 cheetahcoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
