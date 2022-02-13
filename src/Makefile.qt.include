@@ -172,7 +172,7 @@ QT_MOC = \
 QT_QRC_CPP = qt/qrc_bitcoin.cpp
 QT_QRC = qt/bitcoin.qrc
 QT_QRC_LOCALE_CPP = qt/qrc_cheetahcoin_locale.cpp
-QT_QRC_LOCALE = qt/cheetahcoin_locale.qrc
+QT_QRC_LOCALE = qt/bitcoin_locale.qrc
 
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h

@@ -538,7 +538,7 @@ am__qt_libcheetahcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/forms/sendcoinsdialog.ui qt/forms/sendcoinsentry.ui \
 	qt/forms/signverifymessagedialog.ui \
 	qt/forms/transactiondescdialog.ui qt/bitcoin.qrc \
-	qt/cheetahcoin_locale.qrc qt/locale/cheetahcoin_af.ts \
+	qt/bitcoin_locale.qrc qt/locale/cheetahcoin_af.ts \
 	qt/locale/cheetahcoin_af_ZA.ts qt/locale/cheetahcoin_ar.ts \
 	qt/locale/cheetahcoin_be_BY.ts qt/locale/cheetahcoin_bg_BG.ts \
 	qt/locale/cheetahcoin_bg.ts qt/locale/cheetahcoin_ca_ES.ts \
@@ -2369,7 +2369,7 @@ EXTRA_DIST = $(CTAES_DIST) $(am__append_18)
 @ENABLE_QT_TRUE@QT_QRC_CPP = qt/qrc_bitcoin.cpp
 @ENABLE_QT_TRUE@QT_QRC = qt/bitcoin.qrc
 @ENABLE_QT_TRUE@QT_QRC_LOCALE_CPP = qt/qrc_cheetahcoin_locale.cpp
-@ENABLE_QT_TRUE@QT_QRC_LOCALE = qt/cheetahcoin_locale.qrc
+@ENABLE_QT_TRUE@QT_QRC_LOCALE = qt/bitcoin_locale.qrc
 @ENABLE_QT_TRUE@PROTOBUF_CC = qt/paymentrequest.pb.cc
 @ENABLE_QT_TRUE@PROTOBUF_H = qt/paymentrequest.pb.h
 @ENABLE_QT_TRUE@PROTOBUF_PROTO = qt/paymentrequest.proto
