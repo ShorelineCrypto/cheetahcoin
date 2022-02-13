@@ -30,7 +30,7 @@ LIBCHEETAHCOIN_CONSENSUS=libcheetahcoin_consensus.a
 LIBCHEETAHCOIN_CLI=libcheetahcoin_cli.a
 LIBCHEETAHCOIN_UTIL=libcheetahcoin_util.a
 LIBCHEETAHCOIN_CRYPTO=crypto/libcheetahcoin_crypto.a
-LIBCHEETAHCOINQT=qt/libcheetahcoinqt.a
+LIBCHEETAHCOINQT=qt/libbitcoinqt.a
 LIBSECP256K1=secp256k1/libsecp256k1.la
 
 if ENABLE_ZMQ
