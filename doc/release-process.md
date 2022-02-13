@@ -3,7 +3,7 @@ Release Process
 
 Before every release candidate:
 
-* Update translations (ping wumpus on IRC) see [translation_process.md](https://github.com/bitcoin/bitcoin/blob/master/doc/translation_process.md#synchronising-translations).
+* Update translations (ping wumpus on IRC) see [translation_process.md](https://github.com/cheetahcoin/cheetahcoin/blob/master/doc/translation_process.md#synchronising-translations).
 
 Before every minor and major release:
 
@@ -14,19 +14,19 @@ Before every minor and major release:
 
 Before every major release:
 
-* Update hardcoded [seeds](/contrib/seeds/README.md), see [this pull request](https://github.com/bitcoin/bitcoin/pull/7415) for an example.
+* Update hardcoded [seeds](/contrib/seeds/README.md), see [this pull request](https://github.com/cheetahcoin/cheetahcoin/pull/7415) for an example.
 
 ### First time / New builders
 
 Check out the source code in the following directory hierarchy.
 
     cd /path/to/your/toplevel/build
-    git clone https://github.com/bitcoin-core/gitian.sigs.git
-    git clone https://github.com/bitcoin-core/bitcoin-detached-sigs.git
+    git clone https://github.com/cheetahcoin-core/gitian.sigs.git
+    git clone https://github.com/cheetahcoin-core/cheetahcoin-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
-    git clone https://github.com/bitcoin/bitcoin.git
+    git clone https://github.com/cheetahcoin/cheetahcoin.git
 
-### Bitcoin maintainers/release engineers, update version in sources
+### Cheetahcoin maintainers/release engineers, update version in sources
 
 Update the following:
 
@@ -63,7 +63,7 @@ Tag version (or release candidate) in git
 
 Setup Gitian descriptors:
 
-    pushd ./bitcoin
+    pushd ./cheetahcoin
     export SIGNER=(your Gitian key, ie bluematt, sipa, etc)
     export VERSION=(new version, e.g. 0.8.0)
     git fetch
@@ -86,7 +86,7 @@ Ensure gitian-builder is up-to-date:
 
     pushd ./gitian-builder
     mkdir -p inputs
-    wget -P inputs https://bitcoincore.org/cfields/osslsigncode-Backports-to-1.7.1.patch
+    wget -P inputs https://cheetahcoincore.org/cfields/osslsigncode-Backports-to-1.7.1.patch
     wget -P inputs http://downloads.sourceforge.net/project/osslsigncode/osslsigncode/osslsigncode-1.7.1.tar.gz
     popd
 
@@ -97,7 +97,7 @@ Create the OS X SDK tarball, see the [OS X readme](README_osx.md) for details, a
 By default, Gitian will fetch source files as needed. To cache them ahead of time:
 
     pushd ./gitian-builder
-    make -C ../bitcoin/depends download SOURCES_PATH=`pwd`/cache/common
+    make -C ../cheetahcoin/depends download SOURCES_PATH=`pwd`/cache/common
     popd
 
 Only missing files will be fetched, so this is safe to re-run for each build.
@@ -105,49 +105,49 @@ Only missing files will be fetched, so this is safe to re-run for each build.
 NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from local URLs. For example:
 
     pushd ./gitian-builder
-    ./bin/gbuild --url bitcoin=/path/to/bitcoin,signature=/path/to/sigs {rest of arguments}
+    ./bin/gbuild --url cheetahcoin=/path/to/cheetahcoin,signature=/path/to/sigs {rest of arguments}
     popd
 
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-### Build and sign Bitcoin Core for Linux, Windows, and OS X:
+### Build and sign Cheetahcoin Core for Linux, Windows, and OS X:
 
     pushd ./gitian-builder
-    ./bin/gbuild --memory 3000 --commit bitcoin=v${VERSION} ../bitcoin/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../bitcoin/contrib/gitian-descriptors/gitian-linux.yml
-    mv build/out/bitcoin-*.tar.gz build/out/src/bitcoin-*.tar.gz ../
+    ./bin/gbuild --memory 3000 --commit cheetahcoin=v${VERSION} ../cheetahcoin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../cheetahcoin/contrib/gitian-descriptors/gitian-linux.yml
+    mv build/out/cheetahcoin-*.tar.gz build/out/src/cheetahcoin-*.tar.gz ../
 
-    ./bin/gbuild --memory 3000 --commit bitcoin=v${VERSION} ../bitcoin/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../bitcoin/contrib/gitian-descriptors/gitian-win.yml
-    mv build/out/bitcoin-*-win-unsigned.tar.gz inputs/bitcoin-win-unsigned.tar.gz
-    mv build/out/bitcoin-*.zip build/out/bitcoin-*.exe ../
+    ./bin/gbuild --memory 3000 --commit cheetahcoin=v${VERSION} ../cheetahcoin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../cheetahcoin/contrib/gitian-descriptors/gitian-win.yml
+    mv build/out/cheetahcoin-*-win-unsigned.tar.gz inputs/cheetahcoin-win-unsigned.tar.gz
+    mv build/out/cheetahcoin-*.zip build/out/cheetahcoin-*.exe ../
 
-    ./bin/gbuild --memory 3000 --commit bitcoin=v${VERSION} ../bitcoin/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../bitcoin/contrib/gitian-descriptors/gitian-osx.yml
-    mv build/out/bitcoin-*-osx-unsigned.tar.gz inputs/bitcoin-osx-unsigned.tar.gz
-    mv build/out/bitcoin-*.tar.gz build/out/bitcoin-*.dmg ../
+    ./bin/gbuild --memory 3000 --commit cheetahcoin=v${VERSION} ../cheetahcoin/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../cheetahcoin/contrib/gitian-descriptors/gitian-osx.yml
+    mv build/out/cheetahcoin-*-osx-unsigned.tar.gz inputs/cheetahcoin-osx-unsigned.tar.gz
+    mv build/out/cheetahcoin-*.tar.gz build/out/cheetahcoin-*.dmg ../
     popd
 
 Build output expected:
 
-  1. source tarball (`bitcoin-${VERSION}.tar.gz`)
-  2. linux 32-bit and 64-bit dist tarballs (`bitcoin-${VERSION}-linux[32|64].tar.gz`)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (`bitcoin-${VERSION}-win[32|64]-setup-unsigned.exe`, `bitcoin-${VERSION}-win[32|64].zip`)
-  4. OS X unsigned installer and dist tarball (`bitcoin-${VERSION}-osx-unsigned.dmg`, `bitcoin-${VERSION}-osx64.tar.gz`)
+  1. source tarball (`cheetahcoin-${VERSION}.tar.gz`)
+  2. linux 32-bit and 64-bit dist tarballs (`cheetahcoin-${VERSION}-linux[32|64].tar.gz`)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (`cheetahcoin-${VERSION}-win[32|64]-setup-unsigned.exe`, `cheetahcoin-${VERSION}-win[32|64].zip`)
+  4. OS X unsigned installer and dist tarball (`cheetahcoin-${VERSION}-osx-unsigned.dmg`, `cheetahcoin-${VERSION}-osx64.tar.gz`)
   5. Gitian signatures (in `gitian.sigs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
 
 ### Verify other gitian builders signatures to your own. (Optional)
 
 Add other gitian builders keys to your gpg keyring
 
-    gpg --import bitcoin/contrib/gitian-keys/*.pgp
+    gpg --import cheetahcoin/contrib/gitian-keys/*.pgp
 
 Verify the signatures
 
     pushd ./gitian-builder
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../bitcoin/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../bitcoin/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../bitcoin/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../cheetahcoin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../cheetahcoin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../cheetahcoin/contrib/gitian-descriptors/gitian-osx.yml
     popd
 
 ### Next steps:
@@ -165,25 +165,25 @@ Commit your signature to gitian.sigs:
 Wait for Windows/OS X detached signatures:
 
 - Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [bitcoin-detached-sigs](https://github.com/bitcoin-core/bitcoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [cheetahcoin-detached-sigs](https://github.com/cheetahcoin-core/cheetahcoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the signed OS X binary:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../bitcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../bitcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../bitcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
-    mv build/out/bitcoin-osx-signed.dmg ../bitcoin-${VERSION}-osx.dmg
+    ./bin/gbuild -i --commit signature=v${VERSION} ../cheetahcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../cheetahcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../cheetahcoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    mv build/out/cheetahcoin-osx-signed.dmg ../cheetahcoin-${VERSION}-osx.dmg
     popd
 
 Create (and optionally verify) the signed Windows binaries:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../bitcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../bitcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../bitcoin/contrib/gitian-descriptors/gitian-win-signer.yml
-    mv build/out/bitcoin-*win64-setup.exe ../bitcoin-${VERSION}-win64-setup.exe
-    mv build/out/bitcoin-*win32-setup.exe ../bitcoin-${VERSION}-win32-setup.exe
+    ./bin/gbuild -i --commit signature=v${VERSION} ../cheetahcoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../cheetahcoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../cheetahcoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    mv build/out/cheetahcoin-*win64-setup.exe ../cheetahcoin-${VERSION}-win64-setup.exe
+    mv build/out/cheetahcoin-*win32-setup.exe ../cheetahcoin-${VERSION}-win32-setup.exe
     popd
 
 Commit your signature for the signed OS X/Windows binaries:
@@ -205,23 +205,23 @@ sha256sum * > SHA256SUMS
 
 The list of files should be:
 ```
-bitcoin-${VERSION}-aarch64-linux-gnu.tar.gz
-bitcoin-${VERSION}-arm-linux-gnueabihf.tar.gz
-bitcoin-${VERSION}-i686-pc-linux-gnu.tar.gz
-bitcoin-${VERSION}-x86_64-linux-gnu.tar.gz
-bitcoin-${VERSION}-osx64.tar.gz
-bitcoin-${VERSION}-osx.dmg
-bitcoin-${VERSION}.tar.gz
-bitcoin-${VERSION}-win32-setup.exe
-bitcoin-${VERSION}-win32.zip
-bitcoin-${VERSION}-win64-setup.exe
-bitcoin-${VERSION}-win64.zip
+cheetahcoin-${VERSION}-aarch64-linux-gnu.tar.gz
+cheetahcoin-${VERSION}-arm-linux-gnueabihf.tar.gz
+cheetahcoin-${VERSION}-i686-pc-linux-gnu.tar.gz
+cheetahcoin-${VERSION}-x86_64-linux-gnu.tar.gz
+cheetahcoin-${VERSION}-osx64.tar.gz
+cheetahcoin-${VERSION}-osx.dmg
+cheetahcoin-${VERSION}.tar.gz
+cheetahcoin-${VERSION}-win32-setup.exe
+cheetahcoin-${VERSION}-win32.zip
+cheetahcoin-${VERSION}-win64-setup.exe
+cheetahcoin-${VERSION}-win64.zip
 ```
 The `*-debug*` files generated by the gitian build contain debug symbols
 for troubleshooting by developers. It is assumed that anyone that is interested
 in debugging can run gitian to generate the files for themselves. To avoid
 end-user confusion about which file to pick, as well as save storage
-space *do not upload these to the bitcoin.org server, nor put them in the torrent*.
+space *do not upload these to the cheetahcoin.org server, nor put them in the torrent*.
 
 - GPG-sign it, delete the unsigned file:
 ```
@@ -231,46 +231,46 @@ rm SHA256SUMS
 (the digest algorithm is forced to sha256 to avoid confusion of the `Hash:` header that GPG adds with the SHA256 used for the files)
 Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spurious/nonsensical entry.
 
-- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the bitcoin.org server
-  into `/var/www/bin/bitcoin-core-${VERSION}`
+- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the cheetahcoin.org server
+  into `/var/www/bin/cheetahcoin-core-${VERSION}`
 
 - A `.torrent` will appear in the directory after a few minutes. Optionally help seed this torrent. To get the `magnet:` URI use:
 ```bash
 transmission-show -m <torrent file>
 ```
 Insert the magnet URI into the announcement sent to mailing lists. This permits
-people without access to `bitcoin.org` to download the binary distribution.
+people without access to `cheetahcoin.org` to download the binary distribution.
 Also put it into the `optional_magnetlink:` slot in the YAML file for
-bitcoin.org (see below for bitcoin.org update instructions).
+cheetahcoin.org (see below for cheetahcoin.org update instructions).
 
-- Update bitcoin.org version
+- Update cheetahcoin.org version
 
-  - First, check to see if the Bitcoin.org maintainers have prepared a
-    release: https://github.com/bitcoin-dot-org/bitcoin.org/labels/Releases
+  - First, check to see if the Cheetahcoin.org maintainers have prepared a
+    release: https://github.com/cheetahcoin-dot-org/cheetahcoin.org/labels/Releases
 
       - If they have, it will have previously failed their Travis CI
         checks because the final release files weren't uploaded.
         Trigger a Travis CI rebuild---if it passes, merge.
 
-  - If they have not prepared a release, follow the Bitcoin.org release
-    instructions: https://github.com/bitcoin-dot-org/bitcoin.org#release-notes
+  - If they have not prepared a release, follow the Cheetahcoin.org release
+    instructions: https://github.com/cheetahcoin-dot-org/cheetahcoin.org#release-notes
 
   - After the pull request is merged, the website will automatically show the newest version within 15 minutes, as well
     as update the OS download links. Ping @saivann/@harding (saivann/harding on Freenode) in case anything goes wrong
 
 - Announce the release:
 
-  - bitcoin-dev and bitcoin-core-dev mailing list
+  - cheetahcoin-dev and cheetahcoin-core-dev mailing list
 
-  - Bitcoin Core announcements list https://bitcoincore.org/en/list/announcements/join/
+  - Cheetahcoin Core announcements list https://cheetahcoincore.org/en/list/announcements/join/
 
-  - bitcoincore.org blog post
+  - cheetahcoincore.org blog post
 
-  - Update title of #bitcoin on Freenode IRC
+  - Update title of #cheetahcoin on Freenode IRC
 
-  - Optionally twitter, reddit /r/Bitcoin, ... but this will usually sort out itself
+  - Optionally twitter, reddit /r/Cheetahcoin, ... but this will usually sort out itself
 
-  - Notify BlueMatt so that he can start building [the PPAs](https://launchpad.net/~bitcoin/+archive/ubuntu/bitcoin)
+  - Notify BlueMatt so that he can start building [the PPAs](https://launchpad.net/~cheetahcoin/+archive/ubuntu/cheetahcoin)
 
   - Add release notes for the new version to the directory `doc/release-notes` in git master
 
