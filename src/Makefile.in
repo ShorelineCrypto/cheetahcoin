@@ -2360,7 +2360,7 @@ EXTRA_DIST = $(CTAES_DIST) $(am__append_18)
 @ENABLE_QT_TRUE@  qt/macnotificationhandler.mm
 
 @ENABLE_QT_TRUE@QT_MOC = \
-@ENABLE_QT_TRUE@  qt/cheetahcoin.moc \
+@ENABLE_QT_TRUE@  qt/bitcoin.moc \
 @ENABLE_QT_TRUE@  qt/bitcoinamountfield.moc \
 @ENABLE_QT_TRUE@  qt/intro.moc \
 @ENABLE_QT_TRUE@  qt/overviewpage.moc \

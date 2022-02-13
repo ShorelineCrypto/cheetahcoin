@@ -163,7 +163,7 @@ CHEETAHCOIN_MM = \
   qt/macnotificationhandler.mm
 
 QT_MOC = \
-  qt/cheetahcoin.moc \
+  qt/bitcoin.moc \
   qt/bitcoinamountfield.moc \
   qt/intro.moc \
   qt/overviewpage.moc \
