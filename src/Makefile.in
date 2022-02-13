@@ -584,8 +584,8 @@ am__qt_libcheetahcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/locale/cheetahcoin_zh_TW.ts qt/paymentrequest.proto \
 	qt/res/icons/add.png qt/res/icons/address-book.png \
 	qt/res/icons/about.png qt/res/icons/about_qt.png \
-	qt/res/icons/cheetahcoin.ico qt/res/icons/cheetahcoin_testnet.ico \
-	qt/res/icons/cheetahcoin.png qt/res/icons/chevron.png \
+	qt/res/icons/bitcoin.ico qt/res/icons/bitcoin_testnet.ico \
+	qt/res/icons/bitcoin.png qt/res/icons/chevron.png \
 	qt/res/icons/clock1.png qt/res/icons/clock2.png \
 	qt/res/icons/clock3.png qt/res/icons/clock4.png \
 	qt/res/icons/clock5.png qt/res/icons/configure.png \
@@ -2431,9 +2431,9 @@ EXTRA_DIST = $(CTAES_DIST) $(am__append_18)
 @ENABLE_QT_TRUE@  qt/res/icons/address-book.png \
 @ENABLE_QT_TRUE@  qt/res/icons/about.png \
 @ENABLE_QT_TRUE@  qt/res/icons/about_qt.png \
-@ENABLE_QT_TRUE@  qt/res/icons/cheetahcoin.ico \
-@ENABLE_QT_TRUE@  qt/res/icons/cheetahcoin_testnet.ico \
-@ENABLE_QT_TRUE@  qt/res/icons/cheetahcoin.png \
+@ENABLE_QT_TRUE@  qt/res/icons/bitcoin.ico \
+@ENABLE_QT_TRUE@  qt/res/icons/bitcoin_testnet.ico \
+@ENABLE_QT_TRUE@  qt/res/icons/bitcoin.png \
 @ENABLE_QT_TRUE@  qt/res/icons/chevron.png \
 @ENABLE_QT_TRUE@  qt/res/icons/clock1.png \
 @ENABLE_QT_TRUE@  qt/res/icons/clock2.png \
