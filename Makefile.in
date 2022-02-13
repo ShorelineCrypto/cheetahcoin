@@ -91,7 +91,7 @@ DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/share/setup.nsi.in \
 	$(top_srcdir)/share/qt/Info.plist.in \
 	$(top_srcdir)/src/test/buildenv.py.in \
-	$(top_srcdir)/qa/pull-tester/run-cheetahcoind-for-test.sh.in \
+	$(top_srcdir)/qa/pull-tester/run-bitcoind-for-test.sh.in \
 	$(top_srcdir)/qa/pull-tester/tests_config.py.in \
 	$(top_srcdir)/contrib/devtools/split-debug.sh.in \
 	$(top_srcdir)/qa/pull-tester/rpc-tests.py \
@@ -625,7 +625,7 @@ share/qt/Info.plist: $(top_builddir)/config.status $(top_srcdir)/share/qt/Info.p
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 src/test/buildenv.py: $(top_builddir)/config.status $(top_srcdir)/src/test/buildenv.py.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-qa/pull-tester/run-cheetahcoind-for-test.sh: $(top_builddir)/config.status $(top_srcdir)/qa/pull-tester/run-cheetahcoind-for-test.sh.in
+qa/pull-tester/run-cheetahcoind-for-test.sh: $(top_builddir)/config.status $(top_srcdir)/qa/pull-tester/run-bitcoind-for-test.sh.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 qa/pull-tester/tests_config.py: $(top_builddir)/config.status $(top_srcdir)/qa/pull-tester/tests_config.py.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
