@@ -136,7 +136,7 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/src/config/cheetahcoin-config.h
 CONFIG_CLEAN_FILES = libcheetahcoinconsensus.pc share/setup.nsi \
 	share/qt/Info.plist src/test/buildenv.py \
-	qa/pull-tester/run-cheetahcoind-for-test.sh \
+	qa/pull-tester/run-bitcoind-for-test.sh \
 	qa/pull-tester/tests_config.py contrib/devtools/split-debug.sh
 CONFIG_CLEAN_VPATH_FILES = qa/pull-tester/rpc-tests.py
 SCRIPTS = $(dist_noinst_SCRIPTS)
@@ -625,7 +625,7 @@ share/qt/Info.plist: $(top_builddir)/config.status $(top_srcdir)/share/qt/Info.p
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 src/test/buildenv.py: $(top_builddir)/config.status $(top_srcdir)/src/test/buildenv.py.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-qa/pull-tester/run-cheetahcoind-for-test.sh: $(top_builddir)/config.status $(top_srcdir)/qa/pull-tester/run-bitcoind-for-test.sh.in
+qa/pull-tester/run-bitcoind-for-test.sh: $(top_builddir)/config.status $(top_srcdir)/qa/pull-tester/run-bitcoind-for-test.sh.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 qa/pull-tester/tests_config.py: $(top_builddir)/config.status $(top_srcdir)/qa/pull-tester/tests_config.py.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
@@ -1203,7 +1203,7 @@ $(CHEETAHCOIN_CLI_BIN): FORCE
 
 @USE_LCOV_TRUE@block_test.info: test_cheetahcoin_filtered.info
 @USE_LCOV_TRUE@	$(MKDIR_P) qa/tmp
-@USE_LCOV_TRUE@	-@TIMEOUT=15 qa/pull-tester/run-cheetahcoind-for-test.sh $(JAVA) -jar $(JAVA_COMPARISON_TOOL) qa/tmp/compTool $(COMPARISON_TOOL_REORG_TESTS)
+@USE_LCOV_TRUE@	-@TIMEOUT=15 qa/pull-tester/run-bitcoind-for-test.sh $(JAVA) -jar $(JAVA_COMPARISON_TOOL) qa/tmp/compTool $(COMPARISON_TOOL_REORG_TESTS)
 @USE_LCOV_TRUE@	$(LCOV) -c -d $(abs_builddir)/src --t CheetahcoinJBlockTest -o $@
 @USE_LCOV_TRUE@	$(LCOV) -z -d $(abs_builddir)/src
 @USE_LCOV_TRUE@	$(LCOV) -z -d $(abs_builddir)/src/leveldb
@@ -1238,7 +1238,7 @@ $(CHEETAHCOIN_CLI_BIN): FORCE
 
 @USE_COMPARISON_TOOL_TRUE@check-local:
 @USE_COMPARISON_TOOL_TRUE@	$(MKDIR_P) qa/tmp
-@USE_COMPARISON_TOOL_TRUE@	@qa/pull-tester/run-cheetahcoind-for-test.sh $(JAVA) -jar $(JAVA_COMPARISON_TOOL) qa/tmp/compTool $(COMPARISON_TOOL_REORG_TESTS) 2>&1
+@USE_COMPARISON_TOOL_TRUE@	@qa/pull-tester/run-bitcoind-for-test.sh $(JAVA) -jar $(JAVA_COMPARISON_TOOL) qa/tmp/compTool $(COMPARISON_TOOL_REORG_TESTS) 2>&1
 
 .INTERMEDIATE: $(COVERAGE_INFO)
 

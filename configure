@@ -29619,7 +29619,7 @@ COPYRIGHT_HOLDERS_FINAL="The Cheetahcoin Core developers"
 
 ac_config_files="$ac_config_files Makefile src/Makefile share/setup.nsi share/qt/Info.plist src/test/buildenv.py"
 
-ac_config_files="$ac_config_files qa/pull-tester/run-cheetahcoind-for-test.sh"
+ac_config_files="$ac_config_files qa/pull-tester/run-bitcoind-for-test.sh"
 
 ac_config_files="$ac_config_files qa/pull-tester/tests_config.py"
 
@@ -30866,7 +30866,7 @@ do
     "share/setup.nsi") CONFIG_FILES="$CONFIG_FILES share/setup.nsi" ;;
     "share/qt/Info.plist") CONFIG_FILES="$CONFIG_FILES share/qt/Info.plist" ;;
     "src/test/buildenv.py") CONFIG_FILES="$CONFIG_FILES src/test/buildenv.py" ;;
-    "qa/pull-tester/run-cheetahcoind-for-test.sh") CONFIG_FILES="$CONFIG_FILES qa/pull-tester/run-cheetahcoind-for-test.sh" ;;
+    "qa/pull-tester/run-bitcoind-for-test.sh") CONFIG_FILES="$CONFIG_FILES qa/pull-tester/run-bitcoind-for-test.sh" ;;
     "qa/pull-tester/tests_config.py") CONFIG_FILES="$CONFIG_FILES qa/pull-tester/tests_config.py" ;;
     "contrib/devtools/split-debug.sh") CONFIG_FILES="$CONFIG_FILES contrib/devtools/split-debug.sh" ;;
     "qa/pull-tester/rpc-tests.py") CONFIG_LINKS="$CONFIG_LINKS qa/pull-tester/rpc-tests.py:qa/pull-tester/rpc-tests.py" ;;
@@ -32387,7 +32387,7 @@ compiler_lib_search_path=$lt_compiler_lib_search_path_CXX
 _LT_EOF
 
  ;;
-    "qa/pull-tester/run-cheetahcoind-for-test.sh":F) chmod +x qa/pull-tester/run-cheetahcoind-for-test.sh ;;
+    "qa/pull-tester/run-bitcoind-for-test.sh":F) chmod +x qa/pull-tester/run-bitcoind-for-test.sh ;;
     "qa/pull-tester/tests_config.py":F) chmod +x qa/pull-tester/tests_config.py ;;
     "contrib/devtools/split-debug.sh":F) chmod +x contrib/devtools/split-debug.sh ;;
 
