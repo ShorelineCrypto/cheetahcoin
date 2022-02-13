@@ -538,8 +538,8 @@ am__qt_libcheetahcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/forms/sendcoinsdialog.ui qt/forms/sendcoinsentry.ui \
 	qt/forms/signverifymessagedialog.ui \
 	qt/forms/transactiondescdialog.ui qt/bitcoin.qrc \
-	qt/bitcoin_locale.qrc qt/locale/cheetahcoin_af.ts \
-	qt/locale/cheetahcoin_af_ZA.ts qt/locale/cheetahcoin_ar.ts \
+	qt/bitcoin_locale.qrc qt/locale/bitcoin_af.ts \
+	qt/locale/bitcoin_af_ZA.ts qt/locale/cheetahcoin_ar.ts \
 	qt/locale/cheetahcoin_be_BY.ts qt/locale/cheetahcoin_bg_BG.ts \
 	qt/locale/cheetahcoin_bg.ts qt/locale/cheetahcoin_ca_ES.ts \
 	qt/locale/cheetahcoin_ca.ts qt/locale/cheetahcoin_ca@valencia.ts \
@@ -2204,8 +2204,8 @@ EXTRA_DIST = $(CTAES_DIST) $(am__append_18)
 
 # cheetahcoin qt core #
 @ENABLE_QT_TRUE@QT_TS = \
-@ENABLE_QT_TRUE@  qt/locale/cheetahcoin_af.ts \
-@ENABLE_QT_TRUE@  qt/locale/cheetahcoin_af_ZA.ts \
+@ENABLE_QT_TRUE@  qt/locale/bitcoin_af.ts \
+@ENABLE_QT_TRUE@  qt/locale/bitcoin_af_ZA.ts \
 @ENABLE_QT_TRUE@  qt/locale/cheetahcoin_ar.ts \
 @ENABLE_QT_TRUE@  qt/locale/cheetahcoin_be_BY.ts \
 @ENABLE_QT_TRUE@  qt/locale/cheetahcoin_bg_BG.ts \
