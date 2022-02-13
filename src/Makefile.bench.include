@@ -8,7 +8,7 @@ BENCH_BINARY = bench/bench_cheetahcoin$(EXEEXT)
 
 
 bench_bench_cheetahcoin_SOURCES = \
-  bench/bench_cheetahcoin.cpp \
+  bench/bench_bitcoin.cpp \
   bench/bench.cpp \
   bench/bench.h \
   bench/Examples.cpp \

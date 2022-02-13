@@ -812,7 +812,7 @@ libbitcoinconsensus_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 @ENABLE_QT_TRUE@am__EXEEXT_5 = qt/cheetahcoin-qt$(EXEEXT)
 @ENABLE_QT_TESTS_TRUE@am__EXEEXT_6 = qt/test/test_cheetahcoin-qt$(EXEEXT)
 PROGRAMS = $(bin_PROGRAMS)
-am__bench_bench_cheetahcoin_SOURCES_DIST = bench/bench_cheetahcoin.cpp \
+am__bench_bench_cheetahcoin_SOURCES_DIST = bench/bench_bitcoin.cpp \
 	bench/bench.cpp bench/bench.h bench/Examples.cpp \
 	bench/rollingbloom.cpp bench/crypto_hash.cpp bench/base58.cpp
 @ENABLE_BENCH_TRUE@am_bench_bench_cheetahcoin_OBJECTS = bench/bench_bench_cheetahcoin-bench_cheetahcoin.$(OBJEXT) \
@@ -2180,7 +2180,7 @@ EXTRA_DIST = $(CTAES_DIST) $(am__append_18)
 @ENABLE_BENCH_TRUE@BENCH_SRCDIR = bench
 @ENABLE_BENCH_TRUE@BENCH_BINARY = bench/bench_cheetahcoin$(EXEEXT)
 @ENABLE_BENCH_TRUE@bench_bench_cheetahcoin_SOURCES = \
-@ENABLE_BENCH_TRUE@  bench/bench_cheetahcoin.cpp \
+@ENABLE_BENCH_TRUE@  bench/bench_bitcoin.cpp \
 @ENABLE_BENCH_TRUE@  bench/bench.cpp \
 @ENABLE_BENCH_TRUE@  bench/bench.h \
 @ENABLE_BENCH_TRUE@  bench/Examples.cpp \
@@ -7253,19 +7253,19 @@ compat/libbitcoinconsensus_la-glibc_compat.lo: compat/glibc_compat.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o compat/libbitcoinconsensus_la-glibc_compat.lo `test -f 'compat/glibc_compat.cpp' || echo '$(srcdir)/'`compat/glibc_compat.cpp
 
-bench/bench_bench_cheetahcoin-bench_cheetahcoin.o: bench/bench_cheetahcoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -MT bench/bench_bench_cheetahcoin-bench_cheetahcoin.o -MD -MP -MF bench/$(DEPDIR)/bench_bench_cheetahcoin-bench_cheetahcoin.Tpo -c -o bench/bench_bench_cheetahcoin-bench_cheetahcoin.o `test -f 'bench/bench_cheetahcoin.cpp' || echo '$(srcdir)/'`bench/bench_cheetahcoin.cpp
+bench/bench_bench_cheetahcoin-bench_cheetahcoin.o: bench/bench_bitcoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -MT bench/bench_bench_cheetahcoin-bench_cheetahcoin.o -MD -MP -MF bench/$(DEPDIR)/bench_bench_cheetahcoin-bench_cheetahcoin.Tpo -c -o bench/bench_bench_cheetahcoin-bench_cheetahcoin.o `test -f 'bench/bench_bitcoin.cpp' || echo '$(srcdir)/'`bench/bench_bitcoin.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) bench/$(DEPDIR)/bench_bench_cheetahcoin-bench_cheetahcoin.Tpo bench/$(DEPDIR)/bench_bench_cheetahcoin-bench_cheetahcoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bench/bench_cheetahcoin.cpp' object='bench/bench_bench_cheetahcoin-bench_cheetahcoin.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bench/bench_bitcoin.cpp' object='bench/bench_bench_cheetahcoin-bench_cheetahcoin.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -c -o bench/bench_bench_cheetahcoin-bench_cheetahcoin.o `test -f 'bench/bench_cheetahcoin.cpp' || echo '$(srcdir)/'`bench/bench_cheetahcoin.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -c -o bench/bench_bench_cheetahcoin-bench_cheetahcoin.o `test -f 'bench/bench_bitcoin.cpp' || echo '$(srcdir)/'`bench/bench_bitcoin.cpp
 
-bench/bench_bench_cheetahcoin-bench_cheetahcoin.obj: bench/bench_cheetahcoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -MT bench/bench_bench_cheetahcoin-bench_cheetahcoin.obj -MD -MP -MF bench/$(DEPDIR)/bench_bench_cheetahcoin-bench_cheetahcoin.Tpo -c -o bench/bench_bench_cheetahcoin-bench_cheetahcoin.obj `if test -f 'bench/bench_cheetahcoin.cpp'; then $(CYGPATH_W) 'bench/bench_cheetahcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/bench/bench_cheetahcoin.cpp'; fi`
+bench/bench_bench_cheetahcoin-bench_cheetahcoin.obj: bench/bench_bitcoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -MT bench/bench_bench_cheetahcoin-bench_cheetahcoin.obj -MD -MP -MF bench/$(DEPDIR)/bench_bench_cheetahcoin-bench_cheetahcoin.Tpo -c -o bench/bench_bench_cheetahcoin-bench_cheetahcoin.obj `if test -f 'bench/bench_bitcoin.cpp'; then $(CYGPATH_W) 'bench/bench_bitcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/bench/bench_bitcoin.cpp'; fi`
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) bench/$(DEPDIR)/bench_bench_cheetahcoin-bench_cheetahcoin.Tpo bench/$(DEPDIR)/bench_bench_cheetahcoin-bench_cheetahcoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bench/bench_cheetahcoin.cpp' object='bench/bench_bench_cheetahcoin-bench_cheetahcoin.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='bench/bench_bitcoin.cpp' object='bench/bench_bench_cheetahcoin-bench_cheetahcoin.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -c -o bench/bench_bench_cheetahcoin-bench_cheetahcoin.obj `if test -f 'bench/bench_cheetahcoin.cpp'; then $(CYGPATH_W) 'bench/bench_cheetahcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/bench/bench_cheetahcoin.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -c -o bench/bench_bench_cheetahcoin-bench_cheetahcoin.obj `if test -f 'bench/bench_bitcoin.cpp'; then $(CYGPATH_W) 'bench/bench_bitcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/bench/bench_bitcoin.cpp'; fi`
 
 bench/bench_bench_cheetahcoin-bench.o: bench/bench.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -MT bench/bench_bench_cheetahcoin-bench.o -MD -MP -MF bench/$(DEPDIR)/bench_bench_cheetahcoin-bench.Tpo -c -o bench/bench_bench_cheetahcoin-bench.o `test -f 'bench/bench.cpp' || echo '$(srcdir)/'`bench/bench.cpp
