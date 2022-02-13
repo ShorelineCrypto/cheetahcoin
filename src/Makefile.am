@@ -362,7 +362,7 @@ cheetahcoind_LDADD = \
 cheetahcoind_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
 # cheetahcoin-cli binary #
-cheetahcoin_cli_SOURCES = cheetahcoin-cli.cpp
+cheetahcoin_cli_SOURCES = bitcoin-cli.cpp
 cheetahcoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(CHEETAHCOIN_INCLUDES) $(EVENT_CFLAGS)
 cheetahcoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 cheetahcoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
