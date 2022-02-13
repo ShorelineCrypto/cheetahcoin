@@ -487,8 +487,8 @@ libcheetahcoin_zmq_a_OBJECTS = $(am_libcheetahcoin_zmq_a_OBJECTS)
 qt_libcheetahcoinqt_a_AR = $(AR) $(ARFLAGS)
 qt_libcheetahcoinqt_a_LIBADD =
 am__qt_libcheetahcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
-	qt/cheetahcoinaddressvalidator.cpp qt/cheetahcoinamountfield.cpp \
-	qt/cheetahcoingui.cpp qt/cheetahcoinunits.cpp qt/clientmodel.cpp \
+	qt/bitcoinaddressvalidator.cpp qt/bitcoinamountfield.cpp \
+	qt/bitcoingui.cpp qt/bitcoinunits.cpp qt/clientmodel.cpp \
 	qt/csvmodelwriter.cpp qt/guiutil.cpp qt/intro.cpp \
 	qt/networkstyle.cpp qt/notificator.cpp qt/optionsdialog.cpp \
 	qt/optionsmodel.cpp qt/peertablemodel.cpp qt/platformstyle.cpp \
@@ -510,8 +510,8 @@ am__qt_libcheetahcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/walletmodeltransaction.cpp qt/walletview.cpp \
 	qt/addressbookpage.h qt/addresstablemodel.h \
 	qt/askpassphrasedialog.h qt/bantablemodel.h \
-	qt/cheetahcoinaddressvalidator.h qt/cheetahcoinamountfield.h \
-	qt/cheetahcoingui.h qt/cheetahcoinunits.h qt/clientmodel.h \
+	qt/bitcoinaddressvalidator.h qt/bitcoinamountfield.h \
+	qt/bitcoingui.h qt/bitcoinunits.h qt/clientmodel.h \
 	qt/coincontroldialog.h qt/coincontroltreewidget.h \
 	qt/csvmodelwriter.h qt/editaddressdialog.h qt/guiconstants.h \
 	qt/guiutil.h qt/intro.h qt/macdockiconhandler.h \
@@ -612,10 +612,10 @@ am__qt_libcheetahcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 	qt/res/movies/spinner-*.png)
 @ENABLE_QT_TRUE@am__objects_5 =  \
 @ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-bantablemodel.$(OBJEXT) \
-@ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.$(OBJEXT) \
-@ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-cheetahcoinamountfield.$(OBJEXT) \
-@ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-cheetahcoingui.$(OBJEXT) \
-@ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-cheetahcoinunits.$(OBJEXT) \
+@ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.$(OBJEXT) \
+@ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-bitcoinamountfield.$(OBJEXT) \
+@ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-bitcoingui.$(OBJEXT) \
+@ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-bitcoinunits.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-clientmodel.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-csvmodelwriter.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-guiutil.$(OBJEXT) \
@@ -673,10 +673,10 @@ am__qt_libcheetahcoinqt_a_SOURCES_DIST = qt/bantablemodel.cpp \
 @ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-moc_addresstablemodel.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-moc_askpassphrasedialog.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-moc_bantablemodel.$(OBJEXT) \
-@ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.$(OBJEXT) \
-@ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.$(OBJEXT) \
-@ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-moc_cheetahcoingui.$(OBJEXT) \
-@ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.$(OBJEXT) \
+@ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.$(OBJEXT) \
+@ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.$(OBJEXT) \
+@ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-moc_bitcoingui.$(OBJEXT) \
+@ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-moc_bitcoinunits.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-moc_clientmodel.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-moc_coincontroldialog.$(OBJEXT) \
 @ENABLE_QT_TRUE@	qt/qt_libcheetahcoinqt_a-moc_coincontroltreewidget.$(OBJEXT) \
@@ -883,7 +883,7 @@ cheetahcoind_DEPENDENCIES = $(LIBCHEETAHCOIN_SERVER) $(LIBCHEETAHCOIN_COMMON) \
 cheetahcoind_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) \
 	$(LIBTOOLFLAGS) --mode=link $(CXXLD) $(cheetahcoind_CXXFLAGS) \
 	$(CXXFLAGS) $(cheetahcoind_LDFLAGS) $(LDFLAGS) -o $@
-am__qt_cheetahcoin_qt_SOURCES_DIST = qt/cheetahcoin.cpp \
+am__qt_cheetahcoin_qt_SOURCES_DIST = qt/bitcoin.cpp \
 	qt/macdockiconhandler.mm qt/macnotificationhandler.mm \
 	qt/res/cheetahcoin-qt-res.rc
 @ENABLE_QT_TRUE@am__objects_21 =  \
@@ -2314,10 +2314,10 @@ EXTRA_DIST = $(CTAES_DIST) $(am__append_18)
 @ENABLE_QT_TRUE@  qt/moc_addresstablemodel.cpp \
 @ENABLE_QT_TRUE@  qt/moc_askpassphrasedialog.cpp \
 @ENABLE_QT_TRUE@  qt/moc_bantablemodel.cpp \
-@ENABLE_QT_TRUE@  qt/moc_cheetahcoinaddressvalidator.cpp \
-@ENABLE_QT_TRUE@  qt/moc_cheetahcoinamountfield.cpp \
-@ENABLE_QT_TRUE@  qt/moc_cheetahcoingui.cpp \
-@ENABLE_QT_TRUE@  qt/moc_cheetahcoinunits.cpp \
+@ENABLE_QT_TRUE@  qt/moc_bitcoinaddressvalidator.cpp \
+@ENABLE_QT_TRUE@  qt/moc_bitcoinamountfield.cpp \
+@ENABLE_QT_TRUE@  qt/moc_bitcoingui.cpp \
+@ENABLE_QT_TRUE@  qt/moc_bitcoinunits.cpp \
 @ENABLE_QT_TRUE@  qt/moc_clientmodel.cpp \
 @ENABLE_QT_TRUE@  qt/moc_coincontroldialog.cpp \
 @ENABLE_QT_TRUE@  qt/moc_coincontroltreewidget.cpp \
@@ -2361,12 +2361,12 @@ EXTRA_DIST = $(CTAES_DIST) $(am__append_18)
 
 @ENABLE_QT_TRUE@QT_MOC = \
 @ENABLE_QT_TRUE@  qt/cheetahcoin.moc \
-@ENABLE_QT_TRUE@  qt/cheetahcoinamountfield.moc \
+@ENABLE_QT_TRUE@  qt/bitcoinamountfield.moc \
 @ENABLE_QT_TRUE@  qt/intro.moc \
 @ENABLE_QT_TRUE@  qt/overviewpage.moc \
 @ENABLE_QT_TRUE@  qt/rpcconsole.moc
 
-@ENABLE_QT_TRUE@QT_QRC_CPP = qt/qrc_cheetahcoin.cpp
+@ENABLE_QT_TRUE@QT_QRC_CPP = qt/qrc_bitcoin.cpp
 @ENABLE_QT_TRUE@QT_QRC = qt/cheetahcoin.qrc
 @ENABLE_QT_TRUE@QT_QRC_LOCALE_CPP = qt/qrc_cheetahcoin_locale.cpp
 @ENABLE_QT_TRUE@QT_QRC_LOCALE = qt/cheetahcoin_locale.qrc
@@ -2378,10 +2378,10 @@ EXTRA_DIST = $(CTAES_DIST) $(am__append_18)
 @ENABLE_QT_TRUE@  qt/addresstablemodel.h \
 @ENABLE_QT_TRUE@  qt/askpassphrasedialog.h \
 @ENABLE_QT_TRUE@  qt/bantablemodel.h \
-@ENABLE_QT_TRUE@  qt/cheetahcoinaddressvalidator.h \
-@ENABLE_QT_TRUE@  qt/cheetahcoinamountfield.h \
-@ENABLE_QT_TRUE@  qt/cheetahcoingui.h \
-@ENABLE_QT_TRUE@  qt/cheetahcoinunits.h \
+@ENABLE_QT_TRUE@  qt/bitcoinaddressvalidator.h \
+@ENABLE_QT_TRUE@  qt/bitcoinamountfield.h \
+@ENABLE_QT_TRUE@  qt/bitcoingui.h \
+@ENABLE_QT_TRUE@  qt/bitcoinunits.h \
 @ENABLE_QT_TRUE@  qt/clientmodel.h \
 @ENABLE_QT_TRUE@  qt/coincontroldialog.h \
 @ENABLE_QT_TRUE@  qt/coincontroltreewidget.h \
@@ -2482,10 +2482,10 @@ EXTRA_DIST = $(CTAES_DIST) $(am__append_18)
 
 @ENABLE_QT_TRUE@CHEETAHCOIN_QT_BASE_CPP = \
 @ENABLE_QT_TRUE@  qt/bantablemodel.cpp \
-@ENABLE_QT_TRUE@  qt/cheetahcoinaddressvalidator.cpp \
-@ENABLE_QT_TRUE@  qt/cheetahcoinamountfield.cpp \
-@ENABLE_QT_TRUE@  qt/cheetahcoingui.cpp \
-@ENABLE_QT_TRUE@  qt/cheetahcoinunits.cpp \
+@ENABLE_QT_TRUE@  qt/bitcoinaddressvalidator.cpp \
+@ENABLE_QT_TRUE@  qt/bitcoinamountfield.cpp \
+@ENABLE_QT_TRUE@  qt/bitcoingui.cpp \
+@ENABLE_QT_TRUE@  qt/bitcoinunits.cpp \
 @ENABLE_QT_TRUE@  qt/clientmodel.cpp \
 @ENABLE_QT_TRUE@  qt/csvmodelwriter.cpp \
 @ENABLE_QT_TRUE@  qt/guiutil.cpp \
@@ -2559,7 +2559,7 @@ EXTRA_DIST = $(CTAES_DIST) $(am__append_18)
 @ENABLE_QT_TRUE@  $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
 
 @ENABLE_QT_TRUE@qt_cheetahcoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
-@ENABLE_QT_TRUE@qt_cheetahcoin_qt_SOURCES = qt/cheetahcoin.cpp \
+@ENABLE_QT_TRUE@qt_cheetahcoin_qt_SOURCES = qt/bitcoin.cpp \
 @ENABLE_QT_TRUE@	$(am__append_32) $(am__append_33)
 @ENABLE_QT_TRUE@qt_cheetahcoin_qt_LDADD = qt/libcheetahcoinqt.a \
 @ENABLE_QT_TRUE@	$(LIBCHEETAHCOIN_SERVER) $(am__append_34) \
@@ -3010,13 +3010,13 @@ qt/$(DEPDIR)/$(am__dirstamp):
 	@: > qt/$(DEPDIR)/$(am__dirstamp)
 qt/qt_libcheetahcoinqt_a-bantablemodel.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.$(OBJEXT):  \
+qt/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.$(OBJEXT):  \
 	qt/$(am__dirstamp) qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_libcheetahcoinqt_a-cheetahcoinamountfield.$(OBJEXT): qt/$(am__dirstamp) \
+qt/qt_libcheetahcoinqt_a-bitcoinamountfield.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_libcheetahcoinqt_a-cheetahcoingui.$(OBJEXT): qt/$(am__dirstamp) \
+qt/qt_libcheetahcoinqt_a-bitcoingui.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_libcheetahcoinqt_a-cheetahcoinunits.$(OBJEXT): qt/$(am__dirstamp) \
+qt/qt_libcheetahcoinqt_a-bitcoinunits.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
 qt/qt_libcheetahcoinqt_a-clientmodel.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
@@ -3112,13 +3112,13 @@ qt/qt_libcheetahcoinqt_a-moc_askpassphrasedialog.$(OBJEXT):  \
 	qt/$(am__dirstamp) qt/$(DEPDIR)/$(am__dirstamp)
 qt/qt_libcheetahcoinqt_a-moc_bantablemodel.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.$(OBJEXT):  \
+qt/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.$(OBJEXT):  \
 	qt/$(am__dirstamp) qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.$(OBJEXT):  \
+qt/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.$(OBJEXT):  \
 	qt/$(am__dirstamp) qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_libcheetahcoinqt_a-moc_cheetahcoingui.$(OBJEXT): qt/$(am__dirstamp) \
+qt/qt_libcheetahcoinqt_a-moc_bitcoingui.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
-qt/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.$(OBJEXT): qt/$(am__dirstamp) \
+qt/qt_libcheetahcoinqt_a-moc_bitcoinunits.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
 qt/qt_libcheetahcoinqt_a-moc_clientmodel.$(OBJEXT): qt/$(am__dirstamp) \
 	qt/$(DEPDIR)/$(am__dirstamp)
@@ -3699,10 +3699,10 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-addresstablemodel.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-askpassphrasedialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bantablemodel.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinamountfield.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoingui.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinunits.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinamountfield.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoingui.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinunits.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-clientmodel.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-coincontroldialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-coincontroltreewidget.Po@am__quote@
@@ -3714,10 +3714,10 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_addresstablemodel.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_askpassphrasedialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bantablemodel.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoingui.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoingui.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinunits.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_clientmodel.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_coincontroldialog.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_coincontroltreewidget.Po@am__quote@
@@ -5797,61 +5797,61 @@ qt/qt_libcheetahcoinqt_a-bantablemodel.obj: qt/bantablemodel.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-bantablemodel.obj `if test -f 'qt/bantablemodel.cpp'; then $(CYGPATH_W) 'qt/bantablemodel.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/bantablemodel.cpp'; fi`
 
-qt/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.o: qt/cheetahcoinaddressvalidator.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.Tpo -c -o qt/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.o `test -f 'qt/cheetahcoinaddressvalidator.cpp' || echo '$(srcdir)/'`qt/cheetahcoinaddressvalidator.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/cheetahcoinaddressvalidator.cpp' object='qt/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.o' libtool=no @AMDEPBACKSLASH@
+qt/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.o: qt/bitcoinaddressvalidator.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.Tpo -c -o qt/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.o `test -f 'qt/bitcoinaddressvalidator.cpp' || echo '$(srcdir)/'`qt/bitcoinaddressvalidator.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/bitcoinaddressvalidator.cpp' object='qt/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.o `test -f 'qt/cheetahcoinaddressvalidator.cpp' || echo '$(srcdir)/'`qt/cheetahcoinaddressvalidator.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.o `test -f 'qt/bitcoinaddressvalidator.cpp' || echo '$(srcdir)/'`qt/bitcoinaddressvalidator.cpp
 
-qt/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.obj: qt/cheetahcoinaddressvalidator.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.obj -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.Tpo -c -o qt/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.obj `if test -f 'qt/cheetahcoinaddressvalidator.cpp'; then $(CYGPATH_W) 'qt/cheetahcoinaddressvalidator.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/cheetahcoinaddressvalidator.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/cheetahcoinaddressvalidator.cpp' object='qt/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.obj' libtool=no @AMDEPBACKSLASH@
+qt/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.obj: qt/bitcoinaddressvalidator.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.obj -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.Tpo -c -o qt/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.obj `if test -f 'qt/bitcoinaddressvalidator.cpp'; then $(CYGPATH_W) 'qt/bitcoinaddressvalidator.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/bitcoinaddressvalidator.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/bitcoinaddressvalidator.cpp' object='qt/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-cheetahcoinaddressvalidator.obj `if test -f 'qt/cheetahcoinaddressvalidator.cpp'; then $(CYGPATH_W) 'qt/cheetahcoinaddressvalidator.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/cheetahcoinaddressvalidator.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-bitcoinaddressvalidator.obj `if test -f 'qt/bitcoinaddressvalidator.cpp'; then $(CYGPATH_W) 'qt/bitcoinaddressvalidator.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/bitcoinaddressvalidator.cpp'; fi`
 
-qt/qt_libcheetahcoinqt_a-cheetahcoinamountfield.o: qt/cheetahcoinamountfield.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-cheetahcoinamountfield.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinamountfield.Tpo -c -o qt/qt_libcheetahcoinqt_a-cheetahcoinamountfield.o `test -f 'qt/cheetahcoinamountfield.cpp' || echo '$(srcdir)/'`qt/cheetahcoinamountfield.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinamountfield.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinamountfield.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/cheetahcoinamountfield.cpp' object='qt/qt_libcheetahcoinqt_a-cheetahcoinamountfield.o' libtool=no @AMDEPBACKSLASH@
+qt/qt_libcheetahcoinqt_a-bitcoinamountfield.o: qt/bitcoinamountfield.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-bitcoinamountfield.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinamountfield.Tpo -c -o qt/qt_libcheetahcoinqt_a-bitcoinamountfield.o `test -f 'qt/bitcoinamountfield.cpp' || echo '$(srcdir)/'`qt/bitcoinamountfield.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinamountfield.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinamountfield.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/bitcoinamountfield.cpp' object='qt/qt_libcheetahcoinqt_a-bitcoinamountfield.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-cheetahcoinamountfield.o `test -f 'qt/cheetahcoinamountfield.cpp' || echo '$(srcdir)/'`qt/cheetahcoinamountfield.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-bitcoinamountfield.o `test -f 'qt/bitcoinamountfield.cpp' || echo '$(srcdir)/'`qt/bitcoinamountfield.cpp
 
-qt/qt_libcheetahcoinqt_a-cheetahcoinamountfield.obj: qt/cheetahcoinamountfield.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-cheetahcoinamountfield.obj -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinamountfield.Tpo -c -o qt/qt_libcheetahcoinqt_a-cheetahcoinamountfield.obj `if test -f 'qt/cheetahcoinamountfield.cpp'; then $(CYGPATH_W) 'qt/cheetahcoinamountfield.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/cheetahcoinamountfield.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinamountfield.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinamountfield.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/cheetahcoinamountfield.cpp' object='qt/qt_libcheetahcoinqt_a-cheetahcoinamountfield.obj' libtool=no @AMDEPBACKSLASH@
+qt/qt_libcheetahcoinqt_a-bitcoinamountfield.obj: qt/bitcoinamountfield.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-bitcoinamountfield.obj -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinamountfield.Tpo -c -o qt/qt_libcheetahcoinqt_a-bitcoinamountfield.obj `if test -f 'qt/bitcoinamountfield.cpp'; then $(CYGPATH_W) 'qt/bitcoinamountfield.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/bitcoinamountfield.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinamountfield.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinamountfield.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/bitcoinamountfield.cpp' object='qt/qt_libcheetahcoinqt_a-bitcoinamountfield.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-cheetahcoinamountfield.obj `if test -f 'qt/cheetahcoinamountfield.cpp'; then $(CYGPATH_W) 'qt/cheetahcoinamountfield.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/cheetahcoinamountfield.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-bitcoinamountfield.obj `if test -f 'qt/bitcoinamountfield.cpp'; then $(CYGPATH_W) 'qt/bitcoinamountfield.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/bitcoinamountfield.cpp'; fi`
 
-qt/qt_libcheetahcoinqt_a-cheetahcoingui.o: qt/cheetahcoingui.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-cheetahcoingui.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoingui.Tpo -c -o qt/qt_libcheetahcoinqt_a-cheetahcoingui.o `test -f 'qt/cheetahcoingui.cpp' || echo '$(srcdir)/'`qt/cheetahcoingui.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoingui.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoingui.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/cheetahcoingui.cpp' object='qt/qt_libcheetahcoinqt_a-cheetahcoingui.o' libtool=no @AMDEPBACKSLASH@
+qt/qt_libcheetahcoinqt_a-bitcoingui.o: qt/bitcoingui.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-bitcoingui.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoingui.Tpo -c -o qt/qt_libcheetahcoinqt_a-bitcoingui.o `test -f 'qt/bitcoingui.cpp' || echo '$(srcdir)/'`qt/bitcoingui.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoingui.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoingui.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/bitcoingui.cpp' object='qt/qt_libcheetahcoinqt_a-bitcoingui.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-cheetahcoingui.o `test -f 'qt/cheetahcoingui.cpp' || echo '$(srcdir)/'`qt/cheetahcoingui.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-bitcoingui.o `test -f 'qt/bitcoingui.cpp' || echo '$(srcdir)/'`qt/bitcoingui.cpp
 
-qt/qt_libcheetahcoinqt_a-cheetahcoingui.obj: qt/cheetahcoingui.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-cheetahcoingui.obj -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoingui.Tpo -c -o qt/qt_libcheetahcoinqt_a-cheetahcoingui.obj `if test -f 'qt/cheetahcoingui.cpp'; then $(CYGPATH_W) 'qt/cheetahcoingui.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/cheetahcoingui.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoingui.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoingui.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/cheetahcoingui.cpp' object='qt/qt_libcheetahcoinqt_a-cheetahcoingui.obj' libtool=no @AMDEPBACKSLASH@
+qt/qt_libcheetahcoinqt_a-bitcoingui.obj: qt/bitcoingui.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-bitcoingui.obj -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoingui.Tpo -c -o qt/qt_libcheetahcoinqt_a-bitcoingui.obj `if test -f 'qt/bitcoingui.cpp'; then $(CYGPATH_W) 'qt/bitcoingui.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/bitcoingui.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoingui.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoingui.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/bitcoingui.cpp' object='qt/qt_libcheetahcoinqt_a-bitcoingui.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-cheetahcoingui.obj `if test -f 'qt/cheetahcoingui.cpp'; then $(CYGPATH_W) 'qt/cheetahcoingui.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/cheetahcoingui.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-bitcoingui.obj `if test -f 'qt/bitcoingui.cpp'; then $(CYGPATH_W) 'qt/bitcoingui.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/bitcoingui.cpp'; fi`
 
-qt/qt_libcheetahcoinqt_a-cheetahcoinunits.o: qt/cheetahcoinunits.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-cheetahcoinunits.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinunits.Tpo -c -o qt/qt_libcheetahcoinqt_a-cheetahcoinunits.o `test -f 'qt/cheetahcoinunits.cpp' || echo '$(srcdir)/'`qt/cheetahcoinunits.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinunits.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinunits.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/cheetahcoinunits.cpp' object='qt/qt_libcheetahcoinqt_a-cheetahcoinunits.o' libtool=no @AMDEPBACKSLASH@
+qt/qt_libcheetahcoinqt_a-bitcoinunits.o: qt/bitcoinunits.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-bitcoinunits.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinunits.Tpo -c -o qt/qt_libcheetahcoinqt_a-bitcoinunits.o `test -f 'qt/bitcoinunits.cpp' || echo '$(srcdir)/'`qt/bitcoinunits.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinunits.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinunits.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/bitcoinunits.cpp' object='qt/qt_libcheetahcoinqt_a-bitcoinunits.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-cheetahcoinunits.o `test -f 'qt/cheetahcoinunits.cpp' || echo '$(srcdir)/'`qt/cheetahcoinunits.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-bitcoinunits.o `test -f 'qt/bitcoinunits.cpp' || echo '$(srcdir)/'`qt/bitcoinunits.cpp
 
-qt/qt_libcheetahcoinqt_a-cheetahcoinunits.obj: qt/cheetahcoinunits.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-cheetahcoinunits.obj -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinunits.Tpo -c -o qt/qt_libcheetahcoinqt_a-cheetahcoinunits.obj `if test -f 'qt/cheetahcoinunits.cpp'; then $(CYGPATH_W) 'qt/cheetahcoinunits.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/cheetahcoinunits.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinunits.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-cheetahcoinunits.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/cheetahcoinunits.cpp' object='qt/qt_libcheetahcoinqt_a-cheetahcoinunits.obj' libtool=no @AMDEPBACKSLASH@
+qt/qt_libcheetahcoinqt_a-bitcoinunits.obj: qt/bitcoinunits.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-bitcoinunits.obj -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinunits.Tpo -c -o qt/qt_libcheetahcoinqt_a-bitcoinunits.obj `if test -f 'qt/bitcoinunits.cpp'; then $(CYGPATH_W) 'qt/bitcoinunits.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/bitcoinunits.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinunits.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-bitcoinunits.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/bitcoinunits.cpp' object='qt/qt_libcheetahcoinqt_a-bitcoinunits.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-cheetahcoinunits.obj `if test -f 'qt/cheetahcoinunits.cpp'; then $(CYGPATH_W) 'qt/cheetahcoinunits.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/cheetahcoinunits.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-bitcoinunits.obj `if test -f 'qt/bitcoinunits.cpp'; then $(CYGPATH_W) 'qt/bitcoinunits.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/bitcoinunits.cpp'; fi`
 
 qt/qt_libcheetahcoinqt_a-clientmodel.o: qt/clientmodel.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-clientmodel.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-clientmodel.Tpo -c -o qt/qt_libcheetahcoinqt_a-clientmodel.o `test -f 'qt/clientmodel.cpp' || echo '$(srcdir)/'`qt/clientmodel.cpp
@@ -6511,61 +6511,61 @@ qt/qt_libcheetahcoinqt_a-moc_bantablemodel.obj: qt/moc_bantablemodel.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-moc_bantablemodel.obj `if test -f 'qt/moc_bantablemodel.cpp'; then $(CYGPATH_W) 'qt/moc_bantablemodel.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_bantablemodel.cpp'; fi`
 
-qt/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.o: qt/moc_cheetahcoinaddressvalidator.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.Tpo -c -o qt/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.o `test -f 'qt/moc_cheetahcoinaddressvalidator.cpp' || echo '$(srcdir)/'`qt/moc_cheetahcoinaddressvalidator.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_cheetahcoinaddressvalidator.cpp' object='qt/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.o' libtool=no @AMDEPBACKSLASH@
+qt/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.o: qt/moc_bitcoinaddressvalidator.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.Tpo -c -o qt/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.o `test -f 'qt/moc_bitcoinaddressvalidator.cpp' || echo '$(srcdir)/'`qt/moc_bitcoinaddressvalidator.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_bitcoinaddressvalidator.cpp' object='qt/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.o `test -f 'qt/moc_cheetahcoinaddressvalidator.cpp' || echo '$(srcdir)/'`qt/moc_cheetahcoinaddressvalidator.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.o `test -f 'qt/moc_bitcoinaddressvalidator.cpp' || echo '$(srcdir)/'`qt/moc_bitcoinaddressvalidator.cpp
 
-qt/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.obj: qt/moc_cheetahcoinaddressvalidator.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.obj -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.Tpo -c -o qt/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.obj `if test -f 'qt/moc_cheetahcoinaddressvalidator.cpp'; then $(CYGPATH_W) 'qt/moc_cheetahcoinaddressvalidator.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_cheetahcoinaddressvalidator.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_cheetahcoinaddressvalidator.cpp' object='qt/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.obj' libtool=no @AMDEPBACKSLASH@
+qt/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.obj: qt/moc_bitcoinaddressvalidator.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.obj -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.Tpo -c -o qt/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.obj `if test -f 'qt/moc_bitcoinaddressvalidator.cpp'; then $(CYGPATH_W) 'qt/moc_bitcoinaddressvalidator.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_bitcoinaddressvalidator.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_bitcoinaddressvalidator.cpp' object='qt/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-moc_cheetahcoinaddressvalidator.obj `if test -f 'qt/moc_cheetahcoinaddressvalidator.cpp'; then $(CYGPATH_W) 'qt/moc_cheetahcoinaddressvalidator.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_cheetahcoinaddressvalidator.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-moc_bitcoinaddressvalidator.obj `if test -f 'qt/moc_bitcoinaddressvalidator.cpp'; then $(CYGPATH_W) 'qt/moc_bitcoinaddressvalidator.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_bitcoinaddressvalidator.cpp'; fi`
 
-qt/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.o: qt/moc_cheetahcoinamountfield.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.Tpo -c -o qt/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.o `test -f 'qt/moc_cheetahcoinamountfield.cpp' || echo '$(srcdir)/'`qt/moc_cheetahcoinamountfield.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_cheetahcoinamountfield.cpp' object='qt/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.o' libtool=no @AMDEPBACKSLASH@
+qt/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.o: qt/moc_bitcoinamountfield.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.Tpo -c -o qt/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.o `test -f 'qt/moc_bitcoinamountfield.cpp' || echo '$(srcdir)/'`qt/moc_bitcoinamountfield.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_bitcoinamountfield.cpp' object='qt/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.o `test -f 'qt/moc_cheetahcoinamountfield.cpp' || echo '$(srcdir)/'`qt/moc_cheetahcoinamountfield.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.o `test -f 'qt/moc_bitcoinamountfield.cpp' || echo '$(srcdir)/'`qt/moc_bitcoinamountfield.cpp
 
-qt/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.obj: qt/moc_cheetahcoinamountfield.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.obj -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.Tpo -c -o qt/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.obj `if test -f 'qt/moc_cheetahcoinamountfield.cpp'; then $(CYGPATH_W) 'qt/moc_cheetahcoinamountfield.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_cheetahcoinamountfield.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_cheetahcoinamountfield.cpp' object='qt/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.obj' libtool=no @AMDEPBACKSLASH@
+qt/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.obj: qt/moc_bitcoinamountfield.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.obj -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.Tpo -c -o qt/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.obj `if test -f 'qt/moc_bitcoinamountfield.cpp'; then $(CYGPATH_W) 'qt/moc_bitcoinamountfield.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_bitcoinamountfield.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_bitcoinamountfield.cpp' object='qt/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-moc_cheetahcoinamountfield.obj `if test -f 'qt/moc_cheetahcoinamountfield.cpp'; then $(CYGPATH_W) 'qt/moc_cheetahcoinamountfield.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_cheetahcoinamountfield.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-moc_bitcoinamountfield.obj `if test -f 'qt/moc_bitcoinamountfield.cpp'; then $(CYGPATH_W) 'qt/moc_bitcoinamountfield.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_bitcoinamountfield.cpp'; fi`
 
-qt/qt_libcheetahcoinqt_a-moc_cheetahcoingui.o: qt/moc_cheetahcoingui.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-moc_cheetahcoingui.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoingui.Tpo -c -o qt/qt_libcheetahcoinqt_a-moc_cheetahcoingui.o `test -f 'qt/moc_cheetahcoingui.cpp' || echo '$(srcdir)/'`qt/moc_cheetahcoingui.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoingui.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoingui.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_cheetahcoingui.cpp' object='qt/qt_libcheetahcoinqt_a-moc_cheetahcoingui.o' libtool=no @AMDEPBACKSLASH@
+qt/qt_libcheetahcoinqt_a-moc_bitcoingui.o: qt/moc_bitcoingui.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-moc_bitcoingui.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoingui.Tpo -c -o qt/qt_libcheetahcoinqt_a-moc_bitcoingui.o `test -f 'qt/moc_bitcoingui.cpp' || echo '$(srcdir)/'`qt/moc_bitcoingui.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoingui.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoingui.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_bitcoingui.cpp' object='qt/qt_libcheetahcoinqt_a-moc_bitcoingui.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-moc_cheetahcoingui.o `test -f 'qt/moc_cheetahcoingui.cpp' || echo '$(srcdir)/'`qt/moc_cheetahcoingui.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-moc_bitcoingui.o `test -f 'qt/moc_bitcoingui.cpp' || echo '$(srcdir)/'`qt/moc_bitcoingui.cpp
 
-qt/qt_libcheetahcoinqt_a-moc_cheetahcoingui.obj: qt/moc_cheetahcoingui.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-moc_cheetahcoingui.obj -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoingui.Tpo -c -o qt/qt_libcheetahcoinqt_a-moc_cheetahcoingui.obj `if test -f 'qt/moc_cheetahcoingui.cpp'; then $(CYGPATH_W) 'qt/moc_cheetahcoingui.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_cheetahcoingui.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoingui.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoingui.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_cheetahcoingui.cpp' object='qt/qt_libcheetahcoinqt_a-moc_cheetahcoingui.obj' libtool=no @AMDEPBACKSLASH@
+qt/qt_libcheetahcoinqt_a-moc_bitcoingui.obj: qt/moc_bitcoingui.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-moc_bitcoingui.obj -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoingui.Tpo -c -o qt/qt_libcheetahcoinqt_a-moc_bitcoingui.obj `if test -f 'qt/moc_bitcoingui.cpp'; then $(CYGPATH_W) 'qt/moc_bitcoingui.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_bitcoingui.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoingui.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoingui.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_bitcoingui.cpp' object='qt/qt_libcheetahcoinqt_a-moc_bitcoingui.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-moc_cheetahcoingui.obj `if test -f 'qt/moc_cheetahcoingui.cpp'; then $(CYGPATH_W) 'qt/moc_cheetahcoingui.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_cheetahcoingui.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-moc_bitcoingui.obj `if test -f 'qt/moc_bitcoingui.cpp'; then $(CYGPATH_W) 'qt/moc_bitcoingui.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_bitcoingui.cpp'; fi`
 
-qt/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.o: qt/moc_cheetahcoinunits.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.Tpo -c -o qt/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.o `test -f 'qt/moc_cheetahcoinunits.cpp' || echo '$(srcdir)/'`qt/moc_cheetahcoinunits.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_cheetahcoinunits.cpp' object='qt/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.o' libtool=no @AMDEPBACKSLASH@
+qt/qt_libcheetahcoinqt_a-moc_bitcoinunits.o: qt/moc_bitcoinunits.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-moc_bitcoinunits.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinunits.Tpo -c -o qt/qt_libcheetahcoinqt_a-moc_bitcoinunits.o `test -f 'qt/moc_bitcoinunits.cpp' || echo '$(srcdir)/'`qt/moc_bitcoinunits.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinunits.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinunits.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_bitcoinunits.cpp' object='qt/qt_libcheetahcoinqt_a-moc_bitcoinunits.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.o `test -f 'qt/moc_cheetahcoinunits.cpp' || echo '$(srcdir)/'`qt/moc_cheetahcoinunits.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-moc_bitcoinunits.o `test -f 'qt/moc_bitcoinunits.cpp' || echo '$(srcdir)/'`qt/moc_bitcoinunits.cpp
 
-qt/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.obj: qt/moc_cheetahcoinunits.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.obj -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.Tpo -c -o qt/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.obj `if test -f 'qt/moc_cheetahcoinunits.cpp'; then $(CYGPATH_W) 'qt/moc_cheetahcoinunits.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_cheetahcoinunits.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_cheetahcoinunits.cpp' object='qt/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.obj' libtool=no @AMDEPBACKSLASH@
+qt/qt_libcheetahcoinqt_a-moc_bitcoinunits.obj: qt/moc_bitcoinunits.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-moc_bitcoinunits.obj -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinunits.Tpo -c -o qt/qt_libcheetahcoinqt_a-moc_bitcoinunits.obj `if test -f 'qt/moc_bitcoinunits.cpp'; then $(CYGPATH_W) 'qt/moc_bitcoinunits.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_bitcoinunits.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinunits.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_bitcoinunits.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/moc_bitcoinunits.cpp' object='qt/qt_libcheetahcoinqt_a-moc_bitcoinunits.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-moc_cheetahcoinunits.obj `if test -f 'qt/moc_cheetahcoinunits.cpp'; then $(CYGPATH_W) 'qt/moc_cheetahcoinunits.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_cheetahcoinunits.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-moc_bitcoinunits.obj `if test -f 'qt/moc_bitcoinunits.cpp'; then $(CYGPATH_W) 'qt/moc_bitcoinunits.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/moc_bitcoinunits.cpp'; fi`
 
 qt/qt_libcheetahcoinqt_a-moc_clientmodel.o: qt/moc_clientmodel.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-moc_clientmodel.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-moc_clientmodel.Tpo -c -o qt/qt_libcheetahcoinqt_a-moc_clientmodel.o `test -f 'qt/moc_clientmodel.cpp' || echo '$(srcdir)/'`qt/moc_clientmodel.cpp
@@ -7085,19 +7085,19 @@ qt/qt_libcheetahcoinqt_a-paymentrequest.pb.obj: qt/paymentrequest.pb.cc
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-paymentrequest.pb.obj `if test -f 'qt/paymentrequest.pb.cc'; then $(CYGPATH_W) 'qt/paymentrequest.pb.cc'; else $(CYGPATH_W) '$(srcdir)/qt/paymentrequest.pb.cc'; fi`
 
-qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.o: qt/qrc_cheetahcoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-qrc_cheetahcoin.Tpo -c -o qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.o `test -f 'qt/qrc_cheetahcoin.cpp' || echo '$(srcdir)/'`qt/qrc_cheetahcoin.cpp
+qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.o: qt/qrc_bitcoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-qrc_cheetahcoin.Tpo -c -o qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.o `test -f 'qt/qrc_bitcoin.cpp' || echo '$(srcdir)/'`qt/qrc_bitcoin.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-qrc_cheetahcoin.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-qrc_cheetahcoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/qrc_cheetahcoin.cpp' object='qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/qrc_bitcoin.cpp' object='qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.o `test -f 'qt/qrc_cheetahcoin.cpp' || echo '$(srcdir)/'`qt/qrc_cheetahcoin.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.o `test -f 'qt/qrc_bitcoin.cpp' || echo '$(srcdir)/'`qt/qrc_bitcoin.cpp
 
-qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.obj: qt/qrc_cheetahcoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.obj -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-qrc_cheetahcoin.Tpo -c -o qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.obj `if test -f 'qt/qrc_cheetahcoin.cpp'; then $(CYGPATH_W) 'qt/qrc_cheetahcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_cheetahcoin.cpp'; fi`
+qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.obj: qt/qrc_bitcoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.obj -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-qrc_cheetahcoin.Tpo -c -o qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.obj `if test -f 'qt/qrc_bitcoin.cpp'; then $(CYGPATH_W) 'qt/qrc_bitcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_bitcoin.cpp'; fi`
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_libcheetahcoinqt_a-qrc_cheetahcoin.Tpo qt/$(DEPDIR)/qt_libcheetahcoinqt_a-qrc_cheetahcoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/qrc_cheetahcoin.cpp' object='qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/qrc_bitcoin.cpp' object='qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.obj `if test -f 'qt/qrc_cheetahcoin.cpp'; then $(CYGPATH_W) 'qt/qrc_cheetahcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_cheetahcoin.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin.obj `if test -f 'qt/qrc_bitcoin.cpp'; then $(CYGPATH_W) 'qt/qrc_bitcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_bitcoin.cpp'; fi`
 
 qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin_locale.o: qt/qrc_cheetahcoin_locale.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin_locale.o -MD -MP -MF qt/$(DEPDIR)/qt_libcheetahcoinqt_a-qrc_cheetahcoin_locale.Tpo -c -o qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin_locale.o `test -f 'qt/qrc_cheetahcoin_locale.cpp' || echo '$(srcdir)/'`qt/qrc_cheetahcoin_locale.cpp
@@ -7379,19 +7379,19 @@ cheetahcoind-cheetahcoind.obj: bitcoind.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(cheetahcoind_CPPFLAGS) $(CPPFLAGS) $(cheetahcoind_CXXFLAGS) $(CXXFLAGS) -c -o cheetahcoind-cheetahcoind.obj `if test -f 'bitcoind.cpp'; then $(CYGPATH_W) 'bitcoind.cpp'; else $(CYGPATH_W) '$(srcdir)/bitcoind.cpp'; fi`
 
-qt/qt_cheetahcoin_qt-cheetahcoin.o: qt/cheetahcoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_cheetahcoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_cheetahcoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_cheetahcoin_qt-cheetahcoin.o -MD -MP -MF qt/$(DEPDIR)/qt_cheetahcoin_qt-cheetahcoin.Tpo -c -o qt/qt_cheetahcoin_qt-cheetahcoin.o `test -f 'qt/cheetahcoin.cpp' || echo '$(srcdir)/'`qt/cheetahcoin.cpp
+qt/qt_cheetahcoin_qt-cheetahcoin.o: qt/bitcoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_cheetahcoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_cheetahcoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_cheetahcoin_qt-cheetahcoin.o -MD -MP -MF qt/$(DEPDIR)/qt_cheetahcoin_qt-cheetahcoin.Tpo -c -o qt/qt_cheetahcoin_qt-cheetahcoin.o `test -f 'qt/bitcoin.cpp' || echo '$(srcdir)/'`qt/bitcoin.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_cheetahcoin_qt-cheetahcoin.Tpo qt/$(DEPDIR)/qt_cheetahcoin_qt-cheetahcoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/cheetahcoin.cpp' object='qt/qt_cheetahcoin_qt-cheetahcoin.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/bitcoin.cpp' object='qt/qt_cheetahcoin_qt-cheetahcoin.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_cheetahcoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_cheetahcoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_cheetahcoin_qt-cheetahcoin.o `test -f 'qt/cheetahcoin.cpp' || echo '$(srcdir)/'`qt/cheetahcoin.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_cheetahcoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_cheetahcoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_cheetahcoin_qt-cheetahcoin.o `test -f 'qt/bitcoin.cpp' || echo '$(srcdir)/'`qt/bitcoin.cpp
 
-qt/qt_cheetahcoin_qt-cheetahcoin.obj: qt/cheetahcoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_cheetahcoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_cheetahcoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_cheetahcoin_qt-cheetahcoin.obj -MD -MP -MF qt/$(DEPDIR)/qt_cheetahcoin_qt-cheetahcoin.Tpo -c -o qt/qt_cheetahcoin_qt-cheetahcoin.obj `if test -f 'qt/cheetahcoin.cpp'; then $(CYGPATH_W) 'qt/cheetahcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/cheetahcoin.cpp'; fi`
+qt/qt_cheetahcoin_qt-cheetahcoin.obj: qt/bitcoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_cheetahcoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_cheetahcoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/qt_cheetahcoin_qt-cheetahcoin.obj -MD -MP -MF qt/$(DEPDIR)/qt_cheetahcoin_qt-cheetahcoin.Tpo -c -o qt/qt_cheetahcoin_qt-cheetahcoin.obj `if test -f 'qt/bitcoin.cpp'; then $(CYGPATH_W) 'qt/bitcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/bitcoin.cpp'; fi`
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) qt/$(DEPDIR)/qt_cheetahcoin_qt-cheetahcoin.Tpo qt/$(DEPDIR)/qt_cheetahcoin_qt-cheetahcoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/cheetahcoin.cpp' object='qt/qt_cheetahcoin_qt-cheetahcoin.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='qt/bitcoin.cpp' object='qt/qt_cheetahcoin_qt-cheetahcoin.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_cheetahcoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_cheetahcoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_cheetahcoin_qt-cheetahcoin.obj `if test -f 'qt/cheetahcoin.cpp'; then $(CYGPATH_W) 'qt/cheetahcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/cheetahcoin.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_cheetahcoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_cheetahcoin_qt_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_cheetahcoin_qt-cheetahcoin.obj `if test -f 'qt/bitcoin.cpp'; then $(CYGPATH_W) 'qt/bitcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/bitcoin.cpp'; fi`
 
 qt/test/qt_test_test_cheetahcoin_qt-test_main.o: qt/test/test_main.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_test_test_cheetahcoin_qt_CPPFLAGS) $(CPPFLAGS) $(qt_test_test_cheetahcoin_qt_CXXFLAGS) $(CXXFLAGS) -MT qt/test/qt_test_test_cheetahcoin_qt-test_main.o -MD -MP -MF qt/test/$(DEPDIR)/qt_test_test_cheetahcoin_qt-test_main.Tpo -c -o qt/test/qt_test_test_cheetahcoin_qt-test_main.o `test -f 'qt/test/test_main.cpp' || echo '$(srcdir)/'`qt/test/test_main.cpp
