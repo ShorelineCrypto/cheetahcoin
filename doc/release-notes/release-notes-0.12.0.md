@@ -766,7 +766,7 @@ git merge commit are mentioned.
 - #5994 `786ed11` detach wallet from miner (Jonas Schnelli)
 - #6387 `11576a5` [cheetahcoin-cli] improve error output (Jonas Schnelli)
 - #6401 `6db53b4` Add CHEETAHCOIND_SIGTERM_TIMEOUT to OpenRC init scripts (Florian Schmaus)
-- #6430 `b01981e` doc: add documentation for shared library libcheetahcoinconsensus (Braydon Fuller)
+- #6430 `b01981e` doc: add documentation for shared library libbitcoinconsensus (Braydon Fuller)
 - #6372 `dcc495e` Update Linearize tool to support Windows paths; fix variable scope; update README and example configuration (Paul Georgiou)
 - #6453 `8fe5cce` Separate core memory usage computation in core_memusage.h (Pieter Wuille)
 - #6149 `633fe10` Buffer log messages and explicitly open logs (Adam Weiss)

@@ -374,7 +374,7 @@ am_libcheetahcoin_consensus_a_OBJECTS =  \
 	primitives/libcheetahcoin_consensus_a-block.$(OBJEXT) \
 	primitives/libcheetahcoin_consensus_a-transaction.$(OBJEXT) \
 	libcheetahcoin_consensus_a-pubkey.$(OBJEXT) \
-	script/libcheetahcoin_consensus_a-cheetahcoinconsensus.$(OBJEXT) \
+	script/libcheetahcoin_consensus_a-bitcoinconsensus.$(OBJEXT) \
 	script/libcheetahcoin_consensus_a-interpreter.$(OBJEXT) \
 	script/libcheetahcoin_consensus_a-script.$(OBJEXT) \
 	script/libcheetahcoin_consensus_a-script_error.$(OBJEXT) \
@@ -753,9 +753,9 @@ am__uninstall_files_from_dir = { \
 am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(bindir)" \
 	"$(DESTDIR)$(includedir)"
 LTLIBRARIES = $(lib_LTLIBRARIES)
-@BUILD_CHEETAHCOIN_LIBS_TRUE@libcheetahcoinconsensus_la_DEPENDENCIES =  \
+@BUILD_CHEETAHCOIN_LIBS_TRUE@libbitcoinconsensus_la_DEPENDENCIES =  \
 @BUILD_CHEETAHCOIN_LIBS_TRUE@	$(LIBSECP256K1)
-am__libcheetahcoinconsensus_la_SOURCES_DIST = crypto/aes.cpp crypto/aes.h \
+am__libbitcoinconsensus_la_SOURCES_DIST = crypto/aes.cpp crypto/aes.h \
 	crypto/common.h crypto/hmac_sha256.cpp crypto/hmac_sha256.h \
 	crypto/hmac_sha512.cpp crypto/hmac_sha512.h \
 	crypto/ripemd160.cpp crypto/ripemd160.h crypto/sha1.cpp \
@@ -765,44 +765,44 @@ am__libcheetahcoinconsensus_la_SOURCES_DIST = crypto/aes.cpp crypto/aes.h \
 	consensus/params.h consensus/validation.h hash.cpp hash.h \
 	prevector.h primitives/block.cpp primitives/block.h \
 	primitives/transaction.cpp primitives/transaction.h pubkey.cpp \
-	pubkey.h script/cheetahcoinconsensus.cpp script/interpreter.cpp \
+	pubkey.h script/bitcoinconsensus.cpp script/interpreter.cpp \
 	script/interpreter.h script/script.cpp script/script.h \
 	script/script_error.cpp script/script_error.h serialize.h \
 	tinyformat.h uint256.cpp uint256.h utilstrencodings.cpp \
 	utilstrencodings.h version.h compat/glibc_compat.cpp
-am__objects_15 = crypto/libcheetahcoinconsensus_la-aes.lo \
-	crypto/libcheetahcoinconsensus_la-hmac_sha256.lo \
-	crypto/libcheetahcoinconsensus_la-hmac_sha512.lo \
-	crypto/libcheetahcoinconsensus_la-ripemd160.lo \
-	crypto/libcheetahcoinconsensus_la-sha1.lo \
-	crypto/libcheetahcoinconsensus_la-sha256.lo \
-	crypto/libcheetahcoinconsensus_la-sha512.lo
-am__objects_16 = libcheetahcoinconsensus_la-arith_uint256.lo \
-	consensus/libcheetahcoinconsensus_la-merkle.lo \
-	libcheetahcoinconsensus_la-hash.lo \
-	primitives/libcheetahcoinconsensus_la-block.lo \
-	primitives/libcheetahcoinconsensus_la-transaction.lo \
-	libcheetahcoinconsensus_la-pubkey.lo \
-	script/libcheetahcoinconsensus_la-cheetahcoinconsensus.lo \
-	script/libcheetahcoinconsensus_la-interpreter.lo \
-	script/libcheetahcoinconsensus_la-script.lo \
-	script/libcheetahcoinconsensus_la-script_error.lo \
-	libcheetahcoinconsensus_la-uint256.lo \
-	libcheetahcoinconsensus_la-utilstrencodings.lo
-@BUILD_CHEETAHCOIN_LIBS_TRUE@@GLIBC_BACK_COMPAT_TRUE@am__objects_17 = compat/libcheetahcoinconsensus_la-glibc_compat.lo
-@BUILD_CHEETAHCOIN_LIBS_TRUE@am_libcheetahcoinconsensus_la_OBJECTS =  \
+am__objects_15 = crypto/libbitcoinconsensus_la-aes.lo \
+	crypto/libbitcoinconsensus_la-hmac_sha256.lo \
+	crypto/libbitcoinconsensus_la-hmac_sha512.lo \
+	crypto/libbitcoinconsensus_la-ripemd160.lo \
+	crypto/libbitcoinconsensus_la-sha1.lo \
+	crypto/libbitcoinconsensus_la-sha256.lo \
+	crypto/libbitcoinconsensus_la-sha512.lo
+am__objects_16 = libbitcoinconsensus_la-arith_uint256.lo \
+	consensus/libbitcoinconsensus_la-merkle.lo \
+	libbitcoinconsensus_la-hash.lo \
+	primitives/libbitcoinconsensus_la-block.lo \
+	primitives/libbitcoinconsensus_la-transaction.lo \
+	libbitcoinconsensus_la-pubkey.lo \
+	script/libbitcoinconsensus_la-bitcoinconsensus.lo \
+	script/libbitcoinconsensus_la-interpreter.lo \
+	script/libbitcoinconsensus_la-script.lo \
+	script/libbitcoinconsensus_la-script_error.lo \
+	libbitcoinconsensus_la-uint256.lo \
+	libbitcoinconsensus_la-utilstrencodings.lo
+@BUILD_CHEETAHCOIN_LIBS_TRUE@@GLIBC_BACK_COMPAT_TRUE@am__objects_17 = compat/libbitcoinconsensus_la-glibc_compat.lo
+@BUILD_CHEETAHCOIN_LIBS_TRUE@am_libbitcoinconsensus_la_OBJECTS =  \
 @BUILD_CHEETAHCOIN_LIBS_TRUE@	$(am__objects_15) $(am__objects_16) \
 @BUILD_CHEETAHCOIN_LIBS_TRUE@	$(am__objects_17)
-libcheetahcoinconsensus_la_OBJECTS = $(am_libcheetahcoinconsensus_la_OBJECTS)
+libbitcoinconsensus_la_OBJECTS = $(am_libbitcoinconsensus_la_OBJECTS)
 AM_V_lt = $(am__v_lt_@AM_V@)
 am__v_lt_ = $(am__v_lt_@AM_DEFAULT_V@)
 am__v_lt_0 = --silent
 am__v_lt_1 = 
-libcheetahcoinconsensus_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
+libbitcoinconsensus_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CXX \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CXXLD) \
-	$(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) \
-	$(libcheetahcoinconsensus_la_LDFLAGS) $(LDFLAGS) -o $@
-@BUILD_CHEETAHCOIN_LIBS_TRUE@am_libcheetahcoinconsensus_la_rpath = -rpath \
+	$(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) \
+	$(libbitcoinconsensus_la_LDFLAGS) $(LDFLAGS) -o $@
+@BUILD_CHEETAHCOIN_LIBS_TRUE@am_libbitcoinconsensus_la_rpath = -rpath \
 @BUILD_CHEETAHCOIN_LIBS_TRUE@	$(libdir)
 @BUILD_CHEETAHCOIND_TRUE@am__EXEEXT_1 = cheetahcoind$(EXEEXT)
 @BUILD_CHEETAHCOIN_UTILS_TRUE@am__EXEEXT_2 = cheetahcoin-cli$(EXEEXT) \
@@ -1158,7 +1158,7 @@ SOURCES = $(crypto_libcheetahcoin_crypto_a_SOURCES) \
 	$(libcheetahcoin_wallet_a_SOURCES) $(libcheetahcoin_zmq_a_SOURCES) \
 	$(qt_libcheetahcoinqt_a_SOURCES) \
 	$(nodist_qt_libcheetahcoinqt_a_SOURCES) \
-	$(libcheetahcoinconsensus_la_SOURCES) \
+	$(libbitcoinconsensus_la_SOURCES) \
 	$(bench_bench_cheetahcoin_SOURCES) $(cheetahcoin_cli_SOURCES) \
 	$(cheetahcoin_tx_SOURCES) $(cheetahcoind_SOURCES) \
 	$(qt_cheetahcoin_qt_SOURCES) $(qt_test_test_cheetahcoin_qt_SOURCES) \
@@ -1175,7 +1175,7 @@ DIST_SOURCES = $(crypto_libcheetahcoin_crypto_a_SOURCES) \
 	$(libcheetahcoin_wallet_a_SOURCES) \
 	$(am__libcheetahcoin_zmq_a_SOURCES_DIST) \
 	$(am__qt_libcheetahcoinqt_a_SOURCES_DIST) \
-	$(am__libcheetahcoinconsensus_la_SOURCES_DIST) \
+	$(am__libbitcoinconsensus_la_SOURCES_DIST) \
 	$(am__bench_bench_cheetahcoin_SOURCES_DIST) \
 	$(am__cheetahcoin_cli_SOURCES_DIST) $(am__cheetahcoin_tx_SOURCES_DIST) \
 	$(am__cheetahcoind_SOURCES_DIST) $(am__qt_cheetahcoin_qt_SOURCES_DIST) \
@@ -1194,7 +1194,7 @@ am__can_run_installinfo = \
     n|no|NO) false;; \
     *) (install-info --version) >/dev/null 2>&1;; \
   esac
-am__include_HEADERS_DIST = script/cheetahcoinconsensus.h
+am__include_HEADERS_DIST = script/bitcoinconsensus.h
 HEADERS = $(include_HEADERS)
 RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
   distclean-recursive maintainer-clean-recursive
@@ -1694,7 +1694,7 @@ LIBCHEETAHCOIN_CRYPTO = crypto/libcheetahcoin_crypto.a
 LIBCHEETAHCOINQT = qt/libcheetahcoinqt.a
 LIBSECP256K1 = secp256k1/libsecp256k1.la
 @ENABLE_ZMQ_TRUE@LIBCHEETAHCOIN_ZMQ = libcheetahcoin_zmq.a
-@BUILD_CHEETAHCOIN_LIBS_TRUE@LIBCHEETAHCOINCONSENSUS = libcheetahcoinconsensus.la
+@BUILD_CHEETAHCOIN_LIBS_TRUE@LIBCHEETAHCOINCONSENSUS = libbitcoinconsensus.la
 @ENABLE_WALLET_TRUE@LIBCHEETAHCOIN_WALLET = libcheetahcoin_wallet.a
 lib_LTLIBRARIES = $(LIBCHEETAHCOINCONSENSUS)
 BENCHMARKS = 
@@ -1884,7 +1884,7 @@ libcheetahcoin_consensus_a_SOURCES = \
   primitives/transaction.h \
   pubkey.cpp \
   pubkey.h \
-  script/cheetahcoinconsensus.cpp \
+  script/bitcoinconsensus.cpp \
   script/interpreter.cpp \
   script/interpreter.h \
   script/script.cpp \
@@ -1976,15 +1976,15 @@ cheetahcoin_tx_LDADD = $(LIBUNIVALUE) $(LIBCHEETAHCOIN_COMMON) \
 	$(CRYPTO_LIBS)
 #
 
-# cheetahcoinconsensus library #
-@BUILD_CHEETAHCOIN_LIBS_TRUE@include_HEADERS = script/cheetahcoinconsensus.h
-@BUILD_CHEETAHCOIN_LIBS_TRUE@libcheetahcoinconsensus_la_SOURCES = $(crypto_libcheetahcoin_crypto_a_SOURCES) \
+# bitcoinconsensus library #
+@BUILD_CHEETAHCOIN_LIBS_TRUE@include_HEADERS = script/bitcoinconsensus.h
+@BUILD_CHEETAHCOIN_LIBS_TRUE@libbitcoinconsensus_la_SOURCES = $(crypto_libcheetahcoin_crypto_a_SOURCES) \
 @BUILD_CHEETAHCOIN_LIBS_TRUE@	$(libcheetahcoin_consensus_a_SOURCES) \
 @BUILD_CHEETAHCOIN_LIBS_TRUE@	$(am__append_7)
-@BUILD_CHEETAHCOIN_LIBS_TRUE@libcheetahcoinconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-@BUILD_CHEETAHCOIN_LIBS_TRUE@libcheetahcoinconsensus_la_LIBADD = $(LIBSECP256K1)
-@BUILD_CHEETAHCOIN_LIBS_TRUE@libcheetahcoinconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_CHEETAHCOIN_INTERNAL
-@BUILD_CHEETAHCOIN_LIBS_TRUE@libcheetahcoinconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+@BUILD_CHEETAHCOIN_LIBS_TRUE@libbitcoinconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
+@BUILD_CHEETAHCOIN_LIBS_TRUE@libbitcoinconsensus_la_LIBADD = $(LIBSECP256K1)
+@BUILD_CHEETAHCOIN_LIBS_TRUE@libbitcoinconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_CHEETAHCOIN_INTERNAL
+@BUILD_CHEETAHCOIN_LIBS_TRUE@libbitcoinconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 #
 CTAES_DIST = crypto/ctaes/bench.c crypto/ctaes/ctaes.c \
@@ -2885,7 +2885,7 @@ primitives/libcheetahcoin_consensus_a-block.$(OBJEXT):  \
 primitives/libcheetahcoin_consensus_a-transaction.$(OBJEXT):  \
 	primitives/$(am__dirstamp) \
 	primitives/$(DEPDIR)/$(am__dirstamp)
-script/libcheetahcoin_consensus_a-cheetahcoinconsensus.$(OBJEXT):  \
+script/libcheetahcoin_consensus_a-bitcoinconsensus.$(OBJEXT):  \
 	script/$(am__dirstamp) script/$(DEPDIR)/$(am__dirstamp)
 script/libcheetahcoin_consensus_a-interpreter.$(OBJEXT):  \
 	script/$(am__dirstamp) script/$(DEPDIR)/$(am__dirstamp)
@@ -3238,41 +3238,41 @@ clean-libLTLIBRARIES:
 	  echo rm -f $${locs}; \
 	  rm -f $${locs}; \
 	}
-crypto/libcheetahcoinconsensus_la-aes.lo: crypto/$(am__dirstamp) \
+crypto/libbitcoinconsensus_la-aes.lo: crypto/$(am__dirstamp) \
 	crypto/$(DEPDIR)/$(am__dirstamp)
-crypto/libcheetahcoinconsensus_la-hmac_sha256.lo: crypto/$(am__dirstamp) \
+crypto/libbitcoinconsensus_la-hmac_sha256.lo: crypto/$(am__dirstamp) \
 	crypto/$(DEPDIR)/$(am__dirstamp)
-crypto/libcheetahcoinconsensus_la-hmac_sha512.lo: crypto/$(am__dirstamp) \
+crypto/libbitcoinconsensus_la-hmac_sha512.lo: crypto/$(am__dirstamp) \
 	crypto/$(DEPDIR)/$(am__dirstamp)
-crypto/libcheetahcoinconsensus_la-ripemd160.lo: crypto/$(am__dirstamp) \
+crypto/libbitcoinconsensus_la-ripemd160.lo: crypto/$(am__dirstamp) \
 	crypto/$(DEPDIR)/$(am__dirstamp)
-crypto/libcheetahcoinconsensus_la-sha1.lo: crypto/$(am__dirstamp) \
+crypto/libbitcoinconsensus_la-sha1.lo: crypto/$(am__dirstamp) \
 	crypto/$(DEPDIR)/$(am__dirstamp)
-crypto/libcheetahcoinconsensus_la-sha256.lo: crypto/$(am__dirstamp) \
+crypto/libbitcoinconsensus_la-sha256.lo: crypto/$(am__dirstamp) \
 	crypto/$(DEPDIR)/$(am__dirstamp)
-crypto/libcheetahcoinconsensus_la-sha512.lo: crypto/$(am__dirstamp) \
+crypto/libbitcoinconsensus_la-sha512.lo: crypto/$(am__dirstamp) \
 	crypto/$(DEPDIR)/$(am__dirstamp)
-consensus/libcheetahcoinconsensus_la-merkle.lo: consensus/$(am__dirstamp) \
+consensus/libbitcoinconsensus_la-merkle.lo: consensus/$(am__dirstamp) \
 	consensus/$(DEPDIR)/$(am__dirstamp)
-primitives/libcheetahcoinconsensus_la-block.lo:  \
+primitives/libbitcoinconsensus_la-block.lo:  \
 	primitives/$(am__dirstamp) \
 	primitives/$(DEPDIR)/$(am__dirstamp)
-primitives/libcheetahcoinconsensus_la-transaction.lo:  \
+primitives/libbitcoinconsensus_la-transaction.lo:  \
 	primitives/$(am__dirstamp) \
 	primitives/$(DEPDIR)/$(am__dirstamp)
-script/libcheetahcoinconsensus_la-cheetahcoinconsensus.lo:  \
+script/libbitcoinconsensus_la-bitcoinconsensus.lo:  \
 	script/$(am__dirstamp) script/$(DEPDIR)/$(am__dirstamp)
-script/libcheetahcoinconsensus_la-interpreter.lo: script/$(am__dirstamp) \
+script/libbitcoinconsensus_la-interpreter.lo: script/$(am__dirstamp) \
 	script/$(DEPDIR)/$(am__dirstamp)
-script/libcheetahcoinconsensus_la-script.lo: script/$(am__dirstamp) \
+script/libbitcoinconsensus_la-script.lo: script/$(am__dirstamp) \
 	script/$(DEPDIR)/$(am__dirstamp)
-script/libcheetahcoinconsensus_la-script_error.lo: script/$(am__dirstamp) \
+script/libbitcoinconsensus_la-script_error.lo: script/$(am__dirstamp) \
 	script/$(DEPDIR)/$(am__dirstamp)
-compat/libcheetahcoinconsensus_la-glibc_compat.lo: compat/$(am__dirstamp) \
+compat/libbitcoinconsensus_la-glibc_compat.lo: compat/$(am__dirstamp) \
 	compat/$(DEPDIR)/$(am__dirstamp)
 
-libcheetahcoinconsensus.la: $(libcheetahcoinconsensus_la_OBJECTS) $(libcheetahcoinconsensus_la_DEPENDENCIES) $(EXTRA_libcheetahcoinconsensus_la_DEPENDENCIES) 
-	$(AM_V_CXXLD)$(libcheetahcoinconsensus_la_LINK) $(am_libcheetahcoinconsensus_la_rpath) $(libcheetahcoinconsensus_la_OBJECTS) $(libcheetahcoinconsensus_la_LIBADD) $(LIBS)
+libbitcoinconsensus.la: $(libbitcoinconsensus_la_OBJECTS) $(libbitcoinconsensus_la_DEPENDENCIES) $(EXTRA_libbitcoinconsensus_la_DEPENDENCIES) 
+	$(AM_V_CXXLD)$(libbitcoinconsensus_la_LINK) $(am_libbitcoinconsensus_la_rpath) $(libbitcoinconsensus_la_OBJECTS) $(libbitcoinconsensus_la_LIBADD) $(LIBS)
 install-binPROGRAMS: $(bin_PROGRAMS)
 	@$(NORMAL_INSTALL)
 	@list='$(bin_PROGRAMS)'; test -n "$(bindir)" || list=; \
@@ -3611,11 +3611,11 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcheetahcoin_util_a-utilmoneystr.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcheetahcoin_util_a-utilstrencodings.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcheetahcoin_util_a-utiltime.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcheetahcoinconsensus_la-arith_uint256.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcheetahcoinconsensus_la-hash.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcheetahcoinconsensus_la-pubkey.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcheetahcoinconsensus_la-uint256.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libcheetahcoinconsensus_la-utilstrencodings.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoinconsensus_la-arith_uint256.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoinconsensus_la-hash.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoinconsensus_la-pubkey.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoinconsensus_la-uint256.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libbitcoinconsensus_la-utilstrencodings.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@bench/$(DEPDIR)/bench_bench_cheetahcoin-Examples.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@bench/$(DEPDIR)/bench_bench_cheetahcoin-base58.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@bench/$(DEPDIR)/bench_bench_cheetahcoin-bench.Po@am__quote@
@@ -3626,9 +3626,9 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@compat/$(DEPDIR)/libcheetahcoin_util_a-glibc_sanity.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@compat/$(DEPDIR)/libcheetahcoin_util_a-glibcxx_sanity.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@compat/$(DEPDIR)/libcheetahcoin_util_a-strnlen.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@compat/$(DEPDIR)/libcheetahcoinconsensus_la-glibc_compat.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@compat/$(DEPDIR)/libbitcoinconsensus_la-glibc_compat.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@consensus/$(DEPDIR)/libcheetahcoin_consensus_a-merkle.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@consensus/$(DEPDIR)/libcheetahcoinconsensus_la-merkle.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@consensus/$(DEPDIR)/libbitcoinconsensus_la-merkle.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/crypto_libcheetahcoin_crypto_a-aes.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/crypto_libcheetahcoin_crypto_a-hmac_sha256.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/crypto_libcheetahcoin_crypto_a-hmac_sha512.Po@am__quote@
@@ -3636,13 +3636,13 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/crypto_libcheetahcoin_crypto_a-sha1.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/crypto_libcheetahcoin_crypto_a-sha256.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/crypto_libcheetahcoin_crypto_a-sha512.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/libcheetahcoinconsensus_la-aes.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/libcheetahcoinconsensus_la-hmac_sha256.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/libcheetahcoinconsensus_la-hmac_sha512.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/libcheetahcoinconsensus_la-ripemd160.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/libcheetahcoinconsensus_la-sha1.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/libcheetahcoinconsensus_la-sha256.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/libcheetahcoinconsensus_la-sha512.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/libbitcoinconsensus_la-aes.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/libbitcoinconsensus_la-hmac_sha256.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/libbitcoinconsensus_la-hmac_sha512.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/libbitcoinconsensus_la-ripemd160.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/libbitcoinconsensus_la-sha1.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/libbitcoinconsensus_la-sha256.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@crypto/$(DEPDIR)/libbitcoinconsensus_la-sha512.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@leveldb/db/$(DEPDIR)/leveldb_libleveldb_a-builder.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@leveldb/db/$(DEPDIR)/leveldb_libleveldb_a-c.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@leveldb/db/$(DEPDIR)/leveldb_libleveldb_a-db_impl.Po@am__quote@
@@ -3690,8 +3690,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@policy/$(DEPDIR)/libcheetahcoin_wallet_a-rbf.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@primitives/$(DEPDIR)/libcheetahcoin_consensus_a-block.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@primitives/$(DEPDIR)/libcheetahcoin_consensus_a-transaction.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@primitives/$(DEPDIR)/libcheetahcoinconsensus_la-block.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@primitives/$(DEPDIR)/libcheetahcoinconsensus_la-transaction.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@primitives/$(DEPDIR)/libbitcoinconsensus_la-block.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@primitives/$(DEPDIR)/libbitcoinconsensus_la-transaction.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_cheetahcoin_qt-cheetahcoin.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_cheetahcoin_qt-macdockiconhandler.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@qt/$(DEPDIR)/qt_cheetahcoin_qt-macnotificationhandler.Po@am__quote@
@@ -3805,16 +3805,16 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@rpc/$(DEPDIR)/libcheetahcoin_util_a-protocol.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libcheetahcoin_common_a-sign.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libcheetahcoin_common_a-standard.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libcheetahcoin_consensus_a-cheetahcoinconsensus.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libcheetahcoin_consensus_a-bitcoinconsensus.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libcheetahcoin_consensus_a-interpreter.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libcheetahcoin_consensus_a-script.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libcheetahcoin_consensus_a-script_error.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libcheetahcoin_server_a-ismine.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libcheetahcoin_server_a-sigcache.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libcheetahcoinconsensus_la-cheetahcoinconsensus.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libcheetahcoinconsensus_la-interpreter.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libcheetahcoinconsensus_la-script.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libcheetahcoinconsensus_la-script_error.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libbitcoinconsensus_la-bitcoinconsensus.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libbitcoinconsensus_la-interpreter.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libbitcoinconsensus_la-script.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@script/$(DEPDIR)/libbitcoinconsensus_la-script_error.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@support/$(DEPDIR)/libcheetahcoin_util_a-cleanse.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@support/$(DEPDIR)/libcheetahcoin_util_a-pagelocker.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_cheetahcoin-DoS_tests.Po@am__quote@
@@ -4887,19 +4887,19 @@ libcheetahcoin_consensus_a-pubkey.obj: pubkey.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoin_consensus_a_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoin_consensus_a_CXXFLAGS) $(CXXFLAGS) -c -o libcheetahcoin_consensus_a-pubkey.obj `if test -f 'pubkey.cpp'; then $(CYGPATH_W) 'pubkey.cpp'; else $(CYGPATH_W) '$(srcdir)/pubkey.cpp'; fi`
 
-script/libcheetahcoin_consensus_a-cheetahcoinconsensus.o: script/cheetahcoinconsensus.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoin_consensus_a_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoin_consensus_a_CXXFLAGS) $(CXXFLAGS) -MT script/libcheetahcoin_consensus_a-cheetahcoinconsensus.o -MD -MP -MF script/$(DEPDIR)/libcheetahcoin_consensus_a-cheetahcoinconsensus.Tpo -c -o script/libcheetahcoin_consensus_a-cheetahcoinconsensus.o `test -f 'script/cheetahcoinconsensus.cpp' || echo '$(srcdir)/'`script/cheetahcoinconsensus.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) script/$(DEPDIR)/libcheetahcoin_consensus_a-cheetahcoinconsensus.Tpo script/$(DEPDIR)/libcheetahcoin_consensus_a-cheetahcoinconsensus.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='script/cheetahcoinconsensus.cpp' object='script/libcheetahcoin_consensus_a-cheetahcoinconsensus.o' libtool=no @AMDEPBACKSLASH@
+script/libcheetahcoin_consensus_a-bitcoinconsensus.o: script/bitcoinconsensus.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoin_consensus_a_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoin_consensus_a_CXXFLAGS) $(CXXFLAGS) -MT script/libcheetahcoin_consensus_a-bitcoinconsensus.o -MD -MP -MF script/$(DEPDIR)/libcheetahcoin_consensus_a-bitcoinconsensus.Tpo -c -o script/libcheetahcoin_consensus_a-bitcoinconsensus.o `test -f 'script/bitcoinconsensus.cpp' || echo '$(srcdir)/'`script/bitcoinconsensus.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) script/$(DEPDIR)/libcheetahcoin_consensus_a-bitcoinconsensus.Tpo script/$(DEPDIR)/libcheetahcoin_consensus_a-bitcoinconsensus.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='script/bitcoinconsensus.cpp' object='script/libcheetahcoin_consensus_a-bitcoinconsensus.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoin_consensus_a_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoin_consensus_a_CXXFLAGS) $(CXXFLAGS) -c -o script/libcheetahcoin_consensus_a-cheetahcoinconsensus.o `test -f 'script/cheetahcoinconsensus.cpp' || echo '$(srcdir)/'`script/cheetahcoinconsensus.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoin_consensus_a_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoin_consensus_a_CXXFLAGS) $(CXXFLAGS) -c -o script/libcheetahcoin_consensus_a-bitcoinconsensus.o `test -f 'script/bitcoinconsensus.cpp' || echo '$(srcdir)/'`script/bitcoinconsensus.cpp
 
-script/libcheetahcoin_consensus_a-cheetahcoinconsensus.obj: script/cheetahcoinconsensus.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoin_consensus_a_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoin_consensus_a_CXXFLAGS) $(CXXFLAGS) -MT script/libcheetahcoin_consensus_a-cheetahcoinconsensus.obj -MD -MP -MF script/$(DEPDIR)/libcheetahcoin_consensus_a-cheetahcoinconsensus.Tpo -c -o script/libcheetahcoin_consensus_a-cheetahcoinconsensus.obj `if test -f 'script/cheetahcoinconsensus.cpp'; then $(CYGPATH_W) 'script/cheetahcoinconsensus.cpp'; else $(CYGPATH_W) '$(srcdir)/script/cheetahcoinconsensus.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) script/$(DEPDIR)/libcheetahcoin_consensus_a-cheetahcoinconsensus.Tpo script/$(DEPDIR)/libcheetahcoin_consensus_a-cheetahcoinconsensus.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='script/cheetahcoinconsensus.cpp' object='script/libcheetahcoin_consensus_a-cheetahcoinconsensus.obj' libtool=no @AMDEPBACKSLASH@
+script/libcheetahcoin_consensus_a-bitcoinconsensus.obj: script/bitcoinconsensus.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoin_consensus_a_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoin_consensus_a_CXXFLAGS) $(CXXFLAGS) -MT script/libcheetahcoin_consensus_a-bitcoinconsensus.obj -MD -MP -MF script/$(DEPDIR)/libcheetahcoin_consensus_a-bitcoinconsensus.Tpo -c -o script/libcheetahcoin_consensus_a-bitcoinconsensus.obj `if test -f 'script/bitcoinconsensus.cpp'; then $(CYGPATH_W) 'script/bitcoinconsensus.cpp'; else $(CYGPATH_W) '$(srcdir)/script/bitcoinconsensus.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) script/$(DEPDIR)/libcheetahcoin_consensus_a-bitcoinconsensus.Tpo script/$(DEPDIR)/libcheetahcoin_consensus_a-bitcoinconsensus.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='script/bitcoinconsensus.cpp' object='script/libcheetahcoin_consensus_a-bitcoinconsensus.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoin_consensus_a_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoin_consensus_a_CXXFLAGS) $(CXXFLAGS) -c -o script/libcheetahcoin_consensus_a-cheetahcoinconsensus.obj `if test -f 'script/cheetahcoinconsensus.cpp'; then $(CYGPATH_W) 'script/cheetahcoinconsensus.cpp'; else $(CYGPATH_W) '$(srcdir)/script/cheetahcoinconsensus.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoin_consensus_a_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoin_consensus_a_CXXFLAGS) $(CXXFLAGS) -c -o script/libcheetahcoin_consensus_a-bitcoinconsensus.obj `if test -f 'script/bitcoinconsensus.cpp'; then $(CYGPATH_W) 'script/bitcoinconsensus.cpp'; else $(CYGPATH_W) '$(srcdir)/script/bitcoinconsensus.cpp'; fi`
 
 script/libcheetahcoin_consensus_a-interpreter.o: script/interpreter.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoin_consensus_a_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoin_consensus_a_CXXFLAGS) $(CXXFLAGS) -MT script/libcheetahcoin_consensus_a-interpreter.o -MD -MP -MF script/$(DEPDIR)/libcheetahcoin_consensus_a-interpreter.Tpo -c -o script/libcheetahcoin_consensus_a-interpreter.o `test -f 'script/interpreter.cpp' || echo '$(srcdir)/'`script/interpreter.cpp
@@ -7113,145 +7113,145 @@ qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin_locale.obj: qt/qrc_cheetahcoin_locale.c
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(qt_libcheetahcoinqt_a_CPPFLAGS) $(CPPFLAGS) $(qt_libcheetahcoinqt_a_CXXFLAGS) $(CXXFLAGS) -c -o qt/qt_libcheetahcoinqt_a-qrc_cheetahcoin_locale.obj `if test -f 'qt/qrc_cheetahcoin_locale.cpp'; then $(CYGPATH_W) 'qt/qrc_cheetahcoin_locale.cpp'; else $(CYGPATH_W) '$(srcdir)/qt/qrc_cheetahcoin_locale.cpp'; fi`
 
-crypto/libcheetahcoinconsensus_la-aes.lo: crypto/aes.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT crypto/libcheetahcoinconsensus_la-aes.lo -MD -MP -MF crypto/$(DEPDIR)/libcheetahcoinconsensus_la-aes.Tpo -c -o crypto/libcheetahcoinconsensus_la-aes.lo `test -f 'crypto/aes.cpp' || echo '$(srcdir)/'`crypto/aes.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) crypto/$(DEPDIR)/libcheetahcoinconsensus_la-aes.Tpo crypto/$(DEPDIR)/libcheetahcoinconsensus_la-aes.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='crypto/aes.cpp' object='crypto/libcheetahcoinconsensus_la-aes.lo' libtool=yes @AMDEPBACKSLASH@
+crypto/libbitcoinconsensus_la-aes.lo: crypto/aes.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT crypto/libbitcoinconsensus_la-aes.lo -MD -MP -MF crypto/$(DEPDIR)/libbitcoinconsensus_la-aes.Tpo -c -o crypto/libbitcoinconsensus_la-aes.lo `test -f 'crypto/aes.cpp' || echo '$(srcdir)/'`crypto/aes.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) crypto/$(DEPDIR)/libbitcoinconsensus_la-aes.Tpo crypto/$(DEPDIR)/libbitcoinconsensus_la-aes.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='crypto/aes.cpp' object='crypto/libbitcoinconsensus_la-aes.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o crypto/libcheetahcoinconsensus_la-aes.lo `test -f 'crypto/aes.cpp' || echo '$(srcdir)/'`crypto/aes.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o crypto/libbitcoinconsensus_la-aes.lo `test -f 'crypto/aes.cpp' || echo '$(srcdir)/'`crypto/aes.cpp
 
-crypto/libcheetahcoinconsensus_la-hmac_sha256.lo: crypto/hmac_sha256.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT crypto/libcheetahcoinconsensus_la-hmac_sha256.lo -MD -MP -MF crypto/$(DEPDIR)/libcheetahcoinconsensus_la-hmac_sha256.Tpo -c -o crypto/libcheetahcoinconsensus_la-hmac_sha256.lo `test -f 'crypto/hmac_sha256.cpp' || echo '$(srcdir)/'`crypto/hmac_sha256.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) crypto/$(DEPDIR)/libcheetahcoinconsensus_la-hmac_sha256.Tpo crypto/$(DEPDIR)/libcheetahcoinconsensus_la-hmac_sha256.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='crypto/hmac_sha256.cpp' object='crypto/libcheetahcoinconsensus_la-hmac_sha256.lo' libtool=yes @AMDEPBACKSLASH@
+crypto/libbitcoinconsensus_la-hmac_sha256.lo: crypto/hmac_sha256.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT crypto/libbitcoinconsensus_la-hmac_sha256.lo -MD -MP -MF crypto/$(DEPDIR)/libbitcoinconsensus_la-hmac_sha256.Tpo -c -o crypto/libbitcoinconsensus_la-hmac_sha256.lo `test -f 'crypto/hmac_sha256.cpp' || echo '$(srcdir)/'`crypto/hmac_sha256.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) crypto/$(DEPDIR)/libbitcoinconsensus_la-hmac_sha256.Tpo crypto/$(DEPDIR)/libbitcoinconsensus_la-hmac_sha256.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='crypto/hmac_sha256.cpp' object='crypto/libbitcoinconsensus_la-hmac_sha256.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o crypto/libcheetahcoinconsensus_la-hmac_sha256.lo `test -f 'crypto/hmac_sha256.cpp' || echo '$(srcdir)/'`crypto/hmac_sha256.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o crypto/libbitcoinconsensus_la-hmac_sha256.lo `test -f 'crypto/hmac_sha256.cpp' || echo '$(srcdir)/'`crypto/hmac_sha256.cpp
 
-crypto/libcheetahcoinconsensus_la-hmac_sha512.lo: crypto/hmac_sha512.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT crypto/libcheetahcoinconsensus_la-hmac_sha512.lo -MD -MP -MF crypto/$(DEPDIR)/libcheetahcoinconsensus_la-hmac_sha512.Tpo -c -o crypto/libcheetahcoinconsensus_la-hmac_sha512.lo `test -f 'crypto/hmac_sha512.cpp' || echo '$(srcdir)/'`crypto/hmac_sha512.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) crypto/$(DEPDIR)/libcheetahcoinconsensus_la-hmac_sha512.Tpo crypto/$(DEPDIR)/libcheetahcoinconsensus_la-hmac_sha512.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='crypto/hmac_sha512.cpp' object='crypto/libcheetahcoinconsensus_la-hmac_sha512.lo' libtool=yes @AMDEPBACKSLASH@
+crypto/libbitcoinconsensus_la-hmac_sha512.lo: crypto/hmac_sha512.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT crypto/libbitcoinconsensus_la-hmac_sha512.lo -MD -MP -MF crypto/$(DEPDIR)/libbitcoinconsensus_la-hmac_sha512.Tpo -c -o crypto/libbitcoinconsensus_la-hmac_sha512.lo `test -f 'crypto/hmac_sha512.cpp' || echo '$(srcdir)/'`crypto/hmac_sha512.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) crypto/$(DEPDIR)/libbitcoinconsensus_la-hmac_sha512.Tpo crypto/$(DEPDIR)/libbitcoinconsensus_la-hmac_sha512.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='crypto/hmac_sha512.cpp' object='crypto/libbitcoinconsensus_la-hmac_sha512.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o crypto/libcheetahcoinconsensus_la-hmac_sha512.lo `test -f 'crypto/hmac_sha512.cpp' || echo '$(srcdir)/'`crypto/hmac_sha512.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o crypto/libbitcoinconsensus_la-hmac_sha512.lo `test -f 'crypto/hmac_sha512.cpp' || echo '$(srcdir)/'`crypto/hmac_sha512.cpp
 
-crypto/libcheetahcoinconsensus_la-ripemd160.lo: crypto/ripemd160.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT crypto/libcheetahcoinconsensus_la-ripemd160.lo -MD -MP -MF crypto/$(DEPDIR)/libcheetahcoinconsensus_la-ripemd160.Tpo -c -o crypto/libcheetahcoinconsensus_la-ripemd160.lo `test -f 'crypto/ripemd160.cpp' || echo '$(srcdir)/'`crypto/ripemd160.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) crypto/$(DEPDIR)/libcheetahcoinconsensus_la-ripemd160.Tpo crypto/$(DEPDIR)/libcheetahcoinconsensus_la-ripemd160.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='crypto/ripemd160.cpp' object='crypto/libcheetahcoinconsensus_la-ripemd160.lo' libtool=yes @AMDEPBACKSLASH@
+crypto/libbitcoinconsensus_la-ripemd160.lo: crypto/ripemd160.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT crypto/libbitcoinconsensus_la-ripemd160.lo -MD -MP -MF crypto/$(DEPDIR)/libbitcoinconsensus_la-ripemd160.Tpo -c -o crypto/libbitcoinconsensus_la-ripemd160.lo `test -f 'crypto/ripemd160.cpp' || echo '$(srcdir)/'`crypto/ripemd160.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) crypto/$(DEPDIR)/libbitcoinconsensus_la-ripemd160.Tpo crypto/$(DEPDIR)/libbitcoinconsensus_la-ripemd160.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='crypto/ripemd160.cpp' object='crypto/libbitcoinconsensus_la-ripemd160.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o crypto/libcheetahcoinconsensus_la-ripemd160.lo `test -f 'crypto/ripemd160.cpp' || echo '$(srcdir)/'`crypto/ripemd160.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o crypto/libbitcoinconsensus_la-ripemd160.lo `test -f 'crypto/ripemd160.cpp' || echo '$(srcdir)/'`crypto/ripemd160.cpp
 
-crypto/libcheetahcoinconsensus_la-sha1.lo: crypto/sha1.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT crypto/libcheetahcoinconsensus_la-sha1.lo -MD -MP -MF crypto/$(DEPDIR)/libcheetahcoinconsensus_la-sha1.Tpo -c -o crypto/libcheetahcoinconsensus_la-sha1.lo `test -f 'crypto/sha1.cpp' || echo '$(srcdir)/'`crypto/sha1.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) crypto/$(DEPDIR)/libcheetahcoinconsensus_la-sha1.Tpo crypto/$(DEPDIR)/libcheetahcoinconsensus_la-sha1.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='crypto/sha1.cpp' object='crypto/libcheetahcoinconsensus_la-sha1.lo' libtool=yes @AMDEPBACKSLASH@
+crypto/libbitcoinconsensus_la-sha1.lo: crypto/sha1.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT crypto/libbitcoinconsensus_la-sha1.lo -MD -MP -MF crypto/$(DEPDIR)/libbitcoinconsensus_la-sha1.Tpo -c -o crypto/libbitcoinconsensus_la-sha1.lo `test -f 'crypto/sha1.cpp' || echo '$(srcdir)/'`crypto/sha1.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) crypto/$(DEPDIR)/libbitcoinconsensus_la-sha1.Tpo crypto/$(DEPDIR)/libbitcoinconsensus_la-sha1.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='crypto/sha1.cpp' object='crypto/libbitcoinconsensus_la-sha1.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o crypto/libcheetahcoinconsensus_la-sha1.lo `test -f 'crypto/sha1.cpp' || echo '$(srcdir)/'`crypto/sha1.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o crypto/libbitcoinconsensus_la-sha1.lo `test -f 'crypto/sha1.cpp' || echo '$(srcdir)/'`crypto/sha1.cpp
 
-crypto/libcheetahcoinconsensus_la-sha256.lo: crypto/sha256.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT crypto/libcheetahcoinconsensus_la-sha256.lo -MD -MP -MF crypto/$(DEPDIR)/libcheetahcoinconsensus_la-sha256.Tpo -c -o crypto/libcheetahcoinconsensus_la-sha256.lo `test -f 'crypto/sha256.cpp' || echo '$(srcdir)/'`crypto/sha256.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) crypto/$(DEPDIR)/libcheetahcoinconsensus_la-sha256.Tpo crypto/$(DEPDIR)/libcheetahcoinconsensus_la-sha256.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='crypto/sha256.cpp' object='crypto/libcheetahcoinconsensus_la-sha256.lo' libtool=yes @AMDEPBACKSLASH@
+crypto/libbitcoinconsensus_la-sha256.lo: crypto/sha256.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT crypto/libbitcoinconsensus_la-sha256.lo -MD -MP -MF crypto/$(DEPDIR)/libbitcoinconsensus_la-sha256.Tpo -c -o crypto/libbitcoinconsensus_la-sha256.lo `test -f 'crypto/sha256.cpp' || echo '$(srcdir)/'`crypto/sha256.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) crypto/$(DEPDIR)/libbitcoinconsensus_la-sha256.Tpo crypto/$(DEPDIR)/libbitcoinconsensus_la-sha256.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='crypto/sha256.cpp' object='crypto/libbitcoinconsensus_la-sha256.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o crypto/libcheetahcoinconsensus_la-sha256.lo `test -f 'crypto/sha256.cpp' || echo '$(srcdir)/'`crypto/sha256.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o crypto/libbitcoinconsensus_la-sha256.lo `test -f 'crypto/sha256.cpp' || echo '$(srcdir)/'`crypto/sha256.cpp
 
-crypto/libcheetahcoinconsensus_la-sha512.lo: crypto/sha512.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT crypto/libcheetahcoinconsensus_la-sha512.lo -MD -MP -MF crypto/$(DEPDIR)/libcheetahcoinconsensus_la-sha512.Tpo -c -o crypto/libcheetahcoinconsensus_la-sha512.lo `test -f 'crypto/sha512.cpp' || echo '$(srcdir)/'`crypto/sha512.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) crypto/$(DEPDIR)/libcheetahcoinconsensus_la-sha512.Tpo crypto/$(DEPDIR)/libcheetahcoinconsensus_la-sha512.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='crypto/sha512.cpp' object='crypto/libcheetahcoinconsensus_la-sha512.lo' libtool=yes @AMDEPBACKSLASH@
+crypto/libbitcoinconsensus_la-sha512.lo: crypto/sha512.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT crypto/libbitcoinconsensus_la-sha512.lo -MD -MP -MF crypto/$(DEPDIR)/libbitcoinconsensus_la-sha512.Tpo -c -o crypto/libbitcoinconsensus_la-sha512.lo `test -f 'crypto/sha512.cpp' || echo '$(srcdir)/'`crypto/sha512.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) crypto/$(DEPDIR)/libbitcoinconsensus_la-sha512.Tpo crypto/$(DEPDIR)/libbitcoinconsensus_la-sha512.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='crypto/sha512.cpp' object='crypto/libbitcoinconsensus_la-sha512.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o crypto/libcheetahcoinconsensus_la-sha512.lo `test -f 'crypto/sha512.cpp' || echo '$(srcdir)/'`crypto/sha512.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o crypto/libbitcoinconsensus_la-sha512.lo `test -f 'crypto/sha512.cpp' || echo '$(srcdir)/'`crypto/sha512.cpp
 
-libcheetahcoinconsensus_la-arith_uint256.lo: arith_uint256.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT libcheetahcoinconsensus_la-arith_uint256.lo -MD -MP -MF $(DEPDIR)/libcheetahcoinconsensus_la-arith_uint256.Tpo -c -o libcheetahcoinconsensus_la-arith_uint256.lo `test -f 'arith_uint256.cpp' || echo '$(srcdir)/'`arith_uint256.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libcheetahcoinconsensus_la-arith_uint256.Tpo $(DEPDIR)/libcheetahcoinconsensus_la-arith_uint256.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='arith_uint256.cpp' object='libcheetahcoinconsensus_la-arith_uint256.lo' libtool=yes @AMDEPBACKSLASH@
+libbitcoinconsensus_la-arith_uint256.lo: arith_uint256.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT libbitcoinconsensus_la-arith_uint256.lo -MD -MP -MF $(DEPDIR)/libbitcoinconsensus_la-arith_uint256.Tpo -c -o libbitcoinconsensus_la-arith_uint256.lo `test -f 'arith_uint256.cpp' || echo '$(srcdir)/'`arith_uint256.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libbitcoinconsensus_la-arith_uint256.Tpo $(DEPDIR)/libbitcoinconsensus_la-arith_uint256.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='arith_uint256.cpp' object='libbitcoinconsensus_la-arith_uint256.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o libcheetahcoinconsensus_la-arith_uint256.lo `test -f 'arith_uint256.cpp' || echo '$(srcdir)/'`arith_uint256.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o libbitcoinconsensus_la-arith_uint256.lo `test -f 'arith_uint256.cpp' || echo '$(srcdir)/'`arith_uint256.cpp
 
-consensus/libcheetahcoinconsensus_la-merkle.lo: consensus/merkle.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT consensus/libcheetahcoinconsensus_la-merkle.lo -MD -MP -MF consensus/$(DEPDIR)/libcheetahcoinconsensus_la-merkle.Tpo -c -o consensus/libcheetahcoinconsensus_la-merkle.lo `test -f 'consensus/merkle.cpp' || echo '$(srcdir)/'`consensus/merkle.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) consensus/$(DEPDIR)/libcheetahcoinconsensus_la-merkle.Tpo consensus/$(DEPDIR)/libcheetahcoinconsensus_la-merkle.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='consensus/merkle.cpp' object='consensus/libcheetahcoinconsensus_la-merkle.lo' libtool=yes @AMDEPBACKSLASH@
+consensus/libbitcoinconsensus_la-merkle.lo: consensus/merkle.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT consensus/libbitcoinconsensus_la-merkle.lo -MD -MP -MF consensus/$(DEPDIR)/libbitcoinconsensus_la-merkle.Tpo -c -o consensus/libbitcoinconsensus_la-merkle.lo `test -f 'consensus/merkle.cpp' || echo '$(srcdir)/'`consensus/merkle.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) consensus/$(DEPDIR)/libbitcoinconsensus_la-merkle.Tpo consensus/$(DEPDIR)/libbitcoinconsensus_la-merkle.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='consensus/merkle.cpp' object='consensus/libbitcoinconsensus_la-merkle.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o consensus/libcheetahcoinconsensus_la-merkle.lo `test -f 'consensus/merkle.cpp' || echo '$(srcdir)/'`consensus/merkle.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o consensus/libbitcoinconsensus_la-merkle.lo `test -f 'consensus/merkle.cpp' || echo '$(srcdir)/'`consensus/merkle.cpp
 
-libcheetahcoinconsensus_la-hash.lo: hash.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT libcheetahcoinconsensus_la-hash.lo -MD -MP -MF $(DEPDIR)/libcheetahcoinconsensus_la-hash.Tpo -c -o libcheetahcoinconsensus_la-hash.lo `test -f 'hash.cpp' || echo '$(srcdir)/'`hash.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libcheetahcoinconsensus_la-hash.Tpo $(DEPDIR)/libcheetahcoinconsensus_la-hash.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='hash.cpp' object='libcheetahcoinconsensus_la-hash.lo' libtool=yes @AMDEPBACKSLASH@
+libbitcoinconsensus_la-hash.lo: hash.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT libbitcoinconsensus_la-hash.lo -MD -MP -MF $(DEPDIR)/libbitcoinconsensus_la-hash.Tpo -c -o libbitcoinconsensus_la-hash.lo `test -f 'hash.cpp' || echo '$(srcdir)/'`hash.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libbitcoinconsensus_la-hash.Tpo $(DEPDIR)/libbitcoinconsensus_la-hash.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='hash.cpp' object='libbitcoinconsensus_la-hash.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o libcheetahcoinconsensus_la-hash.lo `test -f 'hash.cpp' || echo '$(srcdir)/'`hash.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o libbitcoinconsensus_la-hash.lo `test -f 'hash.cpp' || echo '$(srcdir)/'`hash.cpp
 
-primitives/libcheetahcoinconsensus_la-block.lo: primitives/block.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT primitives/libcheetahcoinconsensus_la-block.lo -MD -MP -MF primitives/$(DEPDIR)/libcheetahcoinconsensus_la-block.Tpo -c -o primitives/libcheetahcoinconsensus_la-block.lo `test -f 'primitives/block.cpp' || echo '$(srcdir)/'`primitives/block.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) primitives/$(DEPDIR)/libcheetahcoinconsensus_la-block.Tpo primitives/$(DEPDIR)/libcheetahcoinconsensus_la-block.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='primitives/block.cpp' object='primitives/libcheetahcoinconsensus_la-block.lo' libtool=yes @AMDEPBACKSLASH@
+primitives/libbitcoinconsensus_la-block.lo: primitives/block.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT primitives/libbitcoinconsensus_la-block.lo -MD -MP -MF primitives/$(DEPDIR)/libbitcoinconsensus_la-block.Tpo -c -o primitives/libbitcoinconsensus_la-block.lo `test -f 'primitives/block.cpp' || echo '$(srcdir)/'`primitives/block.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) primitives/$(DEPDIR)/libbitcoinconsensus_la-block.Tpo primitives/$(DEPDIR)/libbitcoinconsensus_la-block.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='primitives/block.cpp' object='primitives/libbitcoinconsensus_la-block.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o primitives/libcheetahcoinconsensus_la-block.lo `test -f 'primitives/block.cpp' || echo '$(srcdir)/'`primitives/block.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o primitives/libbitcoinconsensus_la-block.lo `test -f 'primitives/block.cpp' || echo '$(srcdir)/'`primitives/block.cpp
 
-primitives/libcheetahcoinconsensus_la-transaction.lo: primitives/transaction.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT primitives/libcheetahcoinconsensus_la-transaction.lo -MD -MP -MF primitives/$(DEPDIR)/libcheetahcoinconsensus_la-transaction.Tpo -c -o primitives/libcheetahcoinconsensus_la-transaction.lo `test -f 'primitives/transaction.cpp' || echo '$(srcdir)/'`primitives/transaction.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) primitives/$(DEPDIR)/libcheetahcoinconsensus_la-transaction.Tpo primitives/$(DEPDIR)/libcheetahcoinconsensus_la-transaction.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='primitives/transaction.cpp' object='primitives/libcheetahcoinconsensus_la-transaction.lo' libtool=yes @AMDEPBACKSLASH@
+primitives/libbitcoinconsensus_la-transaction.lo: primitives/transaction.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT primitives/libbitcoinconsensus_la-transaction.lo -MD -MP -MF primitives/$(DEPDIR)/libbitcoinconsensus_la-transaction.Tpo -c -o primitives/libbitcoinconsensus_la-transaction.lo `test -f 'primitives/transaction.cpp' || echo '$(srcdir)/'`primitives/transaction.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) primitives/$(DEPDIR)/libbitcoinconsensus_la-transaction.Tpo primitives/$(DEPDIR)/libbitcoinconsensus_la-transaction.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='primitives/transaction.cpp' object='primitives/libbitcoinconsensus_la-transaction.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o primitives/libcheetahcoinconsensus_la-transaction.lo `test -f 'primitives/transaction.cpp' || echo '$(srcdir)/'`primitives/transaction.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o primitives/libbitcoinconsensus_la-transaction.lo `test -f 'primitives/transaction.cpp' || echo '$(srcdir)/'`primitives/transaction.cpp
 
-libcheetahcoinconsensus_la-pubkey.lo: pubkey.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT libcheetahcoinconsensus_la-pubkey.lo -MD -MP -MF $(DEPDIR)/libcheetahcoinconsensus_la-pubkey.Tpo -c -o libcheetahcoinconsensus_la-pubkey.lo `test -f 'pubkey.cpp' || echo '$(srcdir)/'`pubkey.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libcheetahcoinconsensus_la-pubkey.Tpo $(DEPDIR)/libcheetahcoinconsensus_la-pubkey.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pubkey.cpp' object='libcheetahcoinconsensus_la-pubkey.lo' libtool=yes @AMDEPBACKSLASH@
+libbitcoinconsensus_la-pubkey.lo: pubkey.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT libbitcoinconsensus_la-pubkey.lo -MD -MP -MF $(DEPDIR)/libbitcoinconsensus_la-pubkey.Tpo -c -o libbitcoinconsensus_la-pubkey.lo `test -f 'pubkey.cpp' || echo '$(srcdir)/'`pubkey.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libbitcoinconsensus_la-pubkey.Tpo $(DEPDIR)/libbitcoinconsensus_la-pubkey.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='pubkey.cpp' object='libbitcoinconsensus_la-pubkey.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o libcheetahcoinconsensus_la-pubkey.lo `test -f 'pubkey.cpp' || echo '$(srcdir)/'`pubkey.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o libbitcoinconsensus_la-pubkey.lo `test -f 'pubkey.cpp' || echo '$(srcdir)/'`pubkey.cpp
 
-script/libcheetahcoinconsensus_la-cheetahcoinconsensus.lo: script/cheetahcoinconsensus.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT script/libcheetahcoinconsensus_la-cheetahcoinconsensus.lo -MD -MP -MF script/$(DEPDIR)/libcheetahcoinconsensus_la-cheetahcoinconsensus.Tpo -c -o script/libcheetahcoinconsensus_la-cheetahcoinconsensus.lo `test -f 'script/cheetahcoinconsensus.cpp' || echo '$(srcdir)/'`script/cheetahcoinconsensus.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) script/$(DEPDIR)/libcheetahcoinconsensus_la-cheetahcoinconsensus.Tpo script/$(DEPDIR)/libcheetahcoinconsensus_la-cheetahcoinconsensus.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='script/cheetahcoinconsensus.cpp' object='script/libcheetahcoinconsensus_la-cheetahcoinconsensus.lo' libtool=yes @AMDEPBACKSLASH@
+script/libbitcoinconsensus_la-bitcoinconsensus.lo: script/bitcoinconsensus.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT script/libbitcoinconsensus_la-bitcoinconsensus.lo -MD -MP -MF script/$(DEPDIR)/libbitcoinconsensus_la-bitcoinconsensus.Tpo -c -o script/libbitcoinconsensus_la-bitcoinconsensus.lo `test -f 'script/bitcoinconsensus.cpp' || echo '$(srcdir)/'`script/bitcoinconsensus.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) script/$(DEPDIR)/libbitcoinconsensus_la-bitcoinconsensus.Tpo script/$(DEPDIR)/libbitcoinconsensus_la-bitcoinconsensus.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='script/bitcoinconsensus.cpp' object='script/libbitcoinconsensus_la-bitcoinconsensus.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o script/libcheetahcoinconsensus_la-cheetahcoinconsensus.lo `test -f 'script/cheetahcoinconsensus.cpp' || echo '$(srcdir)/'`script/cheetahcoinconsensus.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o script/libbitcoinconsensus_la-bitcoinconsensus.lo `test -f 'script/bitcoinconsensus.cpp' || echo '$(srcdir)/'`script/bitcoinconsensus.cpp
 
-script/libcheetahcoinconsensus_la-interpreter.lo: script/interpreter.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT script/libcheetahcoinconsensus_la-interpreter.lo -MD -MP -MF script/$(DEPDIR)/libcheetahcoinconsensus_la-interpreter.Tpo -c -o script/libcheetahcoinconsensus_la-interpreter.lo `test -f 'script/interpreter.cpp' || echo '$(srcdir)/'`script/interpreter.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) script/$(DEPDIR)/libcheetahcoinconsensus_la-interpreter.Tpo script/$(DEPDIR)/libcheetahcoinconsensus_la-interpreter.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='script/interpreter.cpp' object='script/libcheetahcoinconsensus_la-interpreter.lo' libtool=yes @AMDEPBACKSLASH@
+script/libbitcoinconsensus_la-interpreter.lo: script/interpreter.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT script/libbitcoinconsensus_la-interpreter.lo -MD -MP -MF script/$(DEPDIR)/libbitcoinconsensus_la-interpreter.Tpo -c -o script/libbitcoinconsensus_la-interpreter.lo `test -f 'script/interpreter.cpp' || echo '$(srcdir)/'`script/interpreter.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) script/$(DEPDIR)/libbitcoinconsensus_la-interpreter.Tpo script/$(DEPDIR)/libbitcoinconsensus_la-interpreter.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='script/interpreter.cpp' object='script/libbitcoinconsensus_la-interpreter.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o script/libcheetahcoinconsensus_la-interpreter.lo `test -f 'script/interpreter.cpp' || echo '$(srcdir)/'`script/interpreter.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o script/libbitcoinconsensus_la-interpreter.lo `test -f 'script/interpreter.cpp' || echo '$(srcdir)/'`script/interpreter.cpp
 
-script/libcheetahcoinconsensus_la-script.lo: script/script.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT script/libcheetahcoinconsensus_la-script.lo -MD -MP -MF script/$(DEPDIR)/libcheetahcoinconsensus_la-script.Tpo -c -o script/libcheetahcoinconsensus_la-script.lo `test -f 'script/script.cpp' || echo '$(srcdir)/'`script/script.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) script/$(DEPDIR)/libcheetahcoinconsensus_la-script.Tpo script/$(DEPDIR)/libcheetahcoinconsensus_la-script.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='script/script.cpp' object='script/libcheetahcoinconsensus_la-script.lo' libtool=yes @AMDEPBACKSLASH@
+script/libbitcoinconsensus_la-script.lo: script/script.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT script/libbitcoinconsensus_la-script.lo -MD -MP -MF script/$(DEPDIR)/libbitcoinconsensus_la-script.Tpo -c -o script/libbitcoinconsensus_la-script.lo `test -f 'script/script.cpp' || echo '$(srcdir)/'`script/script.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) script/$(DEPDIR)/libbitcoinconsensus_la-script.Tpo script/$(DEPDIR)/libbitcoinconsensus_la-script.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='script/script.cpp' object='script/libbitcoinconsensus_la-script.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o script/libcheetahcoinconsensus_la-script.lo `test -f 'script/script.cpp' || echo '$(srcdir)/'`script/script.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o script/libbitcoinconsensus_la-script.lo `test -f 'script/script.cpp' || echo '$(srcdir)/'`script/script.cpp
 
-script/libcheetahcoinconsensus_la-script_error.lo: script/script_error.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT script/libcheetahcoinconsensus_la-script_error.lo -MD -MP -MF script/$(DEPDIR)/libcheetahcoinconsensus_la-script_error.Tpo -c -o script/libcheetahcoinconsensus_la-script_error.lo `test -f 'script/script_error.cpp' || echo '$(srcdir)/'`script/script_error.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) script/$(DEPDIR)/libcheetahcoinconsensus_la-script_error.Tpo script/$(DEPDIR)/libcheetahcoinconsensus_la-script_error.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='script/script_error.cpp' object='script/libcheetahcoinconsensus_la-script_error.lo' libtool=yes @AMDEPBACKSLASH@
+script/libbitcoinconsensus_la-script_error.lo: script/script_error.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT script/libbitcoinconsensus_la-script_error.lo -MD -MP -MF script/$(DEPDIR)/libbitcoinconsensus_la-script_error.Tpo -c -o script/libbitcoinconsensus_la-script_error.lo `test -f 'script/script_error.cpp' || echo '$(srcdir)/'`script/script_error.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) script/$(DEPDIR)/libbitcoinconsensus_la-script_error.Tpo script/$(DEPDIR)/libbitcoinconsensus_la-script_error.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='script/script_error.cpp' object='script/libbitcoinconsensus_la-script_error.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o script/libcheetahcoinconsensus_la-script_error.lo `test -f 'script/script_error.cpp' || echo '$(srcdir)/'`script/script_error.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o script/libbitcoinconsensus_la-script_error.lo `test -f 'script/script_error.cpp' || echo '$(srcdir)/'`script/script_error.cpp
 
-libcheetahcoinconsensus_la-uint256.lo: uint256.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT libcheetahcoinconsensus_la-uint256.lo -MD -MP -MF $(DEPDIR)/libcheetahcoinconsensus_la-uint256.Tpo -c -o libcheetahcoinconsensus_la-uint256.lo `test -f 'uint256.cpp' || echo '$(srcdir)/'`uint256.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libcheetahcoinconsensus_la-uint256.Tpo $(DEPDIR)/libcheetahcoinconsensus_la-uint256.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='uint256.cpp' object='libcheetahcoinconsensus_la-uint256.lo' libtool=yes @AMDEPBACKSLASH@
+libbitcoinconsensus_la-uint256.lo: uint256.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT libbitcoinconsensus_la-uint256.lo -MD -MP -MF $(DEPDIR)/libbitcoinconsensus_la-uint256.Tpo -c -o libbitcoinconsensus_la-uint256.lo `test -f 'uint256.cpp' || echo '$(srcdir)/'`uint256.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libbitcoinconsensus_la-uint256.Tpo $(DEPDIR)/libbitcoinconsensus_la-uint256.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='uint256.cpp' object='libbitcoinconsensus_la-uint256.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o libcheetahcoinconsensus_la-uint256.lo `test -f 'uint256.cpp' || echo '$(srcdir)/'`uint256.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o libbitcoinconsensus_la-uint256.lo `test -f 'uint256.cpp' || echo '$(srcdir)/'`uint256.cpp
 
-libcheetahcoinconsensus_la-utilstrencodings.lo: utilstrencodings.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT libcheetahcoinconsensus_la-utilstrencodings.lo -MD -MP -MF $(DEPDIR)/libcheetahcoinconsensus_la-utilstrencodings.Tpo -c -o libcheetahcoinconsensus_la-utilstrencodings.lo `test -f 'utilstrencodings.cpp' || echo '$(srcdir)/'`utilstrencodings.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libcheetahcoinconsensus_la-utilstrencodings.Tpo $(DEPDIR)/libcheetahcoinconsensus_la-utilstrencodings.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='utilstrencodings.cpp' object='libcheetahcoinconsensus_la-utilstrencodings.lo' libtool=yes @AMDEPBACKSLASH@
+libbitcoinconsensus_la-utilstrencodings.lo: utilstrencodings.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT libbitcoinconsensus_la-utilstrencodings.lo -MD -MP -MF $(DEPDIR)/libbitcoinconsensus_la-utilstrencodings.Tpo -c -o libbitcoinconsensus_la-utilstrencodings.lo `test -f 'utilstrencodings.cpp' || echo '$(srcdir)/'`utilstrencodings.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libbitcoinconsensus_la-utilstrencodings.Tpo $(DEPDIR)/libbitcoinconsensus_la-utilstrencodings.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='utilstrencodings.cpp' object='libbitcoinconsensus_la-utilstrencodings.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o libcheetahcoinconsensus_la-utilstrencodings.lo `test -f 'utilstrencodings.cpp' || echo '$(srcdir)/'`utilstrencodings.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o libbitcoinconsensus_la-utilstrencodings.lo `test -f 'utilstrencodings.cpp' || echo '$(srcdir)/'`utilstrencodings.cpp
 
-compat/libcheetahcoinconsensus_la-glibc_compat.lo: compat/glibc_compat.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT compat/libcheetahcoinconsensus_la-glibc_compat.lo -MD -MP -MF compat/$(DEPDIR)/libcheetahcoinconsensus_la-glibc_compat.Tpo -c -o compat/libcheetahcoinconsensus_la-glibc_compat.lo `test -f 'compat/glibc_compat.cpp' || echo '$(srcdir)/'`compat/glibc_compat.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) compat/$(DEPDIR)/libcheetahcoinconsensus_la-glibc_compat.Tpo compat/$(DEPDIR)/libcheetahcoinconsensus_la-glibc_compat.Plo
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='compat/glibc_compat.cpp' object='compat/libcheetahcoinconsensus_la-glibc_compat.lo' libtool=yes @AMDEPBACKSLASH@
+compat/libbitcoinconsensus_la-glibc_compat.lo: compat/glibc_compat.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -MT compat/libbitcoinconsensus_la-glibc_compat.lo -MD -MP -MF compat/$(DEPDIR)/libbitcoinconsensus_la-glibc_compat.Tpo -c -o compat/libbitcoinconsensus_la-glibc_compat.lo `test -f 'compat/glibc_compat.cpp' || echo '$(srcdir)/'`compat/glibc_compat.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) compat/$(DEPDIR)/libbitcoinconsensus_la-glibc_compat.Tpo compat/$(DEPDIR)/libbitcoinconsensus_la-glibc_compat.Plo
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='compat/glibc_compat.cpp' object='compat/libbitcoinconsensus_la-glibc_compat.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libcheetahcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libcheetahcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o compat/libcheetahcoinconsensus_la-glibc_compat.lo `test -f 'compat/glibc_compat.cpp' || echo '$(srcdir)/'`compat/glibc_compat.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CXX $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libbitcoinconsensus_la_CPPFLAGS) $(CPPFLAGS) $(libbitcoinconsensus_la_CXXFLAGS) $(CXXFLAGS) -c -o compat/libbitcoinconsensus_la-glibc_compat.lo `test -f 'compat/glibc_compat.cpp' || echo '$(srcdir)/'`compat/glibc_compat.cpp
 
 bench/bench_bench_cheetahcoin-bench_cheetahcoin.o: bench/bench_cheetahcoin.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_bench_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(bench_bench_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -MT bench/bench_bench_cheetahcoin-bench_cheetahcoin.o -MD -MP -MF bench/$(DEPDIR)/bench_bench_cheetahcoin-bench_cheetahcoin.Tpo -c -o bench/bench_bench_cheetahcoin-bench_cheetahcoin.o `test -f 'bench/bench_cheetahcoin.cpp' || echo '$(srcdir)/'`bench/bench_cheetahcoin.cpp

@@ -37,7 +37,7 @@ if ENABLE_ZMQ
 LIBCHEETAHCOIN_ZMQ=libcheetahcoin_zmq.a
 endif
 if BUILD_CHEETAHCOIN_LIBS
-LIBCHEETAHCOINCONSENSUS=libcheetahcoinconsensus.la
+LIBCHEETAHCOINCONSENSUS=libbitcoinconsensus.la
 endif
 if ENABLE_WALLET
 LIBCHEETAHCOIN_WALLET=libcheetahcoin_wallet.a
@@ -265,7 +265,7 @@ libcheetahcoin_consensus_a_SOURCES = \
   primitives/transaction.h \
   pubkey.cpp \
   pubkey.h \
-  script/cheetahcoinconsensus.cpp \
+  script/bitcoinconsensus.cpp \
   script/interpreter.cpp \
   script/interpreter.h \
   script/script.cpp \
@@ -401,19 +401,19 @@ cheetahcoin_tx_LDADD = \
 cheetahcoin_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
-# cheetahcoinconsensus library #
+# bitcoinconsensus library #
 if BUILD_CHEETAHCOIN_LIBS
-include_HEADERS = script/cheetahcoinconsensus.h
-libcheetahcoinconsensus_la_SOURCES = $(crypto_libcheetahcoin_crypto_a_SOURCES) $(libcheetahcoin_consensus_a_SOURCES)
+include_HEADERS = script/bitcoinconsensus.h
+libbitcoinconsensus_la_SOURCES = $(crypto_libcheetahcoin_crypto_a_SOURCES) $(libcheetahcoin_consensus_a_SOURCES)
 
 if GLIBC_BACK_COMPAT
-  libcheetahcoinconsensus_la_SOURCES += compat/glibc_compat.cpp
+  libbitcoinconsensus_la_SOURCES += compat/glibc_compat.cpp
 endif
 
-libcheetahcoinconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
-libcheetahcoinconsensus_la_LIBADD = $(LIBSECP256K1)
-libcheetahcoinconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_CHEETAHCOIN_INTERNAL
-libcheetahcoinconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+libbitcoinconsensus_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined $(RELDFLAGS)
+libbitcoinconsensus_la_LIBADD = $(LIBSECP256K1)
+libbitcoinconsensus_la_CPPFLAGS = $(AM_CPPFLAGS) -I$(builddir)/obj -I$(srcdir)/secp256k1/include -DBUILD_CHEETAHCOIN_INTERNAL
+libbitcoinconsensus_la_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 endif
 #

@@ -243,7 +243,7 @@ git merge commit are mentioned.
 
 ### Consensus
 - #8636 `9dfa0c8` Implement NULLDUMMY softfork (BIP147) (jl2012)
-- #8848 `7a34a46` Add NULLDUMMY verify flag in cheetahcoinconsensus.h (jl2012)
+- #8848 `7a34a46` Add NULLDUMMY verify flag in bitcoinconsensus.h (jl2012)
 - #8937 `8b66659` Define start and end time for segwit deployment (sipa)
 
 ### RPC and other APIs
@@ -280,7 +280,7 @@ git merge commit are mentioned.
 - #8949 `0dbc48a` Be more agressive in getting connections to peers with relevant services (gmaxwell)
 
 ### Build system
-- #8293 `fa5b249` Allow building libcheetahcoinconsensus without any univalue (luke-jr)
+- #8293 `fa5b249` Allow building libbitcoinconsensus without any univalue (luke-jr)
 - #8492 `8b0bdd3` Allow building bench_cheetahcoin by itself (luke-jr)
 - #8563 `147003c` Add configure check for -latomic (ajtowns)
 - #8626 `ea51b0f` Berkeley DB v6 compatibility fix (netsafe)

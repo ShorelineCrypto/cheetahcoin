@@ -124,7 +124,7 @@ git merge commit are mentioned.
 - #6384 `8e5a969` qt: Force TLS1.0+ for SSL connections
 - #6471 `92401c2` Depends: bump to qt 5.5
 - #6224 `93b606a` Be even stricter in processing unrequested blocks
-- #6571 `100ac4e` libcheetahcoinconsensus: avoid a crash in multi-threaded environments
+- #6571 `100ac4e` libbitcoinconsensus: avoid a crash in multi-threaded environments
 - #6545 `649f5d9` Do not store more than 200 timedata samples.
 - #6694 `834e299` [QT] fix thin space word wrap line break issue
 - #6703 `1cd7952` Backport bugfixes to 0.11
