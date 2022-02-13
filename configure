@@ -29226,7 +29226,7 @@ if test x$build_cheetahcoin_libs = xyes; then
 
 $as_echo "#define HAVE_CONSENSUS_LIB 1" >>confdefs.h
 
-  ac_config_files="$ac_config_files libcheetahcoinconsensus.pc:libcheetahcoinconsensus.pc.in"
+  ac_config_files="$ac_config_files libcheetahcoinconsensus.pc:libbitcoinconsensus.pc.in"
 
 fi
 { $as_echo "$as_me:${as_lineno-$LINENO}: result: $build_cheetahcoin_libs" >&5
@@ -30860,7 +30860,7 @@ do
     "src/config/cheetahcoin-config.h") CONFIG_HEADERS="$CONFIG_HEADERS src/config/cheetahcoin-config.h" ;;
     "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
     "libtool") CONFIG_COMMANDS="$CONFIG_COMMANDS libtool" ;;
-    "libcheetahcoinconsensus.pc") CONFIG_FILES="$CONFIG_FILES libcheetahcoinconsensus.pc:libcheetahcoinconsensus.pc.in" ;;
+    "libcheetahcoinconsensus.pc") CONFIG_FILES="$CONFIG_FILES libcheetahcoinconsensus.pc:libbitcoinconsensus.pc.in" ;;
     "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
     "src/Makefile") CONFIG_FILES="$CONFIG_FILES src/Makefile" ;;
     "share/setup.nsi") CONFIG_FILES="$CONFIG_FILES share/setup.nsi" ;;
