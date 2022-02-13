@@ -11,7 +11,7 @@
 #define CHEETAHCOIN_UTIL_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/cheetahcoin-config.h"
+#include "config/bitcoin-config.h"
 #endif
 
 #include "compat.h"

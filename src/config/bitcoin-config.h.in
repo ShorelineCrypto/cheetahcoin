@@ -1,4 +1,4 @@
-/* src/config/cheetahcoin-config.h.in.  Generated from configure.ac by autoheader.  */
+/* src/config/bitcoin-config.h.in.  Generated from configure.ac by autoheader.  */
 
 #ifndef CHEETAHCOIN_CONFIG_H
 

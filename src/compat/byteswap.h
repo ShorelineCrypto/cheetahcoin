@@ -6,7 +6,7 @@
 #define CHEETAHCOIN_COMPAT_BYTESWAP_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/cheetahcoin-config.h"
+#include "config/bitcoin-config.h"
 #endif
 
 #include <stdint.h>

@@ -6,7 +6,7 @@
 #define CHEETAHCOIN_CRYPTO_COMMON_H
 
 #if defined(HAVE_CONFIG_H)
-#include "cheetahcoin-config.h"
+#include "bitcoin-config.h"
 #endif
 
 #include <stdint.h>

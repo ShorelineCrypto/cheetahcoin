@@ -2926,7 +2926,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
 
 
 
-ac_config_headers="$ac_config_headers src/config/cheetahcoin-config.h"
+ac_config_headers="$ac_config_headers src/config/bitcoin-config.h"
 
 ac_aux_dir=
 for ac_dir in build-aux "$srcdir"/build-aux; do
@@ -21138,7 +21138,7 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
 
 
 
-# The following macro will add the necessary defines to cheetahcoin-config.h, but
+# The following macro will add the necessary defines to bitcoin-config.h, but
 # they also need to be passed down to any subprojects. Pull the results out of
 # the cache and add them to CPPFLAGS.
 # Check whether --enable-largefile was given.
@@ -30857,7 +30857,7 @@ cat >>$CONFIG_STATUS <<\_ACEOF || ac_write_fail=1
 for ac_config_target in $ac_config_targets
 do
   case $ac_config_target in
-    "src/config/cheetahcoin-config.h") CONFIG_HEADERS="$CONFIG_HEADERS src/config/cheetahcoin-config.h" ;;
+    "src/config/bitcoin-config.h") CONFIG_HEADERS="$CONFIG_HEADERS src/config/bitcoin-config.h" ;;
     "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
     "libtool") CONFIG_COMMANDS="$CONFIG_COMMANDS libtool" ;;
     "libbitcoinconsensus.pc") CONFIG_FILES="$CONFIG_FILES libbitcoinconsensus.pc:libbitcoinconsensus.pc.in" ;;

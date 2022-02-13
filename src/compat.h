@@ -7,7 +7,7 @@
 #define CHEETAHCOIN_COMPAT_H
 
 #if defined(HAVE_CONFIG_H)
-#include "config/cheetahcoin-config.h"
+#include "config/bitcoin-config.h"
 #endif
 
 #ifdef WIN32
