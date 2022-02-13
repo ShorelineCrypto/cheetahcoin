@@ -1,11 +1,11 @@
-// Copyright (c) 2012-2015 The Bitcoin Core developers
+// Copyright (c) 2012-2015 The Cheetahcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "random.h"
 #include "scheduler.h"
 
-#include "test/test_bitcoin.h"
+#include "test/test_cheetahcoin.h"
 
 #include <boost/bind.hpp>
 #include <boost/random/mersenne_twister.hpp>

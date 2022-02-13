@@ -1,9 +1,9 @@
-// Copyright (c) 2016 The Bitcoin Core developers
+// Copyright (c) 2016 The Cheetahcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_CONSENSUS_VERSIONBITS
-#define BITCOIN_CONSENSUS_VERSIONBITS
+#ifndef CHEETAHCOIN_CONSENSUS_VERSIONBITS
+#define CHEETAHCOIN_CONSENSUS_VERSIONBITS
 
 #include "chain.h"
 #include <map>

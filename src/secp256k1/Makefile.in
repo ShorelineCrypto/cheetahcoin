@@ -121,7 +121,7 @@ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps =  \
 	$(top_srcdir)/build-aux/m4/ax_jni_include_dir.m4 \
 	$(top_srcdir)/build-aux/m4/ax_prog_cc_for_build.m4 \
-	$(top_srcdir)/build-aux/m4/bitcoin_secp.m4 \
+	$(top_srcdir)/build-aux/m4/cheetahcoin_secp.m4 \
 	$(top_srcdir)/build-aux/m4/libtool.m4 \
 	$(top_srcdir)/build-aux/m4/ltoptions.m4 \
 	$(top_srcdir)/build-aux/m4/ltsugar.m4 \
@@ -185,8 +185,8 @@ libsecp256k1_common_la_OBJECTS = $(am_libsecp256k1_common_la_OBJECTS)
 @USE_EXTERNAL_ASM_TRUE@am_libsecp256k1_common_la_rpath =
 libsecp256k1_jni_la_LIBADD =
 am_libsecp256k1_jni_la_OBJECTS =  \
-	src/java/libsecp256k1_jni_la-org_bitcoin_NativeSecp256k1.lo \
-	src/java/libsecp256k1_jni_la-org_bitcoin_Secp256k1Context.lo
+	src/java/libsecp256k1_jni_la-org_cheetahcoin_NativeSecp256k1.lo \
+	src/java/libsecp256k1_jni_la-org_cheetahcoin_Secp256k1Context.lo
 libsecp256k1_jni_la_OBJECTS = $(am_libsecp256k1_jni_la_OBJECTS)
 @USE_JNI_TRUE@am_libsecp256k1_jni_la_rpath =
 @USE_BENCHMARK_TRUE@am__EXEEXT_1 = bench_verify$(EXEEXT) \
@@ -322,8 +322,8 @@ am__noinst_HEADERS_DIST = src/scalar.h src/scalar_4x64.h \
 	src/field_10x26.h src/field_10x26_impl.h src/field_5x52.h \
 	src/field_5x52_impl.h src/field_5x52_int128_impl.h \
 	src/field_5x52_asm_impl.h \
-	src/java/org_bitcoin_NativeSecp256k1.h \
-	src/java/org_bitcoin_Secp256k1Context.h src/util.h \
+	src/java/org_cheetahcoin_NativeSecp256k1.h \
+	src/java/org_cheetahcoin_Secp256k1Context.h src/util.h \
 	src/testrand.h src/testrand_impl.h src/hash.h src/hash_impl.h \
 	src/field.h src/field_impl.h src/bench.h \
 	contrib/lax_der_parsing.h contrib/lax_der_parsing.c \
@@ -702,8 +702,8 @@ noinst_HEADERS = src/scalar.h src/scalar_4x64.h src/scalar_8x32.h \
 	src/num_impl.h src/field_10x26.h src/field_10x26_impl.h \
 	src/field_5x52.h src/field_5x52_impl.h \
 	src/field_5x52_int128_impl.h src/field_5x52_asm_impl.h \
-	src/java/org_bitcoin_NativeSecp256k1.h \
-	src/java/org_bitcoin_Secp256k1Context.h src/util.h \
+	src/java/org_cheetahcoin_NativeSecp256k1.h \
+	src/java/org_cheetahcoin_Secp256k1Context.h src/util.h \
 	src/testrand.h src/testrand_impl.h src/hash.h src/hash_impl.h \
 	src/field.h src/field_impl.h src/bench.h \
 	contrib/lax_der_parsing.h contrib/lax_der_parsing.c \
@@ -718,7 +718,7 @@ pkgconfig_DATA = libsecp256k1.pc
 libsecp256k1_la_SOURCES = src/secp256k1.c
 libsecp256k1_la_CPPFLAGS = -DSECP256K1_BUILD -I$(top_srcdir)/include -I$(top_srcdir)/src $(SECP_INCLUDES)
 libsecp256k1_la_LIBADD = $(JNI_LIB) $(SECP_LIBS) $(COMMON_LIB)
-libsecp256k1_jni_la_SOURCES = src/java/org_bitcoin_NativeSecp256k1.c src/java/org_bitcoin_Secp256k1Context.c
+libsecp256k1_jni_la_SOURCES = src/java/org_cheetahcoin_NativeSecp256k1.c src/java/org_cheetahcoin_Secp256k1Context.c
 libsecp256k1_jni_la_CPPFLAGS = -DSECP256K1_BUILD $(JNI_INCLUDES)
 @USE_BENCHMARK_TRUE@bench_verify_SOURCES = src/bench_verify.c
 @USE_BENCHMARK_TRUE@bench_verify_LDADD = libsecp256k1.la $(SECP_LIBS) $(SECP_TEST_LIBS) $(COMMON_LIB)
@@ -736,7 +736,7 @@ libsecp256k1_jni_la_CPPFLAGS = -DSECP256K1_BUILD $(JNI_INCLUDES)
 @USE_EXHAUSTIVE_TESTS_TRUE@exhaustive_tests_LDADD = $(SECP_LIBS)
 @USE_EXHAUSTIVE_TESTS_TRUE@exhaustive_tests_LDFLAGS = -static
 JAVAROOT = src/java
-JAVAORG = org/bitcoin
+JAVAORG = org/cheetahcoin
 JAVA_GUAVA = $(srcdir)/$(JAVAROOT)/guava/guava-18.0.jar
 CLASSPATH_ENV = CLASSPATH=$(JAVA_GUAVA)
 JAVA_FILES = \
@@ -883,9 +883,9 @@ src/java/$(am__dirstamp):
 src/java/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) src/java/$(DEPDIR)
 	@: > src/java/$(DEPDIR)/$(am__dirstamp)
-src/java/libsecp256k1_jni_la-org_bitcoin_NativeSecp256k1.lo:  \
+src/java/libsecp256k1_jni_la-org_cheetahcoin_NativeSecp256k1.lo:  \
 	src/java/$(am__dirstamp) src/java/$(DEPDIR)/$(am__dirstamp)
-src/java/libsecp256k1_jni_la-org_bitcoin_Secp256k1Context.lo:  \
+src/java/libsecp256k1_jni_la-org_cheetahcoin_Secp256k1Context.lo:  \
 	src/java/$(am__dirstamp) src/java/$(DEPDIR)/$(am__dirstamp)
 
 libsecp256k1_jni.la: $(libsecp256k1_jni_la_OBJECTS) $(libsecp256k1_jni_la_DEPENDENCIES) $(EXTRA_libsecp256k1_jni_la_DEPENDENCIES) 
@@ -962,8 +962,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/exhaustive_tests-tests_exhaustive.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/libsecp256k1_la-secp256k1.Plo@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/tests-tests.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/java/$(DEPDIR)/libsecp256k1_jni_la-org_bitcoin_NativeSecp256k1.Plo@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/java/$(DEPDIR)/libsecp256k1_jni_la-org_bitcoin_Secp256k1Context.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/java/$(DEPDIR)/libsecp256k1_jni_la-org_cheetahcoin_NativeSecp256k1.Plo@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@src/java/$(DEPDIR)/libsecp256k1_jni_la-org_cheetahcoin_Secp256k1Context.Plo@am__quote@
 
 .c.o:
 @am__fastdepCC_TRUE@	$(AM_V_CC)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
@@ -996,19 +996,19 @@ src/libsecp256k1_la-secp256k1.lo: src/secp256k1.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsecp256k1_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/libsecp256k1_la-secp256k1.lo `test -f 'src/secp256k1.c' || echo '$(srcdir)/'`src/secp256k1.c
 
-src/java/libsecp256k1_jni_la-org_bitcoin_NativeSecp256k1.lo: src/java/org_bitcoin_NativeSecp256k1.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsecp256k1_jni_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/java/libsecp256k1_jni_la-org_bitcoin_NativeSecp256k1.lo -MD -MP -MF src/java/$(DEPDIR)/libsecp256k1_jni_la-org_bitcoin_NativeSecp256k1.Tpo -c -o src/java/libsecp256k1_jni_la-org_bitcoin_NativeSecp256k1.lo `test -f 'src/java/org_bitcoin_NativeSecp256k1.c' || echo '$(srcdir)/'`src/java/org_bitcoin_NativeSecp256k1.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/java/$(DEPDIR)/libsecp256k1_jni_la-org_bitcoin_NativeSecp256k1.Tpo src/java/$(DEPDIR)/libsecp256k1_jni_la-org_bitcoin_NativeSecp256k1.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/java/org_bitcoin_NativeSecp256k1.c' object='src/java/libsecp256k1_jni_la-org_bitcoin_NativeSecp256k1.lo' libtool=yes @AMDEPBACKSLASH@
+src/java/libsecp256k1_jni_la-org_cheetahcoin_NativeSecp256k1.lo: src/java/org_cheetahcoin_NativeSecp256k1.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsecp256k1_jni_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/java/libsecp256k1_jni_la-org_cheetahcoin_NativeSecp256k1.lo -MD -MP -MF src/java/$(DEPDIR)/libsecp256k1_jni_la-org_cheetahcoin_NativeSecp256k1.Tpo -c -o src/java/libsecp256k1_jni_la-org_cheetahcoin_NativeSecp256k1.lo `test -f 'src/java/org_cheetahcoin_NativeSecp256k1.c' || echo '$(srcdir)/'`src/java/org_cheetahcoin_NativeSecp256k1.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/java/$(DEPDIR)/libsecp256k1_jni_la-org_cheetahcoin_NativeSecp256k1.Tpo src/java/$(DEPDIR)/libsecp256k1_jni_la-org_cheetahcoin_NativeSecp256k1.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/java/org_cheetahcoin_NativeSecp256k1.c' object='src/java/libsecp256k1_jni_la-org_cheetahcoin_NativeSecp256k1.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsecp256k1_jni_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/java/libsecp256k1_jni_la-org_bitcoin_NativeSecp256k1.lo `test -f 'src/java/org_bitcoin_NativeSecp256k1.c' || echo '$(srcdir)/'`src/java/org_bitcoin_NativeSecp256k1.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsecp256k1_jni_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/java/libsecp256k1_jni_la-org_cheetahcoin_NativeSecp256k1.lo `test -f 'src/java/org_cheetahcoin_NativeSecp256k1.c' || echo '$(srcdir)/'`src/java/org_cheetahcoin_NativeSecp256k1.c
 
-src/java/libsecp256k1_jni_la-org_bitcoin_Secp256k1Context.lo: src/java/org_bitcoin_Secp256k1Context.c
-@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsecp256k1_jni_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/java/libsecp256k1_jni_la-org_bitcoin_Secp256k1Context.lo -MD -MP -MF src/java/$(DEPDIR)/libsecp256k1_jni_la-org_bitcoin_Secp256k1Context.Tpo -c -o src/java/libsecp256k1_jni_la-org_bitcoin_Secp256k1Context.lo `test -f 'src/java/org_bitcoin_Secp256k1Context.c' || echo '$(srcdir)/'`src/java/org_bitcoin_Secp256k1Context.c
-@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/java/$(DEPDIR)/libsecp256k1_jni_la-org_bitcoin_Secp256k1Context.Tpo src/java/$(DEPDIR)/libsecp256k1_jni_la-org_bitcoin_Secp256k1Context.Plo
-@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/java/org_bitcoin_Secp256k1Context.c' object='src/java/libsecp256k1_jni_la-org_bitcoin_Secp256k1Context.lo' libtool=yes @AMDEPBACKSLASH@
+src/java/libsecp256k1_jni_la-org_cheetahcoin_Secp256k1Context.lo: src/java/org_cheetahcoin_Secp256k1Context.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsecp256k1_jni_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/java/libsecp256k1_jni_la-org_cheetahcoin_Secp256k1Context.lo -MD -MP -MF src/java/$(DEPDIR)/libsecp256k1_jni_la-org_cheetahcoin_Secp256k1Context.Tpo -c -o src/java/libsecp256k1_jni_la-org_cheetahcoin_Secp256k1Context.lo `test -f 'src/java/org_cheetahcoin_Secp256k1Context.c' || echo '$(srcdir)/'`src/java/org_cheetahcoin_Secp256k1Context.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) src/java/$(DEPDIR)/libsecp256k1_jni_la-org_cheetahcoin_Secp256k1Context.Tpo src/java/$(DEPDIR)/libsecp256k1_jni_la-org_cheetahcoin_Secp256k1Context.Plo
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='src/java/org_cheetahcoin_Secp256k1Context.c' object='src/java/libsecp256k1_jni_la-org_cheetahcoin_Secp256k1Context.lo' libtool=yes @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsecp256k1_jni_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/java/libsecp256k1_jni_la-org_bitcoin_Secp256k1Context.lo `test -f 'src/java/org_bitcoin_Secp256k1Context.c' || echo '$(srcdir)/'`src/java/org_bitcoin_Secp256k1Context.c
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(libsecp256k1_jni_la_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -c -o src/java/libsecp256k1_jni_la-org_cheetahcoin_Secp256k1Context.lo `test -f 'src/java/org_cheetahcoin_Secp256k1Context.c' || echo '$(srcdir)/'`src/java/org_cheetahcoin_Secp256k1Context.c
 
 src/bench_internal-bench_internal.o: src/bench_internal.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(bench_internal_CPPFLAGS) $(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS) -MT src/bench_internal-bench_internal.o -MD -MP -MF src/$(DEPDIR)/bench_internal-bench_internal.Tpo -c -o src/bench_internal-bench_internal.o `test -f 'src/bench_internal.c' || echo '$(srcdir)/'`src/bench_internal.c

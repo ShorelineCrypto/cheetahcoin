@@ -56,10 +56,10 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>CheetahcoinGUI</name>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin Core</translation>
+        <source>Cheetahcoin</source>
+        <translation>Cheetahcoin Core</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -216,14 +216,14 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>cheetahcoin-core</name>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>Cheetahcoin Core</source>
+        <translation>Cheetahcoin Core</translation>
     </message>
     <message>
         <source>Whitelisted peers cannot be DoS banned and their transactions are always relayed, even if they are already in the mempool, useful e.g. for a gateway</source>
-        <translation>bitcoin-core</translation>
+        <translation>cheetahcoin-core</translation>
     </message>
     <message>
         <source>Information</source>

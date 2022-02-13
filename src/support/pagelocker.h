@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2015 The Bitcoin Core developers
+// Copyright (c) 2009-2015 The Cheetahcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_SUPPORT_PAGELOCKER_H
-#define BITCOIN_SUPPORT_PAGELOCKER_H
+#ifndef CHEETAHCOIN_SUPPORT_PAGELOCKER_H
+#define CHEETAHCOIN_SUPPORT_PAGELOCKER_H
 
 #include "support/cleanse.h"
 
@@ -174,4 +174,4 @@ void UnlockObject(const T& t)
     LockedPageManager::Instance().UnlockRange((void*)(&t), sizeof(T));
 }
 
-#endif // BITCOIN_SUPPORT_PAGELOCKER_H
+#endif // CHEETAHCOIN_SUPPORT_PAGELOCKER_H

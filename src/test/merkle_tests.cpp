@@ -1,9 +1,9 @@
-// Copyright (c) 2015 The Bitcoin Core developers
+// Copyright (c) 2015 The Cheetahcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
 #include "consensus/merkle.h"
-#include "test/test_bitcoin.h"
+#include "test/test_cheetahcoin.h"
 #include "random.h"
 
 #include <boost/test/unit_test.hpp>

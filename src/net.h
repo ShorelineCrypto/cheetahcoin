@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2015 The Bitcoin Core developers
+// Copyright (c) 2009-2015 The Cheetahcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_NET_H
-#define BITCOIN_NET_H
+#ifndef CHEETAHCOIN_NET_H
+#define CHEETAHCOIN_NET_H
 
 #include "amount.h"
 #include "bloom.h"
@@ -855,4 +855,4 @@ struct AddedNodeInfo
 
 std::vector<AddedNodeInfo> GetAddedNodeInfo();
 
-#endif // BITCOIN_NET_H
+#endif // CHEETAHCOIN_NET_H

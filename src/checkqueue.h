@@ -1,9 +1,9 @@
-// Copyright (c) 2012-2015 The Bitcoin Core developers
+// Copyright (c) 2012-2015 The Cheetahcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_CHECKQUEUE_H
-#define BITCOIN_CHECKQUEUE_H
+#ifndef CHEETAHCOIN_CHECKQUEUE_H
+#define CHEETAHCOIN_CHECKQUEUE_H
 
 #include <algorithm>
 #include <vector>
@@ -212,4 +212,4 @@ public:
     }
 };
 
-#endif // BITCOIN_CHECKQUEUE_H
+#endif // CHEETAHCOIN_CHECKQUEUE_H

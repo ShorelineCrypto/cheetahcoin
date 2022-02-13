@@ -1329,7 +1329,7 @@ AC_SUBST([am__untar])
 
 m4_include([build-aux/m4/ax_jni_include_dir.m4])
 m4_include([build-aux/m4/ax_prog_cc_for_build.m4])
-m4_include([build-aux/m4/bitcoin_secp.m4])
+m4_include([build-aux/m4/cheetahcoin_secp.m4])
 m4_include([build-aux/m4/libtool.m4])
 m4_include([build-aux/m4/ltoptions.m4])
 m4_include([build-aux/m4/ltsugar.m4])

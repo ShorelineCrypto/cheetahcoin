@@ -1,9 +1,9 @@
-// Copyright (c) 2015 The Bitcoin Core developers
+// Copyright (c) 2015 The Cheetahcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_MERKLE
-#define BITCOIN_MERKLE
+#ifndef CHEETAHCOIN_MERKLE
+#define CHEETAHCOIN_MERKLE
 
 #include <stdint.h>
 #include <vector>

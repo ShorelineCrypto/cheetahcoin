@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2015 The Bitcoin Core developers
+// Copyright (c) 2009-2015 The Cheetahcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_WALLET_WALLET_H
-#define BITCOIN_WALLET_WALLET_H
+#ifndef CHEETAHCOIN_WALLET_WALLET_H
+#define CHEETAHCOIN_WALLET_WALLET_H
 
 #include "amount.h"
 #include "streams.h"
@@ -965,4 +965,4 @@ public:
     }
 };
 
-#endif // BITCOIN_WALLET_WALLET_H
+#endif // CHEETAHCOIN_WALLET_WALLET_H

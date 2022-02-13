@@ -1,9 +1,9 @@
-// Copyright (c) 2011-2015 The Bitcoin Core developers
+// Copyright (c) 2011-2015 The Cheetahcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_QT_SENDCOINSDIALOG_H
-#define BITCOIN_QT_SENDCOINSDIALOG_H
+#ifndef CHEETAHCOIN_QT_SENDCOINSDIALOG_H
+#define CHEETAHCOIN_QT_SENDCOINSDIALOG_H
 
 #include "walletmodel.h"
 
@@ -28,7 +28,7 @@ QT_END_NAMESPACE
 
 const int defaultConfirmTarget = 25;
 
-/** Dialog for sending bitcoins */
+/** Dialog for sending cheetahcoins */
 class SendCoinsDialog : public QDialog
 {
     Q_OBJECT
@@ -122,4 +122,4 @@ private:
     int secDelay;
 };
 
-#endif // BITCOIN_QT_SENDCOINSDIALOG_H
+#endif // CHEETAHCOIN_QT_SENDCOINSDIALOG_H

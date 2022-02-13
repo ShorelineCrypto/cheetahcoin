@@ -1,10 +1,10 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2015 The Bitcoin Core developers
+// Copyright (c) 2009-2015 The Cheetahcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef BITCOIN_WALLET_WALLETDB_H
-#define BITCOIN_WALLET_WALLETDB_H
+#ifndef CHEETAHCOIN_WALLET_WALLETDB_H
+#define CHEETAHCOIN_WALLET_WALLETDB_H
 
 #include "amount.h"
 #include "primitives/transaction.h"
@@ -187,4 +187,4 @@ private:
 
 void ThreadFlushWalletDB(const std::string& strFile);
 
-#endif // BITCOIN_WALLET_WALLETDB_H
+#endif // CHEETAHCOIN_WALLET_WALLETDB_H

@@ -68,7 +68,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>BitcoinGUI</name>
+    <name>CheetahcoinGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Firmar &amp;mensaje...</translation>
@@ -114,8 +114,8 @@
         <translation>Reindexando bloques en el disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Bitcoin address</source>
-        <translation>Enviar monedas a una dirección Bitcoin</translation>
+        <source>Send coins to a Cheetahcoin address</source>
+        <translation>Enviar monedas a una dirección Cheetahcoin</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -130,8 +130,8 @@
         <translation>Abre la consola de depuración y diágnostico</translation>
     </message>
     <message>
-        <source>Bitcoin</source>
-        <translation>Bitcoin</translation>
+        <source>Cheetahcoin</source>
+        <translation>Cheetahcoin</translation>
     </message>
     <message>
         <source>Wallet</source>
@@ -158,12 +158,12 @@
         <translation>Encriptar las llaves privadas que pertenecen a tu billetera</translation>
     </message>
     <message>
-        <source>Sign messages with your Bitcoin addresses to prove you own them</source>
-        <translation>Firma mensajes con tus direcciones Bitcoin para probar que eres dueño de ellas</translation>
+        <source>Sign messages with your Cheetahcoin addresses to prove you own them</source>
+        <translation>Firma mensajes con tus direcciones Cheetahcoin para probar que eres dueño de ellas</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Bitcoin addresses</source>
-        <translation>Verificar mensajes para asegurar que estaban firmados con direcciones Bitcoin especificas</translation>
+        <source>Verify messages to ensure they were signed with specified Cheetahcoin addresses</source>
+        <translation>Verificar mensajes para asegurar que estaban firmados con direcciones Cheetahcoin especificas</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -588,7 +588,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>cheetahcoin-core</name>
     <message>
         <source>Options:</source>
         <translation>Opciones:</translation>
@@ -614,8 +614,8 @@
         <translation>Correr en segundo plano como daemon y aceptar comandos</translation>
     </message>
     <message>
-        <source>Bitcoin Core</source>
-        <translation>Bitcoin Core</translation>
+        <source>Cheetahcoin Core</source>
+        <translation>Cheetahcoin Core</translation>
     </message>
     <message>
         <source>Bind to given address and always listen on it. Use [host]:port notation for IPv6</source>
