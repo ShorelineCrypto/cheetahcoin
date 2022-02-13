@@ -208,7 +208,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>cheetahcoin-core</name>
+    <name>bitcoin-core</name>
     <message>
         <source>Insufficient funds</source>
         <translation>ناکافی فنڈز</translation>

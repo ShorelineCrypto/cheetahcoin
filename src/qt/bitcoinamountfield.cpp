@@ -2,9 +2,9 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#include "cheetahcoinamountfield.h"
+#include "bitcoinamountfield.h"
 
-#include "cheetahcoinunits.h"
+#include "bitcoinunits.h"
 #include "guiconstants.h"
 #include "qvaluecombobox.h"
 
@@ -188,7 +188,7 @@ Q_SIGNALS:
     void valueChanged();
 };
 
-#include "cheetahcoinamountfield.moc"
+#include "bitcoinamountfield.moc"
 
 CheetahcoinAmountField::CheetahcoinAmountField(QWidget *parent) :
     QWidget(parent),

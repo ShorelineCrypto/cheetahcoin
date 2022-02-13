@@ -115,7 +115,7 @@
     </message>
     <message>
         <source>Send coins to a Cheetahcoin address</source>
-        <translation>Пошаљите новац на cheetahcoin адресу</translation>
+        <translation>Пошаљите новац на bitcoin адресу</translation>
     </message>
     <message>
         <source>Change the passphrase used for wallet encryption</source>
@@ -392,7 +392,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>cheetahcoin-core</name>
+    <name>bitcoin-core</name>
     <message>
         <source>Options:</source>
         <translation>Opcije</translation>

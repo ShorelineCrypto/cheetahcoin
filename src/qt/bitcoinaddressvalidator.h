@@ -20,7 +20,7 @@ public:
     State validate(QString &input, int &pos) const;
 };
 
-/** Cheetahcoin address widget validator, checks for a valid cheetahcoin address.
+/** Cheetahcoin address widget validator, checks for a valid bitcoin address.
  */
 class CheetahcoinAddressCheckValidator : public QValidator
 {

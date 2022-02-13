@@ -214,12 +214,12 @@
         <translation>&amp;Ajutor</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and cheetahcoin: URIs)</source>
-        <translation>Cerere plată (generează coduri QR și cheetahcoin: URIs)</translation>
+        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
+        <translation>Cerere plată (generează coduri QR și bitcoin: URIs)</translation>
     </message>
     <message>
-        <source>Open a cheetahcoin: URI or payment request</source>
-        <translation>Deschide un cheetahcoin: URI sau cerere de plată</translation>
+        <source>Open a bitcoin: URI or payment request</source>
+        <translation>Deschide un bitcoin: URI sau cerere de plată</translation>
     </message>
     <message>
         <source>%1 and %2</source>
@@ -744,7 +744,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>cheetahcoin-core</name>
+    <name>bitcoin-core</name>
     <message>
         <source>Cheetahcoin Core</source>
         <translation>Cheetahcoin Core</translation>

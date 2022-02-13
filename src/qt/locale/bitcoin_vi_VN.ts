@@ -238,7 +238,7 @@
         <translation>Thanh công cụ (toolbar)</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and cheetahcoin: URIs)</source>
+        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
         <translation>Yêu cầu thanh toán(tạo mã QR và địa chỉ Cheetahcoin: URLs)</translation>
     </message>
     <message>
@@ -250,8 +250,8 @@
         <translation>Hiện thỉ danh sách các địa chỉ và nhãn đã dùng để nhận.</translation>
     </message>
     <message>
-        <source>Open a cheetahcoin: URI or payment request</source>
-        <translation>Mở cheetahcoin:URL hoặc yêu cầu thanh toán</translation>
+        <source>Open a bitcoin: URI or payment request</source>
+        <translation>Mở bitcoin:URL hoặc yêu cầu thanh toán</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1002,7 +1002,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>cheetahcoin-core</name>
+    <name>bitcoin-core</name>
     <message>
         <source>Options:</source>
         <translation>Lựa chọn:</translation>

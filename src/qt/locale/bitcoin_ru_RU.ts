@@ -216,14 +216,14 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>cheetahcoin-core</name>
+    <name>bitcoin-core</name>
     <message>
         <source>Cheetahcoin Core</source>
         <translation>Cheetahcoin Core</translation>
     </message>
     <message>
         <source>Whitelisted peers cannot be DoS banned and their transactions are always relayed, even if they are already in the mempool, useful e.g. for a gateway</source>
-        <translation>cheetahcoin-core</translation>
+        <translation>bitcoin-core</translation>
     </message>
     <message>
         <source>Information</source>

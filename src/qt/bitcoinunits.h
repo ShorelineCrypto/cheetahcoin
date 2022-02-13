@@ -52,7 +52,7 @@ public:
     explicit CheetahcoinUnits(QObject *parent);
 
     /** Cheetahcoin units.
-      @note Source: https://en.cheetahcoin.it/wiki/Units . Please add only sensible ones
+      @note Source: https://en.bitcoin.it/wiki/Units . Please add only sensible ones
      */
     enum Unit
     {

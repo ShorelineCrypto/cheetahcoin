@@ -5,7 +5,7 @@
 #ifndef CHEETAHCOIN_QT_TRANSACTIONTABLEMODEL_H
 #define CHEETAHCOIN_QT_TRANSACTIONTABLEMODEL_H
 
-#include "cheetahcoinunits.h"
+#include "bitcoinunits.h"
 
 #include <QAbstractTableModel>
 #include <QStringList>

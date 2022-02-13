@@ -37,9 +37,9 @@ SendCoinsEntry::SendCoinsEntry(const PlatformStyle *platformStyle, QWidget *pare
     ui->addAsLabel->setPlaceholderText(tr("Enter a label for this address to add it to your address book"));
 #endif
 
-    // normal cheetahcoin address field
+    // normal bitcoin address field
     GUIUtil::setupAddressWidget(ui->payTo, this);
-    // just a label for displaying cheetahcoin address(es)
+    // just a label for displaying bitcoin address(es)
     ui->payTo_is->setFont(GUIUtil::fixedPitchFont());
 
     // Connect signals

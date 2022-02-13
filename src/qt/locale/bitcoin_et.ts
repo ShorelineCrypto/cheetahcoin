@@ -362,12 +362,12 @@
         <translation>Vahelehe tööriistariba</translation>
     </message>
     <message>
-        <source>Request payments (generates QR codes and cheetahcoin: URIs)</source>
-        <translation>Loo maksepäring (genereerib QR koodid ja cheetahcoini: URId)</translation>
+        <source>Request payments (generates QR codes and bitcoin: URIs)</source>
+        <translation>Loo maksepäring (genereerib QR koodid ja bitcoini: URId)</translation>
     </message>
     <message>
-        <source>Open a cheetahcoin: URI or payment request</source>
-        <translation>Ava cheetahcoini: URI või maksepäring</translation>
+        <source>Open a bitcoin: URI or payment request</source>
+        <translation>Ava bitcoini: URI või maksepäring</translation>
     </message>
     <message>
         <source>&amp;Command-line options</source>
@@ -1770,7 +1770,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>cheetahcoin-core</name>
+    <name>bitcoin-core</name>
     <message>
         <source>Options:</source>
         <translation>Valikud:</translation>
