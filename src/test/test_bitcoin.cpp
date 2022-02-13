@@ -4,7 +4,7 @@
 
 #define BOOST_TEST_MODULE Cheetahcoin Test Suite
 
-#include "test_cheetahcoin.h"
+#include "test_bitcoin.h"
 
 #include "chainparams.h"
 #include "consensus/consensus.h"

@@ -984,8 +984,8 @@ am__test_test_cheetahcoin_SOURCES_DIST = test/arith_uint256_tests.cpp \
 	test/script_tests.cpp test/scriptnum_tests.cpp \
 	test/serialize_tests.cpp test/sighash_tests.cpp \
 	test/sigopcount_tests.cpp test/skiplist_tests.cpp \
-	test/streams_tests.cpp test/test_cheetahcoin.cpp \
-	test/test_cheetahcoin.h test/testutil.cpp test/testutil.h \
+	test/streams_tests.cpp test/test_bitcoin.cpp \
+	test/test_bitcoin.h test/testutil.cpp test/testutil.h \
 	test/timedata_tests.cpp test/transaction_tests.cpp \
 	test/txvalidationcache_tests.cpp test/versionbits_tests.cpp \
 	test/uint256_tests.cpp test/univalue_tests.cpp \
@@ -1017,7 +1017,7 @@ am__test_test_cheetahcoin_SOURCES_DIST = test/arith_uint256_tests.cpp \
 @ENABLE_TESTS_TRUE@	test/test_test_cheetahcoin-crypto_tests.$(OBJEXT) \
 @ENABLE_TESTS_TRUE@	test/test_test_cheetahcoin-DoS_tests.$(OBJEXT) \
 @ENABLE_TESTS_TRUE@	test/test_test_cheetahcoin-getarg_tests.$(OBJEXT) \
-@ENABLE_TESTS_TRUE@	test/test_test_cheetahcoin-hash_tests.$(OBJEXT) \
+@ENABLE_TESTS_TRUE@	test/test_test_bitcoin.hash_tests.$(OBJEXT) \
 @ENABLE_TESTS_TRUE@	test/test_test_cheetahcoin-key_tests.$(OBJEXT) \
 @ENABLE_TESTS_TRUE@	test/test_test_cheetahcoin-limitedmap_tests.$(OBJEXT) \
 @ENABLE_TESTS_TRUE@	test/test_test_cheetahcoin-dbwrapper_tests.$(OBJEXT) \
@@ -2152,7 +2152,7 @@ EXTRA_DIST = $(CTAES_DIST) $(am__append_18)
 @ENABLE_TESTS_TRUE@	test/sigopcount_tests.cpp \
 @ENABLE_TESTS_TRUE@	test/skiplist_tests.cpp \
 @ENABLE_TESTS_TRUE@	test/streams_tests.cpp \
-@ENABLE_TESTS_TRUE@	test/test_cheetahcoin.cpp test/test_cheetahcoin.h \
+@ENABLE_TESTS_TRUE@	test/test_bitcoin.cpp test/test_bitcoin.h \
 @ENABLE_TESTS_TRUE@	test/testutil.cpp test/testutil.h \
 @ENABLE_TESTS_TRUE@	test/timedata_tests.cpp \
 @ENABLE_TESTS_TRUE@	test/transaction_tests.cpp \
@@ -3430,7 +3430,7 @@ test/test_test_cheetahcoin-DoS_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
 test/test_test_cheetahcoin-getarg_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
-test/test_test_cheetahcoin-hash_tests.$(OBJEXT): test/$(am__dirstamp) \
+test/test_test_bitcoin.hash_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
 test/test_test_cheetahcoin-key_tests.$(OBJEXT): test/$(am__dirstamp) \
 	test/$(DEPDIR)/$(am__dirstamp)
@@ -3833,7 +3833,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_cheetahcoin-crypto_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_cheetahcoin-dbwrapper_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_cheetahcoin-getarg_tests.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_cheetahcoin-hash_tests.Po@am__quote@
+@AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_bitcoin.hash_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_cheetahcoin-key_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_cheetahcoin-limitedmap_tests.Po@am__quote@
 @AMDEP_TRUE@@am__include@ @am__quote@test/$(DEPDIR)/test_test_cheetahcoin-main_tests.Po@am__quote@
@@ -7673,19 +7673,19 @@ test/test_test_cheetahcoin-getarg_tests.obj: test/getarg_tests.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_cheetahcoin-getarg_tests.obj `if test -f 'test/getarg_tests.cpp'; then $(CYGPATH_W) 'test/getarg_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/getarg_tests.cpp'; fi`
 
-test/test_test_cheetahcoin-hash_tests.o: test/hash_tests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_cheetahcoin-hash_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_cheetahcoin-hash_tests.Tpo -c -o test/test_test_cheetahcoin-hash_tests.o `test -f 'test/hash_tests.cpp' || echo '$(srcdir)/'`test/hash_tests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_cheetahcoin-hash_tests.Tpo test/$(DEPDIR)/test_test_cheetahcoin-hash_tests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/hash_tests.cpp' object='test/test_test_cheetahcoin-hash_tests.o' libtool=no @AMDEPBACKSLASH@
+test/test_test_bitcoin.hash_tests.o: test/hash_tests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_bitcoin.hash_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_bitcoin.hash_tests.Tpo -c -o test/test_test_bitcoin.hash_tests.o `test -f 'test/hash_tests.cpp' || echo '$(srcdir)/'`test/hash_tests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_bitcoin.hash_tests.Tpo test/$(DEPDIR)/test_test_bitcoin.hash_tests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/hash_tests.cpp' object='test/test_test_bitcoin.hash_tests.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_cheetahcoin-hash_tests.o `test -f 'test/hash_tests.cpp' || echo '$(srcdir)/'`test/hash_tests.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_bitcoin.hash_tests.o `test -f 'test/hash_tests.cpp' || echo '$(srcdir)/'`test/hash_tests.cpp
 
-test/test_test_cheetahcoin-hash_tests.obj: test/hash_tests.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_cheetahcoin-hash_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_cheetahcoin-hash_tests.Tpo -c -o test/test_test_cheetahcoin-hash_tests.obj `if test -f 'test/hash_tests.cpp'; then $(CYGPATH_W) 'test/hash_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/hash_tests.cpp'; fi`
-@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_cheetahcoin-hash_tests.Tpo test/$(DEPDIR)/test_test_cheetahcoin-hash_tests.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/hash_tests.cpp' object='test/test_test_cheetahcoin-hash_tests.obj' libtool=no @AMDEPBACKSLASH@
+test/test_test_bitcoin.hash_tests.obj: test/hash_tests.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_bitcoin.hash_tests.obj -MD -MP -MF test/$(DEPDIR)/test_test_bitcoin.hash_tests.Tpo -c -o test/test_test_bitcoin.hash_tests.obj `if test -f 'test/hash_tests.cpp'; then $(CYGPATH_W) 'test/hash_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/hash_tests.cpp'; fi`
+@am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_bitcoin.hash_tests.Tpo test/$(DEPDIR)/test_test_bitcoin.hash_tests.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/hash_tests.cpp' object='test/test_test_bitcoin.hash_tests.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_cheetahcoin-hash_tests.obj `if test -f 'test/hash_tests.cpp'; then $(CYGPATH_W) 'test/hash_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/hash_tests.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_bitcoin.hash_tests.obj `if test -f 'test/hash_tests.cpp'; then $(CYGPATH_W) 'test/hash_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/hash_tests.cpp'; fi`
 
 test/test_test_cheetahcoin-key_tests.o: test/key_tests.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_cheetahcoin-key_tests.o -MD -MP -MF test/$(DEPDIR)/test_test_cheetahcoin-key_tests.Tpo -c -o test/test_test_cheetahcoin-key_tests.o `test -f 'test/key_tests.cpp' || echo '$(srcdir)/'`test/key_tests.cpp
@@ -8051,19 +8051,19 @@ test/test_test_cheetahcoin-streams_tests.obj: test/streams_tests.cpp
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_cheetahcoin-streams_tests.obj `if test -f 'test/streams_tests.cpp'; then $(CYGPATH_W) 'test/streams_tests.cpp'; else $(CYGPATH_W) '$(srcdir)/test/streams_tests.cpp'; fi`
 
-test/test_test_cheetahcoin-test_cheetahcoin.o: test/test_cheetahcoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_cheetahcoin-test_cheetahcoin.o -MD -MP -MF test/$(DEPDIR)/test_test_cheetahcoin-test_cheetahcoin.Tpo -c -o test/test_test_cheetahcoin-test_cheetahcoin.o `test -f 'test/test_cheetahcoin.cpp' || echo '$(srcdir)/'`test/test_cheetahcoin.cpp
+test/test_test_cheetahcoin-test_cheetahcoin.o: test/test_bitcoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_cheetahcoin-test_cheetahcoin.o -MD -MP -MF test/$(DEPDIR)/test_test_cheetahcoin-test_cheetahcoin.Tpo -c -o test/test_test_cheetahcoin-test_cheetahcoin.o `test -f 'test/test_bitcoin.cpp' || echo '$(srcdir)/'`test/test_bitcoin.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_cheetahcoin-test_cheetahcoin.Tpo test/$(DEPDIR)/test_test_cheetahcoin-test_cheetahcoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/test_cheetahcoin.cpp' object='test/test_test_cheetahcoin-test_cheetahcoin.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/test_bitcoin.cpp' object='test/test_test_cheetahcoin-test_cheetahcoin.o' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_cheetahcoin-test_cheetahcoin.o `test -f 'test/test_cheetahcoin.cpp' || echo '$(srcdir)/'`test/test_cheetahcoin.cpp
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_cheetahcoin-test_cheetahcoin.o `test -f 'test/test_bitcoin.cpp' || echo '$(srcdir)/'`test/test_bitcoin.cpp
 
-test/test_test_cheetahcoin-test_cheetahcoin.obj: test/test_cheetahcoin.cpp
-@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_cheetahcoin-test_cheetahcoin.obj -MD -MP -MF test/$(DEPDIR)/test_test_cheetahcoin-test_cheetahcoin.Tpo -c -o test/test_test_cheetahcoin-test_cheetahcoin.obj `if test -f 'test/test_cheetahcoin.cpp'; then $(CYGPATH_W) 'test/test_cheetahcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/test/test_cheetahcoin.cpp'; fi`
+test/test_test_cheetahcoin-test_cheetahcoin.obj: test/test_bitcoin.cpp
+@am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_cheetahcoin-test_cheetahcoin.obj -MD -MP -MF test/$(DEPDIR)/test_test_cheetahcoin-test_cheetahcoin.Tpo -c -o test/test_test_cheetahcoin-test_cheetahcoin.obj `if test -f 'test/test_bitcoin.cpp'; then $(CYGPATH_W) 'test/test_bitcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/test/test_bitcoin.cpp'; fi`
 @am__fastdepCXX_TRUE@	$(AM_V_at)$(am__mv) test/$(DEPDIR)/test_test_cheetahcoin-test_cheetahcoin.Tpo test/$(DEPDIR)/test_test_cheetahcoin-test_cheetahcoin.Po
-@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/test_cheetahcoin.cpp' object='test/test_test_cheetahcoin-test_cheetahcoin.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_V_CXX)source='test/test_bitcoin.cpp' object='test/test_test_cheetahcoin-test_cheetahcoin.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
-@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_cheetahcoin-test_cheetahcoin.obj `if test -f 'test/test_cheetahcoin.cpp'; then $(CYGPATH_W) 'test/test_cheetahcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/test/test_cheetahcoin.cpp'; fi`
+@am__fastdepCXX_FALSE@	$(AM_V_CXX@am__nodep@)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -c -o test/test_test_cheetahcoin-test_cheetahcoin.obj `if test -f 'test/test_bitcoin.cpp'; then $(CYGPATH_W) 'test/test_bitcoin.cpp'; else $(CYGPATH_W) '$(srcdir)/test/test_bitcoin.cpp'; fi`
 
 test/test_test_cheetahcoin-testutil.o: test/testutil.cpp
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)$(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(test_test_cheetahcoin_CPPFLAGS) $(CPPFLAGS) $(test_test_cheetahcoin_CXXFLAGS) $(CXXFLAGS) -MT test/test_test_cheetahcoin-testutil.o -MD -MP -MF test/$(DEPDIR)/test_test_cheetahcoin-testutil.Tpo -c -o test/test_test_cheetahcoin-testutil.o `test -f 'test/testutil.cpp' || echo '$(srcdir)/'`test/testutil.cpp

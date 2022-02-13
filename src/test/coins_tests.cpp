@@ -7,7 +7,7 @@
 #include "script/standard.h"
 #include "uint256.h"
 #include "utilstrencodings.h"
-#include "test/test_cheetahcoin.h"
+#include "test/test_bitcoin.h"
 #include "main.h"
 #include "consensus/validation.h"
 

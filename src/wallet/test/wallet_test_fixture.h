@@ -5,7 +5,7 @@
 #ifndef CHEETAHCOIN_WALLET_TEST_FIXTURE_H
 #define CHEETAHCOIN_WALLET_TEST_FIXTURE_H
 
-#include "test/test_cheetahcoin.h"
+#include "test/test_bitcoin.h"
 
 /** Testing setup and teardown for wallet.
  */
