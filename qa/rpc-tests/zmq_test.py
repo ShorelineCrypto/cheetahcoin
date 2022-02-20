@@ -21,7 +21,7 @@ class ZMQTest (CheetahcoinTestFramework):
         super().__init__()
         self.num_nodes = 4
 
-    port = 28332
+    port = 28536
 
     def setup_nodes(self):
         self.zmqContext = zmq.Context()
