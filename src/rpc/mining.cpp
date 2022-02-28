@@ -268,7 +268,7 @@ UniValue generatetoaddress(const UniValue& params, bool fHelp)
         nMaxTries = params[2].get_int();
     }
 
-    CBitcoinAddress address(params[1].get_str());
+    CCheetahcoinAddress address(params[1].get_str());
     if (!address.IsValid())
         throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Error: Invalid address");
     
