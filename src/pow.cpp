@@ -24,7 +24,11 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
     {
         // Special difficulty rule for testnet/mainnet on Nengcoin:
         // If the new block's timestamp is more than 2* 10 minutes
-        // then allow mining of a min-difficulty block.
+        // then allow mining of a cheetah block for CPU/mobile miners on PC or android phones
+        
+        // dynamically adjust network difficulty when miners suddenly left
+        const CBlockIndex* pindex = pindexLast;
+        const int64_t nInterval = params.DifficultyAdjustmentInterval();
 
         // v1.10.x randomSpike fork after block height 769818
         if (pindex->nHeight > 769818) {
