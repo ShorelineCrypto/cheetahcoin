@@ -100,7 +100,7 @@ namespace boost {
 using namespace std;
 
 const char * const CHEETAHCOIN_CONF_FILENAME = "cheetahcoin.conf";
-const char * const CHEETAHCOIN_PID_FILENAME = "cheetahcoin.pid";
+const char * const CHEETAHCOIN_PID_FILENAME = "cheetahcoind.pid";
 
 map<string, string> mapArgs;
 map<string, vector<string> > mapMultiArgs;
