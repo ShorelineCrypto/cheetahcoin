@@ -13,6 +13,7 @@
 unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHeader *pblock, const Consensus::Params& params)
 {
     unsigned int nProofOfWorkLimit = UintToArith256(params.powLimit).GetCompact();
+    arith_uint256 bnProofOfWorkLimit = UintToArith256(params.powLimit);
 
     // Genesis block
     if (pindexLast == NULL)
@@ -27,12 +28,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
 
         // v1.10.x randomSpike fork after block height 769818
         if (pindex->nHeight > 769818) {
-            CBigNum bnCheetah;
+            arith_uint256 bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah /= 40;
             unsigned int nCheetah = bnCheetah.GetCompact();
             
-            CBigNum bnSpike;
+            arith_uint256 bnSpike;
             bnSpike = bnProofOfWorkLimit;
             bnSpike /= 10000000000;
             unsigned int nSpike = bnSpike.GetCompact();
@@ -114,12 +115,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         }
         // v1.9.x randomSpike fork after block height 666136
         else if (pindex->nHeight > 666136) {
-            CBigNum bnCheetah;
+            arith_uint256 bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah /= 36;
             unsigned int nCheetah = bnCheetah.GetCompact();
             
-            CBigNum bnSpike;
+            arith_uint256 bnSpike;
             bnSpike = bnProofOfWorkLimit;
             bnSpike /= 20000000000;
             unsigned int nSpike = bnSpike.GetCompact();
@@ -201,12 +202,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         }
         // v1.8.0 randomSpike fork after block height 383570
         else if (pindex->nHeight > 383570) {
-            CBigNum bnCheetah;
+            arith_uint256 bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah /= 12;
             unsigned int nCheetah = bnCheetah.GetCompact();
             
-            CBigNum bnSpike;
+            arith_uint256 bnSpike;
             bnSpike = bnProofOfWorkLimit;
             bnSpike /= 100000000000;
             unsigned int nSpike = bnSpike.GetCompact();
@@ -242,12 +243,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         }
        // v1.7.0 randomSpike fork after block height 216200
         else if (pindex->nHeight > 216200) {
-            CBigNum bnCheetah;
+            arith_uint256 bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah /= 4;
             unsigned int nCheetah = bnCheetah.GetCompact();
             
-            CBigNum bnSpike;
+            arith_uint256 bnSpike;
             bnSpike = bnProofOfWorkLimit;
             bnSpike /= 100000000000;
             unsigned int nSpike = bnSpike.GetCompact();
@@ -284,12 +285,12 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
        // v1.6.0 randomSpike fork after blocks 20
        // fixed big CPU miner timestamp attack on NENG v1.5.x
         else if (pindex->nHeight > 20) {
-            CBigNum bnCheetah;
+            arith_uint256 bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
 
             unsigned int nCheetah = bnCheetah.GetCompact();
             
-            CBigNum bnSpike;
+            arith_uint256 bnSpike;
             bnSpike = bnProofOfWorkLimit;
             bnSpike /= 100000000000;
             unsigned int nSpike = bnSpike.GetCompact();
