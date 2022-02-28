@@ -29,6 +29,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         // dynamically adjust network difficulty when miners suddenly left
         const CBlockIndex* pindex = pindexLast;
         const int64_t nInterval = params.DifficultyAdjustmentInterval();
+        const int64_t nTargetSpacing = params.nPowTargetSpacing;
 
         // v1.10.x randomSpike fork after block height 769818
         if (pindex->nHeight > 769818) {
