@@ -38,6 +38,12 @@ static const int THREAD_PRIORITY_LOWEST = 19;
 static const int THREAD_PRIORITY_NORMAL = 0;
 #endif
 
+#ifdef MAC_OSX
+static const double THREAD_PRIORITY_LOWEST = 0.0;
+static const double THREAD_PRIORITY_NORMAL = 0.5;
+#endif
+
+
 /** Signals for translation. */
 class CTranslationInterface
 {
