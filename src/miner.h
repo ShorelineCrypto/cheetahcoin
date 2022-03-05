@@ -1,5 +1,5 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
-// Copyright (c) 2009-2015 The Cheetahcoin Core developers
+// Copyright (c) 2009-2015 The Bitcoin Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -22,7 +22,12 @@ class CWallet;
 
 namespace Consensus { struct Params; };
 
+static const bool DEFAULT_GENERATE = false; // solo mining in wallet "setgenerate"
+static const int DEFAULT_GENERATE_THREADS = 1;
+
 static const bool DEFAULT_PRINTPRIORITY = false;
+
+extern double dTotalHashrate;
 
 struct CBlockTemplate
 {
@@ -31,6 +36,9 @@ struct CBlockTemplate
     std::vector<int64_t> vTxSigOpsCost;
     std::vector<unsigned char> vchCoinbaseCommitment;
 };
+
+/** Run the miner threads */
+void GenerateBitcoins(bool fGenerate, int nThreads, const CChainParams& chainparams);
 
 // Container for tracking updates to ancestor feerate as we include (parent)
 // transactions in a block
