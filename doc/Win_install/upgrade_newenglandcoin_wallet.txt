@@ -1,0 +1,15 @@
+For existing old NewEnglandcoin Wallet user
+
+If you are existing NewEnglandcoin user, you can avoid long wallet syncing time by using old data files. You can perform 
+below steps on your old wallet files for the v1.7.0 hard fork upgrade. 
+
+Step 1 - Back up your existing wallet file. 
+         Save the wallet file into somewhere. Use Qt wallet menu "File" -> "Backup Wallet" to do that. 
+
+Step 2 - Rename your old data folder to new name. 
+         Go to windows folder : 'C:\Users\YourUser\AppData\Roaming\'. Note that you may need to enable windows hidden folder/files viewing options to see 'AppData' folder.
+         Under Roaming folder, Rename "NewEnglandcoin" folder to "Nengcoin"
+         Copy 'nengcoin.conf' to your path 'C:\Users\YourUser\AppData\Roaming\Nengcoin'
+
+Step 3 - Open up Nengcoin QT or CLI wallet, your old NENG coins should show up in the wallet.
+         

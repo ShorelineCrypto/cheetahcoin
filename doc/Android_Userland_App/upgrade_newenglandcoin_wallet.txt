@@ -1,0 +1,16 @@
+For existing old NewEnglandcoin Wallet user
+
+If you are existing NewEnglandcoin user, you can avoid long wallet syncing time by using old data files. You can perform 
+below steps on your old wallet files for the v1.7.0 hard fork upgrade. 
+
+Step 1 - Transfer the mining coins out or Back up your existing wallet file. 
+         if you use phone wallet for mining, make sure either transfer coins out to a reserve
+wallet or back up wallet file first. 
+
+Step 2 - On linux terminal, perform below command to rename your old data folder to new name. 
+
+         mv  ~/.newenglandcoin  ~/.nengcoin
+         cp  nengcoin.conf  ~/.nengcoin/ 
+
+Step 3 - Run Nengcoin QT or CLI wallet, your old NENG coins should show up in the wallet.
+         
