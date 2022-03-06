@@ -483,7 +483,7 @@ std::string HelpMessage(HelpMessageMode mode)
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/cheetahcoin-project/cheetahcoin>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/ShorelineCrypto/cheetahcoin>";
     const std::string URL_WEBSITE = "<https://cheetahcoin.org>";
     // todo: remove urls from translations on next change
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i"), 2021, COPYRIGHT_YEAR) + " ") + "\n" +

@@ -22,7 +22,7 @@ updates will be released anymore. Without security updates, using a cheetahcoin
 wallet on a XP machine is irresponsible at least.
 
 In addition to that, with 0.12.x there have been varied reports of Cheetahcoin Core
-randomly crashing on Windows XP. It is [not clear](https://github.com/cheetahcoin/cheetahcoin/issues/7681#issuecomment-217439891)
+randomly crashing on Windows XP. It is [not clear](https://github.com/bitcoin/bitcoin/issues/7681#issuecomment-217439891)
 what the source of these crashes is, but it is likely that upstream
 libraries such as Qt are no longer being tested on XP.
 
