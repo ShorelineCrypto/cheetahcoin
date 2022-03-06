@@ -343,7 +343,7 @@ cheetahcoind_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 cheetahcoind_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-cheetahcoind_SOURCES += cheetahcoind-res.rc
+cheetahcoind_SOURCES += bitcoind-res.rc
 endif
 
 cheetahcoind_LDADD = \
