@@ -387,7 +387,7 @@ cheetahcoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 cheetahcoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-cheetahcoin_tx_SOURCES += cheetahcoin-tx-res.rc
+cheetahcoin_tx_SOURCES += bitcoin-tx-res.rc
 endif
 
 cheetahcoin_tx_LDADD = \
