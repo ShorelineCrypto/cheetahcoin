@@ -14,6 +14,6 @@ sudo  python2 get-pip.py
 
 git clone https://github.com/ShorelineCrypto/cheetah_cpuminer.git
 
-wget  https://github.com/ShorelineCrypto/nengcoin/releases/download/v2.1.0/nengcoin_2.1.0_armhf_linux-gnu.tgz
-tar xvfz nengcoin_2.1.0_armhf_linux-gnu.tgz 
+wget  https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v2.1.0/cheetahcoin_2.1.0_armhf_linux-gnu.tgz
+tar xvfz cheetahcoin_2.1.0_armhf_linux-gnu.tgz 
 

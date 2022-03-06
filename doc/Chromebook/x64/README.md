@@ -1,6 +1,6 @@
 # Chrome OS on x86_64
 
-This folder describe how to run a full node of Nengcoin (NENG) and to CPU mine NENG in Chromebook as Linux App.  Chrome OS v89 on x64 platform was tested. 
+This folder describe how to run a full node of Cheetahcoin (CHTA) and to CPU mine CHTA in Chromebook as Linux App.  Chrome OS v89 on x64 platform was tested. 
 Any Chrome OS version v69 or later on x64 CPU should all work. 
 
 Chrome OS Linux (Beta) runs Debian 11 (Bullseye) Debian 10 (Buster) in embedded linux in a container with close to full feature of linux for both CLI and GUI. 
@@ -14,7 +14,7 @@ For CPU mining steps and optimization with cheetah_Cpuminer, please checkout:
 https://github.com/ShorelineCrypto/cheetah_cpuminer
 
 ## Turn on Linux Beta (Crostini)
-Go to Chrome OS setting, turn on Linux (Beta).  If your chromebook does not have this option, it is not supported here for NENG CPU mining. 
+Go to Chrome OS setting, turn on Linux (Beta).  If your chromebook does not have this option, it is not supported here for CHTA CPU mining. 
 
 For disk size in Linux Beta, we recommend to add 3G on top of recommended 5G by Google. So pick custom disk 8G as minimum selection. 
 
@@ -25,7 +25,7 @@ Inside terminal, this file will be at your home directory.
 
 By default, Linux (Beta) or Crostini runs a container for Debian 10. Below has been tested to be working in both Debian 11 and Debian 10. Because the latest v2.1.0 is static linked wallet file, you can simply download x86_64 linux-gnu version wallet binary and run in either GUI (QT) or command line CLI wallet.  
 
-After successfully downloading NENG wallet file at your current folder. You can move these files to whatever best location inside your "Linux files" folder by using either linux command line or Chromebook GUI drag and drop. 
+After successfully downloading CHTA wallet file at your current folder. You can move these files to whatever best location inside your "Linux files" folder by using either linux command line or Chromebook GUI drag and drop. 
 
 ## Crostini Ubuntu 20.04 Alternative
 
@@ -33,26 +33,26 @@ Ubuntu has better hardware and gaming support on x64 platform in linux. You can 
 
 ## Linux Terminal CLI or Desktop GUI wallet for mining? 
 
-For NENG cpu mining purpose, either CLI wallet or GUI QT wallet was tested working in Chromebook.  You can run either of the software
+For CHTA cpu mining purpose, either CLI wallet or GUI QT wallet was tested working in Chromebook.  You can run either of the software
 to run a full node and for the purpose of CPU mining. 
 
 ## run GUI QT wallet in Chromebook
 
  ```
- hlu@penguin:~$ cd  nengcoin_2.1.0_x86_64_linux-gnu
- hlu@penguin:~/nengcoin_2.1.0_x86_64_linux-gnu$ ./nengcoin-qt &
+ hlu@penguin:~$ cd  cheetahcoin_2.1.0_x86_64_linux-gnu
+ hlu@penguin:~/cheetahcoin_2.1.0_x86_64_linux-gnu$ ./cheetahcoin-qt &
 ```
 
-Above in linux terminal will pop NENG QT wallet in chromebook desktop.
+Above in linux terminal will pop CHTA QT wallet in chromebook desktop.
 
 ## Copy the conf file and restart wallet
  QT wallet in penguin container may show no connections.  Copy the conf file with below command:
 
 ```
-hlu@penguin:~$  cp nengcoin.conf ~/.nengcoin/
+hlu@penguin:~$  cp cheetahcoin.conf ~/.cheetahcoin/
 ```
 
- Then restart the QT GUI wallet, NENG should start to sync. Note fully synced to latest block is required in order to CPU mining NENG with Cheetah_Cpuminer
+ Then restart the QT GUI wallet, CHTA should start to sync. Note fully synced to latest block is required in order to CPU mining CHTA with Cheetah_Cpuminer
  
 
 ## FAQ - Linux Terminal Basic Keyboard
@@ -64,7 +64,7 @@ TAB key is powerful in linux command line.  Typing full word of file or folder n
 
 Here is easier way with tab:
 ```
-   cd  nengcoin_2.1.0_x86_64_linux-gnu
+   cd  cheetahcoin_2.1.0_x86_64_linux-gnu
 
 ```
   Typing above long word in Chromebook is close to impossible. An easier way to do is:
@@ -72,7 +72,7 @@ Here is easier way with tab:
 ```
    cd  nengc-finger push TAB key
 ```
-After you push TAB afer word "nengc" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "nengcoin_2.1.0_x86_64_linux-gnu" auto populated for you. 
+After you push TAB afer word "nengc" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "cheetahcoin_2.1.0_x86_64_linux-gnu" auto populated for you. 
 
 #### Arrow up or down key for history
 
@@ -89,7 +89,7 @@ When you re-login into Chromebook, you can re-attach the screen session with a c
 ####  re-attach specfic screen session when multiple sessions are running (say 3145.pts-1.localhost session):  screen -r 31
 #### force re-attach if the screen session is open at another computer: screen -r 31 -d
 
-  Inside screen, run below in cheetah to mine NENG, and detach screen session to leave it running in background:
+  Inside screen, run below in cheetah to mine CHTA, and detach screen session to leave it running in background:
 ```
    screen
 

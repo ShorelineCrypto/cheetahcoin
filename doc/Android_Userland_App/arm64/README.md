@@ -1,6 +1,6 @@
 # Mobile Mining on Android 64 bits phone (arm64) with UserLand App
 
-This folder describe how to CPU mine Nengcoin (NENG) on 64 bits android phone (arm64). 
+This folder describe how to CPU mine Cheetahcoin (CHTA) on 64 bits android phone (arm64). 
 
 
 ### Step 1: Install and setup UserLand app from Google Play Store
@@ -41,8 +41,8 @@ IP = 192.168.1.98 with user "hlu" like below
 First login into UserLand app linux terminal remotely, you should find that common linux command like "top", "uptime" does not work. 
 Please run below for workaround for those issues:
 ```
-  wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v2.1.0/nengcoin_v2.1.0_android_userland_arm.tgz
-  tar xvfz nengcoin_v2.1.0_android_userland_arm.tgz
+  wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v2.1.0/cheetahcoin_v2.1.0_android_userland_arm.tgz
+  tar xvfz cheetahcoin_v2.1.0_android_userland_arm.tgz
   cd  Android_Userland_App/arm64/
   bash prepare_userland.sh
 
@@ -57,7 +57,7 @@ Please run below shell script in Userland Ubuntu for installing dependencies and
   bash prepare_neng.sh
 
 ```
-The above step automatically download binary NENG wallet file and cheetah_cpuminer in current folder.
+The above step automatically download binary CHTA wallet file and cheetah_cpuminer in current folder.
 
 ### Step 6: Optimize CPU mining with Cheetah_Cpuminer:
 

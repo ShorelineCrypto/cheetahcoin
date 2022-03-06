@@ -9,7 +9,7 @@ fi
 
 # truncate useless full node log file hourly
 
-for dir in  nengcoin  
+for dir in  cheetahcoin  
 do
      truncate -s 0 ~/.${dir}/debug.log
 done

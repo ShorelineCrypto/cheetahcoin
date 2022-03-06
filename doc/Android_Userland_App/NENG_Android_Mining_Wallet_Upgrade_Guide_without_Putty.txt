@@ -1,22 +1,22 @@
-NENG Android 64bit Wallet Upgrade Guide without Putty
+CHTA Android 64bit Wallet Upgrade Guide without Putty
     1. Open Userland App and select Debian
     2. Log in Debian
     3. cd  Android_Userland_App/debian/arm64/
-    4. wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v2.1.0/nengcoin_2.1.0_arm64_linux-gnu.tgz
-    5. tar xvfz nengcoin_2.1.0_arm64_linux-gnu.tgz
-    6. rm -rf nengcoin_v1.9.1.2_u16_arm64 (remove previous nengcoin qt folder)
-    7. rm nengcoin_v1.9.1.2_u16_arm64.tgz (remove previous nengcoin tgz file if exist)
-    8. rm nengcoin_2.1.0_arm64_linux-gnu.tgz (remove current nengcoin tgz file)
+    4. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v2.1.0/cheetahcoin_2.1.0_arm64_linux-gnu.tgz
+    5. tar xvfz cheetahcoin_2.1.0_arm64_linux-gnu.tgz
+    6. rm -rf cheetahcoin_v1.9.1.2_u16_arm64 (remove previous cheetahcoin qt folder)
+    7. rm cheetahcoin_v1.9.1.2_u16_arm64.tgz (remove previous cheetahcoin tgz file if exist)
+    8. rm cheetahcoin_2.1.0_arm64_linux-gnu.tgz (remove current cheetahcoin tgz file)
 
-NENG Android 32bit Wallet Upgrade Guide without Putty
+CHTA Android 32bit Wallet Upgrade Guide without Putty
     1. Open Userland App and select Debian
     2. Log in Debian
     3. cd  Android_Userland_App/debian/armhf/
-    4. wget https://github.com/ShorelineCrypto/nengcoin/releases/download/v2.1.0/nengcoin_2.1.0_armhf_linux-gnu.tgz
-    5. tar xvfz nengcoin_2.1.0_armhf_linux-gnu.tgz
-    6. rm -rf nengcoin_v1.9.1.2_u16_armhf (remove previous nengcoin qt folder)
-    7. rm nengcoin_v1.9.1.2_u16_armhf.tgz (remove previous nengcoin tgz file if exist)
-    8. rm nengcoin_2.1.0_armhf_linux-gnu.tgz (remove current nengcoin tgz file)
+    4. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v2.1.0/cheetahcoin_2.1.0_armhf_linux-gnu.tgz
+    5. tar xvfz cheetahcoin_2.1.0_armhf_linux-gnu.tgz
+    6. rm -rf cheetahcoin_v1.9.1.2_u16_armhf (remove previous cheetahcoin qt folder)
+    7. rm cheetahcoin_v1.9.1.2_u16_armhf.tgz (remove previous cheetahcoin tgz file if exist)
+    8. rm cheetahcoin_2.1.0_armhf_linux-gnu.tgz (remove current cheetahcoin tgz file)
 
 
 

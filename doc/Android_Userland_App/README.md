@@ -1,6 +1,6 @@
 # Mobile Mining on Android phone arm64 or armhf with UserLand App
 
-This folder describe how to CPU mine Nengcoin (NENG) in android phone on 64 bits (arm64) or 32 bits (armhf) through UserLand app inside a linux terminal.  UserLand app is an open-source app that can run linux inside your android phone. 
+This folder describe how to CPU mine Cheetahcoin (CHTA) in android phone on 64 bits (arm64) or 32 bits (armhf) through UserLand app inside a linux terminal.  UserLand app is an open-source app that can run linux inside your android phone. 
 
 - Minimum hardware requirement: 2G memory phone with 3G spare hard disk. 
 - Software Required: UserLand app from Google Play Store or F-Droid
@@ -8,14 +8,14 @@ This folder describe how to CPU mine Nengcoin (NENG) in android phone on 64 bits
 For CPU mining steps and optimization with cheetah_Cpuminer, please checkout: 
 https://github.com/ShorelineCrypto/cheetah_cpuminer
 
-## Confusion on android vs linux on NENG v1.4.x/v1.5.x release
+## Confusion on android vs linux on CHTA v1.4.x/v1.5.x release
 
 There was some confusion created by android mining release v1.4.0.  Please watch this youtube video from android authority Gary Sims:
 
 Is Android really just Linux? - Gary explains
 https://www.youtube.com/watch?v=BkP6FTy0a4Y&t=307s
 
-Not trying to create a flaming war.  Understanding the relationship between android vs linux, then you will clearly know what we did on NENG android CPU mining through UserLand app inside a linux terminal at almost native OS speed.
+Not trying to create a flaming war.  Understanding the relationship between android vs linux, then you will clearly know what we did on CHTA android CPU mining through UserLand app inside a linux terminal at almost native OS speed.
 
 ## Determine your Platform is 64 bits arm64 or 32 bits armhf
 
@@ -30,25 +30,25 @@ Above information from terminal should give you clear idea whether you have arm6
 
 ## Debian or Ubuntu?
 
-UserLand app offers 4 linux distros (Alpine, Arch, Debian, Ubuntu). Currently for Nengcoin android mining, two distros are supported and tested: Debian (version 11 or 10 ) and Ubuntu (version 20.04 or 18.04).  Arch linux is also gnu linux so that Arch may also work, but not tested.  Alpine linux is not supported because Alpine linux is not gnu linux, uses musl libary instead.  
+UserLand app offers 4 linux distros (Alpine, Arch, Debian, Ubuntu). Currently for Cheetahcoin android mining, two distros are supported and tested: Debian (version 11 or 10 ) and Ubuntu (version 20.04 or 18.04).  Arch linux is also gnu linux so that Arch may also work, but not tested.  Alpine linux is not supported because Alpine linux is not gnu linux, uses musl libary instead.  
 
 UserLand Debian runs Debian 11 (bullseye) or 10 (buster) on arm64/armhf.  UserLand ubuntu runs Ubuntu 20.04 or 18.04 on arm64/armhf.  The UserLand LXDE or XFCE desktop installation session uses Debian. Debian or ubuntu either distro is fine with similar user experience.
 
 
 ## Linux Terminal (SSH) or Desktop (VNC or XSDL)? 
 
-For NENG android mining purpose, we recommend using Linux terminal only through UserLand SSH login mode.  Our experience on debian or ubuntu has been fabulous and smooth with 
+For CHTA android mining purpose, we recommend using Linux terminal only through UserLand SSH login mode.  Our experience on debian or ubuntu has been fabulous and smooth with 
 easy setup for remote login from windows/Mac/Linux desktop on big screen. 
 
 In fact, we have tested XSDL/VNC in quad core android 8.0 on VNC or XSDL mode, and failed with crashes.  We do not know the reason of crash errors like "Connection Failed" after hours of LXDE or XFCE installation.  We also tested Arch SSH installation and failed to complete. 
 
-Android is optimized for mobile GUI on top of linux kernel. GNU or regular linux LXDE or XFCE desktop is mainly for desktop/laptop environment. Therefore we see limited value using LXDE/XFCE in android phones any way. If you want to learn or have fun experience for linux, we would recommend to install a copy of Linux OS inside "VirtualBox" in windows 10. Oracle VirtualBox is free virtual machine software that can install and run a second operating system in windows 10 without need of dual boot.  With virutalBox setup for any one of 8 distros that we support for NENG wallet, you can mine NENG with cheetah_cpuminer easily in linux inside virtualbox of windows 10. 
+Android is optimized for mobile GUI on top of linux kernel. GNU or regular linux LXDE or XFCE desktop is mainly for desktop/laptop environment. Therefore we see limited value using LXDE/XFCE in android phones any way. If you want to learn or have fun experience for linux, we would recommend to install a copy of Linux OS inside "VirtualBox" in windows 10. Oracle VirtualBox is free virtual machine software that can install and run a second operating system in windows 10 without need of dual boot.  With virutalBox setup for any one of 8 distros that we support for CHTA wallet, you can mine CHTA with cheetah_cpuminer easily in linux inside virtualbox of windows 10. 
 
 ## Putty or No Putty in windows 10?
 
 Putty is windows 10 software to remote login into android UserLand linux at port 2022.  Below main guide mainly use putty to login into android with big screen to type in those linux command line for installation. Alternatively, those command line can also be done without using putty.
 
-Some members reported that putty does not work either because new android versions have security feature to block UserLand app port or routers block those ports.  Member @Sefia at discord provided this word documents "NENG_Android_arm64_Mining_Guide_without_Putty.txt" at current folder on how to do android mining without using putty. 
+Some members reported that putty does not work either because new android versions have security feature to block UserLand app port or routers block those ports.  Member @Sefia at discord provided this word documents "CHTA_Android_arm64_Mining_Guide_without_Putty.txt" at current folder on how to do android mining without using putty. 
 
 
 ## FAQ - Linux Terminal Basic Keyboard
@@ -60,7 +60,7 @@ See attached picture in this folder "tab.gif".  Tab key in android is the charac
 
 Here is easier way with tab:
 ```
-   cd  nengcoin_2.1.0_arm64_linux-gnu
+   cd  cheetahcoin_2.1.0_arm64_linux-gnu
 
 ```
   Typing above long word in android phone is close to impossible. An easier way to do is:
@@ -68,7 +68,7 @@ Here is easier way with tab:
 ```
    cd  neng-finger push TAB key
 ```
-After you push TAB afer word "neng" , the android UserLand linux terminal should behave like linux in server/desktop with the full file/folder name "nengcoin_2.1.0_arm64_linux-gnu" auto populated for you. 
+After you push TAB afer word "neng" , the android UserLand linux terminal should behave like linux in server/desktop with the full file/folder name "cheetahcoin_2.1.0_arm64_linux-gnu" auto populated for you. 
 
 #### Arrow up or down key for history
 
@@ -85,7 +85,7 @@ When you re-login into phone, you can re-attach the screen session with a comman
 ####  re-attach specfic screen session when multiple sessions are running (say 3145.pts-1.localhost session):  screen -r 31
 #### force re-attach if the screen session is open at another computer: screen -r 31 -d
 
-  Inside screen, run below in cheetah to mine NENG, and detach screen session to leave it running in background:
+  Inside screen, run below in cheetah to mine CHTA, and detach screen session to leave it running in background:
 ```
    screen
 
@@ -102,32 +102,32 @@ Now you can let the cheetah cpuminer running with the phone cord connected to ch
 
 ## optional - Load GUI QT wallet into windows/mac/linux Desktop Remotely
 
- Running linux terminal-only does not mean that you can not load NENG QT wallet with GUI remotely. If your home wifi speed is decent, you could try to load NENG QT GUI wallet in windows 10, or MacOS or Linux Desktop PCs. 
+ Running linux terminal-only does not mean that you can not load CHTA QT wallet with GUI remotely. If your home wifi speed is decent, you could try to load CHTA QT GUI wallet in windows 10, or MacOS or Linux Desktop PCs. 
  - Windows 10 with VcXsrv. Download, install and run free software "VcXsrv".  Check the screenshot2 of putty for enabling 
  "Enable X11 forwarding" for the userland login setting. Save the login session with X11 enabled, start VcXsrv in windows, 
  re-login into phone with putty and type below command lines:
  ```
- hlu@localhost:~$ cd nengcoin_2.1.0_arm64_linux-gnu
- hlu@localhost:~/nengcoin_2.1.0_arm64_linux-gnu$ ./nengcoin-qt &
+ hlu@localhost:~$ cd cheetahcoin_2.1.0_arm64_linux-gnu
+ hlu@localhost:~/cheetahcoin_2.1.0_arm64_linux-gnu$ ./cheetahcoin-qt &
 ```
  Above command inside putty will pop the QT GUI wallet in windows 10 with VcXsrv running. Wait for a while for the QT wallet to fully show up in windows, and then you can control the wallet inside phone from windows 10.
  - macOS with XQuartz. Download, install free software "XQuartz". Log out and re-login. Open up mac terminal:
  ```
  $ ssh -XY hlu@192.168.1.98 -p 2022
  -----login in phone----
- hlu@localhost:~$ cd nengcoin_2.1.0_arm64_linux-gnu
- hlu@localhost:~/nengcoin_2.1.0_arm64_linux-gnu$ ./nengcoin-qt &
+ hlu@localhost:~$ cd cheetahcoin_2.1.0_arm64_linux-gnu
+ hlu@localhost:~/cheetahcoin_2.1.0_arm64_linux-gnu$ ./cheetahcoin-qt &
 ```
-Above in mac terminal will pop up android phone NENG QT GUI wallet in macOS desktop. 
+Above in mac terminal will pop up android phone CHTA QT GUI wallet in macOS desktop. 
 
  - Linux Desktop, any distro in a terminal
 ```
  honglu@MX $ ssh -XY hlu@192.168.1.98 -p 2022
  -----login in phone----
- hlu@localhost:~$ cd nengcoin_2.1.0_arm64_linux-gnu
- hlu@localhost:~/nengcoin_2.1.0_arm64_linux-gnu$ ./nengcoin-qt &
+ hlu@localhost:~$ cd cheetahcoin_2.1.0_arm64_linux-gnu
+ hlu@localhost:~/cheetahcoin_2.1.0_arm64_linux-gnu$ ./cheetahcoin-qt &
 ```
-Above in linux desktop terminal will pop android phone NENG QT wallet in linux desktop remotely.
+Above in linux desktop terminal will pop android phone CHTA QT wallet in linux desktop remotely.
 
 ## optional - Fix the phone IP address at home LAN
 

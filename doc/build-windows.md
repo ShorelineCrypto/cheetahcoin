@@ -1,7 +1,7 @@
 WINDOWS BUILD NOTES
 ====================
 
-Below are some notes on how to build Nengcoin Core for Windows.
+Below are some notes on how to build Cheetahcoin Core for Windows.
 
 Most developers use cross-compilation from Ubuntu to build executables for
 Windows. This is also used to build the release binaries.
@@ -70,6 +70,6 @@ Installation
 After building using the Windows subsystem it can be useful to copy the compiled
 executables to a directory on the windows drive in the same directory structure
 as they appear in the release `.zip` archive. This can be done in the following
-way. This will install to `c:\workspace\nengcoin`, for example:
+way. This will install to `c:\workspace\cheetahcoin`, for example:
 
-    make install DESTDIR=/mnt/c/workspace/nengcoin
+    make install DESTDIR=/mnt/c/workspace/cheetahcoin

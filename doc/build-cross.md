@@ -1,8 +1,8 @@
-Cross-compiliation of Nengcoin
+Cross-compiliation of Cheetahcoin
 ===============================
 
-Nengcoin can be cross-compiled on Linux to all other supported host systems. This is done by changing
-the `HOST` parameter when building the dependencies and then specifying another `--prefix` directory when building Nengcoin.
+Cheetahcoin can be cross-compiled on Linux to all other supported host systems. This is done by changing
+the `HOST` parameter when building the dependencies and then specifying another `--prefix` directory when building Cheetahcoin.
 
 The following instructions are only tested on Debian Stretch and Ubuntu Bionic.
 
@@ -29,7 +29,7 @@ When building the dependencies, as described in [build-generic](build-generic.md
 $ make HOST=x86_64-apple-darwin11 -j4
 ```
 
-When building Nengcoin, use
+When building Cheetahcoin, use
 
 ```bash
 $ ./configure --prefix `pwd`/depends/x86_64-apple-darwin11
@@ -65,7 +65,7 @@ When building the dependencies, as described in [build-generic](build-generic.md
 $ make HOST=x86_64-w64-mingw32 -j4
 ```
 
-When building Nengcoin, use
+When building Cheetahcoin, use
 
 ```bash
 $ ./configure --prefix `pwd`/depends/x86_64-w64-mingw32
@@ -88,7 +88,7 @@ When building the dependencies, as described in [build-generic](build-generic.md
 $ make HOST=aarch64-linux-gnu -j4
 ```
 
-When building Nengcoin, use
+When building Cheetahcoin, use
 
 ```bash
 $ ./configure --prefix `pwd`/depends/aarch64-linux-gnu
@@ -108,7 +108,7 @@ When building the dependencies, as described in [build-generic](build-generic.md
 $ make HOST=arm-linux-gnueabihf -j4
 ```
 
-When building Nengcoin, use
+When building Cheetahcoin, use
 
 ```bash
 $ ./configure --prefix `pwd`/depends/arm-linux-gnueabihf
@@ -128,7 +128,7 @@ When building the dependencies, as described in [build-generic](build-generic.md
 $ make HOST=i686-pc-linux-gnu -j4
 ```
 
-When building Nengcoin, use
+When building Cheetahcoin, use
 
 ```bash
 $ ./configure --prefix `pwd`/depends/i686-pc-linux-gnu

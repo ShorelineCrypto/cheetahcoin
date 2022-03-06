@@ -8,8 +8,8 @@ Step 1 - Back up your existing wallet file.
 
 Step 2 - Open up mac terminal, perform below command to rename your old data folder to new name. 
 
-         mv  ~/Library/'Application Support'/NewEnglandcoin  ~/Library/'Application Support'/Nengcoin
-         cp  nengcoin.conf  ~/Library/'Application Support'/Nengcoin/
+         mv  ~/Library/'Application Support'/NewEnglandcoin  ~/Library/'Application Support'/Cheetahcoin
+         cp  cheetahcoin.conf  ~/Library/'Application Support'/Cheetahcoin/
 
-Step 3 - Open up Nengcoin QT or CLI wallet, your old NENG coins should show up in the wallet.
+Step 3 - Open up Cheetahcoin QT or CLI wallet, your old CHTA coins should show up in the wallet.
          
