@@ -54,7 +54,7 @@ After completion of above, logout and re-login into UserLand linux terminal, you
 ### Step 5: Install library files, wallet and cheetah_cpuminer
 Please run below shell script in Userland Ubuntu for installing dependencies and library files:
 ```
-  bash prepare_neng.sh
+  bash prepare_chee.sh
 
 ```
 The above step automatically download binary CHTA wallet file and cheetah_cpuminer in current folder.

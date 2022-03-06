@@ -16,7 +16,7 @@ CHTA Android Mining Guide without Putty
     8. Relogin Userland Ubuntu or Debian
     9. Enter command line
         a. cd  Android_Userland_App/arm64/
-        b. bash prepare_neng.sh
+        b. bash prepare_chee.sh
         c. cd cheetahcoin_2.1.0_arm64_linux-gnu/
         d. ./cheetahcoind (create wallet folder & files)
         e. screen (creates another screen so you can check your wallet and mining at the same time using one ssh)
