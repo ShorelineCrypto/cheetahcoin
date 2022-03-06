@@ -350,7 +350,7 @@ RES_IMAGES =
 
 RES_MOVIES = $(wildcard qt/res/movies/spinner-*.png)
 
-CHEETAHCOIN_RC = qt/res/cheetahcoin-qt-res.rc
+CHEETAHCOIN_RC = qt/res/bitcoin-qt-res.rc
 
 CHEETAHCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
   -I$(builddir)/qt/forms -DQT_NO_KEYWORDS
