@@ -21,5 +21,5 @@ To setup a reserve wallet, below are the steps
 
 Step 1:  copy the data folder from 'C:\Users\YourUser\AppData\Roaming\Cheetahcoin'  to  'C:\Users\YourUser\AppData\Roaming\Cheetahcoin2'. 
 Delete the "wallet.dat"  in the Cheetahcoin2 folder so that you get a new wallet file. 
-Step 2:  Modify the batch script "reserve_neng.bat" with your proper username in windows10
-Step 3:  double click "reserve_neng.bat". You should have second reserve QT wallet running in windows10
+Step 2:  Modify the batch script "reserve_chta.bat" with your proper username in windows10
+Step 3:  double click "reserve_chta.bat". You should have second reserve QT wallet running in windows10

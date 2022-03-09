@@ -5,8 +5,7 @@
 ## Installation Guide of Cheetahcoin MacOS Wallet for mining
 
  Step 1: For first time CHTA user only to create data folder
-      If you have never ran CHTA wallet before, double click QT wallet file first, run for a 1 minute, then shut down the w
-allet. 
+      If you have never ran CHTA wallet before, double click QT wallet file first, run for a 1 minute, then shut down the wallet. 
 
  Step 2: Copy 'cheetahcoin.conf' to your path '~/Library/'Application Support'/Cheetahcoin/'
 
@@ -29,5 +28,5 @@ To setup a reserve wallet, below are the steps
 
 Step 1:  copy the data folder from ~/Library/'Application Support'/Cheetahcoin/  to  ~/Library/'Application Support'/Cheetahcoin2/. 
 Delete the "wallet.dat"  in the Cheetahcoin2 folder so that you get a new wallet file. 
-Step 2:  Modify the batch script "reserve_neng.sh" with your proper username in conf file.
-Step 3:  Run "reserve_neng.sh". You should have second reserve QT wallet running in macOS
+Step 2:  Modify the batch script "reserve_chta.sh" with your proper username in conf file.
+Step 3:  Run "reserve_chta.sh". You should have second reserve QT wallet running in macOS
