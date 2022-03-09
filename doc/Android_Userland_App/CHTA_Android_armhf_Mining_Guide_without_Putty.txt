@@ -32,7 +32,7 @@ CHTA Android Mining Guide without Putty
         o. ./cheetahcoind (sync the wallet appx 48 hrs or more)
 (Ensure that your device shows command prompt after it shows “Server is starting”. If not press Enter one time to allow command prompt to appear.)
         p. top (rotate your mobile phone to the side so that you are able to see whether cheetahcoind is running)
-        q. ./cheetahcoin-cli getmininginfo (compare the current block with https://spools.online/explorer/CHTA to ensure it has sync to the latest block before getting ready to perform mining)
+        q. ./cheetahcoin-cli getmininginfo (compare the current block with https://au-merged.mine.cminors-pool.com/explorer/CHTA to ensure it has sync to the latest block before getting ready to perform mining)
         r. ./cheetahcoin-cli getbalance (check your coin balance in your wallet)
         s. Ctrl+C (to exit top)
 After complete syncing your CHTA wallet
