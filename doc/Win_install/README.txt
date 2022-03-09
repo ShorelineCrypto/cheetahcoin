@@ -1,5 +1,5 @@
 
-Installation Guide of Cheetahcoin (CHTA) windows 10 Wallet for Mining
+Installation Guide of Cheetahcoin windows 10 Wallet for mining
 
  Step 1: For first time CHTA user only to create data folder
       If you have never ran CHTA wallet before, double click QT wallet file first, run for a 1 minute, then shut down the wallet. 

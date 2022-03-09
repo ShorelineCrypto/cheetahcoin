@@ -22,9 +22,10 @@ Major releases features:
 * v1.8.x cheetah diff 3x
 * v1.9.x Fixed slow hack risk, cheetah diff rise 3x, spike drop 5x
 * v1.10.x Changed bitcoin future timestamp 2 hour rule to 4 minute, cheetah/spike diff adjustment
+* v2.1.0 rebased off bitcoin core v0.13.2 on v1.10.x randomSpike with 3 soft forks
 
-Current full version name: "1.10.1.0_randomSpike-v1.10.x" (shorthand: "v1.10.x") 
-Note: latest different platform wallets have "1.10.1.0" version tag in QT wallet. The downloaded files should have correct version on file names supporting different hardware devices and OS.
+Current full version name: "v2.1.0._randomSpike-1.10.x" 
+Note: All users/miners are recommended to use v2.1.0. MacOS platform is fully supported on new or old versions of OSX with full CPU mining capability.
 
 Bitcointalk Ann
 https://bitcointalk.org/index.php?topic=5309004.0

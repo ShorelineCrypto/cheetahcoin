@@ -5,23 +5,23 @@ This folder describe how to CPU mine Cheetahcoin (CHTA) in android phone on 64 b
 - Minimum hardware requirement: 2G memory phone with 3G spare hard disk. 
 - Software Required: UserLand app from Google Play Store or F-Droid
 
-Please read high level overview first from pdf report:
-https://github.com/ShorelineCrypto/NewEnglandCoin/releases/download/NENG_2020_Q3_report/NENG_2020_Q3_report.pdf 
-
 For CPU mining steps and optimization with cheetah_Cpuminer on "chta" branch web guide at
 https://github.com/ShorelineCrypto/cheetah_cpuminer/tree/chta
 
-To obtain software, please perform below command lines: 
+To obtain software, please perform below command lines:
 ```
-  git clone https://github.com/ShorelineCrypto/cheetah_cpuminer
+  git clone https://github.com/ShorelineCrypto/cheetah_cpuminer cheetah_cpuminer_chta
+  cd cheetah_cpuminer_chta
+  git pull
   git checkout chta
 ```
-or download zip file:
-https://github.com/ShorelineCrypto/cheetah_cpuminer/releases/tag/chta-beta2
 
-## Confusion on android vs linux on CHTA v1.7.x release
+Or download directly on zip file of "chta1.5.0" release:
+https://github.com/ShorelineCrypto/cheetah_cpuminer/releases/tag/chta1.5.0
 
-There was some confusion created by android mining release v1.10.1.  Please watch this youtube video from android authority Gary Sims:
+## Confusion on android vs linux on CHTA v1.4.x/v1.5.x release
+
+There was some confusion created by android mining release v1.4.0.  Please watch this youtube video from android authority Gary Sims:
 
 Is Android really just Linux? - Gary explains
 https://www.youtube.com/watch?v=BkP6FTy0a4Y&t=307s
@@ -41,18 +41,9 @@ Above information from terminal should give you clear idea whether you have arm6
 
 ## Debian or Ubuntu?
 
-UserLand app offers 4 linux distros (Alpine, Arch, Debian, Ubuntu). Currently for Cheetahcoin android mining, two distros are supported and tested: Debian (version 10 ) and Ubuntu (version 18.04).  Due to issues that Userland app ubuntu install unsupported version 20.04, currently Debian is recommended for Userland app. 
+UserLand app offers 4 linux distros (Alpine, Arch, Debian, Ubuntu). Currently for Cheetahcoin android mining, two distros are supported and tested: Debian (version 11 or 10 ) and Ubuntu (version 20.04 or 18.04).  Arch linux is also gnu linux so that Arch may also work, but not tested.  Alpine linux is not supported because Alpine linux is not gnu linux, uses musl libary instead.  
 
-UserLand Debian runs Debian 10 (buster) on arm64/armhf.  UserLand ubuntu runs Ubuntu 18.04 or 20.04 on arm64/armhf.  The UserLand LXDE or XFCE desktop installation session uses Debian. 
-
-Either distro is fine with similar user experience. If you are interested in desktop offering, Debian is preferred. If you encounter hardware compatibility issues, 
-Ubuntu 18.04 is preferred. 
-
-## Ubuntu 18.04 Alternative to Fix Potential Hardware Issue
-
-Arm hardware may have hardware compatibility issues. This situation is worse on 32 bits arm platform. You can suspect a hardware issue if you run into error like "error while loading shared libraries: libboost_system.so.1.58.0". Or CHTA wallet may run, but crash within 1 or 2 hours.
-
-Here we provide a Ubuntu 18.04 CHTA wallet method where you can compile Boost library from source. With self-compiled boost library from source together with CHTA binary wallet file, the hardware compatibility issue should be fixed.
+UserLand Debian runs Debian 11 (bullseye) or 10 (buster) on arm64/armhf.  UserLand ubuntu runs Ubuntu 20.04 or 18.04 on arm64/armhf.  The UserLand LXDE or XFCE desktop installation session uses Debian. Debian or ubuntu either distro is fine with similar user experience.
 
 
 ## Linux Terminal (SSH) or Desktop (VNC or XSDL)? 
@@ -80,7 +71,7 @@ See attached picture in this folder "tab.gif".  Tab key in android is the charac
 
 Here is easier way with tab:
 ```
-   cd  cheetahcoin_v1.10.1.2_u16_arm64
+   cd  cheetahcoin_2.1.0_arm64_linux-gnu
 
 ```
   Typing above long word in android phone is close to impossible. An easier way to do is:
@@ -88,7 +79,7 @@ Here is easier way with tab:
 ```
    cd  chee-finger push TAB key
 ```
-After you push TAB afer word "chee" , the android UserLand linux terminal should behave like linux in server/desktop with the full file/folder name "cheetahcoin_v1.10.1.2_u16_arm64" auto populated for you. 
+After you push TAB afer word "chee" , the android UserLand linux terminal should behave like linux in server/desktop with the full file/folder name "cheetahcoin_2.1.0_arm64_linux-gnu" auto populated for you. 
 
 #### Arrow up or down key for history
 
@@ -127,16 +118,16 @@ Now you can let the cheetah cpuminer running with the phone cord connected to ch
  "Enable X11 forwarding" for the userland login setting. Save the login session with X11 enabled, start VcXsrv in windows, 
  re-login into phone with putty and type below command lines:
  ```
- hlu@localhost:~$ cd cheetahcoin_v1.10.1.2_u16_arm64
- hlu@localhost:~/cheetahcoin_v1.10.1.2_u16_arm64$ ./cheetahcoin-qt &
+ hlu@localhost:~$ cd cheetahcoin_2.1.0_arm64_linux-gnu
+ hlu@localhost:~/cheetahcoin_2.1.0_arm64_linux-gnu$ ./cheetahcoin-qt &
 ```
  Above command inside putty will pop the QT GUI wallet in windows 10 with VcXsrv running. Wait for a while for the QT wallet to fully show up in windows, and then you can control the wallet inside phone from windows 10.
  - macOS with XQuartz. Download, install free software "XQuartz". Log out and re-login. Open up mac terminal:
  ```
  $ ssh -XY hlu@192.168.1.98 -p 2022
  -----login in phone----
- hlu@localhost:~$ cd cheetahcoin_v1.10.1.2_u16_arm64
- hlu@localhost:~/cheetahcoin_v1.10.1.2_u16_arm64$ ./cheetahcoin-qt &
+ hlu@localhost:~$ cd cheetahcoin_2.1.0_arm64_linux-gnu
+ hlu@localhost:~/cheetahcoin_2.1.0_arm64_linux-gnu$ ./cheetahcoin-qt &
 ```
 Above in mac terminal will pop up android phone CHTA QT GUI wallet in macOS desktop. 
 
@@ -144,8 +135,8 @@ Above in mac terminal will pop up android phone CHTA QT GUI wallet in macOS desk
 ```
  honglu@MX $ ssh -XY hlu@192.168.1.98 -p 2022
  -----login in phone----
- hlu@localhost:~$ cd cheetahcoin_v1.10.1.2_u16_arm64
- hlu@localhost:~/cheetahcoin_v1.10.1.2_u16_arm64$ ./cheetahcoin-qt &
+ hlu@localhost:~$ cd cheetahcoin_2.1.0_arm64_linux-gnu
+ hlu@localhost:~/cheetahcoin_2.1.0_arm64_linux-gnu$ ./cheetahcoin-qt &
 ```
 Above in linux desktop terminal will pop android phone CHTA QT wallet in linux desktop remotely.
 

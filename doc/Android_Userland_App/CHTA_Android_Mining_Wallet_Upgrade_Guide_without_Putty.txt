@@ -2,21 +2,21 @@ CHTA Android 64bit Wallet Upgrade Guide without Putty
     1. Open Userland App and select Debian
     2. Log in Debian
     3. cd  Android_Userland_App/debian/arm64/
-    4. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.10.1.2/cheetahcoin_v1.10.1.2_u16_arm64.tgz
-    5. tar xvfz cheetahcoin_v1.10.1.2_u16_arm64.tgz
+    4. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v2.1.0/cheetahcoin_2.1.0_arm64_linux-gnu.tgz
+    5. tar xvfz cheetahcoin_2.1.0_arm64_linux-gnu.tgz
     6. rm -rf cheetahcoin_v1.9.1.2_u16_arm64 (remove previous cheetahcoin qt folder)
     7. rm cheetahcoin_v1.9.1.2_u16_arm64.tgz (remove previous cheetahcoin tgz file if exist)
-    8. rm cheetahcoin_v1.10.1.2_u16_arm64.tgz (remove current coincoin tgz file)
+    8. rm cheetahcoin_2.1.0_arm64_linux-gnu.tgz (remove current cheetahcoin tgz file)
 
 CHTA Android 32bit Wallet Upgrade Guide without Putty
     1. Open Userland App and select Debian
     2. Log in Debian
     3. cd  Android_Userland_App/debian/armhf/
-    4. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v1.10.1.2/cheetahcoin_v1.10.1.2_u16_armhf.tgz
-    5. tar xvfz cheetahcoin_v1.10.1.2_u16_armhf.tgz
+    4. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v2.1.0/cheetahcoin_2.1.0_armhf_linux-gnu.tgz
+    5. tar xvfz cheetahcoin_2.1.0_armhf_linux-gnu.tgz
     6. rm -rf cheetahcoin_v1.9.1.2_u16_armhf (remove previous cheetahcoin qt folder)
     7. rm cheetahcoin_v1.9.1.2_u16_armhf.tgz (remove previous cheetahcoin tgz file if exist)
-    8. rm cheetahcoin_v1.10.1.2_u16_armhf.tgz (remove current cheetahcoin tgz file)
+    8. rm cheetahcoin_2.1.0_armhf_linux-gnu.tgz (remove current cheetahcoin tgz file)
 
 
 

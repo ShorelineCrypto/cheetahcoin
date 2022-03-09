@@ -1,9 +1,9 @@
 # Chrome OS on x86_64
 
-This folder describe how to run a full node of Cheetahcoin (CHTA) and to CPU mine CHTA in Chromebook as Linux App.  Chrome OS v85 on x64 platform was tested. 
+This folder describe how to run a full node of Cheetahcoin (CHTA) and to CPU mine CHTA in Chromebook as Linux App.  Chrome OS v89 on x64 platform was tested. 
 Any Chrome OS version v69 or later on x64 CPU should all work. 
 
-Chrome OS v89 Linux (Beta) runs Debian 10 (Buster) in embedded linux in a container with close to full feature of linux for both CLI and GUI. 
+Chrome OS Linux (Beta) runs Debian 11 (Bullseye) Debian 10 (Buster) in embedded linux in a container with close to full feature of linux for both CLI and GUI. 
 Older version of Chrome OS run Debian 9 (Stretch). The below script and method was also tested on Debian 9 successfully and should all just work on Debian 9.
    
 
@@ -15,11 +15,14 @@ https://github.com/ShorelineCrypto/cheetah_cpuminer/tree/chta
 
 To obtain software, please perform below command lines:
 ```
-  git clone https://github.com/ShorelineCrypto/cheetah_cpuminer
+  git clone https://github.com/ShorelineCrypto/cheetah_cpuminer cheetah_cpuminer_chta
+  cd cheetah_cpuminer_chta
+  git pull
   git checkout chta
 ```
 
-or download zip file: https://github.com/ShorelineCrypto/cheetah_cpuminer/releases/tag/chta-beta2
+Or download directly on zip file of "chta1.5.0" release:
+https://github.com/ShorelineCrypto/cheetah_cpuminer/releases/tag/chta1.5.0
 
 
 ## Turn on Linux Beta (Crostini)
@@ -32,19 +35,13 @@ For disk size in Linux Beta, we recommend to add 3G on top of recommended 5G by 
 You can pin linux "Terminal" at menu bar. Download this tgz file to chromebook, drag the file from "Downloads" to "Linux files" folder in chromebook. 
 Inside terminal, this file will be at your home directory.  
 
-By default, Linux (Beta) or Crostini runs a container for Debian 10. Below has been tested to be working in both Debian 10 and Debian 9.  Run below commands to install all required files:
+By default, Linux (Beta) or Crostini runs a container for Debian 10. Below has been tested to be working in both Debian 11 and Debian 10. Because the latest v2.1.0 is static linked wallet file, you can simply download x86_64 linux-gnu version wallet binary and run in either GUI (QT) or command line CLI wallet.  
 
-```
-   tar xvfz cheetahcoin_v1.10.1.3_chromeos_x64.tgz
-   cd Chromebook/x64/debian
-   bash  prepare_neng.sh
-```
+After successfully downloading CHTA wallet file at your current folder. You can move these files to whatever best location inside your "Linux files" folder by using either linux command line or Chromebook GUI drag and drop. 
 
-After successfully completing above commands, CHTA wallet file and Cheetah_Cpuminer will be downloaded at your current folder. You can move these files to whatever best location inside your "Linux files" folder by using either linux command line or Chromebook GUI drag and drop. 
+## Crostini Ubuntu 20.04 Alternative
 
-## Crostini Ubuntu 18.04 Alternative
-
-Ubuntu has better hardware and gaming support on x64 platform in linux. You can setup x64 penguin container using Ubuntu 18.04 to replace Debian 10 for Crostini. In case you runs a Ubuntu 18.04 container in Linux (Beta),  ubuntu 18.04 installation scripts folder is also provided with README file. 
+Ubuntu has better hardware and gaming support on x64 platform in linux. You can setup x64 penguin container using Ubuntu 18.04 to replace Debian 11 for Crostini. In case you runs a Ubuntu 20.04 container in Linux (Beta),  you can run the same linux binary wallet too. 
 
 ## Linux Terminal CLI or Desktop GUI wallet for mining? 
 
@@ -54,8 +51,8 @@ to run a full node and for the purpose of CPU mining.
 ## run GUI QT wallet in Chromebook
 
  ```
- hlu@penguin:~$ cd  cheetahcoin_v1.10.1.0_ubuntu16.04
- hlu@penguin:~/cheetahcoin_v1.10.1.0_ubuntu16.04$ ./cheetahcoin-qt &
+ hlu@penguin:~$ cd  cheetahcoin_2.1.0_x86_64_linux-gnu
+ hlu@penguin:~/cheetahcoin_2.1.0_x86_64_linux-gnu$ ./cheetahcoin-qt &
 ```
 
 Above in linux terminal will pop CHTA QT wallet in chromebook desktop.
@@ -79,15 +76,15 @@ TAB key is powerful in linux command line.  Typing full word of file or folder n
 
 Here is easier way with tab:
 ```
-   cd  cheetahcoin_v1.10.1.0_ubuntu16.04
+   cd  cheetahcoin_2.1.0_x86_64_linux-gnu
 
 ```
   Typing above long word in Chromebook is close to impossible. An easier way to do is:
 
 ```
-   cd  cheetahc-finger push TAB key
+   cd  cheet-finger push TAB key
 ```
-After you push TAB afer word "cheetahc" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "cheetahcoin_v1.10.1.0_ubuntu16.04" auto populated for you. 
+After you push TAB afer word "cheec" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "cheetahcoin_2.1.0_x86_64_linux-gnu" auto populated for you. 
 
 #### Arrow up or down key for history
 
