@@ -5,8 +5,19 @@ This folder describe how to CPU mine Cheetahcoin (CHTA) in android phone on 64 b
 - Minimum hardware requirement: 2G memory phone with 3G spare hard disk. 
 - Software Required: UserLand app from Google Play Store or F-Droid
 
-For CPU mining steps and optimization with cheetah_Cpuminer, please checkout: 
-https://github.com/ShorelineCrypto/cheetah_cpuminer
+For CPU mining steps and optimization with cheetah_Cpuminer on "chta" branch web guide at
+https://github.com/ShorelineCrypto/cheetah_cpuminer/tree/chta
+
+To obtain software, please perform below command lines:
+```
+  git clone https://github.com/ShorelineCrypto/cheetah_cpuminer cheetah_cpuminer_chta
+  cd cheetah_cpuminer_chta
+  git pull
+  git checkout chta
+```
+
+Or download directly on zip file of "chta1.5.0" release:
+https://github.com/ShorelineCrypto/cheetah_cpuminer/releases/tag/chta1.5.0
 
 ## Confusion on android vs linux on CHTA v1.4.x/v1.5.x release
 
