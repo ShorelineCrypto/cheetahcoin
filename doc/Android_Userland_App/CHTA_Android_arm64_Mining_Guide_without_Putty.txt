@@ -19,22 +19,18 @@ CHTA Android Mining Guide without Putty
         b. bash prepare_chta.sh
         c. cd cheetahcoin_2.1.0_arm64_linux-gnu/
         d. ./cheetahcoind (create wallet folder & files)
-        e. screen (creates another screen so you can check your wallet and mining at the same time using one ssh)
-        f. cd
-        g. cd  Android_Userland_App/debian/arm64/cheetah_cpuminer
-        h. mv cheetahcoin.conf-example cheetahcoin.conf (rename)
-        i. vi cheetahcoin.conf
-        j. Press i and use the arrow keys to navigate to modify your rpc username and password
-        k. Press Esc
-        l. :wq
-        m. cp cheetahcoin.conf  ~/.cheetahcoin/
-        n. Press Ctrl AD to go back to the main screen (CHTA Wallet)
-        o. ./cheetahcoind (sync the wallet appx 48 hrs or more)
+        e. ignore errors related rpcuser rpcpassword when you first time run a node
+        f. screen (creates another screen so you can check your wallet and mining at the same time using one ssh)
+        g. cd
+        h. cd  Android_Userland_App/arm64/cheetah_cpuminer_chta
+        i. cp cheetahcoin.conf  ~/.cheetahcoin/
+        j. Press Ctrl AD to go back to the main screen (CHTA Wallet)
+        k. ./cheetahcoind (sync the wallet appx 48 hrs or more)
 (Ensure that your device shows command prompt after it shows “Server is starting”. If not press Enter one time to allow command prompt to appear.)
-        p. top (rotate your mobile phone to the side so that you are able to see whether cheetahcoind is running)
-        q. ./cheetahcoin-cli getmininginfo (compare the current block with https://au-merged.mine.cminors-pool.com/explorer/CHTA to ensure it has sync to the latest block before getting ready to perform mining)
-        r. ./cheetahcoin-cli getbalance (check your coin balance in your wallet)
-        s. Ctrl+C (to exit top)
+        l. top (rotate your mobile phone to the side so that you are able to see whether cheetahcoind is running)
+        m. ./cheetahcoin-cli getmininginfo (compare the current block with https://au-merged.mine.cminors-pool.com/explorer/CHTA to ensure it has sync to the latest block before getting ready to perform mining)
+        n. ./cheetahcoin-cli getbalance (check your coin balance in your wallet)
+        o. Ctrl+C (to exit top)
 After complete syncing your CHTA wallet
     1. Enter command line
         a. screen -r (from CHTA wallet to Cheetah screen)
