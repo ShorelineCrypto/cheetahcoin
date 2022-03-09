@@ -82,7 +82,7 @@ Here is easier way with tab:
   Typing above long word in Chromebook is close to impossible. An easier way to do is:
 
 ```
-   cd  cheec-finger push TAB key
+   cd  cheet-finger push TAB key
 ```
 After you push TAB afer word "cheec" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "cheetahcoin_2.1.0_x86_64_linux-gnu" auto populated for you. 
 
