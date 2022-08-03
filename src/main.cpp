@@ -2420,8 +2420,8 @@ bool CBlock::CheckBlock(CValidationState &state, bool fCheckPOW, bool fCheckMerk
     if (fCheckPOW && !CheckProofOfWork(GetHash(), nBits))
         return state.DoS(50, error("CheckBlock() : proof of work failed"));
 
-    // Check timestamp, bitcoin 2 hour rule
-    if (GetBlockTime() > GetAdjustedTime() + 2 * 60 * 60)
+    // Check timestamp, Enforce timestamp 4 minute rule on v1.10.x fork
+    if (GetBlockTime() > GetAdjustedTime() + 1 * 4 * 55)
         return state.Invalid(error("CheckBlock() : block timestamp too far in the future"));
 
     // First transaction must be coinbase, the rest must not be
@@ -2490,9 +2490,9 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
         if (GetBlockTime() <= pindexPrev->GetMedianTimePast())
             return state.Invalid(error("AcceptBlock() : block's timestamp is too early"));
 
-        // Enforce timestamp 4 minute rule, v1.10.x fork on block height 769818
-        if ((nHeight > 769818) && (GetBlockTime() > GetAdjustedTime() + 1 * 4 * 55))
-            return state.Invalid(error("AcceptBlock() : block timestamp too far in the future"));
+        // Enforce timestamp 30 seconds rule after v1.12.x hard fork
+        if ((nHeight > 1308484) && (GetBlockTime() > GetAdjustedTime() + 1 * 1 * 30))
+            return state.Invalid(error("AcceptBlock() : block timestamp >30 sec in the future"));
         
         // Check that all transactions are finalized
         BOOST_FOREACH(const CTransaction& tx, vtx)
