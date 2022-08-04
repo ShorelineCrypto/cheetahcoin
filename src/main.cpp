@@ -1147,8 +1147,8 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                 return pindex->nBits;
             }
         }
-        // v1.12.x randomSpike fork after block height 1308484
-        else if (pindex->nHeight > 1308484) {
+        // v1.12.x randomSpike fork after block height 1408590
+        else if (pindex->nHeight > 1408590) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             unsigned int nCheetah = bnCheetah.GetCompact();
@@ -2577,7 +2577,7 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
             return state.Invalid(error("AcceptBlock() : block's timestamp is too early"));
 
         // Enforce timestamp 30 seconds rule after v1.12.x hard fork
-        if ((nHeight > 1308484) && (GetBlockTime() > GetAdjustedTime() + 1 * 1 * 30))
+        if ((nHeight > 1408590) && (GetBlockTime() > GetAdjustedTime() + 1 * 1 * 30))
             return state.Invalid(error("AcceptBlock() : block timestamp >30 sec in the future"));
         
         // Check that all transactions are finalized
