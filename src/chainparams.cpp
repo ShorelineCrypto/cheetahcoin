@@ -89,16 +89,16 @@ public:
 
         // Deployment of BIP68, BIP112, and BIP113.
         consensus.vDeployments[Consensus::DEPLOYMENT_CSV].bit = 0;
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1751121313; // June 28, 2025
-        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1751380513; // July 1, 2025
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nStartTime = 1661990853; // September 1, 2022
+        consensus.vDeployments[Consensus::DEPLOYMENT_CSV].nTimeout = 1693526853; // September 1, 2023
 
         // Deployment of SegWit (BIP141, BIP143, and BIP147)
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].bit = 1;
         consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nStartTime = 1751121313; // June 28, 2025
-        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 1751380513; // July 1, 2025
+        consensus.vDeployments[Consensus::DEPLOYMENT_SEGWIT].nTimeout = 0; // Disabled
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000abb25fee6b638e93f7");
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -142,9 +142,10 @@ public:
             ( 203300, uint256S("0x000000008647886f1c231e07a7427a7440420cf43a306a41f28a0f48f36c4c97"))
             (356778, uint256S("0x000000001a5a7fd606305b6aaefbaa7eef6b01f30148ef5d23a3c5fadf408a26"))
             (622365, uint256S("0x000000000e3867c44a2983dc40592dec589d1dafa1bab5d066b681654ad61ee2"))
-            (802661, uint256S("0x0000000005197f94d397ff5f7a2cf591b10022ea12cc382345946f1a74a4d834")),
-            1646010814, // * UNIX timestamp of last checkpoint block
-            952551,   // * total number of transactions between genesis and last checkpoint
+            (802661, uint256S("0x0000000005197f94d397ff5f7a2cf591b10022ea12cc382345946f1a74a4d834"))
+            (1308484, uint256S("0x00000000009805663ade86774ee904fe84bab361cc967dd7da1bb2ef46d0b038")),
+            1659563547, // * UNIX timestamp of last checkpoint block
+            1557774,   // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             100.0     // * estimated number of transactions per day after checkpoint
         };

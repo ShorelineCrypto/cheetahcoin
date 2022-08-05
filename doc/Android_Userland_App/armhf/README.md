@@ -41,8 +41,8 @@ IP = 192.168.1.98 with user "hlu" like below
 First login into UserLand app linux terminal remotely, you should find that common linux command like "top", "uptime" does not work. 
 Please run below for workaround for those issues:
 ```
-  wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v2.1.0/cheetahcoin_v2.1.0_android_userland_arm.tgz
-  tar xvfz cheetahcoin_v2.1.0_android_userland_arm.tgz
+  wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v2.3.0/cheetahcoin_v2.3.0_android_userland_arm.tgz
+  tar xvfz cheetahcoin_v2.3.0_android_userland_arm.tgz
   cd  Android_Userland_App/armhf/
   bash prepare_userland.sh
 
