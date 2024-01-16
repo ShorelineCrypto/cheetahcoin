@@ -42,7 +42,7 @@ Discord
 https://discord.gg/WgXrgSYrBr
 
 Twitter
-https://twitter.com/cheetah_coin
+https://twitter.com/cheetahcoindev
 
 
 License
