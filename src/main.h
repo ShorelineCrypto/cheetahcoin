@@ -153,6 +153,9 @@ struct BlockHasher
     size_t operator()(const uint256& hash) const { return hash.GetCheapHash(); }
 };
 
+/** Default for -maxreorgdepth */
+static const int DEFAULT_MAX_REORG_DEPTH = 48;
+
 extern CScript COINBASE_FLAGS;
 extern CCriticalSection cs_main;
 extern CTxMemPool mempool;
@@ -534,5 +537,8 @@ static const unsigned int REJECT_HIGHFEE = 0x100;
 static const unsigned int REJECT_ALREADY_KNOWN = 0x101;
 /** Transaction conflicts with a transaction already known */
 static const unsigned int REJECT_CONFLICT = 0x102;
+/** Block conflicts with a transaction already known */
+static const unsigned int REJECT_AGAINST_FINALIZED = 0x103;
+
 
 #endif // CHEETAHCOIN_MAIN_H
