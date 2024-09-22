@@ -1101,8 +1101,9 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
         return bnProofOfWorkLimit.GetCompact();
 
     // Cheetah blocks has low difficulty, allowed to sync to fix MinWorkBug
+    // v2.4 on v1.13.x randomSpike drop cheetah difficulty by 20x
     if (nTime > nTargetSpacing*2)
-        return bnProofOfWorkLimit.GetCompact();
+        return bnProofOfWorkLimit.GetCompact()*20;
 
         
     CBigNum bnResult;
