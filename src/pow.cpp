@@ -467,9 +467,12 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
     arith_uint256 bnTarget;
 
     bnTarget.SetCompact(nBits, &fNegative, &fOverflow);
-
+    
+    # v2.4.0 cheetah diff = 1 / 20 = 0.05
+    arith_uint256 bnCheetahLimit = UintToArith256(params.powLimit) * 20;
+   
     // Check range
-    if (fNegative || bnTarget == 0 || fOverflow || bnTarget > UintToArith256(params.powLimit))
+    if (fNegative || bnTarget == 0 || fOverflow || bnTarget > bnCheetahLimit)
         return false;
 
     // Check proof of work matches claimed amount
