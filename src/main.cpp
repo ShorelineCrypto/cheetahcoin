@@ -1667,8 +1667,11 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits)
     CBigNum bnTarget;
     bnTarget.SetCompact(nBits);
 
+    // v2.4.0 cheetah diff = 1 / 20 = 0.05
+    CBigNum bnCheetahLimit = bnProofOfWorkLimit * 20;
+   
     // Check range
-    if (bnTarget <= 0 || bnTarget > bnProofOfWorkLimit)
+    if (bnTarget <= 0 || bnTarget > bnCheetahLimit)
         return error("CheckProofOfWork() : nBits below minimum work");
 
     // Check proof of work matches claimed amount
