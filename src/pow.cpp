@@ -31,11 +31,11 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         const int64_t nInterval = params.DifficultyAdjustmentInterval();
         const int64_t nTargetSpacing = params.nPowTargetSpacing;
 
-        // v1.13.x randomSpike fork after block height 3367798
-        if (pindex->nHeight > 3367798) {
+        // v1.13.x randomSpike fork after block height 3385825
+        if (pindex->nHeight > 3385825) {
             arith_uint256 bnCheetah;
             bnCheetah = bnPowLimit;
-            bnCheetah *= 20;
+            bnCheetah *= 400;
             unsigned int nCheetah = bnCheetah.GetCompact();
             
             arith_uint256 bnSpike;
@@ -555,8 +555,8 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
 
     bnTarget.SetCompact(nBits, &fNegative, &fOverflow);
     
-    // v2.4.0 cheetah diff = 1 / 20 = 0.05
-    arith_uint256 bnCheetahLimit = UintToArith256(params.powLimit) * 20;
+    // v2.4.0 cheetah diff = 1 / 400 = 0.0025
+    arith_uint256 bnCheetahLimit = UintToArith256(params.powLimit) * 400;
    
     // Check range
     if (fNegative || bnTarget == 0 || fOverflow || bnTarget > bnCheetahLimit)
