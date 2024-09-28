@@ -1101,9 +1101,9 @@ unsigned int ComputeMinWork(unsigned int nBase, int64 nTime)
         return bnProofOfWorkLimit.GetCompact();
 
     // Cheetah blocks has low difficulty, allowed to sync to fix MinWorkBug
-    // v2.4 on v1.13.x randomSpike drop cheetah difficulty by 20x
+    // v2.4 on v1.13.x randomSpike drop cheetah difficulty by 400x
     if (nTime > nTargetSpacing*2)
-        return bnProofOfWorkLimit.GetCompact()*20;
+        return bnProofOfWorkLimit.GetCompact()*400;
 
         
     CBigNum bnResult;
@@ -1148,11 +1148,11 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                 return pindex->nBits;
             }
         }
-        // v1.13.x randomSpike fork after block height 3367798
-        else if (pindex->nHeight > 3367798) {
+        // v1.13.x randomSpike fork after block height 3385825
+        else if (pindex->nHeight > 3385825) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
-            bnCheetah *= 20;
+            bnCheetah *= 400;
             unsigned int nCheetah = bnCheetah.GetCompact();
             
             CBigNum bnSpike;
@@ -1667,8 +1667,8 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits)
     CBigNum bnTarget;
     bnTarget.SetCompact(nBits);
 
-    // v2.4.0 cheetah diff = 1 / 20 = 0.05
-    CBigNum bnCheetahLimit = bnProofOfWorkLimit * 20;
+    // v2.4.0 cheetah diff = 1 / 400 = 0.0025
+    CBigNum bnCheetahLimit = bnProofOfWorkLimit * 400;
    
     // Check range
     if (bnTarget <= 0 || bnTarget > bnCheetahLimit)
