@@ -19,6 +19,6 @@ git checkout chta
 
 cd ..
 
-wget  https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v2.3.0/cheetahcoin_2.3.0_arm64_linux-gnu.tgz
-tar xvfz cheetahcoin_2.3.0_arm64_linux-gnu.tgz 
+wget  https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v2.4.0/cheetahcoin_2.4.0_arm64_linux-gnu.tgz
+tar xvfz cheetahcoin_2.4.0_arm64_linux-gnu.tgz 
 
