@@ -31,8 +31,8 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         const int64_t nInterval = params.DifficultyAdjustmentInterval();
         const int64_t nTargetSpacing = params.nPowTargetSpacing;
 
-        // v1.13.x randomSpike fork after block height 3385825
-        if (pindex->nHeight > 3385825) {
+        // v1.13.x randomSpike fork after block height 3548577
+        if (pindex->nHeight > 3548577) {
             arith_uint256 bnCheetah;
             bnCheetah = bnPowLimit;
             bnCheetah *= 400;
