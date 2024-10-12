@@ -9,20 +9,20 @@ CHTA Android Mining Guide without Putty
         a. uname -a (or uname -m : to determine whether your phone is 64bit or 32bit. This guide is using armhf / 32bit folder. For 64bit please install the files in arm64 folder instead of armhf folder) 
         b. sudo apt update
         c. sudo apt install wget ssh
-        d. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v2.4.0/cheetahcoin_v2.4.0_android_userland_arm.tgz
-        e. tar xvfz cheetahcoin_v2.4.0_android_userland_arm.tgz
-        f. cd  Android_Userland_App/armhf/
+        d. wget https://github.com/ShorelineCrypto/cheetahcoin/releases/download/v2.4.0/cheetahcoin_2.4.0_android_userland_arm.tgz
+        e. tar xvfz cheetahcoin_2.4.0_android_userland_arm.tgz
+        f. cd  cheetahcoin_2.4.0_android_userland_arm/armhf/
         g. bash prepare_userland.sh
     8. Relogin Userland Ubuntu or Debian
     9. Enter command line
-        a. cd  Android_Userland_App/armhf/
+        a. cd  cheetahcoin_2.4.0_android_userland_arm/armhf/
         b. bash prepare_chta.sh
         c. cd cheetahcoin_2.4.0_armhf_linux-gnu/
         d. ./cheetahcoind (create wallet folder & files)
         e. ignore errors related rpcuser rpcpassword when you first time run a node
         f. screen (creates another screen so you can check your wallet and mining at the same time using one ssh)
         g. cd
-        h. cd  Android_Userland_App/armhf/cheetah_cpuminer_chta
+        h. cd  cheetahcoin_2.4.0_android_userland_arm/armhf/cheetah_cpuminer_chta
         i. cp cheetahcoin.conf  ~/.cheetahcoin/
         j. Press Ctrl AD to go back to the main screen (CHTA Wallet)
         k. ./cheetahcoind (sync the wallet appx 48 hrs or more)
