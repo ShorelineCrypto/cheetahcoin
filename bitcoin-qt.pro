@@ -1,7 +1,7 @@
 TEMPLATE = app
 TARGET = cheetahcoin-qt
 macx:TARGET = "Cheetahcoin-Qt"
-VERSION = 1.12.1.0
+VERSION = 1.13.1.0
 INCLUDEPATH += src src/json src/qt
 QT += network
 DEFINES += QT_GUI BOOST_THREAD_USE_LIB BOOST_SPIRIT_THREADSAFE

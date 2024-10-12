@@ -23,8 +23,9 @@ Major releases features:
 * v1.9.x Fixed slow hack risk, cheetah diff rise 3x, spike drop 5x
 * v1.10.x Changed bitcoin future timestamp 2 hour rule to 4 minute, cheetah/spike diff adjustment
 * v1.12.x Reduced future timestamp rule to 30 seconds, cheetah diff drop to 1 
+* v1.13.x cheetah diff drop 400 fold to 0.0025, spike diff rise 2 fold to 20G
 
-Current full version name: "1.12.1.0_randomSpike-v1.12.x" (shorthand: "v1.12.x") 
+Current full version name: "1.13.1.0_randomSpike-v1.13.x" (shorthand: "v1.13.x") 
 
 Bitcointalk Ann
 https://bitcointalk.org/index.php?topic=5309004.0
@@ -39,7 +40,7 @@ Discord
 https://discord.gg/WgXrgSYrBr
 
 Twitter
-https://twitter.com/cheetah_coin
+https://twitter.com/cheetahcoindev
 
 
 License
