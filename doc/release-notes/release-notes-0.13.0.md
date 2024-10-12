@@ -712,7 +712,7 @@ git merge commit are mentioned.
 - #7281 `f9fd4c2` Improve CheckInputs() comment about sig verification (petertodd)
 - #7417 `1e06bab` Minor improvements to the release process (PRabahy)
 - #7444 `4cdbd42` Improve block validity/ConnectBlock() comments (petertodd)
-- #7527 `db2.3.0` Fix and cleanup listreceivedbyX documentation (instagibbs)
+- #7527 `db2.4.0` Fix and cleanup listreceivedbyX documentation (instagibbs)
 - #7541 `b6e00af` Clarify description of blockindex (pinheadmz)
 - #7590 `f06af57` Improving wording related to Boost library requirements [updated] (jonathancross)
 - #7635 `0fa88ef` Add dependency info to test docs (elliotolds)

@@ -113,7 +113,7 @@ by matching the binary network address, instead of with string wildcard matching
 For the user this means that `-rpcallowip` takes a subnet specification, which can be
 
 - a single IP address (e.g. `1.2.3.4` or `fe80::0012:3456:789a:bcde`)
-- a network/CIDR (e.g. `1.2.3.0/24` or `fe80::0000/64`)
+- a network/CIDR (e.g. `1.2.4.0/24` or `fe80::0000/64`)
 - a network/netmask (e.g. `1.2.3.4/255.255.255.0` or `fe80::0012:3456:789a:bcde/ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff`)
 
 An arbitrary number of `-rpcallow` arguments can be given. An incoming connection will be accepted if its origin address

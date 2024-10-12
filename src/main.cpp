@@ -144,6 +144,12 @@ namespace {
 
     CBlockIndex *pindexBestInvalid;
 
+/**
+ * The best finalized block.
+ * This block cannot be reorged in any way, shape or form.
+ */
+CBlockIndex const *pindexFinalized;
+
     /**
      * The set of all CBlockIndex entries with BLOCK_VALID_TRANSACTIONS (for itself and all ancestors) and
      * as good as our current tip or better. Entries may be failed, though, and pruning nodes may be
@@ -2810,6 +2816,11 @@ bool static DisconnectTip(CValidationState& state, const CChainParams& chainpara
         mempool.UpdateTransactionsFromBlock(vHashUpdate);
     }
 
+    // If the tip is finalized, then undo it.
+    if (pindexFinalized == pindexDelete) {
+        pindexFinalized = pindexDelete->pprev;
+    }
+
     // Update chainActive and related variables.
     UpdateTip(pindexDelete->pprev, chainparams);
     // Let wallets know transactions went from 1-confirmed to
@@ -2825,6 +2836,32 @@ static int64_t nTimeConnectTotal = 0;
 static int64_t nTimeFlush = 0;
 static int64_t nTimeChainState = 0;
 static int64_t nTimePostConnect = 0;
+
+static bool FinalizeBlockInternal(CValidationState &state,
+                                  CBlockIndex *pindex) {
+
+    AssertLockHeld(cs_main);                                  
+    if (pindex->nStatus & BLOCK_FAILED_MASK) {
+        // We try to finalize an invalid block.
+        return state.DoS(100,
+                         error("%s: Trying to finalize invalid block %s",
+                               __func__, pindex->GetBlockHash().ToString()),
+                         REJECT_INVALID, "finalize-invalid-block");
+    }
+
+    // Check that the request is consistent with current finalization.
+    if (pindexFinalized && !AreOnTheSameFork(pindex, pindexFinalized)) {
+        return state.DoS(
+            20, error("%s: Trying to finalize block %s which conflicts "
+                      "with already finalized block",
+                      __func__, pindex->GetBlockHash().ToString()),
+            REJECT_AGAINST_FINALIZED, "bad-fork-prior-finalized");
+    }
+
+    // Our candidate is valid, finalize it.
+    pindexFinalized = pindex;
+    return true;
+}
 
 /**
  * Connect a new block to chainActive. pblock is either NULL or a pointer to a CBlock
@@ -2855,6 +2892,20 @@ bool static ConnectTip(CValidationState& state, const CChainParams& chainparams,
             return error("ConnectTip(): ConnectBlock %s failed", pindexNew->GetBlockHash().ToString());
         }
         mapBlockSource.erase(pindexNew->GetBlockHash());
+
+        // Update the finalized block.
+        int32_t nHeightToFinalize =
+            pindexNew->nHeight - DEFAULT_MAX_REORG_DEPTH;
+        CBlockIndex *pindexToFinalize =
+            pindexNew->GetAncestor(nHeightToFinalize);
+        if (pindexToFinalize &&
+            !FinalizeBlockInternal(state, pindexToFinalize)) {
+            state.SetCorruptionPossible();
+            return error("ConnectTip(): FinalizeBlock %s failed (%s)",
+                         pindexNew->GetBlockHash().ToString(),
+                         FormatStateMessage(state));
+        }
+
         nTime3 = GetTimeMicros(); nTimeConnectTotal += nTime3 - nTime2;
         LogPrint("bench", "  - Connect total: %.2fms [%.2fs]\n", (nTime3 - nTime2) * 0.001, nTimeConnectTotal * 0.000001);
         assert(view.Flush());
@@ -2901,6 +2952,16 @@ static CBlockIndex* FindMostWorkChain() {
             if (it == setBlockIndexCandidates.rend())
                 return NULL;
             pindexNew = *it;
+        }
+
+        // If this block will cause a finalized block to be reorged, then we
+        // mark it as invalid.
+        if (pindexFinalized && !AreOnTheSameFork(pindexNew, pindexFinalized)) {
+            LogPrintf("Mark block %s invalid because it forks prior to the "
+                      "finalization point %d.\n",
+                      pindexNew->GetBlockHash().ToString(),
+                      pindexFinalized->nHeight);
+            pindexNew->nStatus |= BLOCK_FAILED_VALID;
         }
 
         // Check whether all blocks on the path between the currently active chain and the candidate are valid.
@@ -4299,6 +4360,7 @@ void UnloadBlockIndex()
     LOCK(cs_main);
     setBlockIndexCandidates.clear();
     chainActive.SetTip(NULL);
+    pindexFinalized = NULL;
     pindexBestInvalid = NULL;
     pindexBestHeader = NULL;
     mempool.clear();

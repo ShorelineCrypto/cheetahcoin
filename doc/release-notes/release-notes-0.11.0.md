@@ -246,7 +246,7 @@ git merge commit are mentioned.
 - #5900 `3e8a1f2` Add a consistency check `-checkblockindex` for the block chain data structures
 - #5951 `7efc9cf` Make it possible to disable wallet transaction broadcast (using `-walletbroadcast=0`)
 - #5911 `b6ea3bc` privacy: Stream isolation for Tor (on by default, use `-proxyrandomize=0` to disable)
-- #5863 `c2.3.04` Add autoprune functionality (`-prune=<size>`)
+- #5863 `c2.4.04` Add autoprune functionality (`-prune=<size>`)
 - #6153 `0bcf04f` Parameter interaction: disable upnp if -proxy set
 - #6274 `4d9c7fe` Add option `-alerts` to opt out of alert system
 

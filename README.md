@@ -24,10 +24,11 @@ Major releases features:
 * v1.10.x Changed bitcoin future timestamp 2 hour rule to 4 minute, cheetah/spike diff adjustment
 * v2.1.0 rebased off bitcoin core v0.13.2 on v1.10.x randomSpike with 3 soft forks
 * v2.3.0-1.12.x Future timestamp 30 seconds rule, cheetah diff drop to 1, 3 CSV BIPs enabled, Segwit BIPs Disabled
+* v2.4.0-P13x Rolling 48 Blocks Deep Reorg Protection, cheetah diff drop 400x, spike diff rise 2x
 
-Current full version name: "v2.3.0._randomSpike-1.12.x" 
-Note: All users/miners are recommended to use v2.3.0. Solo miners on USB ASIC/ASIC are no longer recommended to use v1.12.1 because of soft forks enforcement.
-      Because now v2.3.0 are built with static linked wallet, macOS are fully supported (x86_64 wallet, but should work too for M1 chip).
+Current full version name: "v2.4.0_randomSpike-P13x" 
+Note: All users/miners are recommended to use v2.4.0. Solo miners on USB ASIC/ASIC are no longer able to use old style wallet on v1.13.1 because of soft forks enforcement.
+      Because now v2.4.0 are built with static linked wallet, macOS are fully supported (x86_64 wallet, but should work too for M1 chip).
 
 Bitcointalk Ann
 https://bitcointalk.org/index.php?topic=5309004.0

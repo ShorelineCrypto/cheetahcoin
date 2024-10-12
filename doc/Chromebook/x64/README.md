@@ -35,7 +35,7 @@ For disk size in Linux Beta, we recommend to add 3G on top of recommended 5G by 
 You can pin linux "Terminal" at menu bar. Download this tgz file to chromebook, drag the file from "Downloads" to "Linux files" folder in chromebook. 
 Inside terminal, this file will be at your home directory.  
 
-By default, Linux (Beta) or Crostini runs a container for Debian 10. Below has been tested to be working in both Debian 11 and Debian 10. Because the latest v2.3.0 is static linked wallet file, you can simply download x86_64 linux-gnu version wallet binary and run in either GUI (QT) or command line CLI wallet.  
+By default, Linux (Beta) or Crostini runs a container for Debian 10. Below has been tested to be working in both Debian 11 and Debian 10. Because the latest v2.4.0 is static linked wallet file, you can simply download x86_64 linux-gnu version wallet binary and run in either GUI (QT) or command line CLI wallet.  
 
 After successfully downloading CHTA wallet file at your current folder. You can move these files to whatever best location inside your "Linux files" folder by using either linux command line or Chromebook GUI drag and drop. 
 
@@ -51,8 +51,8 @@ to run a full node and for the purpose of CPU mining.
 ## run GUI QT wallet in Chromebook
 
  ```
- hlu@penguin:~$ cd  cheetahcoin_2.3.0_x86_64_linux-gnu
- hlu@penguin:~/cheetahcoin_2.3.0_x86_64_linux-gnu$ ./cheetahcoin-qt &
+ hlu@penguin:~$ cd  cheetahcoin_2.4.0_x86_64_linux-gnu
+ hlu@penguin:~/cheetahcoin_2.4.0_x86_64_linux-gnu$ ./cheetahcoin-qt &
 ```
 
 Above in linux terminal will pop CHTA QT wallet in chromebook desktop.
@@ -76,7 +76,7 @@ TAB key is powerful in linux command line.  Typing full word of file or folder n
 
 Here is easier way with tab:
 ```
-   cd  cheetahcoin_2.3.0_x86_64_linux-gnu
+   cd  cheetahcoin_2.4.0_x86_64_linux-gnu
 
 ```
   Typing above long word in Chromebook is close to impossible. An easier way to do is:
@@ -84,7 +84,7 @@ Here is easier way with tab:
 ```
    cd  cheet-finger push TAB key
 ```
-After you push TAB afer word "cheec" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "cheetahcoin_2.3.0_x86_64_linux-gnu" auto populated for you. 
+After you push TAB afer word "cheec" , the chromebook linux terminal should behave like linux in server/desktop with the full file/folder name "cheetahcoin_2.4.0_x86_64_linux-gnu" auto populated for you. 
 
 #### Arrow up or down key for history
 

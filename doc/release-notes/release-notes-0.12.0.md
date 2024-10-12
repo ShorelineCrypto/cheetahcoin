@@ -384,11 +384,11 @@ and are affected by this change:
 For example, the `scriptSig.asm` property of a transaction input that
 previously showed an assembly representation of:
 
-    304502207fa7a6d1e0ee81132a269ad84e68d695483745cde8b541e3bf630749894e342a02.3.0c1f7ab20e13e22fb95281a870f3dcf38d782e53023ee313d741ad0cfbc0c509001 400000 OP_NOP2
+    304502207fa7a6d1e0ee81132a269ad84e68d695483745cde8b541e3bf630749894e342a02.4.0c1f7ab20e13e22fb95281a870f3dcf38d782e53023ee313d741ad0cfbc0c509001 400000 OP_NOP2
 
 now shows as:
 
-    304502207fa7a6d1e0ee81132a269ad84e68d695483745cde8b541e3bf630749894e342a02.3.0c1f7ab20e13e22fb95281a870f3dcf38d782e53023ee313d741ad0cfbc0c5090[ALL] 400000 OP_CHECKLOCKTIMEVERIFY
+    304502207fa7a6d1e0ee81132a269ad84e68d695483745cde8b541e3bf630749894e342a02.4.0c1f7ab20e13e22fb95281a870f3dcf38d782e53023ee313d741ad0cfbc0c5090[ALL] 400000 OP_CHECKLOCKTIMEVERIFY
 
 Note that the output of the RPC `decodescript` did not change because it is
 configured specifically to process scriptPubKey and not scriptSig scripts.
@@ -706,7 +706,7 @@ git merge commit are mentioned.
 - #7112 `96b8025` reduce cs_main locks during tip update, more fluently update UI (Jonas Schnelli)
 - #7206 `f43c2f9` Add "NODE_BLOOM" to guiutil so that peers don't get UNKNOWN[4] (Matt Corallo)
 - #7282 `5cadf3e` fix coincontrol update issue when deleting a send coins entry (Jonas Schnelli)
-- #7319 `1320300` Intro: Display required space (MarcoFalke)
+- #7319 `132.4.0` Intro: Display required space (MarcoFalke)
 - #7318 `9265e89` quickfix for RPC timer interface problem (Jonas Schnelli)
 - #7327 `b16b5bc` [Wallet] Transaction View: LastMonth calculation fixed (crowning-)
 - #7364 `7726c48` [qt] Windows: Make rpcconsole monospace font larger (MarcoFalke)
@@ -718,7 +718,7 @@ git merge commit are mentioned.
 - #6318 `e307e13` build: comparison tool NPE fix (Cory Fields)
 - #6337 `0564c5b` Testing infrastructure: mocktime fixes (Gavin Andresen)
 - #6350 `60abba1` add unit tests for the decodescript rpc (mruddy)
-- #5881 `3203a08` Fix and improve txn_doublespend.py test (Tom Harding)
+- #5881 `32.4.08` Fix and improve txn_doublespend.py test (Tom Harding)
 - #6390 `6a73d66` tests: Fix cheetahcoin-tx signing test case (Wladimir J. van der Laan)
 - #6368 `7fc25c2` CLTV: Add more tests to improve coverage (Esteban Ordano)
 - #6414 `5121c68` Fix intermittent test failure, reduce test time (Tom Harding)
