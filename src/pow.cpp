@@ -632,6 +632,13 @@ unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nF
     if (bnNew > bnPowLimit)
         bnNew = bnPowLimit;
 
+    arith_uint256 bnSpike;
+    bnSpike = bnPowLimit;
+    bnSpike /= 20000000000;
+    unsigned int nSpike = bnSpike.GetCompact();
+    if (pindexLast->nBits == nSpike)
+        bnNew = bnPowLimit;
+
     return bnNew.GetCompact();
 }
 
