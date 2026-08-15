@@ -1137,7 +1137,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
         else if (pindex->nHeight > 5027467) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
-            bnCheetah *= 400;
+            bnCheetah *= 500;
             unsigned int nCheetah = bnCheetah.GetCompact();
 
             CBigNum bnSpike;
@@ -1746,8 +1746,8 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits)
     CBigNum bnTarget;
     bnTarget.SetCompact(nBits);
 
-    // v2.4.0 cheetah diff = 1 / 400 = 0.0025
-    CBigNum bnCheetahLimit = bnProofOfWorkLimit * 400;
+    // v2.5.0 cheetah diff = 1 / 500 = 0.002
+    CBigNum bnCheetahLimit = bnProofOfWorkLimit * 500;
    
     // Check range
     if (bnTarget <= 0 || bnTarget > bnCheetahLimit)
