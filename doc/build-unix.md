@@ -13,7 +13,7 @@ below docker command.
 
 For x86_64:
 ```
- docker pull shorelinecrypto/neng_ubuntu16_x86_64:v1.3.0.1
+ docker pull shorelinecrypto/neng_ubuntu16_x86_64:v1.13.1.0
 ```
 For armhf:
 ```
