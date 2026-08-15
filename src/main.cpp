@@ -1725,6 +1725,13 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     if (bnNew > bnProofOfWorkLimit)
         bnNew = bnProofOfWorkLimit;
 
+    CBigNum bnSpike;
+    bnSpike = bnProofOfWorkLimit;
+    bnSpike /= 20000000000;
+    unsigned int nSpike = bnSpike.GetCompact();
+    if (pindexLast->nBits == nSpike)
+        bnNew = bnProofOfWorkLimit;
+
     /// debug print
     printf("GetNextWorkRequired RETARGET\n");
     printf("nTargetTimespan = %"PRI64d"    nActualTimespan = %"PRI64d"\n", nTargetTimespan, nActualTimespan);
