@@ -35,7 +35,7 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         if (pindex->nHeight > 5027467) {
             arith_uint256 bnCheetah;
             bnCheetah = bnPowLimit;
-            bnCheetah *= 400;
+            bnCheetah *= 500;
             unsigned int nCheetah = bnCheetah.GetCompact();
 
             arith_uint256 bnSpike;
@@ -650,8 +650,8 @@ bool CheckProofOfWork(uint256 hash, unsigned int nBits, const Consensus::Params&
 
     bnTarget.SetCompact(nBits, &fNegative, &fOverflow);
     
-    // v2.4.0 cheetah diff = 1 / 400 = 0.0025
-    arith_uint256 bnCheetahLimit = UintToArith256(params.powLimit) * 400;
+    // v2.5.0 cheetah diff = 1 / 500 = 0.002
+    arith_uint256 bnCheetahLimit = UintToArith256(params.powLimit) * 500;
    
     // Check range
     if (fNegative || bnTarget == 0 || fOverflow || bnTarget > bnCheetahLimit)
