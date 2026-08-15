@@ -26,7 +26,7 @@ Major releases features:
 * v1.13.x cheetah diff drop 400 fold to 0.0025, spike diff rise 2 fold to 20G
 * v1.14.x cheetah diff drop to 0.002, removed lock after spike block mined.
 
-Current full version name: "1.13.1.0_randomSpike-v1.13.x" (shorthand: "v1.13.x") 
+Current full version name: "1.14.1.0_randomSpike-v1.14.x" (shorthand: "v1.14.x") 
 
 Bitcointalk Ann
 https://bitcointalk.org/index.php?topic=5309004.0
