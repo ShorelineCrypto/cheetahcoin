@@ -1133,8 +1133,8 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                 return pindex->nBits;
             }
         }
-        // v1.14.x randomSpike fork after block height 5027467
-        else if (pindex->nHeight > 5027467) {
+        // v1.14.x randomSpike fork after block height 5030525
+        else if (pindex->nHeight > 5030525) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah *= 500;
