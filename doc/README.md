@@ -1,4 +1,4 @@
-Cheetahcoin Core 2.4.0
+Cheetahcoin Core 2.5.0
 =====================
 
 Setup
