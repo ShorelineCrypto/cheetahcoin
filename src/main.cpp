@@ -1151,7 +1151,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
             {
                 // Return the last non-special-nonSpike-nonCheetah-block
 
-                while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah && pindex->nBits == nSpike)
+                while (pindex->pprev && pindex->nHeight % nInterval != 0 && (pindex->nBits == nCheetah || pindex->nBits == nSpike))
                     pindex = pindex->pprev;
                 return pindex->nBits;
             }
@@ -1166,7 +1166,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                     return nSpike;
                 else
                 {
-                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah && pindex->nBits == nSpike)
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && (pindex->nBits == nCheetah || pindex->nBits == nSpike))
                         pindex = pindex->pprev;
                     return pindex->nBits;
                 }
@@ -1182,7 +1182,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                     return nSpike;
                 else
                 {
-                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah && pindex->nBits == nSpike)
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && (pindex->nBits == nCheetah || pindex->nBits == nSpike))
                         pindex = pindex->pprev;
                     return pindex->nBits;
                 }
@@ -1198,7 +1198,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                     return nSpike;
                 else
                 {
-                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah && pindex->nBits == nSpike)
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && (pindex->nBits == nCheetah || pindex->nBits == nSpike))
                         pindex = pindex->pprev;
                     return pindex->nBits;
                 }
@@ -1214,7 +1214,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                     return nSpike;
                 else
                 {
-                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && pindex->nBits == nCheetah && pindex->nBits == nSpike)
+                    while (pindex->pprev && pindex->nHeight % nInterval != 0 && (pindex->nBits == nCheetah || pindex->nBits == nSpike))
                         pindex = pindex->pprev;
                     return pindex->nBits;
                 }
