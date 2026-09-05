@@ -18,7 +18,7 @@ const std::string CLIENT_NAME("Cheetah");
 /**
  * Client version number
  */
-#define CLIENT_VERSION_SUFFIX "-P14x-dev2"
+#define CLIENT_VERSION_SUFFIX "-P14x-dev3"
 
 
 /**
