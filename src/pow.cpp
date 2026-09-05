@@ -31,8 +31,8 @@ unsigned int GetNextWorkRequired(const CBlockIndex* pindexLast, const CBlockHead
         const int64_t nInterval = params.DifficultyAdjustmentInterval();
         const int64_t nTargetSpacing = params.nPowTargetSpacing;
 
-       // v1.14.x-dev2 randomSpike fork after block height 5031525
-        if (pindex->nHeight > 5031525) {
+       // v1.14.x-dev3 randomSpike fork after block height 5088961
+        if (pindex->nHeight > 5088961) {
             arith_uint256 bnCheetah;
             bnCheetah = bnPowLimit;
             bnCheetah *= 500;
@@ -636,7 +636,8 @@ unsigned int CalculateNextWorkRequired(const CBlockIndex* pindexLast, int64_t nF
     bnSpike = bnPowLimit;
     bnSpike /= 20000000000;
     unsigned int nSpike = bnSpike.GetCompact();
-    if (pindexLast->nBits == nSpike)
+    // special handling on difficulty adjustment position after v2.5.0-dev3 v1.14.x randomSpike fork
+    if (pindexLast->nHeight > 5088961 && pindexLast->nBits == nSpike)
         bnNew = bnPowLimit;
 
     return bnNew.GetCompact();
