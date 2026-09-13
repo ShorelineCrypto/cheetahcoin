@@ -1,6 +1,23 @@
 # Change Log
 All notable changes to this project will be documented in this file.
+
+## [2.5.0] - 2026-09-12
  
+Hard fork on and after block height 5221830. This is major release that all users are required to upgrade. 
+ 
+### Added
+- [randomSpike 14x](https://github.com/ShorelineCrypto/cheetahcoin/commits/v2.5/)
+  Added randomSpike v1.14x difficulty algorithm.  Compared to prior version of randomSpike (v1.13x), cheetah mode difficulty will drop from 0.0025 to 0.002 while spike difficulty will remain the same.
+  
+### Changed
+- [Hard Fork Height](https://github.com/ShorelineCrypto/cheetahcoin/commits/v2.5/)
+  Added hard fork block height 5221830.  After this block height, this new release will form a new chain on the first cheetah mode block mined by the network.
+- Effectively a lock feature targeting big hashrate rigs after spike difficulty block mining event will be removed. After this hard fork, the blocks can be mined as usual even after a spike
+block (difficulty = 20G) is mined, spike or no spike with no difference.
+
+### Fixed
+- [Special Spike Case](https://github.com/ShorelineCrypto/cheetahcoin/commit/dd1599edf278e0a751dd8836c16eb5361a09602a)
+  Removed a lock on rare special event where the last block position before difficulty adjustment block is on spike difficulty. 
 
 ## [2.4.0] - 2024-10-12
  
@@ -10,7 +27,7 @@ Hard fork on and after block height 3548577. This is major release that all user
 - [Deep Reorg Protection](https://github.com/ShorelineCrypto/cheetahcoin/commit/72825cd4c8d8e97f25cf581573769f0d9532488f)
   Added the finalized block concept on rolling 48 blocks. Finalized blocks cannot be reorged, which protects the network against deep reorgs. This feature was ported from Bitcoin Cash v0.18.5 code base.
 - [randomSpike 13x](https://github.com/ShorelineCrypto/cheetahcoin/commit/c72a75e8178f0349f218ffabfd426bc429b6e487)
-  Added randomSpike v1.13x difficulty aglorithm.  Compared to prior version of randomSpike (v1.12x), cheetah difficulty value will drop by 400x to 0.0025 while spike difficulty will rise 2x to 20G.
+  Added randomSpike v1.13x difficulty algorithm.  Compared to prior version of randomSpike (v1.12x), cheetah difficulty value will drop by 400x to 0.0025 while spike difficulty will rise 2x to 20G.
   
 ### Changed
 - [Hard Fork Height](https://github.com/ShorelineCrypto/cheetahcoin/commit/da3163dd1d09755e5c85bd55feeebe3c08dfa478)
@@ -27,7 +44,7 @@ cheetah difficulty drop by 40x to 1, new future timestamp 30 seconds rule
  
 ### Added
 - [randomSpike 12x](https://github.com/ShorelineCrypto/cheetahcoin/commit/baf066612985fc5a525ec3599d4974ea6d8b93df)
-  Added randomSpike v1.12x difficulty aglorithm.  Compared to prior version of randomSpike (v1.10x), cheetah difficulty value dropped 40x to  1.
+  Added randomSpike v1.12x difficulty algorithm.  Compared to prior version of randomSpike (v1.10x), cheetah difficulty value dropped 40x to  1.
 - [activate BIP68/BIP112/BIP113](https://github.com/ShorelineCrypto/cheetahcoin/commit/baf066612985fc5a525ec3599d4974ea6d8b93df)
   Activate BIP34 at 100 blocks after hard fork height.  Enable deployment_csv 3 soft forks: BIP68/BIP112/BIP113.
  
