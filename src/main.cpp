@@ -1133,8 +1133,8 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
                 return pindex->nBits;
             }
         }
-        // v1.14.x randomSpike fork after block height 5088961
-        else if (pindex->nHeight > 5088961) {
+        // v1.14.x randomSpike fork after block height 5221830
+        else if (pindex->nHeight > 5221830) {
             CBigNum bnCheetah;
             bnCheetah = bnProofOfWorkLimit;
             bnCheetah *= 500;
@@ -1730,7 +1730,7 @@ unsigned int static GetNextWorkRequired(const CBlockIndex* pindexLast, const CBl
     bnSpike /= 20000000000;
     unsigned int nSpike = bnSpike.GetCompact();
     // special handling on difficulty adjustment position after v2.5.0 v1.14.x randomSpike fork
-    if (pindexLast->nHeight > 5088961 && pindexLast->nBits == nSpike)
+    if (pindexLast->nHeight > 5221830 && pindexLast->nBits == nSpike)
         bnNew = bnProofOfWorkLimit;
 
     /// debug print
