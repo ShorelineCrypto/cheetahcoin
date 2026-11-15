@@ -760,7 +760,7 @@ UniValue getblocktemplate(const UniValue& params, bool fHelp)
     return result;
 }
 
-class submitblock_StateCatcher : public CValidationInterface
+class submitblock_StateCatcher final : public CValidationInterface
 {
 public:
     uint256 hash;
@@ -828,21 +828,21 @@ UniValue submitblock(const UniValue& params, bool fHelp)
     }
 
     CValidationState state;
-    submitblock_StateCatcher sc(block.GetHash());
-    RegisterValidationInterface(&sc);
+    auto sc = std::make_shared<submitblock_StateCatcher>(block.GetHash());
+    RegisterSharedValidationInterface(sc);
     bool fAccepted = ProcessNewBlock(state, Params(), NULL, &block, true, NULL, false);
-    UnregisterValidationInterface(&sc);
+    UnregisterSharedValidationInterface(sc);
     if (fBlockPresent)
     {
-        if (fAccepted && !sc.found)
+        if (fAccepted && !sc->found)
             return "duplicate-inconclusive";
         return "duplicate";
     }
     if (fAccepted)
     {
-        if (!sc.found)
+        if (!sc->found)
             return "inconclusive";
-        state = sc.state;
+        state = sc->state;
     }
     return BIP22ValidationResult(state);
 }
